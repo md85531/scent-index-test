@@ -1,0 +1,1043 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="Scent Index">
+<meta name="theme-color" content="#FBF8F3">
+<link rel="apple-touch-icon" href="data:image/png;base64,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">
+<link rel="icon" type="image/png" href="data:image/png;base64,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">
+<link rel="manifest" href='data:application/manifest+json,%7B%22name%22%3A%20%22The%20Scent%20Index%22%2C%20%22short_name%22%3A%20%22Scent%20Index%22%2C%20%22display%22%3A%20%22standalone%22%2C%20%22background_color%22%3A%20%22%23FBF8F3%22%2C%20%22theme_color%22%3A%20%22%23FBF8F3%22%2C%20%22icons%22%3A%20%5B%7B%22src%22%3A%20%22data%3Aimage/png%3Bbase64%2CiVBORw0KGgoAAAANSUhEUgAAAgAAAAIACAIAAAB7GkOtAAAM4klEQVR4nO3cQa8dZR3H8blmXgGb3j17CwlouzCWEFrQBFj6PlhgeAEoC96HSyFRaAkB46IoJO016q47hUs0KMVYjIvj4ibt9d72dM6cc%2BaZ%2Bf8%2BnxXQU/LkZOb/nWfOOXPw32%2B/6QDI069Wq9ZrAKCB77ReAABtCABAKAEACCUAAKEEACCUAACEEgCAUAIAEEoAAEIJAEAoAQAIJQAAoQQAIFTfdZ4GCpDIDgAglAAAhBIAgFACABBKAABCCQBAKAEACCUAAKEEACCUAACE6j0JAiCTHQBAKAEACCUAAKE8DhoglB0AQCgBAAglAAChBAAglAAAhBIAgFACABBKAABCCQBAKAEACCUAAKEEACCUAACE8jRQgFB2AAChBAAglAAAhBIAgFACABBKAABCCQBAqH7lZwAAkewAAEIJAEAoAQAIJQAAoQQAIJQAAITyOGiAUHYAAKEEACCUAACEEgCAUAIAEEoAAEIJAEAoAQAIJQAAoQQAIJQAAIQSAIBQAgAQSgAAQnkcNEAoOwCAUAIAEKp3Bwggkx0AQCgBAAglAAChBAAglAAAhBIAgFACABBKAABCCQBAKAEACOVpoACh7AAAQvWtFwBnXX/9R62XsC/X3vp16yXAAwf/%2BdffW68Buq703D9PCZgDAaC9qNF/mgzQlgDQUuzoP00GaMWHwDRj%2Bp/wPtCKANCGqXead4MmBIAGzLvzvCdMTwCYmkn3KN4ZJiYATMqMW8/7w5QEgOmYbkN4l5iMXwIza088efH0v35156jVSqAevwNgIpte2J4Z/aclZMCPA5iAW0DM0Zrp/9g/BQY6%2BPabv7VeA/Xd%2BOmPh7944Hwvvw%2B4%2BvNftV4CxdkBMC/Dr%2B7tA2BLAgAQSgDYu%2BH3fza9qK%2B9CdjovhmMIAAAoQQAIJQAAIQSAIBQAgAQSgAAQgkAQCgBAAglAAChBAAglAAAhOq7btV6DcCjOD3ZIzsAgFACABBKAABCCQBAKAEACCUAAKEEACCUAACEEgCAUAIAEKr3U3OYL6cn%2B2QHABBKAABCeRoozJnTkz2yAwAIJQAAoQQAIJQAAIQSAIBQAgAQSgAAQgkAQCgBAAglAAChBAAglAAAhBIAgFACABDK46Bhzpye7JEdAEAoAQAIJQAAoQSAGfnqztFeXw%2BcJgAAoQSAvbv6s3eHv3j4RX35y/%2BN3jcYoV/5mhkz89WdoyeevPjY10yzmIacm%2BybHQBztH6%2BJ0x/mMDBva%2BPW6%2BBCB%2B88fKIv3VmK5Az%2Bl940/0f9q5vvQBYJ2fiw/TcAmIiLmmH814xDQEACCUATMeF7RDeJSZzcO/rL1qvgSwfvPFK6yXM1wtvvtN6CQSxA2BqZtyjeGeYmADQgEl3nveE6QkAbZh3p3k3aEIAaMbUO%2BF9oBUfAtNe7MfCRj9tCQBzEZUBo585EABmp3AJzH1mRQCYo2e%2B94PWS9i9z37/29ZLgP/jQ2CAUAIAEEoAAEIJAEAoAQAIJQAAofquW7VeA4RwrjEvdgAAoQQAIJQAAITq3ZaEiTjXmBk7AIBQAgAQSgAAQgkAQCgBAAglAAChBAAglAAAhBIAgFACABDK46BhMs415sUOACCUAACEEgCAUAIAEOrg3j//2noNLMMz3/9h6yUw1Ge/%2B03rJbAAAsA6hn4BYsCjCAAPYe6XpAScIQA8YO6HUAJOCABdZ/RHkgEEIJ3RH04GkvkaaDTTH8dAMjuAUE57zrAVCGQHkMj05zxHRaCDf//jL63XwKSevXSl9RKYr08/%2Bbj1EpiOAAQx%2BhlIBkK4BZTC9Gc4R0sIAYjgfGZTjpkEAlCfM5lxHDnlCQBAKAEozkUc23D81CYAlTl72Z6jqDABKMt5y644lqrqWy%2BAeblweHj/n788Pj7zry1WBOyLHUBNIy7ZLhwenh73I15AYTYBJQlAQeOm/85fSTEaUI8AsPFM1wCoQQCq2fQybdw014BMNgHFCEC0bea4BsDS9V23ar0GdubZS8%2B1XgLFPXvpyqeffNR6FeyGHUCu7S/hbQJg0QQAIJQA1OH%2BD9NwpJUhAAChBAAglAAUYVfOlBxvNQgAQCgBAAglAAChBKACN2SZnqOugN6TIICRTI%2BFswMACCUAAKEEACCUx0EDo5key2YHABBKAABCCQBAKAEACCUAAKEEACCUAACEEgCAUAIAEEoAAEIJAEAoAQAIJQAAoTwNFBjN9Fg2OwCAUAIAEEoAAEIJAEAoAQAIJQAAoQQAIFS/8kVeYBTTY%2BnsAABCCQBAKAEACCUAAKEEACCUAACE8jhoYDTTY9nsAABCCQBAKAEACCUAAKEEACCUAACEEgCAUH3rBVDB7aNbrZeQ6KmLT7deAssmAIx3/cb7Hgnf0P3uKgHjCABjXL/xfusl8MBJCWSATfkMgI2Z/vPkRhybsgNgA0b/zNkKsBE7AIYy/ZfCVoCBPA0UGM30WDY7AAZx%2Bb8sNgEMIQA8num/RBrAYwkAQKjeTTzWc/m/XLePbu33G0Gmx8LZAQCEEgCAUALAOu7/LJ2PgllDAABCCQBAKAEACCUAAKEEACCUAACEEgCAUB4HDYxmeiybHQBAKAEACCUAAKEEACCUAACEEgCAUAIAEEoAAEIJAEAoAQAI1bdeABH%2B8Iu3Wi9heb77k9dbL4Hi7AAAQgkAQCgBAAjVr1Ye6AqMYXosnQ%2BBmYLPM2GG3AICCCUAAKEEACCUAACEEgCAUAIAEEoAAEIJAEAoAQAIJQAAoQQAIJQAAITqu87z/IBxTI9lswMACOVx0CR677Xnz//Hl97%2BcPqVQEMCQJCHzv3zf6oEhBAAIqwf/Q99sQxQns8AqG%2Bj6b/l34IFEQCK22aOawC1CQCVbT/BNYDCBICydjW7NYCqBICadju1NYCSBAAgVO%2B33NSzjwv291573hdDzzI9Fs4OACCUAACEEgCq2d8Htj4KphiPgwZGMz2WzQ4AIJQAAIQSAIBQAgAQSgAAQgkA1ezv97p%2BCUwxAgAQSgAAQgkABe3jXo37P9QjAAChBICadnvB7vKfkgSAsnY1tU1/qhIAKtt%2Bdpv%2BFCYAFLfNBDf9qc3joKnvpbc/HPEof9N/ANNj2frWC4ApnEzzgRkw%2BgkhAAS5P9kfWgJznzQCQCKzHjofArPetasvtl4CW3nq4tOtl8B8CQBAKAEACNWvfI%2BLta5dffH6jfdbr4Ix9n3/x/RYOjsAgFACwOP5KHiJfPzLYwkAg2jAspj%2BDCEAAKEEgKFsApbC5T8D%2BSUwGzhpgC8FzZbRz0Y8DZSN%2BWLoPLWY/qbHstkBMIatwKy48GccAWC8a1df/PL4uOu620e3Wq8lkbnPlgSAHTCJYIl8CwgglAAAhBIAgFACABBKAABCCQBAKAEACCUAAKEEACCUAACEEgCAUB4HDYxmeiybHQBAKAEACCUAAKF6N/GAkUyPhbMDAAglAAChBAAglAAAhBIAgFACABBKAABCCQBAKAEACOVpoMBopsey2QEAhBIAgFACABBKAABCCQBAKAEACCUAAKEEACCUAACEEgCAUAIAEEoAAEIJAEAoAQAI1a9WHuga6svj4wuHh1v%2BH3a1GJbI9Fg6OwCAUAIQbZtLeJf/sHQCUMHNj98d/XfHzXHTn22OOmZCANh4mpv%2BUIMA0HWbzHTTH8roWy%2BAuTiZ7Gu%2BF2T0QzEHd7/4c%2Bs1sBuXr7zcegmk8AFADW4BAYQSAIBQAlCHXTnTcKSVIQAAoQQAIJQAlGJvzr45xioRAIBQB3e/%2BFPrNbBjl6%2B80noJ1HTz43daL4FdsgMACCUABblMYx8cV/UIQE3OVXbLEVWSAACEEoCyXLKxK46lqgSgMuct23MUFSYAxTl72YbjpzYBAAglAPW5iGMcR055AhDBmcymHDMJDu5%2B7lEQKS4/5xERDHLzI9M/ggDEkQHWMPqjuAUUxxnOozg20hzc/fyPrddAA5efe7X1EpiXmx/9svUSmJoARJMBOqM/mFtA0Zz5OAaS2QHQdbYCkYx%2BBIAHZCCE0c8JAeAhlKAkc58zBIB1lKAAc59HEQCGEoMFMfQZQgAAQvkaKEAoAQAIJQAAoQQAIJQAAIQSAIBQfdetWq8BgAbsAABCCQBAKAEACCUAAKEEACCUAACE6le%2BBQoQyQ4AIJQAAIQSAIBQAgAQSgAAQgkAQCgBAAjlcdAAoewAAEIJAEAoAQAIJQAAoQQAIJQAAIQSAIBQAgAQSgAAQgkAQCgBAAglAAChBAAglKeBAoSyAwAIJQAAoQQAIFTvIwCATHYAAKEEACCUAACEEgCAUAIAEEoAAEIJAEAoAQAIJQAAoQQAIJTHQQOEsgMACCUAAKEEACCUAACEEgCAUAIAEEoAAEIJAEAoAQAIJQAAoQQAIJQAAIQSAIBQ/wNe3XI90bFFwgAAAABJRU5ErkJggg%3D%3D%22%2C%20%22sizes%22%3A%20%22512x512%22%2C%20%22type%22%3A%20%22image/png%22%2C%20%22purpose%22%3A%20%22any%22%7D%2C%20%7B%22src%22%3A%20%22data%3Aimage/png%3Bbase64%2CiVBORw0KGgoAAAANSUhEUgAAALQAAAC0CAIAAACyr5FlAAARGUlEQVR4nO2deZBcxXnAv6/fMffOzO5qtVokIZAQCCEQpxGnZTBHFMtQdoUEB4MBpwIlDpuEBGNkLlcOKoBj/kiFUEUZJzixgdiBxCgmAiOJxCBA6EDoRCuBJHZXOzvnO7r7yx8jiUO83dXO7E6/p/7V%2B0s1mul97/e%2B7%2Bt%2B3f3QqxVBo/k8WKsboFEXLYcmEC2HJhAthyYQE4Ba3QaNoujIoQlEy6EJRMuhCcTUJYcmCB05NIHo3oomEB05NIFoOTSBaDk0geiaQxOIjhyaQLQcmkBM0llFE4COHJpAtByaQHRvRROIjhyaQLQcmkC0HJpAtByaQHRBqglEzwTTBKLTiiYQs9UNmCBIyiYmUEQGiM36NmWJvBxEUqJhWok0GgY06UkS9xzpu4CIGOXQG%2BmClAgQ7XTWrxT3rl/hDA0ww2zQDyJihtk%2B65RkZ4/0PeG5yCLrR2QjB5FkhkUkt7z4kx0rf1n%2BaKf0XUDWkBwIQICMxdo6uuedN%2BvSb6a6pvFaGZnRvIYrBLrl/la3ofnU729AXP343bte/7WVzBqWDYwBUf0CN4gUvl8tJ/KTF9zySHb6HL9ajKQf0ZQDAJCx1U/c88Hql%2BLZDhKCSJIUyAySApAhssYcQWYY3KlaqbYFt/6orWcm95zo1R9R%2B3sAgKSwEuneVc/vev3FeFuH5D6RBIDUpGnZ6XMyPTMNyyYSAI10N0gKbsSTTqFv/TM/poh2XUyK3lQwZNyp9q78lRVPk%2BQAAESZnmNjbR1ScCueNOPJYu8mKfwGrykJbqez/Zve3Ld1Tces%2Bb5TxWhJErXIQVIadnxwx4bS7m3MjlE9kKSydjovfQ%2BIJPcMOxHPd5GUzbjhUXJ37zuvomECySb8ASoRNTkAAJnpVYrCcw/ex2h%2BslOGQPTpf2kUt7Svid%2BmDhGUA4CQGZ%2BKCoemzqYmUzSiOSIQSTlgokf2ole3AUAUR0jpwDFhYIt%2Bd9yJauTQNAEthyYQLYcmkMjNBGtJ6qdIlhy6IG3yj0bqZOq0oglEy6EJRMuhCUTLoQkkknJMeFUYrSf1B4lmb4WknMjnHSS47q2EAyJpJVLMsoEIiBCZXylK30XDBCJkDIC84iAgNutS2qlsc75IMSK3Jxgy7ji5o09MTz66vHcHs2wAlMIv7t6W6Z5h2AkSfqVvl1cdQtaUqEnMMLvmnSc5J2iabYoQxcghhRlPTVuwyK%2BVGTMBCNHgtUqhd%2BPQzvcKO951hvqRGY2bgYbpV0rtx57cPvNk36nqCcYhABnznfL0c77SffL5bmkfMy1AQGYAkV8tSe4ja8LcHGaY0nWsVNucK2%2Bup6rGv1M1sDa0u9VtaD71dSskxRuPf2/PmlftdA6ZIZuRQQmIIUMgv1qy07mzbvrb9pmnRHbdSiTlAACSklm29L3ty/%2Bt97UXeHkgGY81PtUeET2f%2B2BOPvELsy79ZttRs/xaKZJmQITlAAAiQsaMWJL86opn//mJf3gslcpIKcb8hchYtVo9/fTT/%2BTuB%2BxMFwJxtxpVMyDCa2UBABGBpFsaTHdM4p3HLdtcyeUsIcYuh2EY%2BwaL7ad2pruOKQ/sMUwjwmZAtOUAAABEZoDkwJ1MjKVtFGLso5mGgX6M2cCJXGQset2TzxC9EdJDIUAARElQP8YMEkgC2j9cHrXx0EOJ3EywQxmPixjBsfLPIeKBcT9Rv4rjxJEhh2ZMRKEgHX70gg7Q3F8c8TsjsOI%2BxAWplJKIEDEWiw1zJYQQaNqW1bTbgDGGzI7FbMMI7Mcioud5nHMAZAxDKkooI4cQwjCMZCoFlgme39u7k3MedAGEEMlM5qO%2BvqZcIcZYpVL9cNf71aHiMHIIKY/qmZLK50CSX6t5nscYC50iWCt80Oo2HAb1YJ7MZp1KZd36d5e/tHzNmnUb39vket7wp76JmQVxhEiAiEKIY4%2BZcfwJsy/60oVnnnFaR/dkv1LxPH8YnxQkTHIIIWzbtuLx55771ZNPPrVx46ZarWaaZjweH81N2cQbd0TPENFxXN/3GDOmTOm%2BYvGiG779rY7OjvJgwWxeghtvQiOHECKVyw3s3bv0Bz98/oX/siwrkUgwxsaj3mwKB/IIeZ5fLJbmzDl%2B6dK7LvjSRdXBfhaSrUuxOrir1W0YGSF4MpNZter/7r//rzZs2NjZ2SGllDIc2ywhommaxVIpZtu3LPnTG2%2B81nPcUPgRAjmEEOls21tvvn3VVddKkplM2vd5qxt12BiGIaXcs%2Bejv7zzO3fc9eel/j6zqVtPjQeq%2B0tElm0P9A8sXfqgJEqn95tBn6bVzRyZ%2BtPgKVO6Hn/iyeUvLstks1KoHvlCIIcdjz/00KOr33w7k0lxvt%2BMZCrV0dmZzmQ6OjsTyWQo/CAiABRSfP%2BeBz7as9eMWYo3W2k5hJDJTOaV/3nlZ//6zKRJnQdjRls2m8/nbdu2TNO27Xw%2Bn85kFD/RdaSU6VSqd%2BeuRx59LJZIykaeEY8/7NPbB6h1IAKR%2BMlTTx/shRJRIpFIp9NCiHo6ISIpZSaTicWaMAtwAvB93taWeeHXy7Zu2pRIxIhky89z0KFu5CCieNze%2BX7v2%2B%2BsTSTi9b4JEcVisUM/XB9ED4UcAGCaZmFwaOXK/zUScaFwn0tdOaSURjzx21dX9fcPWNbH6TnIgLCYAQBEZJrGb1562Ve7T6tuywBRSrl27fqQPZAYBURk2/bWbdsL/QOWwh1a1uq8FniYzKgWht58%2B51YPBaW8a5RUpdj9569G959z47FBZctP9ufeygcOaKO%2BnlQ8fkcKretKXzyVlUOHTk0gWg5NIFoOTSBaDk0geiCtLXoglQTTpTeE0zltjUFIgACUvUv1ZFDE4iWQxOI%2BgUpjfLV0YhoGEbLH3LW1%2BEdzv9QtyBV95HgYWEYhhCiUCgAAAK27kxTIpGIx%2BMERGrP8hoNoZcDEYmoWCwmk8nFX12cy%2BWlEC1bd4i4%2Bo3VmzdvNk0rHv6HyeGWo24G5/z666//6pVXTuqa3PIqyqkVV7y64sH77//ww93xeDzUfoRbjroZjzz68GlnLCDpetUSEbX2HQaWaV58ye%2BdedbZ113zx2vWrMlkMo1sUdda1C9IA2GMVcrlJbfectoZC5zqkMEYU2CZMhHVyoPZXP7%2BB%2B67%2Bo%2B%2BwTmvr9kM%2BrjKBam6M8GGP2mI6Pt%2Be0fH17/%2BNSlcxhi2up9yEMuy3OrQvPlnLly4sFwuD9eBavm5HfZQ5YQeLowxx3FOP/20tmwH972W92APAYnokku/3OpmNIRq5/QwkFKm02lmmGrOt0PEXC4Xug1bPkmI5YADC1CVpb54M7yEuCAF5TdlG0XzlC5Iw92VHY6JzDVqOzpmIisHmtaEXTEphaIP3RsjsnJ4pX00IaOTBGQl0sy0o%2BdHFOVAJMHfe%2BGfvPIgmmZDW%2BGP%2BFMMfdc5/vLr8zPmcS9qr3lTtB9YZ%2BxtQ2yfeQp3q8jY%2BN7QiJL7dipLko9yasEnIaKDexSNR%2BsaJIqRgwiRTTt7URPfHDsMiCB8Vwp/rF0nFbWoE0U5AACAu9UJ%2By1EHEPYUJ/IyjGW9F/ftAshkld6DESqgBozJAURMcs27Bggo4h2TQ8XxUdIJwIiaSWyJP1y307iPJ7vspM54Vel4BPS%2B9AjpApjxlM7Vjzb%2B9p/FHdtltxLdh7VddI5x116nZ3KCt%2BJWO/0sDiy5SAyY6kN//7Yhud%2BbNoJw44DYnnvjsHtawc2v7Vgyd%2BbyRRxHtXR8RE5cm8LktKMpbb85qkNzz0Wz00yE%2Bm6BIZlJ9q7921%2B6/V/vBNkiycdthblZ4KNG2gw7la2//YXViJNkujAm6qJSHLfbsv3vfu7gc1vmrHk%2BA7Dt/wMDzsTrNVNaIUdJKVhJQbfX1/t%2B8CwbKBDLj8BAe1Zu%2BLAPr7j1RCVjyM3rSAafrUkPBeCphgSeeXChLZJMY5UORCl9JMd3VYyczChHPqZ9OSjJ7ZZanGEyoGIwnPapp7QNnUWr1XwM2saEIEkM6zuUy4kyeFI7c0eoX82AAAQIsxZfJNhxaTnMsNEZIgMmYHI3OLgzIuvzk6bzb2q4pMRx48jVw5Ext1q14nnnnXz36FpOcUB7lS4W/UqQ25p33GXf2veH/yZ8GpH%2BCDY%2BJXijTNC2xCxkWcgyAy/NtQ974Ivfu%2BnH7zx333v/U54bnbq7J5TL%2BqaezZ3q0BjfwZXfyHyiJ8a735ZI4R1hFRKGYvF1q5d6zolyzSllGML/sgMv1ZOdU0/4Ss3zV50AxAxIwZAvlNGxAZGwAgRV618LdwLqVV%2B%2BjhM2%2BovXtm%2Bbfvq118/94KFXmXIsqyx/QoyJnz3YAYRngOAjSyulFIahlUs9C9btiyRSAT5gQBEHx8KEtbIUce0rIcffnT%2BqaelMlmnWmy0bvx4KIxgrMuliMiyLMNOPXTvvVu2bMnn84qvvBqGEMtRDx59fR/dftutt3/3u3NPmt/qFu2nNDTwNz%2B49xc/fyabzYbXDAh7QSqlTCaT69Zt%2BM5tt82ff%2Br555%2BXy7eT5NiqqVyIK1euWvbii1s2b27LZkeaNoy6IB1fpJTpdIoI/vP553/29NNGq7foEJzHE8l8e3uoY0ad0MsBAFJKxlg2l8P9r49vJYgopYyAGRANOeoIIYQQ6m3UEWL0qdQEon5BqnLzmoLKBamKrTqAym1rCkp3VnRa0QSj5dAEouXQBKJ%2BQRptlC46dOTQBKLl0ASi5dAEouXQBKL2nmDys5tlIaLjOKl0%2BjOflFI6jtPyp26HC0lJCu8Jpm7kEEJkcplT5p3oeh/ve4%2BIrusWCoX6axIQkTGGiEOFgud5YZEDET3Pnzx50gmzZzmOq%2BzDQkWbBQBEZDB20twT6NMLWRGxUi4P9PdXKxXXcSqVykB/f61aVfYUH0pdjmNnTOvs6uScK2u0uo/sGWNuzT3vnLPa8znP5wb7eBUCY8x13XoeoUoFsaH5wBMPInLhL7zwvFjMrlWrLZ%2BgFIS65xQRHc89Zsb0eXPnODXnM4HhYEJhCkzwOVyEENlM5twFZ3gK5xQAtbdgIJLMYN%2B46gohRGR2%2BDNNo1gsffmiC44/flbVqSHieJ/GMR/qagsABmOVUuniiy%2B4YvFl/QP7TFPdJDhKGGPVqtPd3XX7khtdx2H7zVAUpeUAAED0Pf8v7rh57pzZVYXT82g4kP5o6V23T53W47qu4glRdTnqfdeeKZPvu%2BcOn4tazQlp/KjXRrv37L3m6q/9/uLLhgpD6ouOxQ/Xt7oNI4HAuWjLpF96eeWDf/2j93t3tedzUgoZkveBI4JpmOVqlSG74do/XHLTddzniseMOlj8cF2r2zAaUAiRy2V37vrg%2B/c9tPyVVfF4PB6P1d9IreZiZURkDAHQ93mxVJpx9LS771xy%2BaJLiv37AEPhRmjkAAAQQsRiMcs0/%2BXnv/zp089u3bbD59y2rFjMZqyhvRiaDiK6rud5HgFM6mi/7JIv3vTta3qmTC4UhkKUFsMkBwBIIiDI5jKFwaE1a9996eWVa9dt3Lp9h%2Bf5qEzlj4hCyulTe46beczCC8/5wpnzp087qlarua6nfp3xSUImRx0hhGmayUSCMea4ztZtvZyrlMURhBDTp/a0t%2BcRsVZzXNcN42BdKOWoI6UkAsawXnyoETUOgOB5vs85EIVRizqhyX%2BHcmDgmWo1p8VN%2BTwQ0VB4aHw0KD7BeFQwpux9Ge5zG261NeOK0nuCaVqLjhyaQLQcmkCiUJBqxgkdOTSBaDk0gWg5NIFoOTSB6IJUE4jae4JpWopOK5pAtByaQLQcmkB0QaoJREcOTSBaDk0gWg5NIFoOTSD/D%2BI/MIdIm0pWAAAAAElFTkSuQmCC%22%2C%20%22sizes%22%3A%20%22180x180%22%2C%20%22type%22%3A%20%22image/png%22%7D%5D%7D'>
+<title>The Scent Index</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#FBF8F3; --ink:#2B2724; --muted:#6B6258; --faint:#9A9085;
+  --line:#E7DCCB; --card:#FFFFFF; --card-edge:#EFE6D6;
+  --accent:#2F94AD; --accent-deep:#226e83; --tint:rgba(47,148,173,.06);
+  --shadow:0 1px 2px rgba(43,39,36,.04),0 8px 24px rgba(43,39,36,.06);
+  --shadow-lift:0 2px 6px rgba(43,39,36,.07),0 18px 44px rgba(43,39,36,.12);
+  --r:14px;
+}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{
+  background:var(--paper);
+  color:var(--ink);
+  font-family:"Hanken Grotesk",system-ui,sans-serif;
+  font-size:15px; line-height:1.5;
+  -webkit-font-smoothing:antialiased;
+  background-image:radial-gradient(120% 80% at 50% -10%,var(--tint),transparent 60%);
+  transition:background-color .5s ease;
+}
+.wrap{max-width:1180px;margin:0 auto;padding:0 22px 90px}
+button{font-family:inherit;cursor:pointer}
+input,select,textarea{font-family:inherit}
+
+/* Header */
+header.top{padding:34px 0 14px;display:flex;align-items:flex-end;justify-content:space-between;gap:18px;flex-wrap:wrap}
+.brandblock{display:flex;flex-direction:column;gap:3px}
+.kicker{font-size:11px;letter-spacing:.32em;text-transform:uppercase;color:var(--accent-deep);font-weight:600}
+h1{font-family:"Fraunces",serif;font-weight:500;font-size:clamp(34px,5vw,52px);line-height:.96;margin:0;letter-spacing:-.01em}
+h1 em{font-style:italic;color:var(--accent-deep)}
+.sub{color:var(--muted);font-size:13.5px;max-width:42ch}
+.nav{display:flex;gap:6px;align-items:center}
+.nav button{border:1px solid var(--line);background:var(--card);color:var(--muted);border-radius:999px;padding:9px 16px;font-size:13px;font-weight:600;transition:.18s}
+.nav button:hover{border-color:var(--accent);color:var(--ink)}
+.nav button.on{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.add-btn{background:var(--accent)!important;color:#fff!important;border-color:var(--accent)!important}
+.add-btn:hover{background:var(--accent-deep)!important}
+
+/* Season ribbon */
+.seasons{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin:22px 0 4px}
+.season-pill{border:1px solid var(--line);background:var(--card);border-radius:999px;padding:9px 17px 9px 14px;font-size:13.5px;font-weight:600;color:var(--muted);display:flex;align-items:center;gap:9px;transition:.2s}
+.season-pill .dot{width:9px;height:9px;border-radius:50%;background:var(--sdot,#bbb);box-shadow:0 0 0 3px rgba(0,0,0,.04)}
+.season-pill:hover{color:var(--ink);border-color:currentColor}
+.season-pill.on{color:#fff;border-color:transparent}
+.season-pill.on .dot{box-shadow:0 0 0 3px rgba(255,255,255,.25)}
+.nowtag{font-size:10.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;margin-left:2px;opacity:.85}
+
+/* Toolbar */
+.toolbar{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin:20px 0 8px}
+.search{flex:1;min-width:200px;position:relative}
+.search input{width:100%;border:1px solid var(--line);background:var(--card);border-radius:11px;padding:11px 14px 11px 38px;font-size:14px;color:var(--ink)}
+.search input:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px var(--tint)}
+.search svg{position:absolute;left:13px;top:50%;transform:translateY(-50%);color:var(--faint)}
+.sortsel{border:1px solid var(--line);background:var(--card);border-radius:11px;padding:11px 14px;font-size:13.5px;color:var(--ink);font-weight:600}
+.sortsel:focus{outline:none;border-color:var(--accent)}
+.fav-toggle{border:1px solid var(--line);background:var(--card);border-radius:11px;padding:10px 15px;font-size:13.5px;font-weight:600;color:var(--muted);display:flex;align-items:center;gap:7px}
+.fav-toggle.on{color:#c0405e;border-color:#e8b8c2;background:#fdf2f4}
+
+.families{display:flex;gap:7px;flex-wrap:wrap;margin:6px 0 2px}
+.fam-chip{border:1px solid var(--line);background:var(--card);border-radius:999px;padding:6px 13px 6px 11px;font-size:12.5px;font-weight:600;color:var(--muted);display:flex;align-items:center;gap:7px;transition:.15s}
+.fam-chip .fdot{width:8px;height:8px;border-radius:2px;background:var(--fc,#ccc)}
+.fam-chip:hover{color:var(--ink)}
+.fam-chip.on{color:var(--ink);border-color:var(--ink);background:#fff}
+.fam-chip.on .fdot{box-shadow:0 0 0 2px rgba(43,39,36,.12)}
+
+/* Stat strip */
+.statstrip{display:flex;gap:26px;flex-wrap:wrap;padding:16px 2px 4px;border-bottom:1px solid var(--line);margin-bottom:18px}
+.stat .v{font-family:"Fraunces",serif;font-size:24px;font-weight:500;line-height:1}
+.stat .l{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--faint);font-weight:600;margin-top:4px}
+.stat .v em{font-style:normal;color:var(--accent-deep)}
+
+/* Grid */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(310px,1fr));gap:16px}
+.card{background:var(--card);border:1px solid var(--card-edge);border-radius:var(--r);box-shadow:var(--shadow);position:relative;overflow:hidden;display:flex;flex-direction:column;transition:transform .18s ease,box-shadow .18s ease;animation:rise .4s ease both}
+@keyframes rise{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.card:hover{transform:translateY(-3px);box-shadow:var(--shadow-lift)}
+.strip{position:absolute;left:0;top:0;bottom:0;width:5px;background:var(--fc,#ccc)}
+.card-in{padding:16px 18px 14px 21px;display:flex;flex-direction:column;gap:9px;flex:1}
+.eyebrow{display:flex;justify-content:space-between;align-items:center;gap:8px}
+.brand{font-size:11px;letter-spacing:.13em;text-transform:uppercase;color:var(--muted);font-weight:600}
+.famtag{font-size:10.5px;font-weight:700;color:var(--fc);letter-spacing:.04em;text-transform:uppercase;white-space:nowrap}
+.name{font-family:"Fraunces",serif;font-size:20px;font-weight:500;line-height:1.08;letter-spacing:-.01em}
+.notes{font-size:12.8px;color:var(--muted);line-height:1.45;min-height:18px}
+.sdots{display:flex;gap:5px;align-items:center;flex-wrap:wrap}
+.sdots .sd{font-size:10px;font-weight:600;color:#fff;padding:2px 8px;border-radius:999px;letter-spacing:.02em}
+.meta{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:auto;padding-top:6px}
+.stars{display:flex;gap:1px;font-size:18px;color:var(--line);line-height:1;user-select:none}
+.stars span{cursor:pointer;transition:transform .1s}
+.stars span:hover{transform:scale(1.18)}
+.stars span.lit{color:#E0A92E}
+.price-wrap{display:flex;align-items:center;gap:3px;color:var(--muted);font-size:13px;font-weight:600}
+.price-wrap input{width:62px;border:1px solid transparent;background:transparent;border-radius:7px;padding:3px 5px;font-size:13px;color:var(--ink);font-weight:600;text-align:right}
+.price-wrap input:hover{border-color:var(--line)}
+.price-wrap input:focus{outline:none;border-color:var(--accent);background:#fff}
+.actions{display:flex;align-items:center;gap:7px;border-top:1px solid var(--line);padding:11px 18px 12px 21px}
+.logbtn{flex:1;border:1px solid var(--accent);background:var(--accent);color:#fff;border-radius:9px;padding:9px;font-size:13px;font-weight:700;display:flex;align-items:center;justify-content:center;gap:7px;transition:.15s}
+.logbtn:hover{background:var(--accent-deep);border-color:var(--accent-deep)}
+.logbtn.justlogged{animation:pop .4s ease}
+@keyframes pop{0%{transform:scale(1)}40%{transform:scale(1.05)}100%{transform:scale(1)}}
+.iconbtn{width:38px;height:38px;border:1px solid var(--line);background:var(--card);border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:16px;color:var(--muted);transition:.15s}
+.iconbtn:hover{border-color:var(--ink);color:var(--ink)}
+.iconbtn.fav.on{color:#d23a5c;border-color:#eebcc6;background:#fdf2f4}
+.wearinfo{font-size:11.5px;color:var(--faint);font-weight:500;padding:0 21px 12px;margin-top:-4px}
+.wearinfo b{color:var(--muted);font-weight:700}
+
+/* Expanded */
+.expand{border-top:1px dashed var(--line);padding:15px 21px 17px;background:linear-gradient(var(--tint),transparent 70%);display:none;flex-direction:column;gap:15px}
+.card.open .expand{display:flex}
+.exp-h{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent-deep);font-weight:700;margin-bottom:7px}
+.pair-list{display:flex;flex-direction:column;gap:7px}
+.pair{display:flex;align-items:center;gap:10px;font-size:12.8px}
+.pair .pf{width:7px;height:7px;border-radius:2px;flex:none}
+.pair .pn{font-weight:600}
+.pair .pb{color:var(--faint);font-size:11px}
+.pair .pwhy{margin-left:auto;color:var(--muted);font-size:11px;font-style:italic;text-align:right}
+.pair .pinned-tag{margin-left:auto;font-size:9.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--accent-deep)}
+.pair .pctrl{flex:none;display:flex;gap:4px}
+.pbtn{border:1px solid var(--line);background:#fff;color:var(--faint);border-radius:6px;padding:1px 7px;font-size:14px;font-weight:600;line-height:1.2;cursor:pointer}
+.pbtn:hover{color:#d23a5c;border-color:#eebcc6}
+.addpair{align-self:flex-start;margin-top:5px;border:1px dashed var(--line);background:transparent;color:var(--muted);border-radius:8px;padding:6px 12px;font-size:12px;font-weight:600;cursor:pointer}
+.addpair:hover{border-color:var(--accent);color:var(--ink)}
+.bc-type{font-size:9px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:#fff;background:var(--accent);border-radius:999px;padding:3px 9px;flex:none}
+.bc-add{display:flex;gap:6px;margin-top:9px;flex-wrap:wrap}
+.bc-input{flex:1;min-width:150px;border:1px solid var(--line);border-radius:8px;padding:9px 11px;font-size:12.5px;background:#fff;color:var(--ink)}
+.bc-input:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px var(--tint)}
+.bc-sel{border:1px solid var(--line);border-radius:8px;padding:9px;font-size:12px;background:#fff;color:var(--ink)}
+.bc-sel:focus{outline:none;border-color:var(--accent)}
+.bc-btn{border:1px solid var(--ink);background:var(--ink);color:#fff;border-radius:8px;padding:9px 16px;font-size:12.5px;font-weight:700;cursor:pointer}
+.bc-btn:hover{background:#000}
+.memo{width:100%;min-height:62px;resize:vertical;border:1px solid var(--line);border-radius:10px;padding:10px 12px;font-size:13px;font-family:inherit;color:var(--ink);background:#fff;line-height:1.45}
+.memo::placeholder{color:var(--faint)}
+.memo:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px var(--tint)}
+.history{font-size:12px;color:var(--muted)}
+.history .chip{display:inline-flex;align-items:center;gap:6px;background:#fff;border:1px solid var(--line);border-radius:999px;padding:3px 7px 3px 10px;margin:3px 5px 0 0;font-size:11.5px}
+.history .chip button{border:none;background:none;color:var(--faint);font-size:13px;line-height:1;padding:0}
+.history .chip button:hover{color:#d23a5c}
+.editrow{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.editrow label{font-size:11px;color:var(--muted);font-weight:600;display:flex;flex-direction:column;gap:4px}
+.editrow select,.editrow input{border:1px solid var(--line);border-radius:8px;padding:7px 9px;font-size:12.5px;background:#fff;color:var(--ink)}
+.seasonpick{display:flex;gap:5px}
+.seasonpick .sp{border:1px solid var(--line);border-radius:7px;padding:5px 9px;font-size:11px;font-weight:600;color:var(--muted);cursor:pointer}
+.seasonpick .sp.on{color:#fff;border-color:transparent}
+.exp-foot{display:flex;justify-content:space-between;align-items:center;gap:10px}
+.savebtn{border:1px solid var(--ink);background:var(--ink);color:#fff;border-radius:8px;padding:8px 16px;font-size:12.5px;font-weight:700}
+.savebtn:hover{background:#000}
+.delbtn{border:none;background:none;color:var(--faint);font-size:12px;font-weight:600;text-decoration:underline;text-underline-offset:2px}
+.delbtn:hover{color:#d23a5c}
+
+.empty{text-align:center;padding:70px 20px;color:var(--muted)}
+.empty h3{font-family:"Fraunces",serif;font-weight:500;font-size:22px;color:var(--ink);margin:0 0 6px}
+
+/* Insights */
+.insights{display:none;flex-direction:column;gap:26px;padding-top:6px}
+.insights.on{display:flex}
+.library.off{display:none}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px}
+.kpi{background:var(--card);border:1px solid var(--card-edge);border-radius:var(--r);padding:18px 20px;box-shadow:var(--shadow)}
+.kpi .v{font-family:"Fraunces",serif;font-size:32px;font-weight:500;line-height:1;color:var(--ink)}
+.kpi .l{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--faint);font-weight:600;margin-top:7px}
+.panel{background:var(--card);border:1px solid var(--card-edge);border-radius:var(--r);padding:22px 24px;box-shadow:var(--shadow)}
+.panel h2{font-family:"Fraunces",serif;font-weight:500;font-size:21px;margin:0 0 16px}
+.bars{display:flex;flex-direction:column;gap:9px}
+.bar{display:grid;grid-template-columns:90px 1fr 36px;align-items:center;gap:12px;font-size:13px}
+.bar .bl{font-weight:600;color:var(--muted)}
+.bar .bt{height:13px;border-radius:7px;background:var(--bc,#ccc);min-width:6px;transition:width .6s ease}
+.bar .bv{text-align:right;font-weight:700;color:var(--ink);font-variant-numeric:tabular-nums}
+.twocol{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px}
+.rank{display:flex;flex-direction:column;gap:2px}
+.rank .ri{display:flex;align-items:center;gap:11px;padding:8px 0;border-bottom:1px solid var(--line)}
+.rank .ri:last-child{border-bottom:none}
+.rank .rn{font-family:"Fraunces",serif;font-size:15px;color:var(--faint);width:22px}
+.rank .rname{font-weight:600;font-size:13.5px;flex:1}
+.rank .rname small{display:block;color:var(--faint);font-weight:500;font-size:11px;letter-spacing:.08em;text-transform:uppercase}
+.rank .rval{font-size:12.5px;color:var(--accent-deep);font-weight:700}
+
+/* Modal */
+.modal-bg{position:fixed;inset:0;background:rgba(43,39,36,.42);backdrop-filter:blur(3px);display:none;align-items:flex-start;justify-content:center;padding:40px 16px;z-index:50;overflow:auto}
+.modal-bg.on{display:flex}
+.modal{background:var(--paper);border-radius:18px;max-width:480px;width:100%;padding:26px 26px 24px;box-shadow:0 30px 80px rgba(0,0,0,.3);animation:rise .3s ease both}
+.modal h2{font-family:"Fraunces",serif;font-weight:500;font-size:24px;margin:0 0 3px}
+.modal p.mh{color:var(--muted);font-size:13px;margin:0 0 18px}
+.field{display:flex;flex-direction:column;gap:5px;margin-bottom:14px}
+.field label{font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);font-weight:700}
+.field input,.field select,.field textarea{border:1px solid var(--line);background:#fff;border-radius:10px;padding:10px 12px;font-size:14px;color:var(--ink)}
+.field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px var(--tint)}
+.field .row2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.modal .seasonpick{flex-wrap:wrap}
+.modal .seasonpick .sp{padding:7px 12px;font-size:12px}
+.modal-foot{display:flex;gap:10px;justify-content:flex-end;margin-top:8px}
+.btn-ghost{border:1px solid var(--line);background:#fff;color:var(--muted);border-radius:10px;padding:10px 18px;font-weight:600;font-size:13.5px}
+.btn-ghost:hover{color:var(--ink);border-color:var(--ink)}
+.btn-solid{border:1px solid var(--accent);background:var(--accent);color:#fff;border-radius:10px;padding:10px 22px;font-weight:700;font-size:13.5px}
+.btn-solid:hover{background:var(--accent-deep)}
+
+.savestate{position:fixed;left:50%;bottom:20px;transform:translateX(-50%) translateY(20px);background:var(--ink);color:var(--paper);font-size:12.5px;font-weight:600;padding:9px 18px;border-radius:999px;box-shadow:0 8px 24px rgba(0,0,0,.2);opacity:0;transition:.3s;pointer-events:none;z-index:60}
+.savestate.show{opacity:1;transform:translateX(-50%) translateY(0)}
+.storagebanner{background:#fdf4e7;border:1px solid #ecd9b6;color:#7a5a1e;font-size:12.5px;border-radius:11px;padding:10px 15px;margin:12px 0 0;display:none}
+.storagebanner.show{display:block}
+
+/* Floating quick-log button */
+.fab{position:fixed;right:18px;bottom:18px;z-index:40;display:flex;align-items:center;gap:9px;background:var(--accent);color:#fff;border:none;border-radius:999px;padding:14px 20px 14px 18px;font-family:inherit;font-weight:700;font-size:14px;box-shadow:0 8px 24px rgba(43,39,36,.22),0 2px 6px rgba(43,39,36,.12);transition:.18s}
+.fab:hover{background:var(--accent-deep);transform:translateY(-1px)}
+.fab:active{transform:translateY(0)}
+.fab svg{display:block}
+
+/* Quick-log panel */
+.ql-chips{display:flex;flex-wrap:wrap;gap:6px;margin:2px 0 12px}
+.ql-chips .qc{display:inline-flex;align-items:center;gap:7px;background:var(--accent);color:#fff;border-radius:999px;padding:5px 8px 5px 13px;font-size:12.5px;font-weight:600}
+.ql-chips .qc button{border:none;background:none;color:rgba(255,255,255,.78);font-size:13px;padding:0;line-height:1;cursor:pointer}
+.ql-chips .qc button:hover{color:#fff}
+.ql-results{max-height:48vh;overflow:auto;margin:4px -8px 0;display:flex;flex-direction:column;-webkit-overflow-scrolling:touch}
+.ql-section-label{font-size:10.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--faint);font-weight:700;padding:10px 10px 5px}
+.ql-row{display:flex;align-items:center;gap:12px;padding:11px 10px;border-radius:11px;cursor:pointer;transition:background .12s}
+.ql-row:hover{background:var(--tint)}
+.ql-row .qf{width:9px;height:9px;border-radius:2px;flex:none}
+.ql-row .qn{font-weight:600;font-size:14px;flex:1;line-height:1.18}
+.ql-row .qn small{display:block;color:var(--faint);font-weight:500;font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;margin-top:1px}
+.ql-row .qmeta{font-size:11.5px;color:var(--faint);font-weight:600;text-align:right;white-space:nowrap}
+.ql-row.done{background:var(--tint)}
+.ql-row.done .qmeta{color:var(--accent-deep);font-weight:700}
+
+footer{text-align:center;color:var(--faint);font-size:12px;padding:34px 0 0}
+@media (max-width:560px){
+  .wrap{padding:0 15px 80px}
+  .grid{grid-template-columns:1fr}
+  h1{font-size:38px}
+  .nav{width:100%;flex-wrap:wrap}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <div class="brandblock">
+      <span class="kicker">A personal fragrance library</span>
+      <h1>The Scent <em>Index</em></h1>
+    </div>
+    <div class="nav">
+      <button id="navLib" class="on" onclick="setView('library')">Library</button>
+      <button id="navIns" onclick="setView('insights')">Insights</button>
+      <button class="add-btn" onclick="openAdd()">+ Add scent</button>
+    </div>
+  </header>
+
+  <div class="storagebanner" id="storageBanner">Your browser is blocking on-device storage, so changes won't be kept between sessions. If you're in Private / Incognito mode, switch to a normal tab to save your ratings, wears and additions.</div>
+
+  <!-- LIBRARY -->
+  <section class="library" id="libraryView">
+    <div class="seasons" id="seasonRibbon"></div>
+    <div class="toolbar">
+      <div class="search">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+        <input id="searchBox" placeholder="Search by name, brand, note…" oninput="onSearch(this.value)">
+      </div>
+      <button class="fav-toggle" id="favToggle" onclick="toggleFavFilter()">♥ Favorites</button>
+      <select class="sortsel" id="sortSel" onchange="setSort(this.value)">
+        <option value="az">Sort: A–Z</option>
+        <option value="rating">Sort: Top rated</option>
+        <option value="worn">Sort: Most worn</option>
+        <option value="recent">Sort: Recently worn</option>
+        <option value="price">Sort: Price (high→low)</option>
+        <option value="added">Sort: Newest added</option>
+      </select>
+    </div>
+    <div class="families" id="familyChips"></div>
+    <div class="statstrip" id="statStrip"></div>
+    <div class="grid" id="grid"></div>
+    <div class="empty" id="emptyState" style="display:none">
+      <h3>Nothing here yet</h3>
+      <p>No scents match these filters. Try clearing a family or switching seasons.</p>
+    </div>
+  </section>
+
+  <!-- INSIGHTS -->
+  <section class="insights" id="insightsView"></section>
+
+  <footer>The Scent Index · 206 scents and counting · tap a scent to log a wear, rate it, or refine its details</footer>
+</div>
+
+<!-- FLOATING QUICK-LOG -->
+<button class="fab" id="fab" onclick="openQuickLog()" aria-label="Log tonight's wear">
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
+  <span>Tonight</span>
+</button>
+
+<!-- ADD/EDIT MODAL -->
+<div class="modal-bg" id="modalBg" onclick="if(event.target===this)closeModal()">
+  <div class="modal" id="modalCard"></div>
+</div>
+
+<div class="savestate" id="saveState">Saved</div>
+
+<script>
+const SEED = /*seed*/[{"i":1,"b":"Aerin","n":"Mediterranean Honeysuckle Figue","f":"Floral","o":"Honeysuckle, fig, white floral","s":["Spring","Summer"]},{"i":2,"b":"Al-Rehab","n":"Choco Musk","f":"Gourmand","o":"Chocolate, sweet musk, cocoa","s":["Fall","Winter"]},{"i":3,"b":"Armani","n":"Power of You","f":"Floral","o":"Sweet fruity floral, vanilla","s":["Fall","Winter","Spring"]},{"i":4,"b":"Atelier Cologne","n":"Clementine California","f":"Citrus","o":"Clementine, blackcurrant, vetiver","s":["Spring","Summer"]},{"i":5,"b":"Bath & Body Works","n":"Brown Sugar & Fig","f":"Gourmand","o":"Brown sugar, fig, warm woods","s":["Fall","Winter"]},{"i":6,"b":"Bath & Body Works","n":"Cereal Milk Soft Serve","f":"Gourmand","o":"Cereal milk, sweet cream, vanilla","s":["Fall","Winter"]},{"i":7,"b":"Bath & Body Works","n":"Champagne Apple & Honey","f":"Fruity","o":"Apple, honey, champagne fizz","s":["Fall"]},{"i":8,"b":"Bath & Body Works","n":"Coastal Beauty","f":"Fresh","o":"Aquatic floral, sea air","s":["Spring","Summer"]},{"i":9,"b":"Bath & Body Works","n":"Forever Cherry Blossom","f":"Floral","o":"Cherry blossom, pear, soft floral","s":["Spring"]},{"i":10,"b":"Bath & Body Works","n":"Fresh Musk","f":"Musk","o":"Clean white musk","s":["Spring","Summer","Fall","Winter"]},{"i":11,"b":"Bath & Body Works","n":"Fruity Musk","f":"Musk","o":"Berry, soft fruity musk","s":["Spring","Summer"]},{"i":12,"b":"Bath & Body Works","n":"Imperfect Beauty","f":"Floral","o":"Soft floral, powder","s":["Spring","Fall"]},{"i":13,"b":"Bath & Body Works","n":"Inner Angel","f":"Floral","o":"Pear, peony, soft floral","s":["Spring","Summer"]},{"i":14,"b":"Bath & Body Works","n":"Love Unleashed","f":"Floral","o":"Fruity floral, musk","s":["Spring","Fall"]},{"i":15,"b":"Bath & Body Works","n":"Midnight Addiction","f":"Fruity","o":"Dark berry, plum, amber","s":["Fall","Winter"]},{"i":16,"b":"Bath & Body Works","n":"Milk","f":"Gourmand","o":"Milky, soft vanilla, comfort","s":["Spring","Fall","Winter"]},{"i":17,"b":"Bath & Body Works","n":"Milkbar Birthday Cake","f":"Gourmand","o":"Birthday cake, frosting, vanilla","s":["Fall","Winter"]},{"i":18,"b":"Bath & Body Works","n":"Oh Cherry","f":"Fruity","o":"Cherry, sweet fruit","s":["Spring","Summer"]},{"i":19,"b":"Bath & Body Works","n":"Pina Colada Swirl","f":"Fruity","o":"Pineapple, coconut, rum","s":["Summer"]},{"i":20,"b":"Bath & Body Works","n":"Pistachio Glaze","f":"Gourmand","o":"Pistachio, glaze, sweet nut","s":["Fall","Winter"]},{"i":21,"b":"Bath & Body Works","n":"Rich Espresso","f":"Gourmand","o":"Espresso, coffee, cream","s":["Fall","Winter"]},{"i":22,"b":"Bath & Body Works","n":"Salted Shorelines","f":"Fresh","o":"Salt, aquatic, driftwood","s":["Spring","Summer"]},{"i":23,"b":"Bath & Body Works","n":"Saltwater Breeze","f":"Fresh","o":"Sea breeze, aquatic","s":["Spring","Summer"]},{"i":24,"b":"Bath & Body Works","n":"Snowflakes & Cashmere","f":"Musk","o":"Cashmere musk, soft woods","s":["Winter"]},{"i":25,"b":"Bath & Body Works","n":"Sunrise Woods","f":"Woody","o":"Warm woods, amber","s":["Fall","Winter"]},{"i":26,"b":"Bath & Body Works","n":"Sweetheart Cherry","f":"Fruity","o":"Cherry, vanilla, sweet","s":["Winter","Spring"]},{"i":27,"b":"Bath & Body Works","n":"Touch of Gold","f":"Amber","o":"Amber, warm gourmand glow","s":["Fall","Winter"]},{"i":28,"b":"Bath & Body Works","n":"Vampire Blood","f":"Fruity","o":"Dark fruit, plum, spice","s":["Fall"]},{"i":29,"b":"Bath & Body Works","n":"Vanilla Bean Noel","f":"Gourmand","o":"Vanilla bean, sugar, warm spice","s":["Winter"]},{"i":30,"b":"Bath & Body Works","n":"Vanilla Cafe","f":"Gourmand","o":"Vanilla, coffee, cream","s":["Fall","Winter"]},{"i":31,"b":"Bath & Body Works","n":"Vanilla Ease","f":"Gourmand","o":"Soft vanilla, comfort","s":["Spring","Fall","Winter"]},{"i":32,"b":"Bath & Body Works","n":"Vanilla Romance","f":"Gourmand","o":"Vanilla, soft floral","s":["Fall","Winter"]},{"i":33,"b":"Bath & Body Works","n":"Viva Brazil","f":"Fruity","o":"Tropical fruit, bright","s":["Summer"]},{"i":34,"b":"Bath & Body Works","n":"Warm Musk","f":"Musk","o":"Warm musk, soft amber","s":["Fall","Winter"]},{"i":35,"b":"Bath & Body Works","n":"Warm Vanilla Sugar","f":"Gourmand","o":"Vanilla, sugar, warmth","s":["Fall","Winter"]},{"i":36,"b":"Boy Smells","n":"Woodphoria","f":"Woody","o":"Warm woods, resin, amber","s":["Fall","Winter"]},{"i":37,"b":"Brown Girl Jane","n":"Casino","f":"Amber","o":"Warm amber, woods, spice","s":["Fall","Winter"]},{"i":38,"b":"Burberry","n":"Goddess","f":"Gourmand","o":"Vanilla, lavender, cacao","s":["Fall","Winter"]},{"i":39,"b":"By Rosie Jane","n":"Dulce","f":"Gourmand","o":"Dulce de leche, caramel, sweet","s":["Fall","Winter"]},{"i":40,"b":"By Rosie Jane","n":"Missy","f":"Floral","o":"Soft floral, clean musk","s":["Spring","Summer"]},{"i":41,"b":"By Rosie Jane","n":"Rosie","f":"Floral","o":"Fruity floral, pear, rose","s":["Spring","Summer"]},{"i":42,"b":"By Rosie Jane","n":"White Tee","f":"Musk","o":"Clean skin musk, soft cotton","s":["Spring","Summer","Fall","Winter"]},{"i":43,"b":"Byredo","n":"Alto Astral","f":"Fresh","o":"Green, fresh aromatic","s":["Spring","Summer"]},{"i":44,"b":"Byredo","n":"Bal d'Afrique","f":"Floral","o":"Neroli, violet, vetiver","s":["Spring","Summer","Fall"]},{"i":45,"b":"Byredo","n":"Bal d'Afrique Absolu","f":"Floral","o":"Intense neroli, violet, woods","s":["Fall","Winter"]},{"i":46,"b":"Byredo","n":"Desert Dawn","f":"Fruity","o":"Raspberry, saffron, amber","s":["Fall","Winter"]},{"i":47,"b":"Byredo","n":"Mojave Ghost","f":"Woody","o":"Ambrette, sandalwood, magnolia","s":["Spring","Summer","Fall"]},{"i":48,"b":"Byredo","n":"Young Rose","f":"Floral","o":"Rose, peppery, woods","s":["Spring","Fall"]},{"i":49,"b":"Chanel","n":"Gardénia","f":"Floral","o":"Gardenia, jasmine, white floral","s":["Spring","Summer"]},{"i":50,"b":"Cirque du Soleil","n":"L'Eau de Parfum","f":"Floral","o":"Soft floral, fresh","s":["Spring","Summer"]},{"i":51,"b":"Clean Reserve","n":"Radiant Nectar","f":"Fruity","o":"Nectar, fruit, soft floral","s":["Spring","Summer"]},{"i":52,"b":"Clean Reserve","n":"Rain","f":"Fresh","o":"Clean rain, aquatic, soft","s":["Spring","Summer"]},{"i":53,"b":"Clean Reserve","n":"Skin","f":"Musk","o":"Clean skin musk, soft warmth","s":["Spring","Summer","Fall","Winter"]},{"i":54,"b":"Commodity","n":"Ice(d)","f":"Fresh","o":"Cool mint, crisp, airy","s":["Summer"]},{"i":55,"b":"Commodity","n":"Juice Expressive","f":"Fruity","o":"Juicy fruit, bright","s":["Spring","Summer"]},{"i":56,"b":"Commodity","n":"Milk Orchid Expressive","f":"Gourmand","o":"Milky orchid, soft sweet","s":["Spring","Fall","Winter"]},{"i":57,"b":"d'Annam","n":"Mooncake","f":"Gourmand","o":"Lotus, sweet pastry, soft spice","s":["Fall"]},{"i":58,"b":"d'Annam","n":"White Rice","f":"Gourmand","o":"Steamed rice, milky, soft musk","s":["Spring","Fall","Winter"]},{"i":59,"b":"Dedcool","n":"Mineral Milk","f":"Musk","o":"Milky musk, soft skin","s":["Spring","Summer","Fall","Winter"]},{"i":60,"b":"Dedcool","n":"Mochi Milk","f":"Gourmand","o":"Mochi, milky, sweet rice","s":["Fall","Winter"]},{"i":61,"b":"Dedcool","n":"Taunt","f":"Musk","o":"Clean musk, soft skin","s":["Spring","Summer","Fall","Winter"]},{"i":62,"b":"Dedcool","n":"Xtra Milk","f":"Gourmand","o":"Milky, warm, soft sweet","s":["Spring","Fall","Winter"]},{"i":63,"b":"Diptyque","n":"L'Eau Papier","f":"Musk","o":"White musk, rice steam, mimosa","s":["Spring","Summer","Fall"]},{"i":64,"b":"Ellis Brooklyn","n":"Dear Sky","f":"Floral","o":"Soft floral, airy, fresh","s":["Spring","Summer"]},{"i":65,"b":"Ellis Brooklyn","n":"Marshmallows","f":"Gourmand","o":"Marshmallow, vanilla, soft","s":["Fall","Winter"]},{"i":66,"b":"Ellis Brooklyn","n":"New Crush","f":"Floral","o":"Fruity floral, bright","s":["Spring","Summer"]},{"i":67,"b":"Ellis Brooklyn","n":"Queens Caramel","f":"Gourmand","o":"Caramel, vanilla, sweet","s":["Fall","Winter"]},{"i":68,"b":"Fine'ry","n":"No Prince Required","f":"Fruity","o":"Fruity floral, bright","s":["Spring","Summer"]},{"i":69,"b":"Frenshe","n":"Moon Milk","f":"Gourmand","o":"Milky, lavender, soft vanilla","s":["Fall","Winter"]},{"i":70,"b":"Glossier","n":"Orange Blossom Neroli","f":"Floral","o":"Orange blossom, neroli, citrus","s":["Spring","Summer"]},{"i":71,"b":"Glossier","n":"Sandstone","f":"Woody","o":"Warm woods, amber, soft spice","s":["Fall","Winter"]},{"i":72,"b":"Glossier","n":"You","f":"Musk","o":"Skin musk, ambrette, pink pepper","s":["Spring","Summer","Fall","Winter"]},{"i":73,"b":"Glossier","n":"You Deux","f":"Musk","o":"Warm musk, amber, soft spice","s":["Fall","Winter"]},{"i":74,"b":"Glossier","n":"You Fleur","f":"Floral","o":"Soft floral musk, airy","s":["Spring","Summer"]},{"i":75,"b":"Glossier","n":"You Soie","f":"Musk","o":"Silky soft musk, skin","s":["Spring","Summer","Fall","Winter"]},{"i":76,"b":"Gucci","n":"Bamboo","f":"Floral","o":"Casablanca lily, soft floral","s":["Spring","Summer"]},{"i":77,"b":"Gucci","n":"Bloom","f":"Floral","o":"Tuberose, jasmine, white floral","s":["Spring","Summer"]},{"i":78,"b":"Henry Rose","n":"Torn","f":"Floral","o":"Floral, woods, soft amber","s":["Spring","Fall"]},{"i":79,"b":"Imaginary Author","n":"Sundrunk","f":"Citrus","o":"Sunny citrus, fruity, warm","s":["Summer"]},{"i":80,"b":"Imaginary Authors","n":"Falling Into The Sea","f":"Fresh","o":"Grapefruit, sea air, sand","s":["Spring","Summer"]},{"i":81,"b":"Imaginary Authors","n":"Fox in the Flowerbed","f":"Floral","o":"Peach, honey, white floral","s":["Spring","Summer"]},{"i":82,"b":"Imaginary Authors","n":"Yesterday Haze","f":"Fruity","o":"Fig, vanilla, soft amber","s":["Fall"]},{"i":83,"b":"Jo Malone","n":"Raspberry Ripple","f":"Fruity","o":"Raspberry, vanilla, cream","s":["Spring","Winter"]},{"i":84,"b":"Jo Malone","n":"Wood Sage & Sea Salt","f":"Fresh","o":"Sea salt, sage, mineral","s":["Spring","Summer"]},{"i":85,"b":"Jo Malone","n":"Yuzu Zest","f":"Citrus","o":"Yuzu, citrus, bright","s":["Spring","Summer"]},{"i":86,"b":"Kayali","n":"Capri in a Bottle","f":"Citrus","o":"Limoncello, citrus, bright","s":["Summer"]},{"i":87,"b":"Kayali","n":"Fleur Majesty Rose Royale 31","f":"Floral","o":"Rose, peony, lush floral","s":["Spring","Fall","Winter"]},{"i":88,"b":"Kayali","n":"Freedom Musk Matcha 45","f":"Musk","o":"Matcha, green musk, soft","s":["Spring","Summer","Fall"]},{"i":89,"b":"Kayali","n":"Maldives in a Bottle","f":"Fruity","o":"Coconut, tropical, beach","s":["Summer"]},{"i":90,"b":"Kayali","n":"Maui in a Bottle","f":"Fruity","o":"Tropical fruit, sunny","s":["Summer"]},{"i":91,"b":"Kayali","n":"Musk 12","f":"Musk","o":"Soft musk, clean skin","s":["Spring","Summer","Fall","Winter"]},{"i":92,"b":"Kayali","n":"The Wedding Silk Santal 36","f":"Woody","o":"Sandalwood, amber, soft spice","s":["Fall","Winter"]},{"i":93,"b":"Kayali","n":"Vanilla 28","f":"Gourmand","o":"Vanilla, brown sugar, warm","s":["Fall","Winter"]},{"i":94,"b":"Kayali","n":"Yum Boujee Marshmallow 81","f":"Gourmand","o":"Marshmallow, vanilla, sweet","s":["Fall","Winter"]},{"i":95,"b":"Khadlaj","n":"Cream Velvet","f":"Gourmand","o":"Creamy, sweet, soft amber","s":["Fall","Winter"]},{"i":96,"b":"Le Labo","n":"The Matcha 26","f":"Green","o":"Matcha, fig, cedar, bitter green","s":["Spring","Summer","Fall"]},{"i":97,"b":"Liis","n":"Ethereal Wave","f":"Fresh","o":"Airy floral, fresh, soft","s":["Spring","Summer"]},{"i":98,"b":"Lore","n":"Somewhere but nowhere","f":"Woody","o":"Soft woods, musk, quiet","s":["Fall","Winter"]},{"i":99,"b":"Maison Martin Margiela","n":"Never-ending Summer","f":"Gourmand","o":"Heliotrope, sandy, soft sweet","s":["Summer"]},{"i":100,"b":"Maison Martin Margiela","n":"Under the Lemon Tree","f":"Citrus","o":"Lemon, fig leaf, bright","s":["Spring","Summer"]},{"i":101,"b":"Nest New York","n":"Indigo","f":"Woody","o":"Woods, amber, soft spice","s":["Fall","Winter"]},{"i":102,"b":"Ouai","n":"St. Barts","f":"Floral","o":"Tropical floral, fruity, sunny","s":["Spring","Summer"]},{"i":103,"b":"Phlur","n":"Afterglow","f":"Amber","o":"Warm amber, musk, soft skin","s":["Fall","Winter"]},{"i":104,"b":"Phlur","n":"Amber Haze","f":"Amber","o":"Amber, vanilla, soft woods","s":["Fall","Winter"]},{"i":105,"b":"Phlur","n":"Apricot Privee","f":"Fruity","o":"Apricot, soft floral, warm","s":["Spring","Summer"]},{"i":106,"b":"Phlur","n":"Beach Skin","f":"Fresh","o":"Salty skin, coconut, sun","s":["Summer"]},{"i":107,"b":"Phlur","n":"Caramel Skin","f":"Gourmand","o":"Caramel, musk, soft skin","s":["Fall","Winter"]},{"i":108,"b":"Phlur","n":"Cashmere Skin","f":"Musk","o":"Cashmere musk, soft warmth","s":["Fall","Winter"]},{"i":109,"b":"Phlur","n":"Cherry Stem","f":"Fruity","o":"Cherry, almond, soft","s":["Spring","Summer"]},{"i":110,"b":"Phlur","n":"Coconut Skin","f":"Gourmand","o":"Coconut, musk, creamy","s":["Summer"]},{"i":111,"b":"Phlur","n":"Dragon Fruit","f":"Fruity","o":"Dragon fruit, bright, juicy","s":["Spring","Summer"]},{"i":112,"b":"Phlur","n":"Father Figure","f":"Amber","o":"Amber, woods, leather","s":["Fall","Winter"]},{"i":113,"b":"Phlur","n":"Honey Moon","f":"Floral","o":"Honey, neroli, soft floral","s":["Spring","Fall"]},{"i":114,"b":"Phlur","n":"Island Swim","f":"Fresh","o":"Aquatic, salt, sunscreen","s":["Summer"]},{"i":115,"b":"Phlur","n":"Lost Cause","f":"Floral","o":"Soft floral, musk, airy","s":["Spring","Fall"]},{"i":116,"b":"Phlur","n":"Matcha Milk","f":"Green","o":"Matcha, milk, soft green","s":["Spring","Fall"]},{"i":117,"b":"Phlur","n":"Missing Person","f":"Musk","o":"Skin musk, clean, intimate","s":["Spring","Summer","Fall","Winter"]},{"i":118,"b":"Phlur","n":"Mood Ring","f":"Fruity","o":"Fruity floral, bright","s":["Spring","Summer"]},{"i":119,"b":"Phlur","n":"Moonstone","f":"Musk","o":"Soft musk, floral, airy","s":["Spring","Summer","Fall","Winter"]},{"i":120,"b":"Phlur","n":"Mrs. Smith","f":"Floral","o":"Fruity floral, soft sweet","s":["Spring","Summer"]},{"i":121,"b":"Phlur","n":"Not Your Baby","f":"Floral","o":"Jasmine, amber, soft spice","s":["Fall","Winter"]},{"i":122,"b":"Phlur","n":"Paradise Nectar","f":"Fruity","o":"Tropical nectar, juicy","s":["Summer"]},{"i":123,"b":"Phlur","n":"Rose Whip","f":"Floral","o":"Rose, sweet cream, soft","s":["Spring","Fall","Winter"]},{"i":124,"b":"Phlur","n":"Soft Spot","f":"Musk","o":"Soft musk, powder, skin","s":["Spring","Summer","Fall","Winter"]},{"i":125,"b":"Phlur","n":"Solar Power","f":"Fresh","o":"Sunny citrus, bright, airy","s":["Summer"]},{"i":126,"b":"Phlur","n":"Somebody Wood","f":"Woody","o":"Sandalwood, soft woods","s":["Fall","Winter"]},{"i":127,"b":"Phlur","n":"Strawberry Letter","f":"Fruity","o":"Strawberry, sweet, soft","s":["Spring","Summer"]},{"i":128,"b":"Phlur","n":"Tangerine Boy","f":"Citrus","o":"Tangerine, citrus, bright","s":["Spring","Summer"]},{"i":129,"b":"Rare Beauty","n":"Rare","f":"Floral","o":"Fresh floral, fruity, soft","s":["Spring","Summer"]},{"i":130,"b":"Sabrina Carpenter","n":"Sweet Tooth Lemon Pie","f":"Gourmand","o":"Lemon pie, meringue, sweet","s":["Spring","Fall","Winter"]},{"i":131,"b":"Saltair","n":"Santal Bloom","f":"Woody","o":"Sandalwood, soft floral","s":["Spring","Fall"]},{"i":132,"b":"Saltair","n":"Seascape","f":"Fresh","o":"Sea breeze, aquatic, clean","s":["Spring","Summer"]},{"i":133,"b":"Sand + Fog","n":"Balinese Coconut (Perfume Oil)","f":"Gourmand","o":"Coconut, creamy, tropical","s":["Summer"]},{"i":134,"b":"Sand + Fog","n":"Banana Cream (Perfume Oil)","f":"Gourmand","o":"Banana, cream, sweet","s":["Summer","Fall","Winter"]},{"i":135,"b":"Sand + Fog","n":"Beach Days (Perfume Oil)","f":"Fresh","o":"Aquatic, sunny, tropical","s":["Summer"]},{"i":136,"b":"Sand + Fog","n":"Strawberry Spritz (Perfume Oil)","f":"Fruity","o":"Strawberry, fizzy, sweet","s":["Spring","Summer"]},{"i":137,"b":"Sand + Fog","n":"Vanilla Musk (Perfume Oil)","f":"Musk","o":"Vanilla, soft musk, warm","s":["Fall","Winter"]},{"i":138,"b":"Sand + Fog","n":"Vanilla Sugar (Perfume Oil)","f":"Gourmand","o":"Vanilla, sugar, sweet","s":["Fall","Winter"]},{"i":139,"b":"Skylar","n":"Double Dates","f":"Gourmand","o":"Date, fig, warm sweet","s":["Fall","Winter"]},{"i":140,"b":"Skylar","n":"Midnight Moon","f":"Amber","o":"Amber, musk, soft spice","s":["Fall","Winter"]},{"i":141,"b":"Snif","n":"2%","f":"Musk","o":"Milky musk, soft skin","s":["Spring","Summer","Fall","Winter"]},{"i":142,"b":"Snif","n":"Berry Styles","f":"Fruity","o":"Berry, sweet fruit","s":["Spring","Summer"]},{"i":143,"b":"Snif","n":"Citrus Circus","f":"Citrus","o":"Citrus, bright, playful","s":["Spring","Summer"]},{"i":144,"b":"Snif","n":"Crumb Couture","f":"Gourmand","o":"Pastry, sugar, buttery","s":["Fall","Winter"]},{"i":145,"b":"Snif","n":"Crumb Couture Almond","f":"Gourmand","o":"Almond pastry, sweet","s":["Fall","Winter"]},{"i":146,"b":"Snif","n":"Crunch Time","f":"Gourmand","o":"Sweet cereal, milky","s":["Fall","Winter"]},{"i":147,"b":"Snif","n":"Frooty Call","f":"Fruity","o":"Mixed fruit, juicy, sweet","s":["Spring","Summer"]},{"i":148,"b":"Snif","n":"Gentle Reminder","f":"Floral","o":"Soft floral, musk","s":["Spring","Summer"]},{"i":149,"b":"Snif","n":"Heal the Way","f":"Fresh","o":"Green, fresh, herbal","s":["Spring","Summer"]},{"i":150,"b":"Snif","n":"Honey Suite","f":"Gourmand","o":"Honey, floral, soft sweet","s":["Spring","Fall"]},{"i":151,"b":"Snif","n":"Hot Cakes","f":"Gourmand","o":"Pancakes, maple, butter","s":["Fall","Winter"]},{"i":152,"b":"Snif","n":"Lucky Streak","f":"Amber","o":"Amber, woods, warm spice","s":["Fall","Winter"]},{"i":153,"b":"Snif","n":"Me","f":"Musk","o":"Skin musk, clean, soft","s":["Spring","Summer","Fall","Winter"]},{"i":154,"b":"Snif","n":"Natural Talent","f":"Woody","o":"Soft woods, fresh, clean","s":["Spring","Fall"]},{"i":155,"b":"Snif","n":"Naughty Nonna","f":"Gourmand","o":"Amaretto, cherry, almond","s":["Fall","Winter"]},{"i":156,"b":"Snif","n":"Sweet Ash","f":"Woody","o":"Smoky, sweet, amber","s":["Fall","Winter"]},{"i":157,"b":"Snif","n":"Sweet Ash Super","f":"Woody","o":"Intense smoky sweet amber","s":["Fall","Winter"]},{"i":158,"b":"Snif","n":"Tart Deco","f":"Fruity","o":"Tart fruit, bright sweet","s":["Spring","Summer"]},{"i":159,"b":"Snif","n":"Vanilla Vice","f":"Gourmand","o":"Vanilla, warm, sweet","s":["Fall","Winter"]},{"i":160,"b":"Snif","n":"Vow Factor","f":"Floral","o":"Soft floral, musk, clean","s":["Spring","Summer"]},{"i":161,"b":"Sol de Janeiro","n":"Cheirosa 39","f":"Gourmand","o":"Pistachio, salted caramel, vanilla","s":["Fall","Winter"]},{"i":162,"b":"Sol de Janeiro","n":"Cheirosa 71","f":"Gourmand","o":"Caramel, vanilla, sandalwood","s":["Fall","Winter"]},{"i":163,"b":"Sorce","n":"2AM in Lafayette","f":"Amber","o":"Warm amber, gourmand, nocturnal","s":["Fall","Winter"]},{"i":164,"b":"Sorce","n":"A Light in the Attic","f":"Woody","o":"Soft woods, musk, dusty warmth","s":["Fall","Winter"]},{"i":165,"b":"Sorce","n":"A Match Made In Heaven","f":"Gourmand","o":"Sweet floral, soft gourmand","s":["Spring","Fall"]},{"i":166,"b":"Sorce","n":"A Party, Or Something","f":"Fruity","o":"Fruity, fizzy, festive","s":["Spring","Summer"]},{"i":167,"b":"Sorce","n":"A Witch's Valentine","f":"Gourmand","o":"Chocolate, cherry, sweet","s":["Fall","Winter"]},{"i":168,"b":"Sorce","n":"Beautiful, But Annihilating","f":"Floral","o":"Dark floral, amber","s":["Fall","Winter"]},{"i":169,"b":"Sorce","n":"Between the Sheets","f":"Musk","o":"Skin musk, warm, intimate","s":["Fall","Winter"]},{"i":170,"b":"Sorce","n":"Beyond the Veil","f":"Woody","o":"Smoky woods, amber, mysterious","s":["Fall","Winter"]},{"i":171,"b":"Sorce","n":"Cabanilla","f":"Gourmand","o":"Vanilla, tropical, creamy","s":["Summer","Fall"]},{"i":172,"b":"Sorce","n":"Falling Stars (Black Coffee)","f":"Gourmand","o":"Black coffee, roasted, sweet","s":["Fall","Winter"]},{"i":173,"b":"Sorce","n":"Falling Stars (Marshmallow Cloud)","f":"Gourmand","o":"Marshmallow, soft sweet, airy","s":["Fall","Winter"]},{"i":174,"b":"Sorce","n":"Falling Stars (Salted Vanilla)","f":"Gourmand","o":"Salted vanilla, creamy","s":["Fall","Winter"]},{"i":175,"b":"Sorce","n":"Falling Stars (Strawberry Coconut Milk)","f":"Gourmand","o":"Strawberry, coconut, milk","s":["Summer"]},{"i":176,"b":"Sorce","n":"Fuckery","f":"Amber","o":"Warm amber, musk, spice","s":["Fall","Winter"]},{"i":177,"b":"Sorce","n":"Good at Being Bad","f":"Amber","o":"Smoky amber, woods, warm","s":["Fall","Winter"]},{"i":178,"b":"Sorce","n":"I Think About You, Too","f":"Floral","o":"Soft floral, sweet, dreamy","s":["Spring","Fall"]},{"i":179,"b":"Sorce","n":"In Dreams and Fairy Tales (Blueberry)","f":"Fruity","o":"Blueberry, sweet, soft","s":["Spring","Summer"]},{"i":180,"b":"Sorce","n":"In Dreams and Fairy Tales (Strawberry Rosewater)","f":"Fruity","o":"Strawberry, rosewater, soft","s":["Spring","Summer"]},{"i":181,"b":"Sorce","n":"In Dreams and Fairy Tales (Vanilla)","f":"Gourmand","o":"Vanilla, soft sweet, creamy","s":["Fall","Winter"]},{"i":182,"b":"Sorce","n":"Love and Complications","f":"Floral","o":"Lush floral, amber, warm","s":["Fall","Winter"]},{"i":183,"b":"Sorce","n":"Love and the Sea","f":"Fresh","o":"Aquatic, salt, airy","s":["Summer"]},{"i":184,"b":"Sorce","n":"Midnight Wedding","f":"Floral","o":"White floral, amber, night","s":["Fall","Winter"]},{"i":185,"b":"Sorce","n":"Moon Magic","f":"Musk","o":"Soft musk, amber, mystical","s":["Fall","Winter"]},{"i":186,"b":"Sorce","n":"Pelicans Dive in the Ocean","f":"Fresh","o":"Aquatic, sea breeze, salt","s":["Summer"]},{"i":187,"b":"Sorce","n":"Reduced to a Thing That Wants You","f":"Amber","o":"Warm skin, amber, musk","s":["Fall","Winter"]},{"i":188,"b":"Sorce","n":"Serpentine","f":"Woody","o":"Smoky woods, amber, dark","s":["Fall","Winter"]},{"i":189,"b":"Sorce","n":"Sitting on the Edge of a Cloud","f":"Musk","o":"Airy musk, soft, powdery","s":["Spring","Summer","Fall","Winter"]},{"i":190,"b":"Sorce","n":"Snow Moon Magic","f":"Musk","o":"Frosted musk, soft amber","s":["Winter"]},{"i":191,"b":"Sorce","n":"Strings of Light in the Forest","f":"Woody","o":"Forest woods, green, soft","s":["Fall","Winter"]},{"i":192,"b":"Sorce","n":"The Cookie Party","f":"Gourmand","o":"Cookie, sugar, butter","s":["Fall","Winter"]},{"i":193,"b":"Sorce","n":"The Light Through Clouds","f":"Musk","o":"Airy musk, soft floral","s":["Spring","Summer"]},{"i":194,"b":"Sorce","n":"The Things Unsaid","f":"Floral","o":"Soft floral, amber, wistful","s":["Fall","Winter"]},{"i":195,"b":"Sorce","n":"This is Not a Love Spell","f":"Amber","o":"Sweet amber, gourmand, warm","s":["Fall","Winter"]},{"i":196,"b":"Sorce","n":"Venus in Fleurs","f":"Floral","o":"Lush florals, soft sweet","s":["Spring","Summer"]},{"i":197,"b":"Sorce","n":"We Are All Stardust","f":"Amber","o":"Cosmic amber, musk, warm","s":["Fall","Winter"]},{"i":198,"b":"Sorce","n":"Where The Wild Things Grow I","f":"Green","o":"Green, woods, earthy","s":["Spring","Fall"]},{"i":199,"b":"Sorce","n":"Witchery","f":"Woody","o":"Smoky woods, amber, dark spice","s":["Fall","Winter"]},{"i":200,"b":"Summer Fridays","n":"Sunlit Vanilla","f":"Gourmand","o":"Vanilla, soft sweet, warm","s":["Spring","Fall","Winter"]},{"i":201,"b":"The 7 Virtues","n":"Buttercream Haze","f":"Gourmand","o":"Buttercream, vanilla, sweet","s":["Fall","Winter"]},{"i":202,"b":"The 7 Virtues","n":"Cherry Ambition","f":"Fruity","o":"Cherry, sweet fruit, soft","s":["Spring","Summer"]},{"i":203,"b":"Tru Fragrance","n":"Golden Daylight","f":"Floral","o":"Soft floral, amber glow","s":["Spring","Fall"]},{"i":204,"b":"Ulta Beauty","n":"Vanilla Velour","f":"Gourmand","o":"Vanilla, soft sweet, plush","s":["Fall","Winter"]},{"i":205,"b":"Valentino","n":"Born in Roma","f":"Floral","o":"Vanilla, jasmine, soft floral","s":["Spring","Fall","Winter"]},{"i":206,"b":"Valentino","n":"Born in Roma Coral Fantasy","f":"Fruity","o":"Fruity floral, bright, sweet","s":["Spring","Summer"]}];
+const FAMILIES=["Gourmand","Floral","Fruity","Fresh","Citrus","Woody","Amber","Musk","Green"];
+const FAM_COLOR={Gourmand:"#C68A4E",Floral:"#D27FA3",Fruity:"#D2604E",Fresh:"#4FA8C0",Citrus:"#E0A92E",Woody:"#8A6A45",Amber:"#B07A3C",Musk:"#B9A38C",Green:"#6B9A5B"};
+const SEASONS=["Spring","Summer","Fall","Winter"];
+const BODY_TYPES=["Body wash","Lotion","Body cream","Body oil","Body butter","Body mist","Deodorant","Hair mist","Other"];
+const SEASON_THEME={
+  Spring:{a:"#C77FA0",d:"#a85d80",t:"rgba(199,127,160,.07)"},
+  Summer:{a:"#2F94AD",d:"#226e83",t:"rgba(47,148,173,.07)"},
+  Fall:{a:"#B26B36",d:"#8c5126",t:"rgba(178,107,54,.07)"},
+  Winter:{a:"#6E6A86",d:"#52506b",t:"rgba(110,106,134,.08)"},
+  All:{a:"#8A7B66",d:"#6b5f4d",t:"rgba(138,123,102,.05)"}
+};
+const PAIR_MAP={
+  Gourmand:["Amber","Musk","Woody","Citrus"],
+  Floral:["Musk","Woody","Citrus","Fruity"],
+  Fruity:["Floral","Gourmand","Musk","Citrus"],
+  Fresh:["Citrus","Woody","Musk","Green"],
+  Citrus:["Woody","Gourmand","Fresh","Amber"],
+  Woody:["Amber","Musk","Citrus","Floral"],
+  Amber:["Gourmand","Woody","Musk","Floral"],
+  Musk:["Gourmand","Floral","Fruity","Woody"],
+  Green:["Citrus","Fresh","Woody","Musk"]
+};
+
+/* ---------- storage ---------- */
+const KEY="scentindex_v1";
+let storeMode="none"; // "cloud" = inside Claude, "local" = on-device browser, "none" = session only
+async function loadUser(){
+  // 1) Claude artifact storage (when viewed inside Claude)
+  try{
+    if(window.storage&&window.storage.get){
+      storeMode="cloud";
+      let r=null;
+      try{r=await window.storage.get(KEY,false);}catch(e){r=null;}
+      return (r&&r.value)?JSON.parse(r.value):defaultUser();
+    }
+  }catch(e){}
+  // 2) On-device browser storage (home-screen app / Safari / Chrome)
+  try{
+    if(window.localStorage){
+      storeMode="local";
+      const raw=window.localStorage.getItem(KEY);
+      return raw?JSON.parse(raw):defaultUser();
+    }
+  }catch(e){}
+  // 3) No persistence available (e.g. private mode with storage blocked)
+  storeMode="none";
+  return defaultUser();
+}
+function defaultUser(){return {ov:{},custom:[],nextId:100001};}
+let saveTimer=null;
+function queueSave(){
+  if(saveTimer)clearTimeout(saveTimer);
+  saveTimer=setTimeout(doSave,400);
+}
+async function doSave(){
+  if(storeMode==="cloud"){
+    try{await window.storage.set(KEY,JSON.stringify(USER),false);flash("Saved");}
+    catch(e){flash("Couldn't save");}
+  }else if(storeMode==="local"){
+    try{window.localStorage.setItem(KEY,JSON.stringify(USER));flash("Saved");}
+    catch(e){flash("Couldn't save");}
+  }else{flash("Saved for this session only");}
+}
+function flash(msg){
+  const el=document.getElementById("saveState");
+  el.textContent=msg;el.classList.add("show");
+  clearTimeout(el._t);el._t=setTimeout(()=>el.classList.remove("show"),1400);
+}
+
+/* ---------- state ---------- */
+let USER=defaultUser();
+let state={view:"library",season:currentSeason(),families:new Set(),fav:false,sort:"az",q:""};
+
+function currentSeason(){
+  const m=new Date().getMonth();
+  if(m<2||m===11)return"Winter";
+  if(m<5)return"Spring";
+  if(m<8)return"Summer";
+  return"Fall";
+}
+
+/* merge SEED + overrides + custom into working items */
+function items(){
+  let list=SEED.map(s=>{
+    const ov=USER.ov[s.i]||{};
+    if(ov.del)return null;
+    return {
+      id:s.i,brand:s.b,name:s.n,
+      family:ov.family||s.f,
+      notes:ov.notes!=null?ov.notes:s.o,
+      seasons:ov.seasons||s.s,
+      rating:ov.rating||0,
+      price:ov.price!=null?ov.price:null,
+      fav:!!ov.fav,
+      wears:ov.wears||[],
+      custom:false
+    };
+  }).filter(Boolean);
+  USER.custom.forEach(c=>{
+    list.push({id:c.id,brand:c.brand,name:c.name,family:c.family,notes:c.notes,
+      seasons:c.seasons,rating:c.rating||0,price:c.price!=null?c.price:null,
+      fav:!!c.fav,wears:c.wears||[],custom:true});
+  });
+  return list;
+}
+
+/* mutate helpers */
+function patch(id,fields){
+  const it=items().find(x=>x.id===id);
+  const isCustom=id>=100000;
+  if(isCustom){
+    const c=USER.custom.find(x=>x.id===id);
+    if(c)Object.assign(c,fields);
+  }else{
+    USER.ov[id]=Object.assign({},USER.ov[id],fields);
+  }
+  queueSave();
+}
+
+/* ---------- rendering ---------- */
+function filtered(){
+  let list=items();
+  if(state.season!=="All")list=list.filter(x=>x.seasons.includes(state.season));
+  if(state.families.size)list=list.filter(x=>state.families.has(x.family));
+  if(state.fav)list=list.filter(x=>x.fav);
+  if(state.q){
+    const q=state.q.toLowerCase();
+    list=list.filter(x=>(x.brand+" "+x.name+" "+x.notes+" "+x.family).toLowerCase().includes(q));
+  }
+  const lastWear=x=>x.wears.length?x.wears[x.wears.length-1]:"";
+  const sorters={
+    az:(a,b)=>(a.brand+a.name).localeCompare(b.brand+b.name),
+    rating:(a,b)=>b.rating-a.rating||(a.brand+a.name).localeCompare(b.brand+b.name),
+    worn:(a,b)=>b.wears.length-a.wears.length||(a.brand+a.name).localeCompare(b.brand+b.name),
+    recent:(a,b)=>lastWear(b).localeCompare(lastWear(a)),
+    price:(a,b)=>(b.price||0)-(a.price||0),
+    added:(a,b)=>b.id-a.id
+  };
+  list.sort(sorters[state.sort]);
+  return list;
+}
+
+function relDate(iso){
+  if(!iso)return"";
+  const d=new Date(iso+"T00:00:00"),now=new Date();
+  const days=Math.round((now-d)/86400000);
+  if(days<=0)return"today";
+  if(days===1)return"yesterday";
+  if(days<7)return days+" days ago";
+  if(days<14)return"last week";
+  if(days<60)return Math.round(days/7)+" weeks ago";
+  return Math.round(days/30)+" months ago";
+}
+function esc(s){return(s||"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));}
+
+/* note tokenisation for similarity (drop ubiquitous adjectives so matches mean something) */
+const NOTE_STOP=new Set(["soft","warm","sweet","creamy","clean","airy","bright","intense","lush","dark","cool","fresh","skin","plush","dreamy","mineral","powder","powdery","aromatic","herbal","fizzy","juicy","festive","nocturnal","mysterious","mystical","cosmic","wistful","quiet","night","sunny","roasted","steamed","glow","comfort","velvet","silky","plush"]);
+const TOK={};
+function tokenSet(notes){
+  if(TOK[notes])return TOK[notes];
+  const s=new Set((notes||"").toLowerCase().replace(/[()]/g," ").split(/[\s,]+/).filter(w=>w.length>2&&!NOTE_STOP.has(w)));
+  TOK[notes]=s;return s;
+}
+function overlapCount(a,b){let n=0;a.forEach(w=>{if(b.has(w))n++;});return n;}
+/* stable per-pair pseudo-random jitter so equally-good candidates differ across cards */
+function jit(a,b){let h=((a*73856093)^(b*19349663))>>>0;h^=h>>>13;h=(h*1274126177)>>>0;return (h%1009)/1009;}
+
+/* user-curated pairings stored per scent */
+function userPairs(id){
+  if(id>=100000){const c=USER.custom.find(x=>x.id===id);return (c&&c.pairs)||{};}
+  return (USER.ov[id]&&USER.ov[id].pairs)||{};
+}
+function getPairs(id){
+  const p=userPairs(id);
+  return {pin:{layer:((p.pin&&p.pin.layer)||[]).slice(),rot:((p.pin&&p.pin.rot)||[]).slice()},
+          hide:{layer:((p.hide&&p.hide.layer)||[]).slice(),rot:((p.hide&&p.hide.rot)||[]).slice()}};
+}
+function setUserPairs(id,pairs){
+  if(id>=100000){const c=USER.custom.find(x=>x.id===id);if(c)c.pairs=pairs;}
+  else USER.ov[id]=Object.assign({},USER.ov[id],{pairs});
+  queueSave();
+}
+function pinPair(id,kind,pid){
+  const p=getPairs(id);
+  if(!p.pin[kind].includes(pid))p.pin[kind].push(pid);
+  p.hide[kind]=p.hide[kind].filter(x=>x!==pid);
+  setUserPairs(id,p);softUpdate(id);flash("Pairing added");
+}
+function unpinPair(id,kind,pid){
+  const p=getPairs(id);p.pin[kind]=p.pin[kind].filter(x=>x!==pid);
+  setUserPairs(id,p);softUpdate(id);
+}
+function hidePair(id,kind,pid){
+  const p=getPairs(id);
+  if(!p.hide[kind].includes(pid))p.hide[kind].push(pid);
+  p.pin[kind]=p.pin[kind].filter(x=>x!==pid);
+  setUserPairs(id,p);softUpdate(id);
+}
+
+/* ---------- per-scent notes & body-care pairings ---------- */
+function getMemo(id){
+  if(id>=100000){const c=USER.custom.find(x=>x.id===id);return (c&&c.memo)||"";}
+  return (USER.ov[id]&&USER.ov[id].memo)||"";
+}
+function saveMemo(id,txt){
+  if(id>=100000){const c=USER.custom.find(x=>x.id===id);if(c)c.memo=txt;}
+  else USER.ov[id]=Object.assign({},USER.ov[id],{memo:txt});
+  queueSave();flash("Saved");
+}
+function getBody(id){
+  if(id>=100000){const c=USER.custom.find(x=>x.id===id);return (c&&c.body)||[];}
+  return (USER.ov[id]&&USER.ov[id].body)||[];
+}
+function setBody(id,arr){
+  if(id>=100000){const c=USER.custom.find(x=>x.id===id);if(c)c.body=arr;}
+  else USER.ov[id]=Object.assign({},USER.ov[id],{body:arr});
+  queueSave();
+}
+function addBody(id){
+  const nameEl=document.getElementById("bcN-"+id), typeEl=document.getElementById("bcT-"+id);
+  if(!nameEl)return;
+  const name=(nameEl.value||"").trim();
+  if(!name){flash("Add a product name first");nameEl.focus();return;}
+  const arr=getBody(id).slice();
+  arr.push({n:name,t:typeEl?typeEl.value:"Other"});
+  setBody(id,arr);softUpdate(id);
+}
+function removeBody(id,idx){
+  const arr=getBody(id).slice();arr.splice(idx,1);setBody(id,arr);softUpdate(id);
+}
+
+function pairings(it,all){
+  const pr=getPairs(it.id);
+  const pool=all.filter(x=>x.id!==it.id);
+  const itTok=tokenSet(it.notes);
+  const partners=PAIR_MAP[it.family]||[];
+  function build(kind,exclude){
+    const pinIds=pr.pin[kind], hideIds=new Set(pr.hide[kind]);
+    const pinned=pinIds.map(id=>all.find(x=>x.id===id)).filter(Boolean);
+    let cands=pool.filter(x=>!hideIds.has(x.id)&&!pinIds.includes(x.id)&&!exclude.has(x.id));
+    let scored;
+    if(kind==="layer"){
+      cands=cands.filter(x=>partners.includes(x.family));
+      scored=cands.map(x=>{
+        const seasonShare=x.seasons.filter(s=>it.seasons.includes(s)).length;
+        const syn=overlapCount(tokenSet(x.notes),itTok);
+        return {x,s:(seasonShare>0?2:0)+Math.min(syn,2)*0.6+(x.rating?x.rating*0.15:0)+jit(it.id,x.id)};
+      });
+    }else{
+      scored=cands.map(x=>{
+        const fam=x.family===it.family?2.2:0;
+        const seasonShare=x.seasons.filter(s=>it.seasons.includes(s)).length;
+        const sim=overlapCount(tokenSet(x.notes),itTok);
+        return {x,s:fam+seasonShare*0.7+Math.min(sim,3)*0.8+(x.rating?x.rating*0.15:0)+jit(it.id*7+1,x.id)};
+      });
+    }
+    scored.sort((a,b)=>b.s-a.s);
+    const need=Math.max(0,3-pinned.length);
+    const chosen=[], brands=new Set(pinned.map(p=>p.brand));
+    for(const o of scored){if(chosen.length>=need)break;if(brands.has(o.x.brand))continue;chosen.push(o.x);brands.add(o.x.brand);}
+    if(chosen.length<need){for(const o of scored){if(chosen.length>=need)break;if(chosen.includes(o.x))continue;chosen.push(o.x);}}
+    return {pinned,auto:chosen};
+  }
+  const layer=build("layer",new Set());
+  const used=new Set([...layer.pinned,...layer.auto].map(x=>x.id));
+  const rot=build("rot",used);
+  return {layer,rot};
+}
+
+function cardHTML(it,all){
+  const fc=FAM_COLOR[it.family];
+  const stars=[1,2,3,4,5].map(n=>`<span class="${n<=it.rating?'lit':''}" onclick="setRating(${it.id},${n})">${n<=it.rating?'★':'☆'}</span>`).join("");
+  const sdots=it.seasons.map(s=>`<span class="sd" style="background:${SEASON_THEME[s].a}">${s.slice(0,2)}</span>`).join("");
+  const last=it.wears.length?it.wears[it.wears.length-1]:"";
+  const wearLine=it.wears.length?`<b>${it.wears.length}</b> wear${it.wears.length>1?'s':''} · last ${relDate(last)}`:`Not worn yet`;
+  const P=pairings(it,all);
+  const whyOf=(x,kind)=>kind==="layer"?x.family.toLowerCase():(x.seasons.filter(s=>it.seasons.includes(s))[0]||x.family.toLowerCase());
+  const pRow=(x,kind,isPin)=>`<div class="pair"><span class="pf" style="background:${FAM_COLOR[x.family]}"></span><span class="pn">${esc(x.name)}</span><span class="pb">${esc(x.brand)}</span>${isPin?'<span class="pinned-tag">pinned</span>':`<span class="pwhy">${whyOf(x,kind)}</span>`}<span class="pctrl"><button class="pbtn" title="${isPin?'Remove pairing':'Not this one'}" onclick="${isPin?'unpinPair':'hidePair'}(${it.id},'${kind}',${x.id})">×</button></span></div>`;
+  const section=(obj,kind,emptyMsg)=>{
+    const rows=obj.pinned.map(x=>pRow(x,kind,true)).join("")+obj.auto.map(x=>pRow(x,kind,false)).join("");
+    return (rows||`<div class="pair pb" style="cursor:default">${emptyMsg}</div>`)+`<button class="addpair" onclick="openPairPicker(${it.id},'${kind}')">＋ Add your own</button>`;
+  };
+  const history=it.wears.slice().reverse().slice(0,8).map((d,idx)=>`<span class="chip">${fmtShort(d)}<button title="Remove" onclick="removeWear(${it.id},'${d}')">✕</button></span>`).join("");
+  const memo=getMemo(it.id);
+  const body=getBody(it.id);
+  const bodyRows=body.length
+    ? body.map((b,idx)=>`<div class="pair"><span class="bc-type">${esc(b.t)}</span><span class="pn">${esc(b.n)}</span><span class="pctrl" style="margin-left:auto"><button class="pbtn" title="Remove" onclick="removeBody(${it.id},${idx})">×</button></span></div>`).join("")
+    : `<div class="pair pb" style="cursor:default">Nothing added yet — add a body wash, lotion or oil you layer with this.</div>`;
+  const bodyAdd=`<div class="bc-add">
+      <input id="bcN-${it.id}" class="bc-input" placeholder="e.g. Vanilla body lotion (CeraVe)" onkeydown="if(event.key==='Enter')addBody(${it.id})">
+      <select id="bcT-${it.id}" class="bc-sel">${BODY_TYPES.map(t=>`<option>${t}</option>`).join("")}</select>
+      <button class="bc-btn" onclick="addBody(${it.id})">Add</button>
+    </div>`;
+  const famOpts=FAMILIES.map(f=>`<option ${f===it.family?'selected':''}>${f}</option>`).join("");
+  const seasonPick=SEASONS.map(s=>`<div class="sp ${it.seasons.includes(s)?'on':''}" style="${it.seasons.includes(s)?'background:'+SEASON_THEME[s].a:''}" onclick="toggleEditSeason(${it.id},'${s}',this)">${s.slice(0,2)}</div>`).join("");
+  return `<div class="card" id="card-${it.id}" style="--fc:${fc}">
+    <div class="strip"></div>
+    <div class="card-in">
+      <div class="eyebrow"><span class="brand">${esc(it.brand)}</span><span class="famtag">${it.family}</span></div>
+      <div class="name">${esc(it.name)}</div>
+      <div class="notes">${esc(it.notes)}</div>
+      <div class="sdots">${sdots}</div>
+      <div class="meta">
+        <div class="stars">${stars}</div>
+        <div class="price-wrap">$<input type="number" min="0" step="1" value="${it.price!=null?it.price:''}" placeholder="—" onchange="setPrice(${it.id},this.value)" onclick="event.stopPropagation()"></div>
+      </div>
+    </div>
+    <div class="wearinfo">${wearLine}</div>
+    <div class="actions">
+      <button class="logbtn" id="log-${it.id}" onclick="logWear(${it.id})">＋ Log a wear</button>
+      <button class="iconbtn fav ${it.fav?'on':''}" title="Favorite" onclick="toggleFav(${it.id})">${it.fav?'♥':'♡'}</button>
+      <button class="iconbtn" title="Details & pairings" onclick="toggleExpand(${it.id})">⋯</button>
+    </div>
+    <div class="expand">
+      <div>
+        <div class="exp-h">Layer with</div>
+        <div class="pair-list">${section(P.layer,'layer','No layering ideas yet — add your own below.')}</div>
+      </div>
+      <div>
+        <div class="exp-h">Wears well alongside</div>
+        <div class="pair-list">${section(P.rot,'rot','Nothing matched yet — add your own below.')}</div>
+      </div>
+      <div>
+        <div class="exp-h">Body care to layer</div>
+        <div class="pair-list">${bodyRows}</div>
+        ${bodyAdd}
+      </div>
+      <div>
+        <div class="exp-h">Your notes</div>
+        <textarea class="memo" placeholder="Private notes — longevity, compliments, occasions, where you bought it…" onchange="saveMemo(${it.id},this.value)">${esc(memo)}</textarea>
+      </div>
+      ${it.wears.length?`<div><div class="exp-h">Wear history</div><div class="history">${history}</div></div>`:""}
+      <div>
+        <div class="exp-h">Refine details</div>
+        <div class="editrow">
+          <label>Family<select onchange="setFamily(${it.id},this.value)">${famOpts}</select></label>
+          <label style="flex:1;min-width:160px">Notes / accords<input type="text" value="${esc(it.notes)}" onchange="setNotes(${it.id},this.value)"></label>
+        </div>
+        <div class="editrow" style="margin-top:10px">
+          <label>Seasons<div class="seasonpick">${seasonPick}</div></label>
+        </div>
+      </div>
+      <div class="exp-foot">
+        <span style="font-size:11px;color:var(--faint)">${it.custom?'Added by you':'From your starter list'}</span>
+        <button class="delbtn" onclick="removeScent(${it.id})">Remove from collection</button>
+      </div>
+    </div>
+  </div>`;
+}
+function fmtShort(iso){const d=new Date(iso+"T00:00:00");return d.toLocaleDateString(undefined,{month:"short",day:"numeric"});}
+
+function render(){
+  applyTheme();
+  renderRibbon();renderFamilyChips();renderStats();
+  const all=items();
+  const list=filtered();
+  const grid=document.getElementById("grid");
+  document.getElementById("emptyState").style.display=list.length?"none":"block";
+  grid.innerHTML=list.map(it=>cardHTML(it,all)).join("");
+}
+
+function applyTheme(){
+  const t=SEASON_THEME[state.season];
+  const r=document.documentElement.style;
+  r.setProperty("--accent",t.a);r.setProperty("--accent-deep",t.d);r.setProperty("--tint",t.t);
+}
+
+function renderRibbon(){
+  const opts=["All",...SEASONS];
+  const nowS=currentSeason();
+  document.getElementById("seasonRibbon").innerHTML=opts.map(s=>{
+    const th=SEASON_THEME[s];
+    const on=state.season===s;
+    const label=s==="All"?"All seasons":s;
+    const now=(s===nowS)?`<span class="nowtag">in season</span>`:"";
+    return `<button class="season-pill ${on?'on':''}" style="--sdot:${th.a};${on?'background:'+th.a:''}" onclick="setSeason('${s}')"><span class="dot"></span>${label}${now}</button>`;
+  }).join("");
+}
+function renderFamilyChips(){
+  const counts={};items().forEach(x=>counts[x.family]=(counts[x.family]||0)+1);
+  document.getElementById("familyChips").innerHTML=FAMILIES.map(f=>{
+    const on=state.families.has(f);
+    return `<button class="fam-chip ${on?'on':''}" style="--fc:${FAM_COLOR[f]}" onclick="toggleFamily('${f}')"><span class="fdot"></span>${f} <span style="color:var(--faint);font-weight:600">${counts[f]||0}</span></button>`;
+  }).join("");
+}
+function renderStats(){
+  const all=items();const shown=filtered();
+  const value=all.reduce((s,x)=>s+(x.price||0),0);
+  const wears=all.reduce((s,x)=>s+x.wears.length,0);
+  const inSeason=all.filter(x=>x.seasons.includes(currentSeason())).length;
+  document.getElementById("statStrip").innerHTML=`
+    <div class="stat"><div class="v">${shown.length}<em> / ${all.length}</em></div><div class="l">Showing</div></div>
+    <div class="stat"><div class="v">${inSeason}</div><div class="l">In season now</div></div>
+    <div class="stat"><div class="v">${wears}</div><div class="l">Total wears</div></div>
+    <div class="stat"><div class="v">${value?'$'+value.toLocaleString():'—'}</div><div class="l">Tracked value</div></div>`;
+}
+
+/* ---------- interactions ---------- */
+function setSeason(s){state.season=s;render();}
+function toggleFamily(f){state.families.has(f)?state.families.delete(f):state.families.add(f);render();}
+function toggleFavFilter(){state.fav=!state.fav;document.getElementById("favToggle").classList.toggle("on",state.fav);render();}
+function setSort(v){state.sort=v;render();}
+function onSearch(v){state.q=v;render();}
+function setRating(id,n){const it=items().find(x=>x.id===id);patch(id,{rating:it.rating===n?0:n});softUpdate(id);}
+function setPrice(id,v){patch(id,{price:v===""?null:Math.max(0,parseFloat(v)||0)});renderStats();}
+function toggleFav(id){const it=items().find(x=>x.id===id);patch(id,{fav:!it.fav});softUpdate(id);}
+function setFamily(id,v){patch(id,{family:v});softUpdate(id);}
+function setNotes(id,v){patch(id,{notes:v});}
+function toggleEditSeason(id,s,el){
+  const it=items().find(x=>x.id===id);
+  let seasons=it.seasons.slice();
+  if(seasons.includes(s))seasons=seasons.filter(z=>z!==s);else seasons.push(s);
+  seasons=SEASONS.filter(z=>seasons.includes(z));
+  if(!seasons.length)seasons=[s];
+  patch(id,{seasons});
+  el.classList.toggle("on");
+  el.style.background=el.classList.contains("on")?SEASON_THEME[s].a:"";
+}
+function logWear(id){
+  const it=items().find(x=>x.id===id);
+  const today=new Date().toISOString().slice(0,10);
+  const wears=it.wears.concat([today]);
+  patch(id,{wears});
+  const btn=document.getElementById("log-"+id);
+  if(btn){btn.classList.add("justlogged");setTimeout(()=>btn.classList.remove("justlogged"),400);}
+  softUpdate(id);renderStats();
+}
+function removeWear(id,d){
+  const it=items().find(x=>x.id===id);
+  const i=it.wears.lastIndexOf(d);
+  const wears=it.wears.slice();if(i>=0)wears.splice(i,1);
+  patch(id,{wears});softUpdate(id);renderStats();
+}
+function removeScent(id){
+  if(!confirm("Remove this scent from your collection?"))return;
+  if(id>=100000){USER.custom=USER.custom.filter(c=>c.id!==id);}
+  else{USER.ov[id]=Object.assign({},USER.ov[id],{del:true});}
+  queueSave();render();
+}
+/* re-render a single card in place (keeps expanded state) */
+function softUpdate(id){
+  const all=items();const it=all.find(x=>x.id===id);
+  const old=document.getElementById("card-"+id);
+  if(!it||!old){render();return;}
+  const wasOpen=old.classList.contains("open");
+  const tmp=document.createElement("div");tmp.innerHTML=cardHTML(it,all);
+  const fresh=tmp.firstElementChild;
+  if(wasOpen)fresh.classList.add("open");
+  fresh.style.animation="none";
+  old.replaceWith(fresh);
+}
+function toggleExpand(id){document.getElementById("card-"+id).classList.toggle("open");}
+
+/* ---------- view switch ---------- */
+function setView(v){
+  state.view=v;
+  document.getElementById("navLib").classList.toggle("on",v==="library");
+  document.getElementById("navIns").classList.toggle("on",v==="insights");
+  document.getElementById("libraryView").classList.toggle("off",v!=="library");
+  document.getElementById("insightsView").classList.toggle("on",v==="insights");
+  if(v==="insights")renderInsights();
+}
+
+function renderInsights(){
+  const all=items();
+  const value=all.reduce((s,x)=>s+(x.price||0),0);
+  const wears=all.reduce((s,x)=>s+x.wears.length,0);
+  const rated=all.filter(x=>x.rating);
+  const avg=rated.length?(rated.reduce((s,x)=>s+x.rating,0)/rated.length).toFixed(1):"—";
+  const favs=all.filter(x=>x.fav).length;
+  const untried=all.filter(x=>!x.wears.length).length;
+  const inSeason=all.filter(x=>x.seasons.includes(currentSeason())).length;
+
+  const famCounts={};all.forEach(x=>famCounts[x.family]=(famCounts[x.family]||0)+1);
+  const maxFam=Math.max(1,...Object.values(famCounts));
+  const famBars=FAMILIES.map(f=>`<div class="bar"><span class="bl">${f}</span><div class="bt" style="width:${(famCounts[f]||0)/maxFam*100}%;--bc:${FAM_COLOR[f]}"></div><span class="bv">${famCounts[f]||0}</span></div>`).join("");
+
+  const seaCounts={};SEASONS.forEach(s=>seaCounts[s]=all.filter(x=>x.seasons.includes(s)).length);
+  const maxSea=Math.max(1,...Object.values(seaCounts));
+  const seaBars=SEASONS.map(s=>`<div class="bar"><span class="bl">${s}</span><div class="bt" style="width:${seaCounts[s]/maxSea*100}%;--bc:${SEASON_THEME[s].a}"></div><span class="bv">${seaCounts[s]}</span></div>`).join("");
+
+  const topRated=all.filter(x=>x.rating).sort((a,b)=>b.rating-a.rating||b.wears.length-a.wears.length).slice(0,6);
+  const mostWorn=all.filter(x=>x.wears.length).sort((a,b)=>b.wears.length-a.wears.length).slice(0,6);
+  const lastWear=x=>x.wears.length?x.wears[x.wears.length-1]:"";
+  const recent=all.filter(x=>x.wears.length).sort((a,b)=>lastWear(b).localeCompare(lastWear(a))).slice(0,6);
+
+  const rankList=(arr,valFn)=>arr.length?arr.map((x,i)=>`<div class="ri"><span class="rn">${i+1}</span><span class="rname">${esc(x.name)}<small>${esc(x.brand)}</small></span><span class="rval">${valFn(x)}</span></div>`).join(""):`<div class="ri" style="color:var(--faint)">Nothing logged yet — start tapping “Log a wear”.</div>`;
+
+  document.getElementById("insightsView").innerHTML=`
+    <div class="kpis">
+      <div class="kpi"><div class="v">${all.length}</div><div class="l">Scents owned</div></div>
+      <div class="kpi"><div class="v">${inSeason}</div><div class="l">In season now</div></div>
+      <div class="kpi"><div class="v">${avg}</div><div class="l">Avg rating</div></div>
+      <div class="kpi"><div class="v">${wears}</div><div class="l">Total wears</div></div>
+      <div class="kpi"><div class="v">${favs}</div><div class="l">Favorites</div></div>
+      <div class="kpi"><div class="v">${value?'$'+value.toLocaleString():'—'}</div><div class="l">Tracked value</div></div>
+    </div>
+    <div class="twocol">
+      <div class="panel"><h2>By scent family</h2><div class="bars">${famBars}</div></div>
+      <div class="panel"><h2>By season</h2><div class="bars">${seaBars}</div>
+        <p style="font-size:12.5px;color:var(--muted);margin:16px 0 0">${untried} scent${untried===1?'':'s'} in your collection ${untried===1?'is':'are'} still untried — plenty left to discover.</p>
+      </div>
+    </div>
+    <div class="twocol">
+      <div class="panel"><h2>Top rated</h2><div class="rank">${rankList(topRated,x=>'★'.repeat(x.rating))}</div></div>
+      <div class="panel"><h2>Most worn</h2><div class="rank">${rankList(mostWorn,x=>x.wears.length+'×')}</div></div>
+      <div class="panel"><h2>Recently worn</h2><div class="rank">${rankList(recent,x=>relDate(lastWear(x)))}</div></div>
+    </div>
+    <div class="panel">
+      <h2>Backup &amp; restore</h2>
+      <p style="font-size:13px;color:var(--muted);margin:0 0 16px;max-width:60ch">Your library is currently saved <b>${storeLabel()}</b>. Export a backup file to keep a safe copy — or to move your whole collection, ratings and wear history to another phone. Import that file on the new device to restore everything.</p>
+      <div style="display:flex;gap:10px;flex-wrap:wrap">
+        <button class="btn-solid" onclick="exportData()">Export backup</button>
+        <button class="btn-ghost" onclick="document.getElementById('importFile').click()">Import backup</button>
+        <input type="file" id="importFile" accept="application/json,.json" style="display:none" onchange="importData(this)">
+      </div>
+    </div>`;
+}
+
+/* ---------- add modal ---------- */
+let addSeasons=new Set([currentSeason()]);
+function openAdd(){modalKind="add";
+  addSeasons=new Set([currentSeason()]);
+  const famOpts=FAMILIES.map(f=>`<option>${f}</option>`).join("");
+  const sp=SEASONS.map(s=>`<div class="sp ${addSeasons.has(s)?'on':''}" style="${addSeasons.has(s)?'background:'+SEASON_THEME[s].a:''}" onclick="toggleAddSeason('${s}',this)">${s}</div>`).join("");
+  document.getElementById("modalCard").innerHTML=`
+    <h2>Add a scent</h2>
+    <p class="mh">New bottle, sample, or decant — log it here and it joins your library.</p>
+    <div class="field"><label>Brand</label><input id="aBrand" placeholder="e.g. Phlur"></div>
+    <div class="field"><label>Name</label><input id="aName" placeholder="e.g. Vanilla Skin"></div>
+    <div class="field"><label>Family</label><select id="aFamily">${famOpts}</select></div>
+    <div class="field"><label>Notes / accords</label><input id="aNotes" placeholder="e.g. vanilla, musk, soft amber"></div>
+    <div class="field"><label>Seasons</label><div class="seasonpick" id="aSeasons">${sp}</div></div>
+    <div class="field"><div class="row2">
+      <div><label>Rating</label><select id="aRating"><option value="0">—</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select></div>
+      <div><label>Price ($)</label><input id="aPrice" type="number" min="0" placeholder="optional"></div>
+    </div></div>
+    <div class="modal-foot">
+      <button class="btn-ghost" onclick="closeModal()">Cancel</button>
+      <button class="btn-solid" onclick="saveAdd()">Add to library</button>
+    </div>`;
+  document.getElementById("modalBg").classList.add("on");
+  setTimeout(()=>document.getElementById("aBrand").focus(),50);
+}
+function toggleAddSeason(s,el){
+  if(addSeasons.has(s))addSeasons.delete(s);else addSeasons.add(s);
+  el.classList.toggle("on");el.style.background=el.classList.contains("on")?SEASON_THEME[s].a:"";
+}
+let modalKind=null;
+function closeModal(){
+  document.getElementById("modalBg").classList.remove("on");
+  if(modalKind==="quicklog")render();
+  modalKind=null;
+}
+function saveAdd(){
+  const brand=document.getElementById("aBrand").value.trim();
+  const name=document.getElementById("aName").value.trim();
+  if(!brand&&!name){flash("Add a brand or name first");return;}
+  const seasons=SEASONS.filter(s=>addSeasons.has(s));
+  const rec={
+    id:USER.nextId++,
+    brand:brand||"—",name:name||"Untitled",
+    family:document.getElementById("aFamily").value,
+    notes:document.getElementById("aNotes").value.trim(),
+    seasons:seasons.length?seasons:[currentSeason()],
+    rating:parseInt(document.getElementById("aRating").value)||0,
+    price:document.getElementById("aPrice").value!==""?Math.max(0,parseFloat(document.getElementById("aPrice").value)||0):null,
+    fav:false,wears:[]
+  };
+  USER.custom.push(rec);
+  queueSave();closeModal();
+  state.q="";document.getElementById("searchBox").value="";
+  if(!rec.seasons.includes(state.season)&&state.season!=="All")state.season="All";
+  render();flash("Added "+rec.name);
+}
+
+/* ---------- quick log (Tonight's wear) ---------- */
+let quickQ="", loggedTonight=[];
+function todayISO(){return new Date().toISOString().slice(0,10);}
+function openQuickLog(){modalKind="quicklog";
+  quickQ="";loggedTonight=[];
+  document.getElementById("modalCard").innerHTML=`
+    <h2>Tonight's wear</h2>
+    <p class="mh">Tap a scent to log it for today. Layering two? Tap both.</p>
+    <div class="ql-chips" id="qlChips" style="display:none"></div>
+    <div class="field" style="margin-bottom:6px"><input id="qlSearch" placeholder="Search your collection…" oninput="onQLSearch(this.value)"></div>
+    <div class="ql-results" id="qlResults"></div>
+    <div class="modal-foot" style="margin-top:14px"><button class="btn-solid" onclick="closeModal()">Done</button></div>`;
+  document.getElementById("modalBg").classList.add("on");
+  renderQLResults("");
+  setTimeout(()=>{const s=document.getElementById("qlSearch");if(s)s.focus();},60);
+}
+function onQLSearch(v){quickQ=v;renderQLResults(v);}
+function renderQLResults(q){
+  const all=items();let label,list;
+  if(q&&q.trim()){
+    const t=q.toLowerCase();
+    list=all.filter(x=>(x.brand+" "+x.name+" "+x.notes+" "+x.family).toLowerCase().includes(t)).slice(0,25);
+    label="Matches";
+  }else{
+    const cs=currentSeason();
+    list=all.filter(x=>x.seasons.includes(cs))
+      .sort((a,b)=>(b.fav-a.fav)||(b.rating-a.rating)||(b.wears.length-a.wears.length)||a.name.localeCompare(b.name))
+      .slice(0,12);
+    label="In season now · "+cs;
+  }
+  const today=todayISO();
+  const rows=list.map(x=>{
+    const doneToday=x.wears.includes(today);
+    const meta=doneToday?"logged ✓":(x.wears.length?x.wears.length+"×":"tap to log");
+    return `<div class="ql-row ${doneToday?'done':''}" onclick="quickLogItem(${x.id})">
+      <span class="qf" style="background:${FAM_COLOR[x.family]}"></span>
+      <span class="qn">${esc(x.name)}<small>${esc(x.brand)}</small></span>
+      <span class="qmeta">${meta}</span></div>`;
+  }).join("");
+  document.getElementById("qlResults").innerHTML=
+    `<div class="ql-section-label">${label}</div>`+
+    (rows||`<div class="ql-row" style="color:var(--faint);cursor:default">No matches — try another name.</div>`);
+}
+function quickLogItem(id){
+  const it=items().find(x=>x.id===id);if(!it)return;
+  patch(id,{wears:it.wears.concat([todayISO()])});
+  if(!loggedTonight.includes(id))loggedTonight.push(id);
+  flash("Logged "+it.name);
+  renderQLChips();renderQLResults(quickQ);renderStats();
+}
+function renderQLChips(){
+  const all=items();const wrap=document.getElementById("qlChips");
+  if(!wrap)return;
+  if(!loggedTonight.length){wrap.innerHTML="";wrap.style.display="none";return;}
+  wrap.style.display="flex";
+  wrap.innerHTML=loggedTonight.map(id=>{
+    const it=all.find(x=>x.id===id);if(!it)return"";
+    return `<span class="qc">${esc(it.name)}<button onclick="undoTonight(${id})" aria-label="Undo">✕</button></span>`;
+  }).join("");
+}
+function undoTonight(id){
+  const it=items().find(x=>x.id===id);const today=todayISO();
+  if(it){const i=it.wears.lastIndexOf(today);if(i>=0){const w=it.wears.slice();w.splice(i,1);patch(id,{wears:w});}}
+  loggedTonight=loggedTonight.filter(x=>x!==id);
+  renderQLChips();renderQLResults(quickQ);renderStats();
+}
+
+/* ---------- backup: export / import ---------- */
+function storeLabel(){
+  return ({cloud:"inside Claude",local:"on this device",none:"for this session only — your browser is blocking storage"})[storeMode]||"on this device";
+}
+function exportData(){
+  try{
+    const blob=new Blob([JSON.stringify(USER,null,2)],{type:"application/json"});
+    const url=URL.createObjectURL(blob);
+    const a=document.createElement("a");
+    a.href=url;a.download="scent-index-backup-"+todayISO()+".json";
+    document.body.appendChild(a);a.click();
+    setTimeout(()=>{URL.revokeObjectURL(url);a.remove();},120);
+    flash("Backup downloaded");
+  }catch(e){flash("Couldn't export");}
+}
+function importData(input){
+  const file=input.files&&input.files[0];
+  if(!file){return;}
+  const reader=new FileReader();
+  reader.onload=function(){
+    try{
+      const data=JSON.parse(reader.result);
+      if(typeof data!=="object"||data===null||(!("ov" in data)&&!("custom" in data)))throw new Error("bad");
+      if(!confirm("Restore this backup? It replaces the ratings, wears and added scents currently saved on this device."))
+        {input.value="";return;}
+      USER={ov:data.ov||{},custom:Array.isArray(data.custom)?data.custom:[],nextId:data.nextId||100001};
+      const maxId=USER.custom.reduce((m,c)=>Math.max(m,c.id||0),100000);
+      if(!USER.nextId||USER.nextId<=maxId)USER.nextId=maxId+1;
+      doSave();render();renderInsights();
+      flash("Backup restored");
+    }catch(e){flash("That file isn't a valid backup");}
+    input.value="";
+  };
+  reader.readAsText(file);
+}
+
+/* ---------- pairing picker modal ---------- */
+let pairTarget={id:null,kind:null}, pairQ="";
+function openPairPicker(id,kind){
+  modalKind="pair";pairTarget={id,kind};pairQ="";
+  const it=items().find(x=>x.id===id);
+  const label=kind==="layer"?"layering partner":"rotation pairing";
+  document.getElementById("modalCard").innerHTML=`
+    <h2>Add a ${label}</h2>
+    <p class="mh">Pin your own pairing for <b>${esc(it.name)}</b> — tap a scent to add it.</p>
+    <div class="field" style="margin-bottom:6px"><input id="ppSearch" placeholder="Search your collection…" oninput="onPairSearch(this.value)"></div>
+    <div class="ql-results" id="ppResults"></div>
+    <div class="modal-foot" style="margin-top:14px"><button class="btn-solid" onclick="closeModal()">Done</button></div>`;
+  document.getElementById("modalBg").classList.add("on");
+  renderPairResults("");
+  setTimeout(()=>{const s=document.getElementById("ppSearch");if(s)s.focus();},60);
+}
+function onPairSearch(v){pairQ=v;renderPairResults(v);}
+function renderPairResults(q){
+  const it=items().find(x=>x.id===pairTarget.id);if(!it)return;
+  const all=items();
+  const pinned=new Set(getPairs(pairTarget.id).pin[pairTarget.kind]);
+  let list=all.filter(x=>x.id!==it.id);
+  if(q&&q.trim()){const t=q.toLowerCase();list=list.filter(x=>(x.brand+" "+x.name+" "+x.notes+" "+x.family).toLowerCase().includes(t));}
+  else{
+    const partners=PAIR_MAP[it.family]||[];
+    if(pairTarget.kind==="layer")list=list.filter(x=>partners.includes(x.family));
+    else list=list.filter(x=>x.family===it.family||x.seasons.some(s=>it.seasons.includes(s)));
+    list=list.sort((a,b)=>a.brand.localeCompare(b.brand)||a.name.localeCompare(b.name));
+  }
+  list=list.slice(0,30);
+  const rows=list.map(x=>{
+    const isP=pinned.has(x.id);
+    return `<div class="ql-row ${isP?'done':''}" onclick="${isP?`unpinPair(${it.id},'${pairTarget.kind}',${x.id})`:`pinPair(${it.id},'${pairTarget.kind}',${x.id})`};renderPairResults(pairQ)">
+      <span class="qf" style="background:${FAM_COLOR[x.family]}"></span>
+      <span class="qn">${esc(x.name)}<small>${esc(x.brand)}</small></span>
+      <span class="qmeta">${isP?'added ✓':'tap to add'}</span></div>`;
+  }).join("");
+  document.getElementById("ppResults").innerHTML=rows||`<div class="ql-row" style="color:var(--faint);cursor:default">No matches.</div>`;
+}
+
+document.addEventListener("keydown",e=>{if(e.key==="Escape")closeModal();});
+
+/* ---------- boot ---------- */
+(async function(){
+  USER=await loadUser();
+  if(storeMode==="none")document.getElementById("storageBanner").classList.add("show");
+  document.getElementById("sortSel").value=state.sort;
+  render();
+})();
+</script>
+</body>
+</html>
