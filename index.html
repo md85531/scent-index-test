@@ -95,7 +95,7 @@ h1 em{font-style:italic;color:var(--accent-deep)}
 .card-in{padding:16px 18px 14px 21px;display:flex;flex-direction:column;gap:9px;flex:1}
 .eyebrow{display:flex;justify-content:space-between;align-items:center;gap:8px}
 .brand{font-size:11px;letter-spacing:.13em;text-transform:uppercase;color:var(--muted);font-weight:600}
-.famtag{font-size:10.5px;font-weight:700;color:var(--fc);letter-spacing:.04em;text-transform:uppercase;white-space:nowrap}
+.famtag{font-size:10.5px;font-weight:700;color:var(--fc);letter-spacing:.04em;text-transform:uppercase;text-align:right;max-width:60%;line-height:1.3}
 .name{font-family:"Fraunces",serif;font-size:20px;font-weight:500;line-height:1.08;letter-spacing:-.01em}
 .notes{font-size:12.8px;color:var(--muted);line-height:1.45;min-height:18px}
 .sdots{display:flex;gap:5px;align-items:center;flex-wrap:wrap}
@@ -147,6 +147,12 @@ h1 em{font-style:italic;color:var(--accent-deep)}
 .memo{width:100%;min-height:62px;resize:vertical;border:1px solid var(--line);border-radius:10px;padding:10px 12px;font-size:13px;font-family:inherit;color:var(--ink);background:#fff;line-height:1.45}
 .memo::placeholder{color:var(--faint)}
 .memo:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px var(--tint)}
+.tagrow{display:flex;gap:6px;flex-wrap:wrap;margin-top:1px}
+.size-tag{font-size:9px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);background:var(--paper);border:1px solid var(--line);border-radius:999px;padding:2px 9px}
+.backup-tag{font-size:9px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--accent-deep);background:var(--tint);border:1px solid var(--accent);border-radius:999px;padding:2px 9px}
+.chk{display:flex!important;flex-direction:row!important;align-items:center;gap:9px;font-size:12.5px;color:var(--muted);font-weight:600;cursor:pointer}
+.chk input{width:17px;height:17px;accent-color:var(--accent);cursor:pointer;flex:none}
+.hinttxt{font-size:10px;font-weight:600;color:var(--faint);text-transform:none;letter-spacing:0}
 .history{font-size:12px;color:var(--muted)}
 .history .chip{display:inline-flex;align-items:center;gap:6px;background:#fff;border:1px solid var(--line);border-radius:999px;padding:3px 7px 3px 10px;margin:3px 5px 0 0;font-size:11.5px}
 .history .chip button{border:none;background:none;color:var(--faint);font-size:13px;line-height:1;padding:0}
@@ -310,8 +316,10 @@ footer{text-align:center;color:var(--faint);font-size:12px;padding:34px 0 0}
 
 <script>
 const SEED = /*seed*/[{"i":1,"b":"Aerin","n":"Mediterranean Honeysuckle Figue","f":"Floral","o":"Honeysuckle, fig, white floral","s":["Spring","Summer"]},{"i":2,"b":"Al-Rehab","n":"Choco Musk","f":"Gourmand","o":"Chocolate, sweet musk, cocoa","s":["Fall","Winter"]},{"i":3,"b":"Armani","n":"Power of You","f":"Floral","o":"Sweet fruity floral, vanilla","s":["Fall","Winter","Spring"]},{"i":4,"b":"Atelier Cologne","n":"Clementine California","f":"Citrus","o":"Clementine, blackcurrant, vetiver","s":["Spring","Summer"]},{"i":5,"b":"Bath & Body Works","n":"Brown Sugar & Fig","f":"Gourmand","o":"Brown sugar, fig, warm woods","s":["Fall","Winter"]},{"i":6,"b":"Bath & Body Works","n":"Cereal Milk Soft Serve","f":"Gourmand","o":"Cereal milk, sweet cream, vanilla","s":["Fall","Winter"]},{"i":7,"b":"Bath & Body Works","n":"Champagne Apple & Honey","f":"Fruity","o":"Apple, honey, champagne fizz","s":["Fall"]},{"i":8,"b":"Bath & Body Works","n":"Coastal Beauty","f":"Fresh","o":"Aquatic floral, sea air","s":["Spring","Summer"]},{"i":9,"b":"Bath & Body Works","n":"Forever Cherry Blossom","f":"Floral","o":"Cherry blossom, pear, soft floral","s":["Spring"]},{"i":10,"b":"Bath & Body Works","n":"Fresh Musk","f":"Musk","o":"Clean white musk","s":["Spring","Summer","Fall","Winter"]},{"i":11,"b":"Bath & Body Works","n":"Fruity Musk","f":"Musk","o":"Berry, soft fruity musk","s":["Spring","Summer"]},{"i":12,"b":"Bath & Body Works","n":"Imperfect Beauty","f":"Floral","o":"Soft floral, powder","s":["Spring","Fall"]},{"i":13,"b":"Bath & Body Works","n":"Inner Angel","f":"Floral","o":"Pear, peony, soft floral","s":["Spring","Summer"]},{"i":14,"b":"Bath & Body Works","n":"Love Unleashed","f":"Floral","o":"Fruity floral, musk","s":["Spring","Fall"]},{"i":15,"b":"Bath & Body Works","n":"Midnight Addiction","f":"Fruity","o":"Dark berry, plum, amber","s":["Fall","Winter"]},{"i":16,"b":"Bath & Body Works","n":"Milk","f":"Gourmand","o":"Milky, soft vanilla, comfort","s":["Spring","Fall","Winter"]},{"i":17,"b":"Bath & Body Works","n":"Milkbar Birthday Cake","f":"Gourmand","o":"Birthday cake, frosting, vanilla","s":["Fall","Winter"]},{"i":18,"b":"Bath & Body Works","n":"Oh Cherry","f":"Fruity","o":"Cherry, sweet fruit","s":["Spring","Summer"]},{"i":19,"b":"Bath & Body Works","n":"Pina Colada Swirl","f":"Fruity","o":"Pineapple, coconut, rum","s":["Summer"]},{"i":20,"b":"Bath & Body Works","n":"Pistachio Glaze","f":"Gourmand","o":"Pistachio, glaze, sweet nut","s":["Fall","Winter"]},{"i":21,"b":"Bath & Body Works","n":"Rich Espresso","f":"Gourmand","o":"Espresso, coffee, cream","s":["Fall","Winter"]},{"i":22,"b":"Bath & Body Works","n":"Salted Shorelines","f":"Fresh","o":"Salt, aquatic, driftwood","s":["Spring","Summer"]},{"i":23,"b":"Bath & Body Works","n":"Saltwater Breeze","f":"Fresh","o":"Sea breeze, aquatic","s":["Spring","Summer"]},{"i":24,"b":"Bath & Body Works","n":"Snowflakes & Cashmere","f":"Musk","o":"Cashmere musk, soft woods","s":["Winter"]},{"i":25,"b":"Bath & Body Works","n":"Sunrise Woods","f":"Woody","o":"Warm woods, amber","s":["Fall","Winter"]},{"i":26,"b":"Bath & Body Works","n":"Sweetheart Cherry","f":"Fruity","o":"Cherry, vanilla, sweet","s":["Winter","Spring"]},{"i":27,"b":"Bath & Body Works","n":"Touch of Gold","f":"Amber","o":"Amber, warm gourmand glow","s":["Fall","Winter"]},{"i":28,"b":"Bath & Body Works","n":"Vampire Blood","f":"Fruity","o":"Dark fruit, plum, spice","s":["Fall"]},{"i":29,"b":"Bath & Body Works","n":"Vanilla Bean Noel","f":"Gourmand","o":"Vanilla bean, sugar, warm spice","s":["Winter"]},{"i":30,"b":"Bath & Body Works","n":"Vanilla Cafe","f":"Gourmand","o":"Vanilla, coffee, cream","s":["Fall","Winter"]},{"i":31,"b":"Bath & Body Works","n":"Vanilla Ease","f":"Gourmand","o":"Soft vanilla, comfort","s":["Spring","Fall","Winter"]},{"i":32,"b":"Bath & Body Works","n":"Vanilla Romance","f":"Gourmand","o":"Vanilla, soft floral","s":["Fall","Winter"]},{"i":33,"b":"Bath & Body Works","n":"Viva Brazil","f":"Fruity","o":"Tropical fruit, bright","s":["Summer"]},{"i":34,"b":"Bath & Body Works","n":"Warm Musk","f":"Musk","o":"Warm musk, soft amber","s":["Fall","Winter"]},{"i":35,"b":"Bath & Body Works","n":"Warm Vanilla Sugar","f":"Gourmand","o":"Vanilla, sugar, warmth","s":["Fall","Winter"]},{"i":36,"b":"Boy Smells","n":"Woodphoria","f":"Woody","o":"Warm woods, resin, amber","s":["Fall","Winter"]},{"i":37,"b":"Brown Girl Jane","n":"Casino","f":"Amber","o":"Warm amber, woods, spice","s":["Fall","Winter"]},{"i":38,"b":"Burberry","n":"Goddess","f":"Gourmand","o":"Vanilla, lavender, cacao","s":["Fall","Winter"]},{"i":39,"b":"By Rosie Jane","n":"Dulce","f":"Gourmand","o":"Dulce de leche, caramel, sweet","s":["Fall","Winter"]},{"i":40,"b":"By Rosie Jane","n":"Missy","f":"Floral","o":"Soft floral, clean musk","s":["Spring","Summer"]},{"i":41,"b":"By Rosie Jane","n":"Rosie","f":"Floral","o":"Fruity floral, pear, rose","s":["Spring","Summer"]},{"i":42,"b":"By Rosie Jane","n":"White Tee","f":"Musk","o":"Clean skin musk, soft cotton","s":["Spring","Summer","Fall","Winter"]},{"i":43,"b":"Byredo","n":"Alto Astral","f":"Fresh","o":"Green, fresh aromatic","s":["Spring","Summer"]},{"i":44,"b":"Byredo","n":"Bal d'Afrique","f":"Floral","o":"Neroli, violet, vetiver","s":["Spring","Summer","Fall"]},{"i":45,"b":"Byredo","n":"Bal d'Afrique Absolu","f":"Floral","o":"Intense neroli, violet, woods","s":["Fall","Winter"]},{"i":46,"b":"Byredo","n":"Desert Dawn","f":"Fruity","o":"Raspberry, saffron, amber","s":["Fall","Winter"]},{"i":47,"b":"Byredo","n":"Mojave Ghost","f":"Woody","o":"Ambrette, sandalwood, magnolia","s":["Spring","Summer","Fall"]},{"i":48,"b":"Byredo","n":"Young Rose","f":"Floral","o":"Rose, peppery, woods","s":["Spring","Fall"]},{"i":49,"b":"Chanel","n":"Gardénia","f":"Floral","o":"Gardenia, jasmine, white floral","s":["Spring","Summer"]},{"i":50,"b":"Cirque du Soleil","n":"L'Eau de Parfum","f":"Floral","o":"Soft floral, fresh","s":["Spring","Summer"]},{"i":51,"b":"Clean Reserve","n":"Radiant Nectar","f":"Fruity","o":"Nectar, fruit, soft floral","s":["Spring","Summer"]},{"i":52,"b":"Clean Reserve","n":"Rain","f":"Fresh","o":"Clean rain, aquatic, soft","s":["Spring","Summer"]},{"i":53,"b":"Clean Reserve","n":"Skin","f":"Musk","o":"Clean skin musk, soft warmth","s":["Spring","Summer","Fall","Winter"]},{"i":54,"b":"Commodity","n":"Ice(d)","f":"Fresh","o":"Cool mint, crisp, airy","s":["Summer"]},{"i":55,"b":"Commodity","n":"Juice Expressive","f":"Fruity","o":"Juicy fruit, bright","s":["Spring","Summer"]},{"i":56,"b":"Commodity","n":"Milk Orchid Expressive","f":"Gourmand","o":"Milky orchid, soft sweet","s":["Spring","Fall","Winter"]},{"i":57,"b":"d'Annam","n":"Mooncake","f":"Gourmand","o":"Lotus, sweet pastry, soft spice","s":["Fall"]},{"i":58,"b":"d'Annam","n":"White Rice","f":"Gourmand","o":"Steamed rice, milky, soft musk","s":["Spring","Fall","Winter"]},{"i":59,"b":"Dedcool","n":"Mineral Milk","f":"Musk","o":"Milky musk, soft skin","s":["Spring","Summer","Fall","Winter"]},{"i":60,"b":"Dedcool","n":"Mochi Milk","f":"Gourmand","o":"Mochi, milky, sweet rice","s":["Fall","Winter"]},{"i":61,"b":"Dedcool","n":"Taunt","f":"Musk","o":"Clean musk, soft skin","s":["Spring","Summer","Fall","Winter"]},{"i":62,"b":"Dedcool","n":"Xtra Milk","f":"Gourmand","o":"Milky, warm, soft sweet","s":["Spring","Fall","Winter"]},{"i":63,"b":"Diptyque","n":"L'Eau Papier","f":"Musk","o":"White musk, rice steam, mimosa","s":["Spring","Summer","Fall"]},{"i":64,"b":"Ellis Brooklyn","n":"Dear Sky","f":"Floral","o":"Soft floral, airy, fresh","s":["Spring","Summer"]},{"i":65,"b":"Ellis Brooklyn","n":"Marshmallows","f":"Gourmand","o":"Marshmallow, vanilla, soft","s":["Fall","Winter"]},{"i":66,"b":"Ellis Brooklyn","n":"New Crush","f":"Floral","o":"Fruity floral, bright","s":["Spring","Summer"]},{"i":67,"b":"Ellis Brooklyn","n":"Queens Caramel","f":"Gourmand","o":"Caramel, vanilla, sweet","s":["Fall","Winter"]},{"i":68,"b":"Fine'ry","n":"No Prince Required","f":"Fruity","o":"Fruity floral, bright","s":["Spring","Summer"]},{"i":69,"b":"Frenshe","n":"Moon Milk","f":"Gourmand","o":"Milky, lavender, soft vanilla","s":["Fall","Winter"]},{"i":70,"b":"Glossier","n":"Orange Blossom Neroli","f":"Floral","o":"Orange blossom, neroli, citrus","s":["Spring","Summer"]},{"i":71,"b":"Glossier","n":"Sandstone","f":"Woody","o":"Warm woods, amber, soft spice","s":["Fall","Winter"]},{"i":72,"b":"Glossier","n":"You","f":"Musk","o":"Skin musk, ambrette, pink pepper","s":["Spring","Summer","Fall","Winter"]},{"i":73,"b":"Glossier","n":"You Deux","f":"Musk","o":"Warm musk, amber, soft spice","s":["Fall","Winter"]},{"i":74,"b":"Glossier","n":"You Fleur","f":"Floral","o":"Soft floral musk, airy","s":["Spring","Summer"]},{"i":75,"b":"Glossier","n":"You Soie","f":"Musk","o":"Silky soft musk, skin","s":["Spring","Summer","Fall","Winter"]},{"i":76,"b":"Gucci","n":"Bamboo","f":"Floral","o":"Casablanca lily, soft floral","s":["Spring","Summer"]},{"i":77,"b":"Gucci","n":"Bloom","f":"Floral","o":"Tuberose, jasmine, white floral","s":["Spring","Summer"]},{"i":78,"b":"Henry Rose","n":"Torn","f":"Floral","o":"Floral, woods, soft amber","s":["Spring","Fall"]},{"i":79,"b":"Imaginary Author","n":"Sundrunk","f":"Citrus","o":"Sunny citrus, fruity, warm","s":["Summer"]},{"i":80,"b":"Imaginary Authors","n":"Falling Into The Sea","f":"Fresh","o":"Grapefruit, sea air, sand","s":["Spring","Summer"]},{"i":81,"b":"Imaginary Authors","n":"Fox in the Flowerbed","f":"Floral","o":"Peach, honey, white floral","s":["Spring","Summer"]},{"i":82,"b":"Imaginary Authors","n":"Yesterday Haze","f":"Fruity","o":"Fig, vanilla, soft amber","s":["Fall"]},{"i":83,"b":"Jo Malone","n":"Raspberry Ripple","f":"Fruity","o":"Raspberry, vanilla, cream","s":["Spring","Winter"]},{"i":84,"b":"Jo Malone","n":"Wood Sage & Sea Salt","f":"Fresh","o":"Sea salt, sage, mineral","s":["Spring","Summer"]},{"i":85,"b":"Jo Malone","n":"Yuzu Zest","f":"Citrus","o":"Yuzu, citrus, bright","s":["Spring","Summer"]},{"i":86,"b":"Kayali","n":"Capri in a Bottle","f":"Citrus","o":"Limoncello, citrus, bright","s":["Summer"]},{"i":87,"b":"Kayali","n":"Fleur Majesty Rose Royale 31","f":"Floral","o":"Rose, peony, lush floral","s":["Spring","Fall","Winter"]},{"i":88,"b":"Kayali","n":"Freedom Musk Matcha 45","f":"Musk","o":"Matcha, green musk, soft","s":["Spring","Summer","Fall"]},{"i":89,"b":"Kayali","n":"Maldives in a Bottle","f":"Fruity","o":"Coconut, tropical, beach","s":["Summer"]},{"i":90,"b":"Kayali","n":"Maui in a Bottle","f":"Fruity","o":"Tropical fruit, sunny","s":["Summer"]},{"i":91,"b":"Kayali","n":"Musk 12","f":"Musk","o":"Soft musk, clean skin","s":["Spring","Summer","Fall","Winter"]},{"i":92,"b":"Kayali","n":"The Wedding Silk Santal 36","f":"Woody","o":"Sandalwood, amber, soft spice","s":["Fall","Winter"]},{"i":93,"b":"Kayali","n":"Vanilla 28","f":"Gourmand","o":"Vanilla, brown sugar, warm","s":["Fall","Winter"]},{"i":94,"b":"Kayali","n":"Yum Boujee Marshmallow 81","f":"Gourmand","o":"Marshmallow, vanilla, sweet","s":["Fall","Winter"]},{"i":95,"b":"Khadlaj","n":"Cream Velvet","f":"Gourmand","o":"Creamy, sweet, soft amber","s":["Fall","Winter"]},{"i":96,"b":"Le Labo","n":"The Matcha 26","f":"Green","o":"Matcha, fig, cedar, bitter green","s":["Spring","Summer","Fall"]},{"i":97,"b":"Liis","n":"Ethereal Wave","f":"Fresh","o":"Airy floral, fresh, soft","s":["Spring","Summer"]},{"i":98,"b":"Lore","n":"Somewhere but nowhere","f":"Woody","o":"Soft woods, musk, quiet","s":["Fall","Winter"]},{"i":99,"b":"Maison Martin Margiela","n":"Never-ending Summer","f":"Gourmand","o":"Heliotrope, sandy, soft sweet","s":["Summer"]},{"i":100,"b":"Maison Martin Margiela","n":"Under the Lemon Tree","f":"Citrus","o":"Lemon, fig leaf, bright","s":["Spring","Summer"]},{"i":101,"b":"Nest New York","n":"Indigo","f":"Woody","o":"Woods, amber, soft spice","s":["Fall","Winter"]},{"i":102,"b":"Ouai","n":"St. Barts","f":"Floral","o":"Tropical floral, fruity, sunny","s":["Spring","Summer"]},{"i":103,"b":"Phlur","n":"Afterglow","f":"Amber","o":"Warm amber, musk, soft skin","s":["Fall","Winter"]},{"i":104,"b":"Phlur","n":"Amber Haze","f":"Amber","o":"Amber, vanilla, soft woods","s":["Fall","Winter"]},{"i":105,"b":"Phlur","n":"Apricot Privee","f":"Fruity","o":"Apricot, soft floral, warm","s":["Spring","Summer"]},{"i":106,"b":"Phlur","n":"Beach Skin","f":"Fresh","o":"Salty skin, coconut, sun","s":["Summer"]},{"i":107,"b":"Phlur","n":"Caramel Skin","f":"Gourmand","o":"Caramel, musk, soft skin","s":["Fall","Winter"]},{"i":108,"b":"Phlur","n":"Cashmere Skin","f":"Musk","o":"Cashmere musk, soft warmth","s":["Fall","Winter"]},{"i":109,"b":"Phlur","n":"Cherry Stem","f":"Fruity","o":"Cherry, almond, soft","s":["Spring","Summer"]},{"i":110,"b":"Phlur","n":"Coconut Skin","f":"Gourmand","o":"Coconut, musk, creamy","s":["Summer"]},{"i":111,"b":"Phlur","n":"Dragon Fruit","f":"Fruity","o":"Dragon fruit, bright, juicy","s":["Spring","Summer"]},{"i":112,"b":"Phlur","n":"Father Figure","f":"Amber","o":"Amber, woods, leather","s":["Fall","Winter"]},{"i":113,"b":"Phlur","n":"Honey Moon","f":"Floral","o":"Honey, neroli, soft floral","s":["Spring","Fall"]},{"i":114,"b":"Phlur","n":"Island Swim","f":"Fresh","o":"Aquatic, salt, sunscreen","s":["Summer"]},{"i":115,"b":"Phlur","n":"Lost Cause","f":"Floral","o":"Soft floral, musk, airy","s":["Spring","Fall"]},{"i":116,"b":"Phlur","n":"Matcha Milk","f":"Green","o":"Matcha, milk, soft green","s":["Spring","Fall"]},{"i":117,"b":"Phlur","n":"Missing Person","f":"Musk","o":"Skin musk, clean, intimate","s":["Spring","Summer","Fall","Winter"]},{"i":118,"b":"Phlur","n":"Mood Ring","f":"Fruity","o":"Fruity floral, bright","s":["Spring","Summer"]},{"i":119,"b":"Phlur","n":"Moonstone","f":"Musk","o":"Soft musk, floral, airy","s":["Spring","Summer","Fall","Winter"]},{"i":120,"b":"Phlur","n":"Mrs. Smith","f":"Floral","o":"Fruity floral, soft sweet","s":["Spring","Summer"]},{"i":121,"b":"Phlur","n":"Not Your Baby","f":"Floral","o":"Jasmine, amber, soft spice","s":["Fall","Winter"]},{"i":122,"b":"Phlur","n":"Paradise Nectar","f":"Fruity","o":"Tropical nectar, juicy","s":["Summer"]},{"i":123,"b":"Phlur","n":"Rose Whip","f":"Floral","o":"Rose, sweet cream, soft","s":["Spring","Fall","Winter"]},{"i":124,"b":"Phlur","n":"Soft Spot","f":"Musk","o":"Soft musk, powder, skin","s":["Spring","Summer","Fall","Winter"]},{"i":125,"b":"Phlur","n":"Solar Power","f":"Fresh","o":"Sunny citrus, bright, airy","s":["Summer"]},{"i":126,"b":"Phlur","n":"Somebody Wood","f":"Woody","o":"Sandalwood, soft woods","s":["Fall","Winter"]},{"i":127,"b":"Phlur","n":"Strawberry Letter","f":"Fruity","o":"Strawberry, sweet, soft","s":["Spring","Summer"]},{"i":128,"b":"Phlur","n":"Tangerine Boy","f":"Citrus","o":"Tangerine, citrus, bright","s":["Spring","Summer"]},{"i":129,"b":"Rare Beauty","n":"Rare","f":"Floral","o":"Fresh floral, fruity, soft","s":["Spring","Summer"]},{"i":130,"b":"Sabrina Carpenter","n":"Sweet Tooth Lemon Pie","f":"Gourmand","o":"Lemon pie, meringue, sweet","s":["Spring","Fall","Winter"]},{"i":131,"b":"Saltair","n":"Santal Bloom","f":"Woody","o":"Sandalwood, soft floral","s":["Spring","Fall"]},{"i":132,"b":"Saltair","n":"Seascape","f":"Fresh","o":"Sea breeze, aquatic, clean","s":["Spring","Summer"]},{"i":133,"b":"Sand + Fog","n":"Balinese Coconut (Perfume Oil)","f":"Gourmand","o":"Coconut, creamy, tropical","s":["Summer"]},{"i":134,"b":"Sand + Fog","n":"Banana Cream (Perfume Oil)","f":"Gourmand","o":"Banana, cream, sweet","s":["Summer","Fall","Winter"]},{"i":135,"b":"Sand + Fog","n":"Beach Days (Perfume Oil)","f":"Fresh","o":"Aquatic, sunny, tropical","s":["Summer"]},{"i":136,"b":"Sand + Fog","n":"Strawberry Spritz (Perfume Oil)","f":"Fruity","o":"Strawberry, fizzy, sweet","s":["Spring","Summer"]},{"i":137,"b":"Sand + Fog","n":"Vanilla Musk (Perfume Oil)","f":"Musk","o":"Vanilla, soft musk, warm","s":["Fall","Winter"]},{"i":138,"b":"Sand + Fog","n":"Vanilla Sugar (Perfume Oil)","f":"Gourmand","o":"Vanilla, sugar, sweet","s":["Fall","Winter"]},{"i":139,"b":"Skylar","n":"Double Dates","f":"Gourmand","o":"Date, fig, warm sweet","s":["Fall","Winter"]},{"i":140,"b":"Skylar","n":"Midnight Moon","f":"Amber","o":"Amber, musk, soft spice","s":["Fall","Winter"]},{"i":141,"b":"Snif","n":"2%","f":"Musk","o":"Milky musk, soft skin","s":["Spring","Summer","Fall","Winter"]},{"i":142,"b":"Snif","n":"Berry Styles","f":"Fruity","o":"Berry, sweet fruit","s":["Spring","Summer"]},{"i":143,"b":"Snif","n":"Citrus Circus","f":"Citrus","o":"Citrus, bright, playful","s":["Spring","Summer"]},{"i":144,"b":"Snif","n":"Crumb Couture","f":"Gourmand","o":"Pastry, sugar, buttery","s":["Fall","Winter"]},{"i":145,"b":"Snif","n":"Crumb Couture Almond","f":"Gourmand","o":"Almond pastry, sweet","s":["Fall","Winter"]},{"i":146,"b":"Snif","n":"Crunch Time","f":"Gourmand","o":"Sweet cereal, milky","s":["Fall","Winter"]},{"i":147,"b":"Snif","n":"Frooty Call","f":"Fruity","o":"Mixed fruit, juicy, sweet","s":["Spring","Summer"]},{"i":148,"b":"Snif","n":"Gentle Reminder","f":"Floral","o":"Soft floral, musk","s":["Spring","Summer"]},{"i":149,"b":"Snif","n":"Heal the Way","f":"Fresh","o":"Green, fresh, herbal","s":["Spring","Summer"]},{"i":150,"b":"Snif","n":"Honey Suite","f":"Gourmand","o":"Honey, floral, soft sweet","s":["Spring","Fall"]},{"i":151,"b":"Snif","n":"Hot Cakes","f":"Gourmand","o":"Pancakes, maple, butter","s":["Fall","Winter"]},{"i":152,"b":"Snif","n":"Lucky Streak","f":"Amber","o":"Amber, woods, warm spice","s":["Fall","Winter"]},{"i":153,"b":"Snif","n":"Me","f":"Musk","o":"Skin musk, clean, soft","s":["Spring","Summer","Fall","Winter"]},{"i":154,"b":"Snif","n":"Natural Talent","f":"Woody","o":"Soft woods, fresh, clean","s":["Spring","Fall"]},{"i":155,"b":"Snif","n":"Naughty Nonna","f":"Gourmand","o":"Amaretto, cherry, almond","s":["Fall","Winter"]},{"i":156,"b":"Snif","n":"Sweet Ash","f":"Woody","o":"Smoky, sweet, amber","s":["Fall","Winter"]},{"i":157,"b":"Snif","n":"Sweet Ash Super","f":"Woody","o":"Intense smoky sweet amber","s":["Fall","Winter"]},{"i":158,"b":"Snif","n":"Tart Deco","f":"Fruity","o":"Tart fruit, bright sweet","s":["Spring","Summer"]},{"i":159,"b":"Snif","n":"Vanilla Vice","f":"Gourmand","o":"Vanilla, warm, sweet","s":["Fall","Winter"]},{"i":160,"b":"Snif","n":"Vow Factor","f":"Floral","o":"Soft floral, musk, clean","s":["Spring","Summer"]},{"i":161,"b":"Sol de Janeiro","n":"Cheirosa 39","f":"Gourmand","o":"Pistachio, salted caramel, vanilla","s":["Fall","Winter"]},{"i":162,"b":"Sol de Janeiro","n":"Cheirosa 71","f":"Gourmand","o":"Caramel, vanilla, sandalwood","s":["Fall","Winter"]},{"i":163,"b":"Sorce","n":"2AM in Lafayette","f":"Amber","o":"Warm amber, gourmand, nocturnal","s":["Fall","Winter"]},{"i":164,"b":"Sorce","n":"A Light in the Attic","f":"Woody","o":"Soft woods, musk, dusty warmth","s":["Fall","Winter"]},{"i":165,"b":"Sorce","n":"A Match Made In Heaven","f":"Gourmand","o":"Sweet floral, soft gourmand","s":["Spring","Fall"]},{"i":166,"b":"Sorce","n":"A Party, Or Something","f":"Fruity","o":"Fruity, fizzy, festive","s":["Spring","Summer"]},{"i":167,"b":"Sorce","n":"A Witch's Valentine","f":"Gourmand","o":"Chocolate, cherry, sweet","s":["Fall","Winter"]},{"i":168,"b":"Sorce","n":"Beautiful, But Annihilating","f":"Floral","o":"Dark floral, amber","s":["Fall","Winter"]},{"i":169,"b":"Sorce","n":"Between the Sheets","f":"Musk","o":"Skin musk, warm, intimate","s":["Fall","Winter"]},{"i":170,"b":"Sorce","n":"Beyond the Veil","f":"Woody","o":"Smoky woods, amber, mysterious","s":["Fall","Winter"]},{"i":171,"b":"Sorce","n":"Cabanilla","f":"Gourmand","o":"Vanilla, tropical, creamy","s":["Summer","Fall"]},{"i":172,"b":"Sorce","n":"Falling Stars (Black Coffee)","f":"Gourmand","o":"Black coffee, roasted, sweet","s":["Fall","Winter"]},{"i":173,"b":"Sorce","n":"Falling Stars (Marshmallow Cloud)","f":"Gourmand","o":"Marshmallow, soft sweet, airy","s":["Fall","Winter"]},{"i":174,"b":"Sorce","n":"Falling Stars (Salted Vanilla)","f":"Gourmand","o":"Salted vanilla, creamy","s":["Fall","Winter"]},{"i":175,"b":"Sorce","n":"Falling Stars (Strawberry Coconut Milk)","f":"Gourmand","o":"Strawberry, coconut, milk","s":["Summer"]},{"i":176,"b":"Sorce","n":"Fuckery","f":"Amber","o":"Warm amber, musk, spice","s":["Fall","Winter"]},{"i":177,"b":"Sorce","n":"Good at Being Bad","f":"Amber","o":"Smoky amber, woods, warm","s":["Fall","Winter"]},{"i":178,"b":"Sorce","n":"I Think About You, Too","f":"Floral","o":"Soft floral, sweet, dreamy","s":["Spring","Fall"]},{"i":179,"b":"Sorce","n":"In Dreams and Fairy Tales (Blueberry)","f":"Fruity","o":"Blueberry, sweet, soft","s":["Spring","Summer"]},{"i":180,"b":"Sorce","n":"In Dreams and Fairy Tales (Strawberry Rosewater)","f":"Fruity","o":"Strawberry, rosewater, soft","s":["Spring","Summer"]},{"i":181,"b":"Sorce","n":"In Dreams and Fairy Tales (Vanilla)","f":"Gourmand","o":"Vanilla, soft sweet, creamy","s":["Fall","Winter"]},{"i":182,"b":"Sorce","n":"Love and Complications","f":"Floral","o":"Lush floral, amber, warm","s":["Fall","Winter"]},{"i":183,"b":"Sorce","n":"Love and the Sea","f":"Fresh","o":"Aquatic, salt, airy","s":["Summer"]},{"i":184,"b":"Sorce","n":"Midnight Wedding","f":"Floral","o":"White floral, amber, night","s":["Fall","Winter"]},{"i":185,"b":"Sorce","n":"Moon Magic","f":"Musk","o":"Soft musk, amber, mystical","s":["Fall","Winter"]},{"i":186,"b":"Sorce","n":"Pelicans Dive in the Ocean","f":"Fresh","o":"Aquatic, sea breeze, salt","s":["Summer"]},{"i":187,"b":"Sorce","n":"Reduced to a Thing That Wants You","f":"Amber","o":"Warm skin, amber, musk","s":["Fall","Winter"]},{"i":188,"b":"Sorce","n":"Serpentine","f":"Woody","o":"Smoky woods, amber, dark","s":["Fall","Winter"]},{"i":189,"b":"Sorce","n":"Sitting on the Edge of a Cloud","f":"Musk","o":"Airy musk, soft, powdery","s":["Spring","Summer","Fall","Winter"]},{"i":190,"b":"Sorce","n":"Snow Moon Magic","f":"Musk","o":"Frosted musk, soft amber","s":["Winter"]},{"i":191,"b":"Sorce","n":"Strings of Light in the Forest","f":"Woody","o":"Forest woods, green, soft","s":["Fall","Winter"]},{"i":192,"b":"Sorce","n":"The Cookie Party","f":"Gourmand","o":"Cookie, sugar, butter","s":["Fall","Winter"]},{"i":193,"b":"Sorce","n":"The Light Through Clouds","f":"Musk","o":"Airy musk, soft floral","s":["Spring","Summer"]},{"i":194,"b":"Sorce","n":"The Things Unsaid","f":"Floral","o":"Soft floral, amber, wistful","s":["Fall","Winter"]},{"i":195,"b":"Sorce","n":"This is Not a Love Spell","f":"Amber","o":"Sweet amber, gourmand, warm","s":["Fall","Winter"]},{"i":196,"b":"Sorce","n":"Venus in Fleurs","f":"Floral","o":"Lush florals, soft sweet","s":["Spring","Summer"]},{"i":197,"b":"Sorce","n":"We Are All Stardust","f":"Amber","o":"Cosmic amber, musk, warm","s":["Fall","Winter"]},{"i":198,"b":"Sorce","n":"Where The Wild Things Grow I","f":"Green","o":"Green, woods, earthy","s":["Spring","Fall"]},{"i":199,"b":"Sorce","n":"Witchery","f":"Woody","o":"Smoky woods, amber, dark spice","s":["Fall","Winter"]},{"i":200,"b":"Summer Fridays","n":"Sunlit Vanilla","f":"Gourmand","o":"Vanilla, soft sweet, warm","s":["Spring","Fall","Winter"]},{"i":201,"b":"The 7 Virtues","n":"Buttercream Haze","f":"Gourmand","o":"Buttercream, vanilla, sweet","s":["Fall","Winter"]},{"i":202,"b":"The 7 Virtues","n":"Cherry Ambition","f":"Fruity","o":"Cherry, sweet fruit, soft","s":["Spring","Summer"]},{"i":203,"b":"Tru Fragrance","n":"Golden Daylight","f":"Floral","o":"Soft floral, amber glow","s":["Spring","Fall"]},{"i":204,"b":"Ulta Beauty","n":"Vanilla Velour","f":"Gourmand","o":"Vanilla, soft sweet, plush","s":["Fall","Winter"]},{"i":205,"b":"Valentino","n":"Born in Roma","f":"Floral","o":"Vanilla, jasmine, soft floral","s":["Spring","Fall","Winter"]},{"i":206,"b":"Valentino","n":"Born in Roma Coral Fantasy","f":"Fruity","o":"Fruity floral, bright, sweet","s":["Spring","Summer"]}];
-const FAMILIES=["Gourmand","Floral","Fruity","Fresh","Citrus","Woody","Amber","Musk","Green"];
-const FAM_COLOR={Gourmand:"#C68A4E",Floral:"#D27FA3",Fruity:"#D2604E",Fresh:"#4FA8C0",Citrus:"#E0A92E",Woody:"#8A6A45",Amber:"#B07A3C",Musk:"#B9A38C",Green:"#6B9A5B"};
+const FAMILIES=["Gourmand","Floral","Fruity","Fresh","Citrus","Woody","Amber","Musk","Green","Aquatic","Solar","Spicy"];
+const FAM_COLOR={Gourmand:"#C68A4E",Floral:"#D27FA3",Fruity:"#D2604E",Fresh:"#4FA8C0",Citrus:"#E0A92E",Woody:"#8A6A45",Amber:"#B07A3C",Musk:"#B9A38C",Green:"#6B9A5B",Aquatic:"#3C7DAE",Solar:"#E0954E",Spicy:"#A8432C"};
+const SIZES=["Sample/Decant","Travel Size","Full Size"];
+function txtOn(hex){const c=hex.replace("#","");const r=parseInt(c.slice(0,2),16),g=parseInt(c.slice(2,4),16),b=parseInt(c.slice(4,6),16);return ((0.299*r+0.587*g+0.114*b)/255)>0.62?"#2B2724":"#ffffff";}
 const SEASONS=["Spring","Summer","Fall","Winter"];
 const BODY_TYPES=["Body wash","Lotion","Body cream","Body oil","Body butter","Body mist","Deodorant","Hair mist","Other"];
 const SEASON_THEME={
@@ -330,7 +338,10 @@ const PAIR_MAP={
   Woody:["Amber","Musk","Citrus","Floral"],
   Amber:["Gourmand","Woody","Musk","Floral"],
   Musk:["Gourmand","Floral","Fruity","Woody"],
-  Green:["Citrus","Fresh","Woody","Musk"]
+  Green:["Citrus","Fresh","Woody","Musk"],
+  Aquatic:["Citrus","Woody","Musk","Green"],
+  Solar:["Gourmand","Floral","Amber","Citrus"],
+  Spicy:["Amber","Woody","Gourmand","Citrus"]
 };
 
 /* ---------- storage ---------- */
@@ -392,15 +403,23 @@ function currentSeason(){
 }
 
 /* merge SEED + overrides + custom into working items */
+function famArr(fams,fallback){
+  let a=Array.isArray(fams)?fams.slice():(fallback?[fallback]:[]);
+  a=FAMILIES.filter(f=>a.includes(f));            // canonical order, drop unknowns
+  return a.length?a:(fallback?[fallback]:["Gourmand"]);
+}
 function items(){
   let list=SEED.map(s=>{
     const ov=USER.ov[s.i]||{};
     if(ov.del)return null;
+    const families=famArr(ov.families,ov.family||s.f);
     return {
       id:s.i,brand:s.b,name:s.n,
-      family:ov.family||s.f,
+      families,family:families[0],
       notes:ov.notes!=null?ov.notes:s.o,
       seasons:ov.seasons||s.s,
+      sizes:Array.isArray(ov.sizes)?ov.sizes:[],
+      multiples:!!ov.multiples,
       rating:ov.rating||0,
       price:ov.price!=null?ov.price:null,
       fav:!!ov.fav,
@@ -409,8 +428,10 @@ function items(){
     };
   }).filter(Boolean);
   USER.custom.forEach(c=>{
-    list.push({id:c.id,brand:c.brand,name:c.name,family:c.family,notes:c.notes,
-      seasons:c.seasons,rating:c.rating||0,price:c.price!=null?c.price:null,
+    const families=famArr(c.families,c.family);
+    list.push({id:c.id,brand:c.brand,name:c.name,families,family:families[0],notes:c.notes,
+      seasons:c.seasons,sizes:Array.isArray(c.sizes)?c.sizes:[],multiples:!!c.multiples,
+      rating:c.rating||0,price:c.price!=null?c.price:null,
       fav:!!c.fav,wears:c.wears||[],custom:true});
   });
   return list;
@@ -433,11 +454,11 @@ function patch(id,fields){
 function filtered(){
   let list=items();
   if(state.season!=="All")list=list.filter(x=>x.seasons.includes(state.season));
-  if(state.families.size)list=list.filter(x=>state.families.has(x.family));
+  if(state.families.size)list=list.filter(x=>x.families.some(f=>state.families.has(f)));
   if(state.fav)list=list.filter(x=>x.fav);
   if(state.q){
     const q=state.q.toLowerCase();
-    list=list.filter(x=>(x.brand+" "+x.name+" "+x.notes+" "+x.family).toLowerCase().includes(q));
+    list=list.filter(x=>(x.brand+" "+x.name+" "+x.notes+" "+x.families.join(" ")).toLowerCase().includes(q));
   }
   const lastWear=x=>x.wears.length?x.wears[x.wears.length-1]:"";
   const sorters={
@@ -545,14 +566,15 @@ function pairings(it,all){
   const pr=getPairs(it.id);
   const pool=all.filter(x=>x.id!==it.id);
   const itTok=tokenSet(it.notes);
-  const partners=PAIR_MAP[it.family]||[];
+  const partners=new Set();
+  it.families.forEach(f=>(PAIR_MAP[f]||[]).forEach(p=>partners.add(p)));
   function build(kind,exclude){
     const pinIds=pr.pin[kind], hideIds=new Set(pr.hide[kind]);
     const pinned=pinIds.map(id=>all.find(x=>x.id===id)).filter(Boolean);
     let cands=pool.filter(x=>!hideIds.has(x.id)&&!pinIds.includes(x.id)&&!exclude.has(x.id));
     let scored;
     if(kind==="layer"){
-      cands=cands.filter(x=>partners.includes(x.family));
+      cands=cands.filter(x=>x.families.some(f=>partners.has(f)));
       scored=cands.map(x=>{
         const seasonShare=x.seasons.filter(s=>it.seasons.includes(s)).length;
         const syn=overlapCount(tokenSet(x.notes),itTok);
@@ -560,7 +582,7 @@ function pairings(it,all){
       });
     }else{
       scored=cands.map(x=>{
-        const fam=x.family===it.family?2.2:0;
+        const fam=x.families.some(f=>it.families.includes(f))?2.2:0;
         const seasonShare=x.seasons.filter(s=>it.seasons.includes(s)).length;
         const sim=overlapCount(tokenSet(x.notes),itTok);
         return {x,s:fam+seasonShare*0.7+Math.min(sim,3)*0.8+(x.rating?x.rating*0.15:0)+jit(it.id*7+1,x.id)};
@@ -603,15 +625,21 @@ function cardHTML(it,all){
       <select id="bcT-${it.id}" class="bc-sel">${BODY_TYPES.map(t=>`<option>${t}</option>`).join("")}</select>
       <button class="bc-btn" onclick="addBody(${it.id})">Add</button>
     </div>`;
-  const famOpts=FAMILIES.map(f=>`<option ${f===it.family?'selected':''}>${f}</option>`).join("");
-  const seasonPick=SEASONS.map(s=>`<div class="sp ${it.seasons.includes(s)?'on':''}" style="${it.seasons.includes(s)?'background:'+SEASON_THEME[s].a:''}" onclick="toggleEditSeason(${it.id},'${s}',this)">${s.slice(0,2)}</div>`).join("");
+  const famPick=FAMILIES.map(f=>{const on=it.families.includes(f);return `<div class="sp ${on?'on':''}" style="${on?'background:'+FAM_COLOR[f]+';color:'+txtOn(FAM_COLOR[f])+';border-color:transparent':''}" onclick="toggleEditFamily(${it.id},'${f}')">${f}</div>`;}).join("");
+  const sizePick=SIZES.map(sz=>{const on=it.sizes.includes(sz);return `<div class="sp ${on?'on':''}" style="${on?'background:var(--accent);color:#fff;border-color:transparent':''}" onclick="toggleEditSize(${it.id},'${sz}')">${esc(sz)}</div>`;}).join("");
+  const seasonPick=SEASONS.map(s=>`<div class="sp ${it.seasons.includes(s)?'on':''}" style="${it.seasons.includes(s)?'background:'+SEASON_THEME[s].a+';color:#fff;border-color:transparent':''}" onclick="toggleEditSeason(${it.id},'${s}',this)">${s.slice(0,2)}</div>`).join("");
+  const stripBg=it.families.length>1?`linear-gradient(180deg,${it.families.map(f=>FAM_COLOR[f]).join(",")})`:fc;
+  const sizeTags=it.sizes.map(sz=>`<span class="size-tag">${esc(sz)}</span>`).join("");
+  const backupTag=it.multiples?`<span class="backup-tag">＋ Backup</span>`:"";
+  const tagRow=(it.sizes.length||it.multiples)?`<div class="tagrow">${sizeTags}${backupTag}</div>`:"";
   return `<div class="card" id="card-${it.id}" style="--fc:${fc}">
-    <div class="strip"></div>
+    <div class="strip" style="background:${stripBg}"></div>
     <div class="card-in">
-      <div class="eyebrow"><span class="brand">${esc(it.brand)}</span><span class="famtag">${it.family}</span></div>
+      <div class="eyebrow"><span class="brand">${esc(it.brand)}</span><span class="famtag">${it.families.join(" · ")}</span></div>
       <div class="name">${esc(it.name)}</div>
       <div class="notes">${esc(it.notes)}</div>
       <div class="sdots">${sdots}</div>
+      ${tagRow}
       <div class="meta">
         <div class="stars">${stars}</div>
         <div class="price-wrap">$<input type="number" min="0" step="1" value="${it.price!=null?it.price:''}" placeholder="—" onchange="setPrice(${it.id},this.value)" onclick="event.stopPropagation()"></div>
@@ -645,11 +673,17 @@ function cardHTML(it,all){
       <div>
         <div class="exp-h">Refine details</div>
         <div class="editrow">
-          <label>Family<select onchange="setFamily(${it.id},this.value)">${famOpts}</select></label>
+          <label style="flex:1;min-width:220px"><span>Families <span class="hinttxt">choose one or more</span></span><div class="seasonpick">${famPick}</div></label>
+        </div>
+        <div class="editrow" style="margin-top:10px">
           <label style="flex:1;min-width:160px">Notes / accords<input type="text" value="${esc(it.notes)}" onchange="setNotes(${it.id},this.value)"></label>
         </div>
         <div class="editrow" style="margin-top:10px">
           <label>Seasons<div class="seasonpick">${seasonPick}</div></label>
+          <label>Size<div class="seasonpick">${sizePick}</div></label>
+        </div>
+        <div class="editrow" style="margin-top:12px">
+          <label class="chk"><input type="checkbox" ${it.multiples?'checked':''} onchange="setMultiples(${it.id},this.checked)"> I own multiples / backups of this</label>
         </div>
       </div>
       <div class="exp-foot">
@@ -689,7 +723,7 @@ function renderRibbon(){
   }).join("");
 }
 function renderFamilyChips(){
-  const counts={};items().forEach(x=>counts[x.family]=(counts[x.family]||0)+1);
+  const counts={};items().forEach(x=>x.families.forEach(f=>counts[f]=(counts[f]||0)+1));
   document.getElementById("familyChips").innerHTML=FAMILIES.map(f=>{
     const on=state.families.has(f);
     return `<button class="fam-chip ${on?'on':''}" style="--fc:${FAM_COLOR[f]}" onclick="toggleFamily('${f}')"><span class="fdot"></span>${f} <span style="color:var(--faint);font-weight:600">${counts[f]||0}</span></button>`;
@@ -716,7 +750,21 @@ function onSearch(v){state.q=v;render();}
 function setRating(id,n){const it=items().find(x=>x.id===id);patch(id,{rating:it.rating===n?0:n});softUpdate(id);}
 function setPrice(id,v){patch(id,{price:v===""?null:Math.max(0,parseFloat(v)||0)});renderStats();}
 function toggleFav(id){const it=items().find(x=>x.id===id);patch(id,{fav:!it.fav});softUpdate(id);}
-function setFamily(id,v){patch(id,{family:v});softUpdate(id);}
+function setFamily(id,v){patch(id,{families:[v]});softUpdate(id);}
+function toggleEditFamily(id,f){
+  const it=items().find(x=>x.id===id);
+  let fam=it.families.includes(f)?it.families.filter(z=>z!==f):it.families.concat([f]);
+  fam=FAMILIES.filter(z=>fam.includes(z));
+  if(!fam.length)fam=[f];
+  patch(id,{families:fam});softUpdate(id);
+}
+function toggleEditSize(id,sz){
+  const it=items().find(x=>x.id===id);
+  let arr=it.sizes.includes(sz)?it.sizes.filter(z=>z!==sz):it.sizes.concat([sz]);
+  arr=SIZES.filter(z=>arr.includes(z));
+  patch(id,{sizes:arr});softUpdate(id);
+}
+function setMultiples(id,checked){patch(id,{multiples:!!checked});softUpdate(id);}
 function setNotes(id,v){patch(id,{notes:v});}
 function toggleEditSeason(id,s,el){
   const it=items().find(x=>x.id===id);
@@ -783,7 +831,7 @@ function renderInsights(){
   const untried=all.filter(x=>!x.wears.length).length;
   const inSeason=all.filter(x=>x.seasons.includes(currentSeason())).length;
 
-  const famCounts={};all.forEach(x=>famCounts[x.family]=(famCounts[x.family]||0)+1);
+  const famCounts={};all.forEach(x=>x.families.forEach(f=>famCounts[f]=(famCounts[f]||0)+1));
   const maxFam=Math.max(1,...Object.values(famCounts));
   const famBars=FAMILIES.map(f=>`<div class="bar"><span class="bl">${f}</span><div class="bt" style="width:${(famCounts[f]||0)/maxFam*100}%;--bc:${FAM_COLOR[f]}"></div><span class="bv">${famCounts[f]||0}</span></div>`).join("");
 
@@ -830,19 +878,22 @@ function renderInsights(){
 }
 
 /* ---------- add modal ---------- */
-let addSeasons=new Set([currentSeason()]);
+let addSeasons=new Set([currentSeason()]), addFamilies=new Set(), addSizes=new Set(), addMultiples=false;
 function openAdd(){modalKind="add";
-  addSeasons=new Set([currentSeason()]);
-  const famOpts=FAMILIES.map(f=>`<option>${f}</option>`).join("");
-  const sp=SEASONS.map(s=>`<div class="sp ${addSeasons.has(s)?'on':''}" style="${addSeasons.has(s)?'background:'+SEASON_THEME[s].a:''}" onclick="toggleAddSeason('${s}',this)">${s}</div>`).join("");
+  addSeasons=new Set([currentSeason()]);addFamilies=new Set();addSizes=new Set();addMultiples=false;
+  const fp=FAMILIES.map(f=>`<div class="sp" onclick="toggleAddFamily('${f}',this)">${f}</div>`).join("");
+  const zp=SIZES.map(z=>`<div class="sp" onclick="toggleAddSize('${z}',this)">${z}</div>`).join("");
+  const sp=SEASONS.map(s=>`<div class="sp ${addSeasons.has(s)?'on':''}" style="${addSeasons.has(s)?'background:'+SEASON_THEME[s].a+';color:#fff;border-color:transparent':''}" onclick="toggleAddSeason('${s}',this)">${s}</div>`).join("");
   document.getElementById("modalCard").innerHTML=`
     <h2>Add a scent</h2>
     <p class="mh">New bottle, sample, or decant — log it here and it joins your library.</p>
     <div class="field"><label>Brand</label><input id="aBrand" placeholder="e.g. Phlur"></div>
     <div class="field"><label>Name</label><input id="aName" placeholder="e.g. Vanilla Skin"></div>
-    <div class="field"><label>Family</label><select id="aFamily">${famOpts}</select></div>
+    <div class="field"><label>Families <span class="hinttxt">choose one or more</span></label><div class="seasonpick" id="aFamilies">${fp}</div></div>
     <div class="field"><label>Notes / accords</label><input id="aNotes" placeholder="e.g. vanilla, musk, soft amber"></div>
     <div class="field"><label>Seasons</label><div class="seasonpick" id="aSeasons">${sp}</div></div>
+    <div class="field"><label>Size <span class="hinttxt">optional</span></label><div class="seasonpick" id="aSizes">${zp}</div></div>
+    <div class="field"><label class="chk"><input type="checkbox" id="aMultiples" onchange="addMultiples=this.checked"> I own multiples / backups of this</label></div>
     <div class="field"><div class="row2">
       <div><label>Rating</label><select id="aRating"><option value="0">—</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select></div>
       <div><label>Price ($)</label><input id="aPrice" type="number" min="0" placeholder="optional"></div>
@@ -857,6 +908,19 @@ function openAdd(){modalKind="add";
 function toggleAddSeason(s,el){
   if(addSeasons.has(s))addSeasons.delete(s);else addSeasons.add(s);
   el.classList.toggle("on");el.style.background=el.classList.contains("on")?SEASON_THEME[s].a:"";
+  el.style.color=el.classList.contains("on")?"#fff":"";el.style.borderColor=el.classList.contains("on")?"transparent":"";
+}
+function toggleAddFamily(f,el){
+  if(addFamilies.has(f))addFamilies.delete(f);else addFamilies.add(f);
+  const on=addFamilies.has(f);
+  el.classList.toggle("on",on);
+  el.style.background=on?FAM_COLOR[f]:"";el.style.color=on?txtOn(FAM_COLOR[f]):"";el.style.borderColor=on?"transparent":"";
+}
+function toggleAddSize(z,el){
+  if(addSizes.has(z))addSizes.delete(z);else addSizes.add(z);
+  const on=addSizes.has(z);
+  el.classList.toggle("on",on);
+  el.style.background=on?"var(--accent)":"";el.style.color=on?"#fff":"";el.style.borderColor=on?"transparent":"";
 }
 let modalKind=null;
 function closeModal(){
@@ -869,12 +933,15 @@ function saveAdd(){
   const name=document.getElementById("aName").value.trim();
   if(!brand&&!name){flash("Add a brand or name first");return;}
   const seasons=SEASONS.filter(s=>addSeasons.has(s));
+  const families=FAMILIES.filter(f=>addFamilies.has(f));
+  const sizes=SIZES.filter(z=>addSizes.has(z));
   const rec={
     id:USER.nextId++,
     brand:brand||"—",name:name||"Untitled",
-    family:document.getElementById("aFamily").value,
+    families:families.length?families:["Gourmand"],
     notes:document.getElementById("aNotes").value.trim(),
     seasons:seasons.length?seasons:[currentSeason()],
+    sizes:sizes,multiples:addMultiples,
     rating:parseInt(document.getElementById("aRating").value)||0,
     price:document.getElementById("aPrice").value!==""?Math.max(0,parseFloat(document.getElementById("aPrice").value)||0):null,
     fav:false,wears:[]
@@ -907,7 +974,7 @@ function renderQLResults(q){
   const all=items();let label,list;
   if(q&&q.trim()){
     const t=q.toLowerCase();
-    list=all.filter(x=>(x.brand+" "+x.name+" "+x.notes+" "+x.family).toLowerCase().includes(t)).slice(0,25);
+    list=all.filter(x=>(x.brand+" "+x.name+" "+x.notes+" "+x.families.join(" ")).toLowerCase().includes(t)).slice(0,25);
     label="Matches";
   }else{
     const cs=currentSeason();
@@ -1011,11 +1078,11 @@ function renderPairResults(q){
   const all=items();
   const pinned=new Set(getPairs(pairTarget.id).pin[pairTarget.kind]);
   let list=all.filter(x=>x.id!==it.id);
-  if(q&&q.trim()){const t=q.toLowerCase();list=list.filter(x=>(x.brand+" "+x.name+" "+x.notes+" "+x.family).toLowerCase().includes(t));}
+  if(q&&q.trim()){const t=q.toLowerCase();list=list.filter(x=>(x.brand+" "+x.name+" "+x.notes+" "+x.families.join(" ")).toLowerCase().includes(t));}
   else{
-    const partners=PAIR_MAP[it.family]||[];
-    if(pairTarget.kind==="layer")list=list.filter(x=>partners.includes(x.family));
-    else list=list.filter(x=>x.family===it.family||x.seasons.some(s=>it.seasons.includes(s)));
+    const partners=new Set();it.families.forEach(f=>(PAIR_MAP[f]||[]).forEach(p=>partners.add(p)));
+    if(pairTarget.kind==="layer")list=list.filter(x=>x.families.some(f=>partners.has(f)));
+    else list=list.filter(x=>x.families.some(f=>it.families.includes(f))||x.seasons.some(s=>it.seasons.includes(s)));
     list=list.sort((a,b)=>a.brand.localeCompare(b.brand)||a.name.localeCompare(b.name));
   }
   list=list.slice(0,30);
