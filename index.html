@@ -73,6 +73,26 @@ h1 em{font-style:italic;color:var(--accent-deep)}
 .fav-toggle{border:1px solid var(--line);background:var(--card);border-radius:11px;padding:10px 15px;font-size:13.5px;font-weight:600;color:var(--muted);display:flex;align-items:center;gap:7px}
 .fav-toggle.on{color:#c0405e;border-color:#e8b8c2;background:#fdf2f4}
 #matchToggle.on{color:var(--accent-deep);border-color:var(--accent);background:var(--tint)}
+#trayFilterBtn.on{color:var(--accent-deep);border-color:var(--accent);background:var(--tint)}
+.iconbtn{flex:none}
+.iconbtn.tray.on{color:#fff;background:var(--accent);border-color:var(--accent)}
+.tray-tag{font-size:9px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:#fff;background:var(--accent-deep);border-radius:999px;padding:2px 9px}
+.trayview{display:none;flex-direction:column;gap:18px;padding-top:6px}
+.trayview.on{display:flex}
+.tray-head{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.tray-head-l{display:flex;flex-direction:column;gap:4px}
+.tray-label{font-family:"Fraunces",serif;font-size:26px;font-weight:500;color:var(--ink);border:1px solid transparent;border-radius:8px;padding:2px 6px;margin-left:-6px;background:transparent;max-width:100%}
+.tray-label:hover{border-color:var(--line)}
+.tray-label:focus{outline:none;border-color:var(--accent);background:#fff}
+.tray-sub{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--muted);font-weight:600}
+.tray-sub .sd{font-size:10px;font-weight:700;color:#fff;padding:2px 9px;border-radius:999px;text-transform:uppercase;letter-spacing:.03em}
+.tray-hist-list{display:flex;flex-direction:column;gap:12px}
+.tray-hist{border:1px solid var(--line);border-radius:11px;padding:12px 14px;background:var(--paper)}
+.th-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.th-label{font-family:"Fraunces",serif;font-size:17px;font-weight:500;color:var(--ink)}
+.th-meta{font-size:11.5px;color:var(--faint);font-weight:600}
+.th-reuse{margin-left:auto}
+.th-names{font-size:12px;color:var(--muted);margin-top:7px;line-height:1.5}
 .kpi-link{cursor:pointer;transition:transform .15s ease,box-shadow .15s ease}
 .kpi-link:hover{transform:translateY(-2px);box-shadow:var(--shadow-lift);border-color:var(--accent)}
 .kpi-link .l{color:var(--accent-deep)}
@@ -267,6 +287,7 @@ footer{text-align:center;color:var(--faint);font-size:12px;padding:34px 0 0}
     </div>
     <div class="nav">
       <button id="navLib" class="on" onclick="setView('library')">Library</button>
+      <button id="navTray" onclick="setView('tray')">Tray</button>
       <button id="navIns" onclick="setView('insights')">Insights</button>
       <button class="add-btn" onclick="openAdd()">+ Add scent</button>
     </div>
@@ -284,6 +305,7 @@ footer{text-align:center;color:var(--faint);font-size:12px;padding:34px 0 0}
       </div>
       <button class="fav-toggle" id="favToggle" onclick="toggleFavFilter()">♥ Favorites</button>
       <button class="fav-toggle match-toggle" id="matchToggle" onclick="toggleMatchFilter()">🧴 Matching set</button>
+      <button class="fav-toggle tray-toggle" id="trayFilterBtn" onclick="toggleTrayFilter()">🗂️ In tray</button>
       <select class="sortsel" id="sortSel" onchange="setSort(this.value)">
         <option value="az">Sort: A–Z</option>
         <option value="rating">Sort: Top rated</option>
@@ -304,6 +326,9 @@ footer{text-align:center;color:var(--faint);font-size:12px;padding:34px 0 0}
 
   <!-- INSIGHTS -->
   <section class="insights" id="insightsView"></section>
+
+  <!-- TRAY -->
+  <section class="trayview" id="trayView"></section>
 
   <footer>The Scent Index · 206 scents and counting · tap a scent to log a wear, rate it, or refine its details</footer>
 </div>
@@ -381,7 +406,18 @@ async function loadUser(){
   storeMode="none";
   return defaultUser();
 }
-function defaultUser(){return {ov:{},custom:[],nextId:100001};}
+const MONTHS=["January","February","March","April","May","June","July","August","September","October","November","December"];
+function defaultTrayLabel(){const d=new Date();return MONTHS[d.getMonth()]+" "+d.getFullYear();}
+function defaultUser(){return {ov:{},custom:[],nextId:100001,tray:{label:defaultTrayLabel(),ids:[]},trayHistory:[]};}
+function ensureShape(u){
+  u=u||{};
+  u.ov=u.ov||{}; u.custom=Array.isArray(u.custom)?u.custom:[]; u.nextId=u.nextId||100001;
+  if(!u.tray||typeof u.tray!=="object")u.tray={label:defaultTrayLabel(),ids:[]};
+  if(!Array.isArray(u.tray.ids))u.tray.ids=[];
+  if(!u.tray.label)u.tray.label=defaultTrayLabel();
+  if(!Array.isArray(u.trayHistory))u.trayHistory=[];
+  return u;
+}
 let saveTimer=null;
 function queueSave(){
   if(saveTimer)clearTimeout(saveTimer);
@@ -404,7 +440,7 @@ function flash(msg){
 
 /* ---------- state ---------- */
 let USER=defaultUser();
-let state={view:"library",season:currentSeason(),families:new Set(),fav:false,match:false,sort:"az",q:""};
+let state={view:"library",season:currentSeason(),families:new Set(),fav:false,match:false,tray:false,sort:"az",q:""};
 
 function currentSeason(){
   const m=new Date().getMonth();
@@ -471,6 +507,7 @@ function filtered(){
   if(state.families.size)list=list.filter(x=>x.families.some(f=>state.families.has(f)));
   if(state.fav)list=list.filter(x=>x.fav);
   if(state.match)list=list.filter(x=>x.matchbody.length);
+  if(state.tray){const t=new Set((USER.tray&&USER.tray.ids)||[]);list=list.filter(x=>t.has(x.id));}
   if(state.q){
     const q=state.q.toLowerCase();
     list=list.filter(x=>(x.brand+" "+x.name+" "+x.notes+" "+x.families.join(" ")).toLowerCase().includes(q));
@@ -648,7 +685,9 @@ function cardHTML(it,all){
   const sizeTags=it.sizes.map(sz=>`<span class="size-tag">${esc(sz)}</span>`).join("");
   const backupTag=it.multiples?`<span class="backup-tag">＋ Backup</span>`:"";
   const matchTag=it.matchbody.length?`<span class="match-tag">🧴 Matching: ${it.matchbody.map(t=>MATCH_SHORT[t]||t).join(" · ")}</span>`:"";
-  const tagRow=(it.sizes.length||it.multiples||it.matchbody.length)?`<div class="tagrow">${sizeTags}${backupTag}${matchTag}</div>`:"";
+  const inTray=((USER.tray&&USER.tray.ids)||[]).includes(it.id);
+  const trayTag=inTray?`<span class="tray-tag">🗂️ In tray</span>`:"";
+  const tagRow=(it.sizes.length||it.multiples||it.matchbody.length||inTray)?`<div class="tagrow">${sizeTags}${backupTag}${matchTag}${trayTag}</div>`:"";
   return `<div class="card" id="card-${it.id}" style="--fc:${fc}">
     <div class="strip" style="background:${stripBg}"></div>
     <div class="card-in">
@@ -666,6 +705,7 @@ function cardHTML(it,all){
     <div class="actions">
       <button class="logbtn" id="log-${it.id}" onclick="logWear(${it.id})">＋ Log a wear</button>
       <button class="iconbtn fav ${it.fav?'on':''}" title="Favorite" onclick="toggleFav(${it.id})">${it.fav?'♥':'♡'}</button>
+      <button class="iconbtn tray ${inTray?'on':''}" title="${inTray?'In tray — tap to remove':'Add to tray'}" onclick="trayToggle(${it.id})"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-6l-2 3h-4l-2-3H2"/><path d="M5.45 5.11 2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z"/></svg></button>
       <button class="iconbtn" title="Details & pairings" onclick="toggleExpand(${it.id})">⋯</button>
     </div>
     <div class="expand">
@@ -766,6 +806,7 @@ function setSeason(s){state.season=s;render();}
 function toggleFamily(f){state.families.has(f)?state.families.delete(f):state.families.add(f);render();}
 function toggleFavFilter(){state.fav=!state.fav;document.getElementById("favToggle").classList.toggle("on",state.fav);render();}
 function toggleMatchFilter(){state.match=!state.match;document.getElementById("matchToggle").classList.toggle("on",state.match);render();}
+function toggleTrayFilter(){state.tray=!state.tray;document.getElementById("trayFilterBtn").classList.toggle("on",state.tray);render();}
 function gotoMatchFilter(){
   state.match=true;
   const b=document.getElementById("matchToggle");if(b)b.classList.add("on");
@@ -849,10 +890,13 @@ function toggleExpand(id){document.getElementById("card-"+id).classList.toggle("
 function setView(v){
   state.view=v;
   document.getElementById("navLib").classList.toggle("on",v==="library");
+  document.getElementById("navTray").classList.toggle("on",v==="tray");
   document.getElementById("navIns").classList.toggle("on",v==="insights");
   document.getElementById("libraryView").classList.toggle("off",v!=="library");
   document.getElementById("insightsView").classList.toggle("on",v==="insights");
+  document.getElementById("trayView").classList.toggle("on",v==="tray");
   if(v==="insights")renderInsights();
+  if(v==="tray")renderTray();
 }
 
 function renderInsights(){
@@ -989,6 +1033,66 @@ function saveAdd(){
   render();flash("Added "+rec.name);
 }
 
+/* ---------- current tray ---------- */
+function idName(id){
+  if(id>=100000){const c=USER.custom.find(x=>x.id===id);return c?c.name:"(removed)";}
+  const s=SEED.find(z=>z.i===id);return s?s.n:"(removed)";
+}
+function trayItems(){const t=new Set((USER.tray&&USER.tray.ids)||[]);return items().filter(x=>t.has(x.id));}
+function trayToggle(id){
+  const ids=USER.tray.ids,i=ids.indexOf(id);
+  const removing=i>=0;
+  if(removing)ids.splice(i,1);else ids.push(id);
+  queueSave();
+  if(state.view==="tray")renderTray();else softUpdate(id);
+  flash(removing?"Removed from tray":"Added to tray");
+}
+function setTrayLabel(v){USER.tray.label=v.trim()||defaultTrayLabel();queueSave();}
+function archiveTray(){
+  if(!USER.tray.ids.length){flash("Your tray is empty");return;}
+  if(!confirm(`Archive “${USER.tray.label}” (${USER.tray.ids.length} scents) to your history and start a fresh tray?`))return;
+  USER.trayHistory.unshift({label:USER.tray.label,ids:USER.tray.ids.slice(),date:todayISO()});
+  USER.tray={label:defaultTrayLabel(),ids:[]};
+  queueSave();renderTray();flash("Tray archived");
+}
+function reuseTray(i){
+  const h=USER.trayHistory[i];if(!h)return;
+  if(!confirm(`Replace your current tray with “${h.label}” (${h.ids.length} scents)?`))return;
+  USER.tray.ids=h.ids.slice();
+  queueSave();renderTray();flash("Tray loaded");
+}
+function renderTray(){
+  const all=items();
+  const tray=trayItems();
+  const season=currentSeason();
+  const cards=tray.length
+    ? `<div class="grid">${tray.map(it=>cardHTML(it,all)).join("")}</div>`
+    : `<div class="empty"><h3>Your tray is empty</h3><p>Tap the tray icon on any scent (or use the 🗂️ button in the Library) to gather this month's lineup here.</p></div>`;
+  const hist=USER.trayHistory.length
+    ? USER.trayHistory.map((h,i)=>{
+        const names=(h.ids||[]).map(idName).filter(n=>n!=="(removed)");
+        return `<div class="tray-hist">
+          <div class="th-row"><span class="th-label">${esc(h.label)}</span><span class="th-meta">${h.ids.length} scents · archived ${fmtShort(h.date)}</span><button class="pbtn th-reuse" onclick="reuseTray(${i})">Reuse</button></div>
+          <div class="th-names">${names.map(esc).join(" · ")||"—"}</div>
+        </div>`;
+      }).join("")
+    : `<p style="color:var(--muted);font-size:13px;margin:0">No past trays yet. When you archive your current tray, it'll be saved here with its month.</p>`;
+  document.getElementById("trayView").innerHTML=`
+    <div class="panel tray-head">
+      <div class="tray-head-l">
+        <span class="kicker">Current tray</span>
+        <input class="tray-label" value="${esc(USER.tray.label)}" onchange="setTrayLabel(this.value)" aria-label="Tray name">
+        <div class="tray-sub"><span class="sd" style="background:${SEASON_THEME[season].a}">${season}</span> ${tray.length} scent${tray.length===1?'':'s'} in rotation</div>
+      </div>
+      <button class="btn-ghost" onclick="archiveTray()">Archive &amp; start new month</button>
+    </div>
+    ${cards}
+    <div class="panel">
+      <h2>Past trays</h2>
+      <div class="tray-hist-list">${hist}</div>
+    </div>`;
+}
+
 /* ---------- quick log (Tonight's wear) ---------- */
 let quickQ="", loggedTonight=[];
 function todayISO(){return new Date().toISOString().slice(0,10);}
@@ -1081,7 +1185,8 @@ function importData(input){
       if(typeof data!=="object"||data===null||(!("ov" in data)&&!("custom" in data)))throw new Error("bad");
       if(!confirm("Restore this backup? It replaces the ratings, wears and added scents currently saved on this device."))
         {input.value="";return;}
-      USER={ov:data.ov||{},custom:Array.isArray(data.custom)?data.custom:[],nextId:data.nextId||100001};
+      USER={ov:data.ov||{},custom:Array.isArray(data.custom)?data.custom:[],nextId:data.nextId||100001,tray:data.tray,trayHistory:data.trayHistory};
+      USER=ensureShape(USER);
       const maxId=USER.custom.reduce((m,c)=>Math.max(m,c.id||0),100000);
       if(!USER.nextId||USER.nextId<=maxId)USER.nextId=maxId+1;
       doSave();render();renderInsights();
@@ -1136,7 +1241,7 @@ document.addEventListener("keydown",e=>{if(e.key==="Escape")closeModal();});
 
 /* ---------- boot ---------- */
 (async function(){
-  USER=await loadUser();
+  USER=ensureShape(await loadUser());
   if(storeMode==="none")document.getElementById("storageBanner").classList.add("show");
   document.getElementById("sortSel").value=state.sort;
   render();
