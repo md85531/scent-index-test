@@ -183,6 +183,8 @@ h1 em{font-style:italic;color:var(--accent-deep)}
 .history .chip{display:inline-flex;align-items:center;gap:6px;background:#fff;border:1px solid var(--line);border-radius:999px;padding:3px 7px 3px 10px;margin:3px 5px 0 0;font-size:11.5px}
 .history .chip button{border:none;background:none;color:var(--faint);font-size:13px;line-height:1;padding:0}
 .history .chip button:hover{color:#d23a5c}
+.history .chip .weardate{border:none;background:transparent;font-family:inherit;font-size:11.5px;color:var(--ink);padding:0;cursor:pointer;max-width:118px}
+.history .chip .weardate:focus{outline:none}
 .editrow{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
 .editrow label{font-size:11px;color:var(--muted);font-weight:600;display:flex;flex-direction:column;gap:4px}
 .editrow select,.editrow input{border:1px solid var(--line);border-radius:8px;padding:7px 9px;font-size:12.5px;background:#fff;color:var(--ink)}
@@ -402,6 +404,9 @@ const INITIAL_USER = /*userdata*/{
           "n": "Viva Brazil",
           "t": "Body cream"
         }
+      ],
+      "wears": [
+        "2026-06-22"
       ]
     },
     "4": {
@@ -424,7 +429,10 @@ const INITIAL_USER = /*userdata*/{
       "sizes": [
         "Full Size"
       ],
-      "multiples": true
+      "multiples": true,
+      "wears": [
+        "2026-06-27"
+      ]
     },
     "5": {
       "rating": 4,
@@ -506,7 +514,19 @@ const INITIAL_USER = /*userdata*/{
         "Lotion",
         "Body cream",
         "Body butter"
-      ]
+      ],
+      "pairs": {
+        "pin": {
+          "layer": [
+            41
+          ],
+          "rot": []
+        },
+        "hide": {
+          "layer": [],
+          "rot": []
+        }
+      }
     },
     "10": {
       "body": [],
@@ -821,7 +841,8 @@ const INITIAL_USER = /*userdata*/{
       ],
       "families": [
         "Gourmand",
-        "Sweet"
+        "Sweet",
+        "Nutty"
       ]
     },
     "21": {
@@ -842,7 +863,8 @@ const INITIAL_USER = /*userdata*/{
       },
       "families": [
         "Gourmand",
-        "Spicy"
+        "Spicy",
+        "Nutty"
       ],
       "sizes": [
         "Full Size"
@@ -1402,6 +1424,11 @@ const INITIAL_USER = /*userdata*/{
       "sizes": [
         "Travel Size",
         "Full Size"
+      ],
+      "matchbody": [
+        "Body wash",
+        "Lotion",
+        "Body oil"
       ]
     },
     "42": {
@@ -1756,7 +1783,7 @@ const INITIAL_USER = /*userdata*/{
         "Fall",
         "Winter"
       ],
-      "notes": "Honey, salted egg yolk,, mung bean, vanilla, lotus seed",
+      "notes": "Honey, salted egg yolk, mung bean, vanilla, lotus seed",
       "rating": 4,
       "price": 5,
       "memo": "Sample",
@@ -1774,7 +1801,8 @@ const INITIAL_USER = /*userdata*/{
       },
       "families": [
         "Gourmand",
-        "Spicy"
+        "Spicy",
+        "Sweet"
       ],
       "sizes": [
         "Sample/Decant"
@@ -1800,7 +1828,8 @@ const INITIAL_USER = /*userdata*/{
       "memo": "Sample",
       "families": [
         "Lactonic",
-        "Sweet"
+        "Sweet",
+        "Nutty"
       ],
       "sizes": [
         "Sample/Decant"
@@ -1906,7 +1935,8 @@ const INITIAL_USER = /*userdata*/{
       "notes": "White musk, sesame, mimosa",
       "families": [
         "Musk",
-        "Lactonic"
+        "Lactonic",
+        "Nutty"
       ],
       "sizes": [
         "Full Size"
@@ -2041,9 +2071,9 @@ const INITIAL_USER = /*userdata*/{
         "Body oil"
       ],
       "families": [
-        "Gourmand",
         "Lactonic",
-        "Sweet"
+        "Sweet",
+        "Nutty"
       ],
       "sizes": [
         "Full Size"
@@ -2216,7 +2246,11 @@ const INITIAL_USER = /*userdata*/{
         "Spring",
         "Summer",
         "Fall"
-      ]
+      ],
+      "wears": [
+        "2026-06-27"
+      ],
+      "multiples": true
     },
     "75": {
       "price": 32,
@@ -2442,6 +2476,9 @@ const INITIAL_USER = /*userdata*/{
       ],
       "sizes": [
         "Travel Size"
+      ],
+      "wears": [
+        "2026-06-23"
       ]
     },
     "86": {
@@ -3038,7 +3075,8 @@ const INITIAL_USER = /*userdata*/{
       "notes": "Calamansi, plumeria, coconut, sandalwood ",
       "rating": 3,
       "wears": [
-        "2026-06-13"
+        "2026-06-13",
+        "2026-06-23"
       ],
       "families": [
         "Citrus",
@@ -3047,7 +3085,25 @@ const INITIAL_USER = /*userdata*/{
       ],
       "sizes": [
         "Travel Size"
-      ]
+      ],
+      "body": [
+        {
+          "n": "Coastal Dreaming",
+          "t": "Lotion"
+        }
+      ],
+      "pairs": {
+        "pin": {
+          "layer": [],
+          "rot": []
+        },
+        "hide": {
+          "layer": [
+            71
+          ],
+          "rot": []
+        }
+      }
     },
     "115": {
       "family": "Green",
@@ -3080,7 +3136,8 @@ const INITIAL_USER = /*userdata*/{
       "families": [
         "Green",
         "Spicy",
-        "Lactonic"
+        "Lactonic",
+        "Nutty"
       ],
       "sizes": [
         "Full Size"
@@ -3212,7 +3269,7 @@ const INITIAL_USER = /*userdata*/{
       "family": "Floral",
       "notes": "Black currant, mandarin, lotus flower, patchouli",
       "price": 26,
-      "rating": 3,
+      "rating": 4,
       "families": [
         "Floral",
         "Aquatic"
@@ -3239,7 +3296,10 @@ const INITIAL_USER = /*userdata*/{
             52
           ]
         }
-      }
+      },
+      "wears": [
+        "2026-06-27"
+      ]
     },
     "123": {
       "notes": "Black currant, rose, cashmere woods ",
@@ -3283,7 +3343,8 @@ const INITIAL_USER = /*userdata*/{
       },
       "families": [
         "Floral",
-        "Musk"
+        "Musk",
+        "Powdery"
       ],
       "sizes": [
         "Travel Size",
@@ -3612,7 +3673,8 @@ const INITIAL_USER = /*userdata*/{
       "rating": 5,
       "families": [
         "Gourmand",
-        "Sweet"
+        "Sweet",
+        "Nutty"
       ],
       "sizes": [
         "Travel Size",
@@ -3716,7 +3778,8 @@ const INITIAL_USER = /*userdata*/{
       },
       "families": [
         "Gourmand",
-        "Woody"
+        "Woody",
+        "Nutty"
       ],
       "matchbody": [
         "Body butter"
@@ -3780,6 +3843,9 @@ const INITIAL_USER = /*userdata*/{
       ],
       "sizes": [
         "Full Size"
+      ],
+      "wears": [
+        "2026-06-27"
       ]
     },
     "154": {
@@ -3901,7 +3967,8 @@ const INITIAL_USER = /*userdata*/{
       "rating": 5,
       "families": [
         "Gourmand",
-        "Tropical"
+        "Tropical",
+        "Sweet"
       ],
       "sizes": [
         "Full Size"
@@ -3918,7 +3985,8 @@ const INITIAL_USER = /*userdata*/{
       "families": [
         "Gourmand",
         "Woody",
-        "Sweet"
+        "Sweet",
+        "Nutty"
       ],
       "sizes": [
         "Travel Size"
@@ -3983,7 +4051,8 @@ const INITIAL_USER = /*userdata*/{
       "families": [
         "Gourmand",
         "Woody",
-        "Musk"
+        "Musk",
+        "Nutty"
       ],
       "sizes": [
         "Travel Size"
@@ -4053,8 +4122,8 @@ const INITIAL_USER = /*userdata*/{
       "price": 105,
       "rating": 4,
       "families": [
-        "Gourmand",
         "Floral",
+        "Musk",
         "Sweet"
       ],
       "sizes": [
@@ -4077,11 +4146,11 @@ const INITIAL_USER = /*userdata*/{
     "172": {
       "notes": "Black coffee, almond cream, sandalwood, natural oud, palo santo oil, tonka bean absolute, vanilla bean",
       "price": 38,
-      "rating": 4,
+      "rating": 3,
       "families": [
-        "Gourmand",
         "Woody",
-        "Spicy"
+        "Spicy",
+        "Nutty"
       ],
       "sizes": [
         "Travel Size"
@@ -4373,7 +4442,22 @@ const INITIAL_USER = /*userdata*/{
       ],
       "sizes": [
         "Travel Size"
-      ]
+      ],
+      "wears": [
+        "2026-06-27"
+      ],
+      "pairs": {
+        "pin": {
+          "layer": [
+            153
+          ],
+          "rot": []
+        },
+        "hide": {
+          "layer": [],
+          "rot": []
+        }
+      }
     },
     "190": {
       "family": "Gourmand",
@@ -4712,6 +4796,7 @@ const INITIAL_USER = /*userdata*/{
       ],
       "families": [
         "Gourmand",
+        "Musk",
         "Spicy"
       ],
       "sizes": [
@@ -4870,13 +4955,26 @@ const INITIAL_USER = /*userdata*/{
       "rating": 4,
       "price": 240,
       "fav": false,
-      "wears": [],
+      "wears": [
+        "2026-06-25"
+      ],
       "families": [
         "Fruity",
-        "Citrus"
+        "Citrus",
+        "Sweet"
       ],
       "sizes": [
         "Full Size"
+      ],
+      "body": [
+        {
+          "n": "Fruity Musk",
+          "t": "Body wash"
+        },
+        {
+          "n": "Fruity Musk",
+          "t": "Body cream"
+        }
       ]
     },
     {
@@ -5208,7 +5306,8 @@ const INITIAL_USER = /*userdata*/{
       1,
       4,
       106,
-      79
+      79,
+      85
     ]
   },
   "trayHistory": []
@@ -5412,8 +5511,11 @@ function filtered(){
 
 function relDate(iso){
   if(!iso)return"";
-  const d=new Date(iso+"T00:00:00"),now=new Date();
-  const days=Math.round((now-d)/86400000);
+  const p=iso.split("-");
+  const d=new Date(+p[0],+p[1]-1,+p[2]);        // the wear date at local midnight
+  const n=new Date();
+  const today=new Date(n.getFullYear(),n.getMonth(),n.getDate()); // local midnight today
+  const days=Math.round((today-d)/86400000);     // whole calendar days
   if(days<=0)return"today";
   if(days===1)return"yesterday";
   if(days<7)return days+" days ago";
@@ -5545,7 +5647,7 @@ function cardHTML(it,all){
   const stars=[1,2,3,4,5].map(n=>`<span class="${n<=it.rating?'lit':''}" onclick="setRating(${it.id},${n})">${n<=it.rating?'★':'☆'}</span>`).join("");
   const sdots=it.seasons.map(s=>`<span class="sd" style="background:${SEASON_THEME[s].a}">${s.slice(0,2)}</span>`).join("");
   const last=it.wears.length?it.wears[it.wears.length-1]:"";
-  const wearLine=it.wears.length?`<b>${it.wears.length}</b> wear${it.wears.length>1?'s':''} · last ${relDate(last)}`:`Not worn yet`;
+  const wearLine=it.wears.length?`<b>${it.wears.length}</b> wear${it.wears.length>1?'s':''} · ${relDate(last)}`:`Not worn yet`;
   const P=pairings(it,all);
   const whyOf=(x,kind)=>{
     if(kind==="layer")return x.family.toLowerCase();
@@ -5561,7 +5663,7 @@ function cardHTML(it,all){
     const rows=obj.pinned.map(x=>pRow(x,kind,true)).join("")+obj.auto.map(x=>pRow(x,kind,false)).join("");
     return (rows||`<div class="pair pb" style="cursor:default">${emptyMsg}</div>`)+`<button class="addpair" onclick="openPairPicker(${it.id},'${kind}')">＋ Add your own</button>`;
   };
-  const history=it.wears.slice().reverse().slice(0,8).map((d,idx)=>`<span class="chip">${fmtShort(d)}<button title="Remove" onclick="removeWear(${it.id},'${d}')">✕</button></span>`).join("");
+  const history=it.wears.slice().reverse().slice(0,8).map((d,idx)=>`<span class="chip"><input type="date" class="weardate" value="${d}" max="${todayISO()}" title="Tap to change this date" onchange="editWearDate(${it.id},'${d}',this.value)"><button title="Remove" onclick="removeWear(${it.id},'${d}')">✕</button></span>`).join("");
   const memo=getMemo(it.id);
   const body=getBody(it.id);
   const bodyRows=body.length
@@ -5748,7 +5850,7 @@ function toggleEditSeason(id,s,el){
 }
 function logWear(id){
   const it=items().find(x=>x.id===id);
-  const today=new Date().toISOString().slice(0,10);
+  const today=todayISO();
   const wears=it.wears.concat([today]);
   patch(id,{wears});
   const btn=document.getElementById("log-"+id);
@@ -5760,6 +5862,16 @@ function removeWear(id,d){
   const i=it.wears.lastIndexOf(d);
   const wears=it.wears.slice();if(i>=0)wears.splice(i,1);
   patch(id,{wears});softUpdate(id);renderStats();
+}
+function editWearDate(id,oldD,newD){
+  if(!newD||newD===oldD)return;
+  const it=items().find(x=>x.id===id);
+  const w=it.wears.slice();
+  const i=w.indexOf(oldD);
+  if(i<0)return;
+  w[i]=newD; w.sort();
+  patch(id,{wears:w});softUpdate(id);renderStats();
+  flash("Date updated");
 }
 function removeScent(id){
   if(!confirm("Remove this scent from your collection?"))return;
@@ -5990,7 +6102,7 @@ function renderTray(){
 
 /* ---------- quick log (Tonight's wear) ---------- */
 let quickQ="", loggedTonight=[];
-function todayISO(){return new Date().toISOString().slice(0,10);}
+function todayISO(){const d=new Date();return d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")+"-"+String(d.getDate()).padStart(2,"0");}
 function openQuickLog(){modalKind="quicklog";
   quickQ="";loggedTonight=[];
   document.getElementById("modalCard").innerHTML=`
