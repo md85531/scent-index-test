@@ -6896,12 +6896,13 @@ let surpriseScope="season";
 function openSurprise(){
   modalKind="surprise";surpriseRecent=[];
   document.getElementById("modalBg").classList.add("on");
-  spinSurprise(true);
+  spinSurprise();
 }
-function setSurpriseScope(s){surpriseScope=s;spinSurprise(true);}
+function setSurpriseScope(s){surpriseScope=s;spinSurprise();}
 function spinSurprise(forced){
-  const pick=forced||pickSurprise(surpriseScope);
-  if(pick&&!forced){surpriseId=pick.id;surpriseRecent.push(pick.id);}
+  const keep=(forced&&typeof forced==="object"&&forced.id!=null)?forced:null;
+  const pick=keep||pickSurprise(surpriseScope);
+  if(pick&&!keep){surpriseId=pick.id;surpriseRecent.push(pick.id);}
   const cs=currentSeason();
   const body=pick?(()=>{
     const last=pick.wears.length?pick.wears[pick.wears.length-1]:"";
