@@ -93,6 +93,53 @@ h1 em{font-style:italic;color:var(--accent-deep)}
 .th-meta{font-size:11.5px;color:var(--faint);font-weight:600}
 .th-reuse{margin-left:auto}
 .th-names{font-size:12px;color:var(--muted);margin-top:7px;line-height:1.5}
+/* body-care shelf */
+.shelf-title{font-family:"Fraunces",serif;font-size:26px;font-weight:500;color:var(--ink)}
+.shelf-group{background:#fff;border:1px solid var(--line);border-radius:13px;padding:13px 15px;margin-bottom:13px}
+.shelf-gh{font-size:11px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--faint);display:flex;align-items:center;gap:8px;margin-bottom:9px}
+.shelf-gn{background:var(--tint);color:var(--accent-deep);border-radius:999px;padding:1px 8px;font-size:10.5px}
+.shelf-item{display:flex;align-items:flex-start;gap:12px;padding:9px 0;border-top:1px solid var(--line)}
+.shelf-group .shelf-item:first-of-type{border-top:none}
+.shelf-main{flex:1;min-width:0}
+.shelf-name{font-size:14px;font-weight:700;color:var(--ink);line-height:1.3}
+.shelf-brand{font-size:10.5px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--faint);margin-top:2px}
+.shelf-notes{font-size:12px;color:var(--muted);margin-top:4px;line-height:1.45}
+.shelf-tags{display:flex;flex-wrap:wrap;gap:5px;margin-top:7px}
+.shelf-fam{font-size:9.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;border-radius:999px;padding:2px 9px}
+.shelf-tags .sd{font-size:9.5px;font-weight:700;color:#fff;padding:2px 8px;border-radius:999px;text-transform:uppercase}
+.shelf-acts{display:flex;gap:5px;flex:none}
+/* surprise me */
+#surpriseBtn{border-style:dashed}
+#surpriseBtn:hover{color:var(--accent-deep);border-color:var(--accent);background:var(--tint)}
+.sur-scope{margin:2px 0 14px}
+.sur-card{border:1px solid var(--line);border-radius:13px;overflow:hidden;background:var(--paper)}
+.sur-strip{height:5px}
+.sur-brand{font-size:10.5px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--faint);padding:14px 16px 0}
+.sur-name{font-family:"Fraunces",serif;font-size:25px;font-weight:500;color:var(--ink);padding:2px 16px 0;line-height:1.15}
+.sur-fam{font-size:11px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--accent-deep);padding:7px 16px 0}
+.sur-notes{font-size:13px;color:var(--muted);padding:8px 16px 0;line-height:1.5}
+.sur-rest{font-size:12px;color:var(--faint);font-weight:600;padding:10px 16px 0}
+.sur-acts{display:flex;gap:9px;padding:14px 16px 16px;flex-wrap:wrap}
+.sur-acts button{flex:1;min-width:130px}
+/* tray suggestions */
+.panel-sub{font-size:13px;color:var(--muted);margin:-4px 0 14px;line-height:1.5}
+.sug-list{display:flex;flex-direction:column;gap:13px}
+.sug{border:1px solid var(--line);border-radius:12px;padding:13px 14px;background:var(--paper)}
+.sug-top{display:flex;align-items:flex-start;gap:12px;flex-wrap:wrap}
+.sug-title{font-family:"Fraunces",serif;font-size:17px;font-weight:500;color:var(--ink)}
+.sug-blurb{font-size:12px;color:var(--muted);margin-top:2px}
+.sug-acts{margin-left:auto;display:flex;gap:7px}
+.sug-btn{border:1px solid var(--line);border-radius:999px;padding:5px 13px;font-size:12px;font-weight:700;color:var(--ink);background:#fff}
+.sug-btn:hover{border-color:var(--accent);color:var(--accent-deep)}
+.sug-btn.solid{background:var(--accent);color:#fff;border-color:var(--accent)}
+.sug-btn.solid:hover{background:var(--accent-deep);color:#fff}
+.sug-chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:11px}
+.sug-chip{display:inline-flex;align-items:center;gap:6px;font-size:11.5px;color:var(--ink);background:#fff;border:1px solid var(--line);border-radius:999px;padding:3px 10px}
+.sug-chip.have{border-color:var(--accent);color:var(--accent-deep);background:var(--tint)}
+.sug-dot{width:7px;height:7px;border-radius:50%;flex:none}
+/* body-care suggestions */
+.pair.bsug{cursor:default}
+.pair.bsug .pn{font-weight:600}
 .kpi-link{cursor:pointer;transition:transform .15s ease,box-shadow .15s ease}
 .kpi-link:hover{transform:translateY(-2px);box-shadow:var(--shadow-lift);border-color:var(--accent)}
 .kpi-link .l{color:var(--accent-deep)}
@@ -290,6 +337,7 @@ footer{text-align:center;color:var(--faint);font-size:12px;padding:34px 0 0}
     <div class="nav">
       <button id="navLib" class="on" onclick="setView('library')">Library</button>
       <button id="navTray" onclick="setView('tray')">Tray</button>
+      <button id="navBody" onclick="setView('body')">Body care</button>
       <button id="navIns" onclick="setView('insights')">Insights</button>
       <button class="add-btn" onclick="openAdd()">+ Add scent</button>
     </div>
@@ -308,6 +356,7 @@ footer{text-align:center;color:var(--faint);font-size:12px;padding:34px 0 0}
       <button class="fav-toggle" id="favToggle" onclick="toggleFavFilter()">♥ Favorites</button>
       <button class="fav-toggle match-toggle" id="matchToggle" onclick="toggleMatchFilter()">🧴 Matching set</button>
       <button class="fav-toggle tray-toggle" id="trayFilterBtn" onclick="toggleTrayFilter()">🗂️ In tray</button>
+      <button class="fav-toggle surprise-btn" id="surpriseBtn" onclick="openSurprise()">🎲 Surprise me</button>
       <select class="sortsel" id="sortSel" onchange="setSort(this.value)">
         <option value="az">Sort: A–Z</option>
         <option value="rating">Sort: Top rated</option>
@@ -331,6 +380,9 @@ footer{text-align:center;color:var(--faint);font-size:12px;padding:34px 0 0}
 
   <!-- TRAY -->
   <section class="trayview" id="trayView"></section>
+
+  <!-- BODY CARE SHELF -->
+  <section class="trayview" id="bodyView"></section>
 
   <footer>The Scent Index · 206 scents and counting · tap a scent to log a wear, rate it, or refine its details</footer>
 </div>
@@ -431,7 +483,7 @@ const INITIAL_USER = /*userdata*/{
       ],
       "multiples": true,
       "wears": [
-        "2026-06-27"
+        "2026-06-26"
       ]
     },
     "5": {
@@ -1397,7 +1449,9 @@ const INITIAL_USER = /*userdata*/{
       },
       "wears": [
         "2026-06-11",
-        "2026-06-15"
+        "2026-06-15",
+        "2026-07-17",
+        "2026-07-19"
       ],
       "rating": 5,
       "fav": true,
@@ -1567,6 +1621,7 @@ const INITIAL_USER = /*userdata*/{
         }
       },
       "families": [
+        "Floral",
         "Woody",
         "Spicy"
       ],
@@ -1751,6 +1806,9 @@ const INITIAL_USER = /*userdata*/{
       ],
       "sizes": [
         "Travel Size"
+      ],
+      "wears": [
+        "2026-07-14"
       ]
     },
     "55": {
@@ -1846,7 +1904,8 @@ const INITIAL_USER = /*userdata*/{
         "Fall"
       ],
       "wears": [
-        "2026-06-13"
+        "2026-06-13",
+        "2026-07-03"
       ],
       "families": [
         "Fresh",
@@ -1936,7 +1995,8 @@ const INITIAL_USER = /*userdata*/{
       "families": [
         "Musk",
         "Lactonic",
-        "Nutty"
+        "Nutty",
+        "Powdery"
       ],
       "sizes": [
         "Full Size"
@@ -2248,7 +2308,8 @@ const INITIAL_USER = /*userdata*/{
         "Fall"
       ],
       "wears": [
-        "2026-06-27"
+        "2026-06-26",
+        "2026-07-13"
       ],
       "multiples": true
     },
@@ -2269,6 +2330,9 @@ const INITIAL_USER = /*userdata*/{
       ],
       "sizes": [
         "Travel Size"
+      ],
+      "wears": [
+        "2026-06-28"
       ]
     },
     "76": {
@@ -2497,7 +2561,9 @@ const INITIAL_USER = /*userdata*/{
       "sizes": [
         "Full Size"
       ],
-      "wears": []
+      "wears": [
+        "2026-07-08"
+      ]
     },
     "87": {
       "price": 32,
@@ -2629,7 +2695,8 @@ const INITIAL_USER = /*userdata*/{
       "rating": 4,
       "families": [
         "Woody",
-        "Musk"
+        "Musk",
+        "Powdery"
       ],
       "sizes": [
         "Travel Size"
@@ -3024,7 +3091,8 @@ const INITIAL_USER = /*userdata*/{
       "families": [
         "Floral",
         "Fresh",
-        "Woody"
+        "Woody",
+        "Powdery"
       ],
       "matchbody": [],
       "body": [
@@ -3230,13 +3298,15 @@ const INITIAL_USER = /*userdata*/{
       "notes": "Cardamom, bergamot, mimosa, violet, tonka, sandalwood",
       "seasons": [
         "Spring",
+        "Summer",
         "Fall",
         "Winter"
       ],
       "price": 99,
       "rating": 5,
       "wears": [
-        "2026-06-18"
+        "2026-06-18",
+        "2026-07-02"
       ],
       "families": [
         "Floral",
@@ -3298,7 +3368,7 @@ const INITIAL_USER = /*userdata*/{
         }
       },
       "wears": [
-        "2026-06-27"
+        "2026-06-26"
       ]
     },
     "123": {
@@ -3364,6 +3434,9 @@ const INITIAL_USER = /*userdata*/{
       "sizes": [
         "Travel Size",
         "Full Size"
+      ],
+      "wears": [
+        "2026-07-04"
       ]
     },
     "126": {
@@ -4019,7 +4092,9 @@ const INITIAL_USER = /*userdata*/{
       ],
       "sizes": [
         "Travel Size"
-      ]
+      ],
+      "matchbody": [],
+      "multiples": true
     },
     "165": {
       "notes": "Matcha, vanilla soft serve, cherry blossom, almond, waffle cone, powdered sugar, sandalwood",
@@ -4047,11 +4122,10 @@ const INITIAL_USER = /*userdata*/{
         "Winter"
       ],
       "price": 26,
-      "rating": 0,
+      "rating": 4,
       "families": [
         "Gourmand",
         "Woody",
-        "Musk",
         "Nutty"
       ],
       "sizes": [
@@ -4084,7 +4158,7 @@ const INITIAL_USER = /*userdata*/{
         "Fall"
       ],
       "price": 26,
-      "rating": 0,
+      "rating": 4,
       "families": [
         "Floral",
         "Tropical"
@@ -4141,6 +4215,9 @@ const INITIAL_USER = /*userdata*/{
         "Woody",
         "Solar",
         "Tropical"
+      ],
+      "wears": [
+        "2026-07-04"
       ]
     },
     "172": {
@@ -4159,7 +4236,7 @@ const INITIAL_USER = /*userdata*/{
     "173": {
       "notes": "Marshmallow, black coffee, almond cream, sandalwood, natural oud, palo santo oil, tonka bean absolute, vanilla bean",
       "price": 23,
-      "rating": 0,
+      "rating": 4,
       "families": [
         "Gourmand",
         "Woody",
@@ -4177,7 +4254,7 @@ const INITIAL_USER = /*userdata*/{
         "Winter"
       ],
       "price": 38,
-      "rating": 0,
+      "rating": 5,
       "families": [
         "Gourmand",
         "Sweet"
@@ -4195,7 +4272,7 @@ const INITIAL_USER = /*userdata*/{
       ],
       "family": "Fruity",
       "price": 23,
-      "rating": 0,
+      "rating": 4,
       "families": [
         "Gourmand",
         "Fruity",
@@ -4226,7 +4303,7 @@ const INITIAL_USER = /*userdata*/{
         "Winter"
       ],
       "price": 23,
-      "rating": 0,
+      "rating": 4,
       "families": [
         "Gourmand",
         "Floral",
@@ -4317,13 +4394,16 @@ const INITIAL_USER = /*userdata*/{
         "Fall"
       ],
       "price": 23,
-      "rating": 0,
+      "rating": 3,
       "families": [
         "Fruity",
         "Sweet"
       ],
       "sizes": [
         "Travel Size"
+      ],
+      "wears": [
+        "2026-07-19"
       ]
     },
     "183": {
@@ -4341,7 +4421,8 @@ const INITIAL_USER = /*userdata*/{
       ],
       "sizes": [
         "Travel Size"
-      ]
+      ],
+      "rating": 3
     },
     "184": {
       "notes": "Bergamot, oud, patchouli, sandalwood, tonka bean, ambroxan",
@@ -4351,7 +4432,7 @@ const INITIAL_USER = /*userdata*/{
         "Winter"
       ],
       "price": 23,
-      "rating": 0,
+      "rating": 4,
       "families": [
         "Woody",
         "Amber",
@@ -4382,13 +4463,28 @@ const INITIAL_USER = /*userdata*/{
         "Summer"
       ],
       "price": 23,
-      "rating": 0,
+      "rating": 5,
       "families": [
+        "Fruity",
         "Fresh",
         "Aquatic"
       ],
       "sizes": [
+        "Sample/Decant",
         "Travel Size"
+      ],
+      "wears": [
+        "2026-06-30"
+      ],
+      "body": [
+        {
+          "n": "Salted Shorelines",
+          "t": "Body cream"
+        },
+        {
+          "n": "Coastal Dreaming",
+          "t": "Body wash"
+        }
       ]
     },
     "187": {
@@ -4399,7 +4495,7 @@ const INITIAL_USER = /*userdata*/{
       ],
       "family": "Citrus",
       "price": 23,
-      "rating": 0,
+      "rating": 4,
       "families": [
         "Citrus",
         "Spicy"
@@ -4441,10 +4537,15 @@ const INITIAL_USER = /*userdata*/{
         "Sweet"
       ],
       "sizes": [
+        "Sample/Decant",
         "Travel Size"
       ],
       "wears": [
-        "2026-06-27"
+        "2026-06-27",
+        "2026-07-01",
+        "2026-07-10",
+        "2026-07-11",
+        "2026-07-22"
       ],
       "pairs": {
         "pin": {
@@ -4494,6 +4595,9 @@ const INITIAL_USER = /*userdata*/{
       ],
       "sizes": [
         "Travel Size"
+      ],
+      "wears": [
+        "2026-07-09"
       ]
     },
     "192": {
@@ -4519,7 +4623,8 @@ const INITIAL_USER = /*userdata*/{
       "price": 38,
       "rating": 5,
       "wears": [
-        "2026-06-12"
+        "2026-06-12",
+        "2026-07-03"
       ],
       "families": [
         "Citrus",
@@ -4549,6 +4654,9 @@ const INITIAL_USER = /*userdata*/{
       "sizes": [
         "Travel Size",
         "Full Size"
+      ],
+      "wears": [
+        "2026-07-05"
       ]
     },
     "195": {
@@ -4575,7 +4683,8 @@ const INITIAL_USER = /*userdata*/{
       "rating": 4,
       "price": 23,
       "wears": [
-        "2026-06-14"
+        "2026-06-14",
+        "2026-07-14"
       ],
       "families": [
         "Fruity",
@@ -4589,14 +4698,26 @@ const INITIAL_USER = /*userdata*/{
       "notes": "Sandalwood nut co2, Australian sandalwood, beeswax absolute, Iso E Super, ambroxan, labdanum, vanilla",
       "family": "Woody",
       "price": 23,
-      "rating": 0,
+      "rating": 5,
       "families": [
         "Woody",
         "Spicy"
       ],
       "sizes": [
         "Travel Size"
-      ]
+      ],
+      "wears": [
+        "2026-07-18",
+        "2026-07-19"
+      ],
+      "memo": "Special Order Catalog",
+      "seasons": [
+        "Spring",
+        "Summer",
+        "Fall",
+        "Winter"
+      ],
+      "fav": true
     },
     "198": {
       "notes": "Strawberry, vanilla cream soda, fresh green grass, morning dew, ambrette seed",
@@ -4606,7 +4727,7 @@ const INITIAL_USER = /*userdata*/{
         "Fall"
       ],
       "price": 23,
-      "rating": 4,
+      "rating": 3,
       "family": "Fruity",
       "families": [
         "Fruity",
@@ -4615,6 +4736,9 @@ const INITIAL_USER = /*userdata*/{
       ],
       "sizes": [
         "Travel Size"
+      ],
+      "wears": [
+        "2026-07-15"
       ]
     },
     "199": {
@@ -4956,7 +5080,9 @@ const INITIAL_USER = /*userdata*/{
       "price": 240,
       "fav": false,
       "wears": [
-        "2026-06-25"
+        "2026-06-25",
+        "2026-07-07",
+        "2026-07-17"
       ],
       "families": [
         "Fruity",
@@ -5017,7 +5143,9 @@ const INITIAL_USER = /*userdata*/{
       "rating": 4,
       "price": 65,
       "fav": false,
-      "wears": [],
+      "wears": [
+        "2026-07-20"
+      ],
       "families": [
         "Floral",
         "Lactonic"
@@ -5287,30 +5415,384 @@ const INITIAL_USER = /*userdata*/{
       "price": 46,
       "fav": false,
       "wears": []
+    },
+    {
+      "id": 100023,
+      "brand": "House of Brandt",
+      "name": "Porcelain (London) Fog",
+      "families": [
+        "Citrus",
+        "Green",
+        "Lactonic",
+        "Powdery"
+      ],
+      "notes": "Earl grey tea, bergamot, lavender, milk, vanilla absolute, honey, white musk",
+      "seasons": [
+        "Spring",
+        "Summer",
+        "Fall",
+        "Winter"
+      ],
+      "sizes": [
+        "Sample/Decant"
+      ],
+      "multiples": false,
+      "rating": 5,
+      "price": null,
+      "fav": true,
+      "wears": []
+    },
+    {
+      "id": 100024,
+      "brand": "Sol de Janeiro",
+      "name": "Limonada Gelada",
+      "families": [
+        "Fruity",
+        "Tropical",
+        "Sweet"
+      ],
+      "notes": "Brazilian lemonade, pineapple, coconut milk, vanilla, blonde woods",
+      "seasons": [
+        "Spring",
+        "Summer"
+      ],
+      "sizes": [
+        "Full Size"
+      ],
+      "multiples": false,
+      "rating": 4,
+      "price": 26,
+      "fav": false,
+      "wears": [],
+      "memo": "Limited edition "
+    },
+    {
+      "id": 100025,
+      "brand": "Noyz",
+      "name": "Rinse Cycle",
+      "families": [
+        "Fresh",
+        "Musk",
+        "Aquatic"
+      ],
+      "notes": "Musk flower, water lily, cherry blossom, pear, lemon, sandalwood",
+      "seasons": [
+        "Spring",
+        "Summer",
+        "Fall"
+      ],
+      "sizes": [
+        "Travel Size"
+      ],
+      "multiples": false,
+      "rating": 4,
+      "price": 38,
+      "fav": false,
+      "wears": []
+    },
+    {
+      "id": 100026,
+      "brand": "Snif",
+      "name": "Coco Shimmy",
+      "families": [
+        "Solar",
+        "Tropical",
+        "Sweet"
+      ],
+      "notes": "Coconut milk, coconut water, pineapple, sandalwood, orcanox, tonka bean",
+      "seasons": [
+        "Spring",
+        "Summer"
+      ],
+      "sizes": [
+        "Full Size"
+      ],
+      "multiples": false,
+      "rating": 0,
+      "price": 68,
+      "fav": false,
+      "wears": []
+    },
+    {
+      "id": 100027,
+      "brand": "Lore",
+      "name": "Lil Softie",
+      "families": [
+        "Gourmand",
+        "Spicy",
+        "Lactonic"
+      ],
+      "notes": "Pink pepper, cereal milk, bergamot, ambroxan",
+      "seasons": [
+        "Spring",
+        "Fall"
+      ],
+      "sizes": [
+        "Travel Size"
+      ],
+      "multiples": false,
+      "rating": 4,
+      "price": 28,
+      "fav": false,
+      "wears": []
+    },
+    {
+      "id": 100028,
+      "brand": "Jo Malone",
+      "name": "Sea Salt & Bergamot",
+      "families": [
+        "Fresh",
+        "Citrus",
+        "Aquatic"
+      ],
+      "notes": "Bergamot, sea salt, driftwood, minerals",
+      "seasons": [
+        "Spring",
+        "Summer",
+        "Fall"
+      ],
+      "sizes": [
+        "Travel Size"
+      ],
+      "multiples": false,
+      "rating": 4,
+      "price": 38,
+      "fav": false,
+      "wears": []
+    },
+    {
+      "id": 100029,
+      "brand": "Bath & Body Works",
+      "name": "Cozy & Creamy",
+      "families": [
+        "Lactonic",
+        "Nutty"
+      ],
+      "notes": "Sweet rice milk, toasted almond, vanilla shea",
+      "seasons": [
+        "Fall",
+        "Winter"
+      ],
+      "sizes": [
+        "Full Size"
+      ],
+      "multiples": false,
+      "rating": 4,
+      "price": 18,
+      "fav": false,
+      "wears": [],
+      "matchbody": [
+        "Body wash",
+        "Lotion",
+        "Body cream"
+      ]
+    },
+    {
+      "id": 100030,
+      "brand": "Bath & Body Works",
+      "name": "Blush Cardigan",
+      "families": [
+        "Fruity",
+        "Amber",
+        "Sweet"
+      ],
+      "notes": "Sweet raspberries, sugar dipped violet, warm amber",
+      "seasons": [
+        "Spring",
+        "Fall",
+        "Winter"
+      ],
+      "sizes": [
+        "Full Size"
+      ],
+      "multiples": false,
+      "rating": 0,
+      "price": 18,
+      "fav": false,
+      "wears": []
+    },
+    {
+      "id": 100031,
+      "brand": "Bath & Body Works",
+      "name": "Strawberry Poundcake",
+      "families": [
+        "Gourmand",
+        "Fruity",
+        "Sweet"
+      ],
+      "notes": "Strawberries, golden shortcake, whipped cream",
+      "seasons": [
+        "Spring",
+        "Fall",
+        "Winter"
+      ],
+      "sizes": [
+        "Full Size"
+      ],
+      "multiples": false,
+      "rating": 0,
+      "price": 18,
+      "fav": false,
+      "wears": [],
+      "matchbody": [
+        "Body wash",
+        "Lotion"
+      ]
+    },
+    {
+      "id": 100032,
+      "brand": "Bath & Body Works",
+      "name": "Into the Night",
+      "families": [
+        "Fruity",
+        "Amber",
+        "Spicy"
+      ],
+      "notes": "Raspberries, amber, rose petals, patchouli, mocha musk",
+      "seasons": [
+        "Fall",
+        "Winter"
+      ],
+      "sizes": [
+        "Full Size"
+      ],
+      "multiples": false,
+      "rating": 0,
+      "price": 18,
+      "fav": false,
+      "wears": []
+    },
+    {
+      "id": 100033,
+      "brand": "L'Epoque Parfums",
+      "name": "Dopamine Rose",
+      "families": [
+        "Floral",
+        "Fruity",
+        "Sweet"
+      ],
+      "notes": "Raspberry, marshmallow, rose, strawberry, rhubarb, cyclamen, cashmere musk",
+      "seasons": [
+        "Spring",
+        "Summer",
+        "Fall"
+      ],
+      "sizes": [
+        "Full Size"
+      ],
+      "multiples": false,
+      "rating": 0,
+      "price": 125,
+      "fav": false,
+      "wears": []
+    },
+    {
+      "id": 100034,
+      "brand": "Liis",
+      "name": "Bo",
+      "families": [
+        "Woody",
+        "Powdery"
+      ],
+      "notes": "Elemi resin, tobacco leaves, redwood pine, incense, guaiac wood, cedar, vanilla bean",
+      "seasons": [
+        "Spring",
+        "Summer",
+        "Fall",
+        "Winter"
+      ],
+      "sizes": [
+        "Full Size"
+      ],
+      "multiples": false,
+      "rating": 0,
+      "price": 175,
+      "fav": false,
+      "wears": []
+    },
+    {
+      "id": 100035,
+      "brand": "Discoth\u00e8que",
+      "name": "Baise Moi On The Dancefloor",
+      "families": [
+        "Floral",
+        "Woody",
+        "Aquatic"
+      ],
+      "notes": "Violet leaf, cassis, orris, jasmine, cashmere wood, sandalwood",
+      "seasons": [
+        "Spring",
+        "Summer",
+        "Fall",
+        "Winter"
+      ],
+      "sizes": [
+        "Sample/Decant"
+      ],
+      "multiples": false,
+      "rating": 0,
+      "price": 17,
+      "fav": false,
+      "wears": []
+    },
+    {
+      "id": 100036,
+      "brand": "Zernell Gillie",
+      "name": "Rock",
+      "families": [
+        "Citrus",
+        "Spicy"
+      ],
+      "notes": "Ginger, lime, yuzu, apple, musk",
+      "seasons": [
+        "Spring",
+        "Summer",
+        "Fall"
+      ],
+      "sizes": [
+        "Sample/Decant"
+      ],
+      "multiples": false,
+      "rating": 0,
+      "price": 16,
+      "fav": false,
+      "wears": []
     }
   ],
-  "nextId": 100023,
+  "nextId": 100037,
   "tray": {
-    "label": "June 2026",
+    "label": "July 2026",
     "ids": [
-      86,
-      89,
-      114,
-      122,
-      171,
-      193,
-      128,
-      125,
-      59,
-      75,
-      1,
-      4,
-      106,
-      79,
-      85
+      189,
+      100011,
+      59
     ]
   },
-  "trayHistory": []
+  "trayHistory": [
+    {
+      "label": "June 2026",
+      "ids": [
+        86,
+        89,
+        114,
+        122,
+        171,
+        193,
+        128,
+        125,
+        59,
+        75,
+        1,
+        4,
+        106,
+        79,
+        85
+      ],
+      "date": "2026-07-01"
+    }
+  ],
+  "shelf": [],
+  "nextShelfId": 900001
 };
 const FAMILIES=["Gourmand","Floral","Fruity","Fresh","Citrus","Woody","Amber","Musk","Green","Aquatic","Solar","Spicy","Tropical","Lactonic","Sweet","Nutty","Powdery"];
 const FAM_COLOR={Gourmand:"#C68A4E",Floral:"#D27FA3",Fruity:"#D2604E",Fresh:"#4FA8C0",Citrus:"#E0A92E",Woody:"#8A6A45",Amber:"#B07A3C",Musk:"#B9A38C",Green:"#6B9A5B",Aquatic:"#3C7DAE",Solar:"#E0954E",Spicy:"#A8432C",Tropical:"#2FA98E",Lactonic:"#D9C4A3",Sweet:"#B47BC4",Nutty:"#A6764B",Powdery:"#C7B3C9"};
@@ -5400,6 +5882,13 @@ function ensureShape(u){
   if(!Array.isArray(u.tray.ids))u.tray.ids=[];
   if(!u.tray.label)u.tray.label=defaultTrayLabel();
   if(!Array.isArray(u.trayHistory))u.trayHistory=[];
+  if(!Array.isArray(u.shelf))u.shelf=[];          // standalone body care (no matching fragrance)
+  u.shelf.forEach(p=>{
+    if(!Array.isArray(p.families))p.families=[];
+    if(!Array.isArray(p.seasons))p.seasons=[];
+    if(typeof p.notes!=="string")p.notes="";
+  });
+  if(!u.nextShelfId)u.nextShelfId=Math.max(900001,...u.shelf.map(p=>(p.id||0)+1));
   return u;
 }
 let saveTimer=null;
@@ -5601,6 +6090,199 @@ function removeBody(id,idx){
   const arr=getBody(id).slice();arr.splice(idx,1);setBody(id,arr);softUpdate(id);
 }
 
+/* ---------- standalone body care shelf ---------- */
+function shelf(){return (USER.shelf||[]);}
+function shelfGet(id){return shelf().find(p=>p.id===id);}
+function saveShelfItem(rec){
+  if(rec.id){
+    const i=shelf().findIndex(p=>p.id===rec.id);
+    if(i>=0)USER.shelf[i]=Object.assign({},USER.shelf[i],rec);
+  }else{
+    rec.id=USER.nextShelfId++;USER.shelf.push(rec);
+  }
+  queueSave();renderBody();
+}
+function removeShelfItem(id){
+  const p=shelfGet(id);if(!p)return;
+  if(!confirm(`Remove “${p.name}” from your body care?`))return;
+  USER.shelf=shelf().filter(x=>x.id!==id);
+  queueSave();renderBody();flash("Removed");
+}
+function renderBody(){
+  const list=shelf().slice().sort((a,b)=>(a.type||"").localeCompare(b.type||"")||(a.name||"").localeCompare(b.name||""));
+  const cs=currentSeason();
+  // how many products are linked to scents, for context
+  const all=items();
+  const linked=bodyCatalog(all).filter(p=>p.kind!=="standalone").length;
+  const groups={};
+  list.forEach(p=>{(groups[p.type||"Other"]=groups[p.type||"Other"]||[]).push(p);});
+  const rows=list.length
+    ? Object.keys(groups).map(t=>`
+        <div class="shelf-group">
+          <div class="shelf-gh">${esc(t)} <span class="shelf-gn">${groups[t].length}</span></div>
+          ${groups[t].map(p=>{
+            const fams=p.families.length?p.families.map(f=>`<span class="shelf-fam" style="background:${FAM_COLOR[f]};color:${txtOn(FAM_COLOR[f])}">${f}</span>`).join(""):"";
+            const seas=p.seasons.length?p.seasons.map(s=>`<span class="sd" style="background:${SEASON_THEME[s].a}">${s.slice(0,2)}</span>`).join(""):"";
+            return `<div class="shelf-item">
+              <div class="shelf-main">
+                <div class="shelf-name">${esc(p.name)}</div>
+                ${p.brand?`<div class="shelf-brand">${esc(p.brand)}</div>`:""}
+                ${p.notes?`<div class="shelf-notes">${esc(p.notes)}</div>`:""}
+                <div class="shelf-tags">${fams}${seas}</div>
+              </div>
+              <div class="shelf-acts">
+                <button class="pbtn" title="Edit" onclick="openShelf(${p.id})">✎</button>
+                <button class="pbtn" title="Remove" onclick="removeShelfItem(${p.id})">×</button>
+              </div>
+            </div>`;
+          }).join("")}
+        </div>`).join("")
+    : `<div class="empty"><h3>Nothing on the shelf yet</h3><p>Add body washes, lotions, oils and creams that don't belong to a fragrance. Give them a family or two and they'll start showing up as pairing suggestions on your scents.</p></div>`;
+  document.getElementById("bodyView").innerHTML=`
+    <div class="panel tray-head">
+      <div class="tray-head-l">
+        <span class="kicker">Body care</span>
+        <div class="shelf-title">Your shelf</div>
+        <div class="tray-sub"><span class="sd" style="background:${SEASON_THEME[cs].a}">${cs}</span> ${list.length} standalone product${list.length===1?'':'s'} · ${linked} tied to scents</div>
+      </div>
+      <button class="btn-solid" onclick="openShelf()">＋ Add product</button>
+    </div>
+    ${rows}
+    <div class="panel">
+      <h2>How these get used</h2>
+      <p class="panel-sub" style="margin-bottom:0">Anything here joins the pairing pool. Give a product one or more families — a vanilla lotion as Gourmand, say — and it'll be suggested under scents it flatters, in the “Pair from your body care” section.</p>
+    </div>`;
+}
+let shelfEdit={id:null,families:new Set(),seasons:new Set()};
+function openShelf(id){
+  modalKind="shelf";
+  const p=id?shelfGet(id):null;
+  shelfEdit={id:id||null,families:new Set(p?p.families:[]),seasons:new Set(p?p.seasons:[])};
+  const fp=FAMILIES.map(f=>{const on=shelfEdit.families.has(f);return `<div class="sp ${on?'on':''}" style="${on?'background:'+FAM_COLOR[f]+';color:'+txtOn(FAM_COLOR[f])+';border-color:transparent':''}" onclick="toggleShelfFamily('${f}',this)">${f}</div>`;}).join("");
+  const sp=SEASONS.map(s=>{const on=shelfEdit.seasons.has(s);return `<div class="sp ${on?'on':''}" style="${on?'background:'+SEASON_THEME[s].a+';color:#fff;border-color:transparent':''}" onclick="toggleShelfSeason('${s}',this)">${s}</div>`;}).join("");
+  const tp=BODY_TYPES.map(t=>`<option ${p&&p.type===t?"selected":""}>${t}</option>`).join("");
+  document.getElementById("modalCard").innerHTML=`
+    <h2>${p?"Edit product":"Add body care"}</h2>
+    <p class="mh">For washes, lotions, oils and creams that aren't tied to a fragrance in your library.</p>
+    <div class="field"><label>Product name</label><input id="sName" placeholder="e.g. Coconut whipped body butter" value="${p?esc(p.name):''}"></div>
+    <div class="field"><label>Brand <span class="hinttxt">optional</span></label><input id="sBrand" placeholder="e.g. Tree Hut" value="${p&&p.brand?esc(p.brand):''}"></div>
+    <div class="field"><label>Type</label><select id="sType">${tp}</select></div>
+    <div class="field"><label>Scent families <span class="hinttxt">optional — helps it pair well</span></label><div class="seasonpick">${fp}</div></div>
+    <div class="field"><label>Seasons <span class="hinttxt">optional</span></label><div class="seasonpick">${sp}</div></div>
+    <div class="field"><label>Notes <span class="hinttxt">optional</span></label><input id="sNotes" placeholder="e.g. coconut, vanilla, warm" value="${p?esc(p.notes):''}"></div>
+    <div class="modal-foot">
+      <button class="btn-ghost" onclick="closeModal()">Cancel</button>
+      <button class="btn-solid" onclick="saveShelf()">${p?"Save changes":"Add to shelf"}</button>
+    </div>`;
+  document.getElementById("modalBg").classList.add("on");
+  setTimeout(()=>{const s=document.getElementById("sName");if(s)s.focus();},60);
+}
+function toggleShelfFamily(f,el){
+  if(shelfEdit.families.has(f)){shelfEdit.families.delete(f);el.classList.remove("on");el.style.background="";el.style.color="";el.style.borderColor="";}
+  else{shelfEdit.families.add(f);el.classList.add("on");el.style.background=FAM_COLOR[f];el.style.color=txtOn(FAM_COLOR[f]);el.style.borderColor="transparent";}
+}
+function toggleShelfSeason(s,el){
+  if(shelfEdit.seasons.has(s)){shelfEdit.seasons.delete(s);el.classList.remove("on");el.style.background="";el.style.color="";el.style.borderColor="";}
+  else{shelfEdit.seasons.add(s);el.classList.add("on");el.style.background=SEASON_THEME[s].a;el.style.color="#fff";el.style.borderColor="transparent";}
+}
+function saveShelf(){
+  const name=(document.getElementById("sName").value||"").trim();
+  if(!name){flash("Give it a name first");document.getElementById("sName").focus();return;}
+  saveShelfItem({
+    id:shelfEdit.id,
+    name,
+    brand:(document.getElementById("sBrand").value||"").trim(),
+    type:document.getElementById("sType").value||"Other",
+    families:FAMILIES.filter(f=>shelfEdit.families.has(f)),
+    seasons:SEASONS.filter(s=>shelfEdit.seasons.has(s)),
+    notes:(document.getElementById("sNotes").value||"").trim()
+  });
+  closeModal();flash(shelfEdit.id?"Saved":"Added to your shelf");
+}
+
+/* ---------- body-care pairing engine ---------- */
+/* Builds a catalog of every body product you've told the app you own:
+   - "matching" products (same line as a scent, from the Matching-products picker)
+   - "other" named products you've listed under a scent
+   Then suggests ones that suit a given scent, based on family fit. */
+function bodyCatalog(all){
+  const out=[];
+  all.forEach(s=>{
+    (s.matchbody||[]).forEach(t=>{
+      out.push({label:s.name,type:t,src:s,kind:"matching"});
+    });
+    (getBody(s.id)||[]).forEach(b=>{
+      if(!b||!b.n)return;
+      out.push({label:b.n,type:b.t||"Other",src:s,kind:"other"});
+    });
+  });
+  // standalone shelf products — no parent fragrance, so give them a stand-in "source"
+  shelf().forEach(p=>{
+    out.push({label:p.name,type:p.type||"Other",kind:"standalone",brand:p.brand||"",
+      src:{id:p.id,name:p.name,brand:p.brand||"",families:p.families||[],seasons:p.seasons||[],
+           notes:p.notes||"",rating:0,fav:false}});
+  });
+  return out;
+}
+function bodySuggest(it,all){
+  const cat=bodyCatalog(all).filter(p=>p.src.id!==it.id);
+  if(!cat.length)return [];
+  const partners=new Set();
+  it.families.forEach(f=>(PAIR_MAP[f]||[]).forEach(p=>partners.add(p)));
+  const itTok=tokenSet(it.notes), cs=currentSeason();
+  const scored=cat.map(p=>{
+    const shared=p.src.families.find(f=>it.families.includes(f));
+    const comp=p.src.families.find(f=>partners.has(f));
+    let s=0, why="";
+    if(shared){s+=2.4;why=shared.toLowerCase();}
+    else if(comp){s+=1.6;why=comp.toLowerCase()+" pairs well";}
+    else if(p.kind==="standalone"&&!p.src.families.length){s+=1.2;why="goes with anything";}
+    else {s+=0.2;why="";}
+    const seasonShare=p.src.seasons.filter(x=>it.seasons.includes(x)).length;
+    s+=Math.min(seasonShare,2)*0.35;
+    if(p.src.seasons.includes(cs))s+=0.5;
+    s+=Math.min(overlapCount(tokenSet(p.src.notes),itTok),3)*0.7;
+    if(p.src.rating)s+=p.src.rating*0.1;
+    if(p.src.fav)s+=0.3;
+    s+=jit(it.id*31+7,p.src.id+p.type.length*13)*1.0;
+    if(!why)why=p.src.families[0]?p.src.families[0].toLowerCase():"";
+    return {p,s,why};
+  });
+  scored.sort((a,b)=>b.s-a.s);
+  const keyOf=o=>(o.p.label+"|"+o.p.type).toLowerCase();
+  const chosen=[], seenType=new Set(), seenSrc=new Set(), seenKey=new Set();
+  const push=o=>{chosen.push(o);seenType.add(o.p.type);seenSrc.add(o.p.src.id);seenKey.add(keyOf(o));};
+  // Your standalone shelf is a much smaller pool than scent-linked products, so
+  // reserve it a slot (two once it's a decent share) — otherwise it never shows.
+  const shelfScored=scored.filter(o=>o.p.kind==="standalone");
+  if(shelfScored.length){
+    const share=shelfScored.length/scored.length;
+    const reserve=Math.min(share>=0.25?2:1,shelfScored.length,2);
+    for(const o of shelfScored){
+      if(chosen.length>=reserve)break;
+      if(seenKey.has(keyOf(o))||seenType.has(o.p.type))continue;
+      push(o);
+    }
+  }
+  // variety: spread across product types AND source scents, then relax to fill
+  for(const o of scored){
+    if(chosen.length>=4)break;
+    if(seenKey.has(keyOf(o))||seenType.has(o.p.type)||seenSrc.has(o.p.src.id))continue;
+    push(o);
+  }
+  for(const o of scored){   // relax the source rule
+    if(chosen.length>=4)break;
+    if(seenKey.has(keyOf(o))||seenType.has(o.p.type))continue;
+    push(o);
+  }
+  for(const o of scored){   // relax everything but duplicates
+    if(chosen.length>=4)break;
+    if(seenKey.has(keyOf(o)))continue;
+    push(o);
+  }
+  return chosen;
+}
+
 function pairings(it,all){
   const pr=getPairs(it.id);
   const pool=all.filter(x=>x.id!==it.id);
@@ -5669,6 +6351,15 @@ function cardHTML(it,all){
   const bodyRows=body.length
     ? body.map((b,idx)=>`<div class="pair"><span class="bc-type">${esc(b.t)}</span><span class="pn">${esc(b.n)}</span><span class="pctrl" style="margin-left:auto"><button class="pbtn" title="Remove" onclick="removeBody(${it.id},${idx})">×</button></span></div>`).join("")
     : `<div class="pair pb" style="cursor:default">Nothing added yet — add a body wash, lotion or oil you layer with this.</div>`;
+  const bsug=bodySuggest(it,all);
+  const bsugRows=bsug.length
+    ? bsug.map(o=>{
+        const src=o.p.kind==="matching"?"matching set"
+                 :o.p.kind==="standalone"?(o.p.brand?esc(o.p.brand):"your shelf")
+                 :"with "+esc(o.p.src.name);
+        return `<div class="pair bsug"><span class="bc-type">${esc(o.p.type)}</span><span class="pn">${esc(o.p.label)}</span><span class="pb">${src}</span>${o.why?`<span class="pwhy">${esc(o.why)}</span>`:""}</div>`;
+      }).join("")
+    : `<div class="pair pb" style="cursor:default">Tick matching products or add named ones on a few scents, and suggestions will appear here.</div>`;
   const bodyAdd=`<div class="bc-add">
       <input id="bcN-${it.id}" class="bc-input" placeholder="e.g. Vanilla body lotion (CeraVe)" onkeydown="if(event.key==='Enter')addBody(${it.id})">
       <select id="bcT-${it.id}" class="bc-sel">${BODY_TYPES.map(t=>`<option>${t}</option>`).join("")}</select>
@@ -5721,6 +6412,8 @@ function cardHTML(it,all){
         <div class="match-label" style="margin-top:12px">Other products to layer</div>
         <div class="pair-list">${bodyRows}</div>
         ${bodyAdd}
+        <div class="match-label" style="margin-top:14px">Pair from your body care <span class="hinttxt">products you own, drawn from your other scents</span></div>
+        <div class="pair-list">${bsugRows}</div>
       </div>
       <div>
         <div class="exp-h">Your notes</div>
@@ -5898,12 +6591,15 @@ function setView(v){
   state.view=v;
   document.getElementById("navLib").classList.toggle("on",v==="library");
   document.getElementById("navTray").classList.toggle("on",v==="tray");
+  document.getElementById("navBody").classList.toggle("on",v==="body");
   document.getElementById("navIns").classList.toggle("on",v==="insights");
   document.getElementById("libraryView").classList.toggle("off",v!=="library");
   document.getElementById("insightsView").classList.toggle("on",v==="insights");
   document.getElementById("trayView").classList.toggle("on",v==="tray");
+  document.getElementById("bodyView").classList.toggle("on",v==="body");
   if(v==="insights")renderInsights();
   if(v==="tray")renderTray();
+  if(v==="body")renderBody();
 }
 
 function renderInsights(){
@@ -6068,6 +6764,50 @@ function reuseTray(i){
   USER.tray.ids=h.ids.slice();
   queueSave();renderTray();flash("Tray loaded");
 }
+/* ---------- suggested trays ---------- */
+function traySuggestions(size){
+  const all=items(), cs=currentSeason();
+  size=size||8;
+  const inSeason=all.filter(x=>x.seasons.includes(cs));
+  const pool=inSeason.length>=size?inSeason:all.slice();
+  const lastOf=x=>x.wears.length?x.wears[x.wears.length-1]:"";
+  const take=(list,n)=>{
+    // brand-diverse pass, then fill
+    const out=[],brands=new Set();
+    for(const x of list){if(out.length>=n)break;if(brands.has(x.brand))continue;out.push(x);brands.add(x.brand);}
+    for(const x of list){if(out.length>=n)break;if(out.includes(x))continue;out.push(x);}
+    return out;
+  };
+  // 1. Season favourites — best-loved things you can wear right now
+  const favs=pool.slice().sort((a,b)=>(b.fav-a.fav)||(b.rating-a.rating)||a.name.localeCompare(b.name));
+  // 2. Rediscover — in-season but rested longest
+  const rested=pool.slice().sort((a,b)=>daysSince(lastOf(b))-daysSince(lastOf(a))||(b.rating-a.rating));
+  // 3. A little of everything — one per family, spread across your collection
+  const byFam=[];const seen=new Set();
+  const shuffled=pool.slice().sort((a,b)=>jit(a.id,7)-jit(b.id,7));
+  FAMILIES.forEach(f=>{
+    const hit=shuffled.find(x=>!seen.has(x.id)&&x.families.includes(f));
+    if(hit){byFam.push(hit);seen.add(hit.id);}
+  });
+  const spread=byFam.concat(shuffled.filter(x=>!seen.has(x.id)));
+  return [
+    {key:"favs",title:"Season favourites",blurb:`Your best-loved ${cs.toLowerCase()} scents`,ids:take(favs,size).map(x=>x.id)},
+    {key:"rest",title:"Rediscover",blurb:"Lovely things you haven't reached for in a while",ids:take(rested,size).map(x=>x.id)},
+    {key:"spread",title:"A little of everything",blurb:"One from each family, for maximum variety",ids:take(spread,size).map(x=>x.id)}
+  ];
+}
+function applyTraySuggestion(key,mode){
+  const s=traySuggestions().find(x=>x.key===key);
+  if(!s)return;
+  if(mode==="replace"){
+    if(USER.tray.ids.length&&!confirm(`Replace your current tray (${USER.tray.ids.length} scents) with “${s.title}”?`))return;
+    USER.tray.ids=s.ids.slice();
+  }else{
+    const set=new Set(USER.tray.ids);
+    s.ids.forEach(id=>{if(!set.has(id))USER.tray.ids.push(id);});
+  }
+  queueSave();renderTray();flash(mode==="replace"?"Tray set":"Added to tray");
+}
 function renderTray(){
   const all=items();
   const tray=trayItems();
@@ -6084,6 +6824,22 @@ function renderTray(){
         </div>`;
       }).join("")
     : `<p style="color:var(--muted);font-size:13px;margin:0">No past trays yet. When you archive your current tray, it'll be saved here with its month.</p>`;
+  const inTraySet=new Set(USER.tray.ids);
+  const sugs=traySuggestions().map(s=>{
+    const list=s.ids.map(id=>all.find(x=>x.id===id)).filter(Boolean);
+    const chips=list.map(x=>`<span class="sug-chip ${inTraySet.has(x.id)?'have':''}"><span class="sug-dot" style="background:${FAM_COLOR[x.family]}"></span>${esc(x.name)}</span>`).join("");
+    const already=list.filter(x=>inTraySet.has(x.id)).length;
+    return `<div class="sug">
+      <div class="sug-top">
+        <div><div class="sug-title">${esc(s.title)}</div><div class="sug-blurb">${esc(s.blurb)}${already?` · ${already} already in your tray`:""}</div></div>
+        <div class="sug-acts">
+          <button class="pbtn sug-btn" onclick="applyTraySuggestion('${s.key}','add')">Add</button>
+          <button class="pbtn sug-btn solid" onclick="applyTraySuggestion('${s.key}','replace')">Use this</button>
+        </div>
+      </div>
+      <div class="sug-chips">${chips}</div>
+    </div>`;
+  }).join("");
   document.getElementById("trayView").innerHTML=`
     <div class="panel tray-head">
       <div class="tray-head-l">
@@ -6095,9 +6851,93 @@ function renderTray(){
     </div>
     ${cards}
     <div class="panel">
+      <h2>Ideas for this month</h2>
+      <p class="panel-sub">Ready-made lineups drawn from your collection — use one as a starting point, then tweak.</p>
+      <div class="sug-list">${sugs}</div>
+    </div>
+    <div class="panel">
       <h2>Past trays</h2>
       <div class="tray-hist-list">${hist}</div>
     </div>`;
+}
+
+/* ---------- surprise me (random in-season pick) ---------- */
+let surpriseId=null, surpriseRecent=[];
+function daysSince(iso){
+  if(!iso)return 999;
+  const p=iso.split("-");const d=new Date(+p[0],+p[1]-1,+p[2]);
+  const n=new Date();const t=new Date(n.getFullYear(),n.getMonth(),n.getDate());
+  return Math.max(0,Math.round((t-d)/86400000));
+}
+function surprisePool(scope){
+  const all=items(), cs=currentSeason();
+  let pool=scope==="all"?all.slice():all.filter(x=>x.seasons.includes(cs));
+  if(!pool.length)pool=all.slice();
+  return pool;
+}
+function pickSurprise(scope){
+  const pool=surprisePool(scope);
+  if(!pool.length)return null;
+  // weight: rested scents and higher-rated ones come up more often
+  const avoid=new Set(surpriseRecent.slice(-6));
+  const weighted=pool.map(x=>{
+    const last=x.wears.length?x.wears[x.wears.length-1]:"";
+    const rest=Math.min(daysSince(last),120)/120;      // 0 = worn today, 1 = long rested
+    let w=0.5+rest*1.6+(x.rating?x.rating*0.12:0)+(x.fav?0.25:0);
+    if(avoid.has(x.id))w*=0.15;
+    return {x,w};
+  });
+  const total=weighted.reduce((a,b)=>a+b.w,0);
+  let r=Math.random()*total;
+  for(const o of weighted){r-=o.w;if(r<=0)return o.x;}
+  return weighted[weighted.length-1].x;
+}
+let surpriseScope="season";
+function openSurprise(){
+  modalKind="surprise";surpriseRecent=[];
+  document.getElementById("modalBg").classList.add("on");
+  spinSurprise(true);
+}
+function setSurpriseScope(s){surpriseScope=s;spinSurprise(true);}
+function spinSurprise(forced){
+  const pick=forced||pickSurprise(surpriseScope);
+  if(pick&&!forced){surpriseId=pick.id;surpriseRecent.push(pick.id);}
+  const cs=currentSeason();
+  const body=pick?(()=>{
+    const last=pick.wears.length?pick.wears[pick.wears.length-1]:"";
+    const restLine=pick.wears.length?`${pick.wears.length} wear${pick.wears.length>1?'s':''} · ${relDate(last)}`:"Never worn — a good day to change that";
+    const inTray=((USER.tray&&USER.tray.ids)||[]).includes(pick.id);
+    const stripBg=pick.families.length>1?`linear-gradient(90deg,${pick.families.map(f=>FAM_COLOR[f]).join(",")})`:FAM_COLOR[pick.family];
+    return `<div class="sur-card">
+      <div class="sur-strip" style="background:${stripBg}"></div>
+      <div class="sur-brand">${esc(pick.brand)}</div>
+      <div class="sur-name">${esc(pick.name)}</div>
+      <div class="sur-fam">${pick.families.join(" · ")}</div>
+      <div class="sur-notes">${esc(pick.notes)}</div>
+      <div class="sur-rest">${restLine}</div>
+      <div class="sur-acts">
+        <button class="btn-solid" onclick="logWear(${pick.id});flash('Logged for today');">＋ Log a wear</button>
+        <button class="btn-ghost" onclick="trayToggle(${pick.id});spinKeep();">${inTray?"In tray ✓":"Add to tray"}</button>
+      </div>
+    </div>`;
+  })():`<p class="mh">No scents match yet — try “Anytime”.</p>`;
+  document.getElementById("modalCard").innerHTML=`
+    <h2>Surprise me</h2>
+    <p class="mh">A pick from your collection — it leans toward scents you haven't reached for in a while.</p>
+    <div class="seasonpick sur-scope">
+      <div class="sp ${surpriseScope==="season"?"on":""}" style="${surpriseScope==="season"?'background:'+SEASON_THEME[cs].a+';color:#fff;border-color:transparent':''}" onclick="setSurpriseScope('season')">${cs} picks</div>
+      <div class="sp ${surpriseScope==="all"?"on":""}" style="${surpriseScope==="all"?'background:var(--accent);color:#fff;border-color:transparent':''}" onclick="setSurpriseScope('all')">Anytime</div>
+    </div>
+    ${body}
+    <div class="modal-foot" style="margin-top:14px">
+      <button class="btn-ghost" onclick="closeModal()">Close</button>
+      <button class="btn-solid" onclick="spinSurprise()">🎲 Again</button>
+    </div>`;
+}
+function spinKeep(){
+  // re-render the current pick (e.g. after a tray toggle) without drawing a new scent
+  const pick=items().find(x=>x.id===surpriseId);
+  if(pick)spinSurprise(pick);else spinSurprise();
 }
 
 /* ---------- quick log (Tonight's wear) ---------- */
@@ -6192,7 +7032,7 @@ function importData(input){
       if(typeof data!=="object"||data===null||(!("ov" in data)&&!("custom" in data)))throw new Error("bad");
       if(!confirm("Restore this backup? It replaces the ratings, wears and added scents currently saved on this device."))
         {input.value="";return;}
-      USER={ov:data.ov||{},custom:Array.isArray(data.custom)?data.custom:[],nextId:data.nextId||100001,tray:data.tray,trayHistory:data.trayHistory};
+      USER={ov:data.ov||{},custom:Array.isArray(data.custom)?data.custom:[],nextId:data.nextId||100001,tray:data.tray,trayHistory:data.trayHistory,shelf:data.shelf,nextShelfId:data.nextShelfId};
       USER=ensureShape(USER);
       const maxId=USER.custom.reduce((m,c)=>Math.max(m,c.id||0),100000);
       if(!USER.nextId||USER.nextId<=maxId)USER.nextId=maxId+1;
