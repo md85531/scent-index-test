@@ -93,6 +93,12 @@ h1 em{font-style:italic;color:var(--accent-deep)}
 .th-meta{font-size:11.5px;color:var(--faint);font-weight:600}
 .th-reuse{margin-left:auto}
 .th-names{font-size:12px;color:var(--muted);margin-top:7px;line-height:1.5}
+/* carry-over notice */
+.carry-note{display:flex;align-items:center;gap:14px;flex-wrap:wrap;background:var(--tint);border:1px solid var(--accent);border-radius:12px;padding:12px 15px}
+.carry-txt{flex:1;min-width:220px;font-size:13px;color:var(--ink);line-height:1.5}
+.carry-acts{display:flex;gap:7px}
+.carry-btn{border:1px solid var(--line);border-radius:999px;padding:5px 13px;font-size:12px;font-weight:700;color:var(--ink);background:#fff}
+.carry-btn.solid{background:var(--accent);color:#fff;border-color:var(--accent)}
 /* body-care shelf */
 .shelf-title{font-family:"Fraunces",serif;font-size:26px;font-weight:500;color:var(--ink)}
 .shelf-group{background:#fff;border:1px solid var(--line);border-radius:13px;padding:13px 15px;margin-bottom:13px}
@@ -1243,7 +1249,14 @@ const INITIAL_USER = /*userdata*/{
       ],
       "families": [
         "Woody",
+        "Spicy",
         "Sweet"
+      ],
+      "seasons": [
+        "Spring",
+        "Summer",
+        "Fall",
+        "Winter"
       ]
     },
     "33": {
@@ -1635,7 +1648,8 @@ const INITIAL_USER = /*userdata*/{
       "fav": true,
       "notes": "Ambrette, sandalwood, magnolia, violet, ambergris",
       "wears": [
-        "2026-06-12"
+        "2026-06-12",
+        "2026-08-01"
       ],
       "families": [
         "Floral",
@@ -1833,6 +1847,9 @@ const INITIAL_USER = /*userdata*/{
       ],
       "sizes": [
         "Full Size"
+      ],
+      "wears": [
+        "2026-07-27"
       ]
     },
     "57": {
@@ -2241,6 +2258,7 @@ const INITIAL_USER = /*userdata*/{
         }
       },
       "matchbody": [
+        "Body oil",
         "Body butter"
       ],
       "families": [
@@ -2418,6 +2436,9 @@ const INITIAL_USER = /*userdata*/{
       ],
       "sizes": [
         "Travel Size"
+      ],
+      "wears": [
+        "2026-07-31"
       ]
     },
     "81": {
@@ -2433,6 +2454,9 @@ const INITIAL_USER = /*userdata*/{
       ],
       "matchbody": [
         "Body oil"
+      ],
+      "wears": [
+        "2026-07-27"
       ]
     },
     "82": {
@@ -2896,6 +2920,9 @@ const INITIAL_USER = /*userdata*/{
       "sizes": [
         "Travel Size",
         "Full Size"
+      ],
+      "wears": [
+        "2026-07-30"
       ]
     },
     "102": {
@@ -2921,7 +2948,8 @@ const INITIAL_USER = /*userdata*/{
         "Musk"
       ],
       "sizes": [
-        "Sample/Decant"
+        "Sample/Decant",
+        "Travel Size"
       ]
     },
     "104": {
@@ -3253,7 +3281,7 @@ const INITIAL_USER = /*userdata*/{
     "118": {
       "notes": "Fruity gummies, candy, orange blossom, patchouli, musk",
       "price": 36,
-      "rating": 3,
+      "rating": 2,
       "fav": false,
       "families": [
         "Fruity",
@@ -3261,6 +3289,9 @@ const INITIAL_USER = /*userdata*/{
       ],
       "sizes": [
         "Travel Size"
+      ],
+      "wears": [
+        "2026-07-23"
       ]
     },
     "119": {
@@ -4078,7 +4109,8 @@ const INITIAL_USER = /*userdata*/{
         "Spicy"
       ],
       "sizes": [
-        "Sample/Decant"
+        "Sample/Decant",
+        "Travel Size"
       ]
     },
     "164": {
@@ -4165,6 +4197,9 @@ const INITIAL_USER = /*userdata*/{
       ],
       "sizes": [
         "Travel Size"
+      ],
+      "wears": [
+        "2026-07-24"
       ]
     },
     "169": {
@@ -4632,7 +4667,8 @@ const INITIAL_USER = /*userdata*/{
         "Spicy"
       ],
       "sizes": [
-        "Travel Size"
+        "Travel Size",
+        "Full Size"
       ]
     },
     "194": {
@@ -4708,7 +4744,8 @@ const INITIAL_USER = /*userdata*/{
       ],
       "wears": [
         "2026-07-18",
-        "2026-07-19"
+        "2026-07-19",
+        "2026-07-31"
       ],
       "memo": "Special Order Catalog",
       "seasons": [
@@ -4773,11 +4810,14 @@ const INITIAL_USER = /*userdata*/{
       "rating": 3,
       "families": [
         "Gourmand",
-        "Solar",
+        "Musk",
         "Sweet"
       ],
       "sizes": [
         "Travel Size"
+      ],
+      "wears": [
+        "2026-07-29"
       ]
     },
     "201": {
@@ -5118,9 +5158,11 @@ const INITIAL_USER = /*userdata*/{
       "rating": 4,
       "price": 175,
       "fav": false,
-      "wears": [],
+      "wears": [
+        "2026-07-25",
+        "2026-07-26"
+      ],
       "families": [
-        "Gourmand",
         "Musk",
         "Lactonic"
       ],
@@ -5363,6 +5405,7 @@ const INITIAL_USER = /*userdata*/{
       "fav": false,
       "wears": [],
       "matchbody": [
+        "Body wash",
         "Body oil"
       ]
     },
@@ -5558,7 +5601,9 @@ const INITIAL_USER = /*userdata*/{
       "rating": 4,
       "price": 38,
       "fav": false,
-      "wears": []
+      "wears": [
+        "2026-07-28"
+      ]
     },
     {
       "id": 100029,
@@ -5757,18 +5802,192 @@ const INITIAL_USER = /*userdata*/{
       "price": 16,
       "fav": false,
       "wears": []
+    },
+    {
+      "id": 100037,
+      "brand": "Imaginary Authors",
+      "name": "How to Say Bicycle in French",
+      "families": [
+        "Fresh",
+        "Green",
+        "Powdery"
+      ],
+      "notes": "Sweet basil, lavender, clary sage, white thyme",
+      "seasons": [
+        "Spring",
+        "Summer",
+        "Fall"
+      ],
+      "sizes": [
+        "Travel Size"
+      ],
+      "multiples": false,
+      "rating": 4,
+      "price": 46,
+      "fav": false,
+      "wears": []
+    },
+    {
+      "id": 100038,
+      "brand": "Sand & Fog",
+      "name": "Vanilla Musk",
+      "families": [
+        "Musk",
+        "Sweet"
+      ],
+      "notes": "Vanilla, vanilla orchid, coconut, anise, musk",
+      "seasons": [
+        "Spring",
+        "Summer",
+        "Fall"
+      ],
+      "sizes": [
+        "Full Size"
+      ],
+      "multiples": false,
+      "rating": 4,
+      "price": 16,
+      "fav": false,
+      "wears": [
+        "2026-07-28"
+      ]
+    },
+    {
+      "id": 100039,
+      "brand": "Sand & Fog",
+      "name": "Marshmallow Skies",
+      "families": [
+        "Gourmand",
+        "Fruity",
+        "Sweet"
+      ],
+      "notes": "Marshmallow, lemon, strawberry, cream, raspberry, benzoin, vanilla, musk, sugar",
+      "seasons": [
+        "Spring",
+        "Summer",
+        "Fall",
+        "Winter"
+      ],
+      "sizes": [
+        "Full Size"
+      ],
+      "multiples": false,
+      "rating": 0,
+      "price": 16,
+      "fav": false,
+      "wears": [],
+      "pairs": {
+        "pin": {
+          "layer": [
+            94
+          ],
+          "rot": [
+            94
+          ]
+        },
+        "hide": {
+          "layer": [],
+          "rot": []
+        }
+      }
+    },
+    {
+      "id": 100040,
+      "brand": "Diptyque",
+      "name": "Orph\u00e9on",
+      "families": [
+        "Woody",
+        "Green",
+        "Powdery"
+      ],
+      "notes": "Juniper berries, jasmine, cedar, tonka bean",
+      "seasons": [
+        "Spring",
+        "Summer",
+        "Fall",
+        "Winter"
+      ],
+      "sizes": [
+        "Travel Size"
+      ],
+      "multiples": false,
+      "rating": 0,
+      "price": 28,
+      "fav": false,
+      "wears": []
+    },
+    {
+      "id": 100041,
+      "brand": "Diptyque",
+      "name": "Philosykos",
+      "families": [
+        "Woody",
+        "Green",
+        "Sweet"
+      ],
+      "notes": "Fig leaves, fig, coconut, cedar",
+      "seasons": [
+        "Spring",
+        "Summer",
+        "Fall"
+      ],
+      "sizes": [
+        "Travel Size"
+      ],
+      "multiples": false,
+      "rating": 0,
+      "price": 28,
+      "fav": false,
+      "wears": []
+    },
+    {
+      "id": 100042,
+      "brand": "Diptyque",
+      "name": "Do Son",
+      "families": [
+        "Floral",
+        "Musk"
+      ],
+      "notes": "Tuberose, orange leaf, musk, pink pepper",
+      "seasons": [
+        "Spring",
+        "Summer",
+        "Fall"
+      ],
+      "sizes": [
+        "Travel Size"
+      ],
+      "multiples": false,
+      "rating": 0,
+      "price": 28,
+      "fav": false,
+      "wears": []
     }
   ],
-  "nextId": 100037,
+  "nextId": 100043,
   "tray": {
     "label": "July 2026",
     "ids": [
-      189,
-      100011,
-      59
+      100039,
+      100015,
+      51,
+      114,
+      100041,
+      61,
+      100010,
+      195
     ]
   },
   "trayHistory": [
+    {
+      "label": "July 2026",
+      "ids": [
+        189,
+        100011,
+        59
+      ],
+      "date": "2026-07-31"
+    },
     {
       "label": "June 2026",
       "ids": [
@@ -5791,8 +6010,481 @@ const INITIAL_USER = /*userdata*/{
       "date": "2026-07-01"
     }
   ],
-  "shelf": [],
-  "nextShelfId": 900001
+  "shelf": [
+    {
+      "id": 900001,
+      "name": "Feeling Jazzed",
+      "brand": "Method",
+      "type": "Body wash",
+      "families": [
+        "Gourmand",
+        "Musk",
+        "Sweet"
+      ],
+      "seasons": [
+        "Spring",
+        "Fall",
+        "Winter"
+      ],
+      "notes": "Vanilla, cocoa, musk"
+    },
+    {
+      "id": 900002,
+      "name": "Salted Sunset",
+      "brand": "Athena",
+      "type": "Lotion",
+      "families": [
+        "Gourmand",
+        "Tropical",
+        "Nutty"
+      ],
+      "seasons": [
+        "Spring",
+        "Summer",
+        "Fall",
+        "Winter"
+      ],
+      "notes": "Caramel, coconut milk, pistachio"
+    },
+    {
+      "id": 900003,
+      "name": "Solar Muse",
+      "brand": "Athena",
+      "type": "Lotion",
+      "families": [
+        "Fresh",
+        "Solar"
+      ],
+      "seasons": [],
+      "notes": "Bergamot, neroli blossom, frangipani"
+    },
+    {
+      "id": 900004,
+      "name": "166",
+      "brand": "Miim.Miic",
+      "type": "Body wash",
+      "families": [
+        "Gourmand",
+        "Lactonic",
+        "Sweet"
+      ],
+      "seasons": [
+        "Spring",
+        "Fall",
+        "Winter"
+      ],
+      "notes": "Marshmallow"
+    },
+    {
+      "id": 900005,
+      "name": "Lemon Custard",
+      "brand": "Philosophy",
+      "type": "Body wash",
+      "families": [
+        "Gourmand",
+        "Citrus",
+        "Sweet"
+      ],
+      "seasons": [
+        "Spring",
+        "Summer",
+        "Fall",
+        "Winter"
+      ],
+      "notes": "Lemon, bergamot, vanilla"
+    },
+    {
+      "id": 900006,
+      "name": "Lemon Custard",
+      "brand": "Philosophy",
+      "type": "Lotion",
+      "families": [
+        "Gourmand",
+        "Citrus",
+        "Sweet"
+      ],
+      "seasons": [
+        "Spring",
+        "Summer",
+        "Fall",
+        "Winter"
+      ],
+      "notes": "Lemon, bergamot, vanilla"
+    },
+    {
+      "id": 900007,
+      "name": "The Dreamer",
+      "brand": "Method",
+      "type": "Body wash",
+      "families": [
+        "Tropical",
+        "Sweet"
+      ],
+      "seasons": [
+        "Spring",
+        "Summer",
+        "Fall"
+      ],
+      "notes": "Coconut, passion fruit, mango"
+    },
+    {
+      "id": 900008,
+      "name": "Sea Salt & Cedar",
+      "brand": "Native",
+      "type": "Body wash",
+      "families": [
+        "Fresh",
+        "Woody",
+        "Spicy"
+      ],
+      "seasons": [
+        "Spring",
+        "Summer",
+        "Fall",
+        "Winter"
+      ],
+      "notes": "Cedar, sea salt"
+    },
+    {
+      "id": 900009,
+      "name": "Sea Salt & Cedar",
+      "brand": "Native",
+      "type": "Lotion",
+      "families": [
+        "Fresh",
+        "Woody",
+        "Spicy"
+      ],
+      "seasons": [
+        "Spring",
+        "Summer",
+        "Fall",
+        "Winter"
+      ],
+      "notes": "Cedar, sea salt"
+    },
+    {
+      "id": 900010,
+      "name": "Sweet Vanilla Fig",
+      "brand": "Philosophy",
+      "type": "Body wash",
+      "families": [
+        "Fresh",
+        "Woody",
+        "Sweet"
+      ],
+      "seasons": [
+        "Spring",
+        "Summer",
+        "Fall",
+        "Winter"
+      ],
+      "notes": "Fig nectar, vanilla, sandalwood"
+    },
+    {
+      "id": 900011,
+      "name": "Mandarin Mimosa",
+      "brand": "Philosophy",
+      "type": "Body wash",
+      "families": [
+        "Citrus",
+        "Sweet"
+      ],
+      "seasons": [
+        "Spring",
+        "Summer",
+        "Fall"
+      ],
+      "notes": "Mandarin, champagne, amber"
+    },
+    {
+      "id": 900012,
+      "name": "Golden Hour",
+      "brand": "Josie Maran",
+      "type": "Body butter",
+      "families": [
+        "Amber",
+        "Musk"
+      ],
+      "seasons": [
+        "Spring",
+        "Summer",
+        "Fall"
+      ],
+      "notes": "Amber, white musk"
+    },
+    {
+      "id": 900013,
+      "name": "Always Nude",
+      "brand": "Josie Maran",
+      "type": "Body butter",
+      "families": [
+        "Fresh"
+      ],
+      "seasons": [
+        "Spring",
+        "Summer",
+        "Fall",
+        "Winter"
+      ],
+      "notes": ""
+    },
+    {
+      "id": 900014,
+      "name": "Citrus Blossom",
+      "brand": "Hempz",
+      "type": "Lotion",
+      "families": [
+        "Citrus",
+        "Sweet"
+      ],
+      "seasons": [
+        "Spring",
+        "Summer",
+        "Fall"
+      ],
+      "notes": ""
+    },
+    {
+      "id": 900015,
+      "name": "Restore",
+      "brand": "Bath & Body Works",
+      "type": "Body wash",
+      "families": [
+        "Fruity",
+        "Woody",
+        "Spicy"
+      ],
+      "seasons": [
+        "Fall",
+        "Winter"
+      ],
+      "notes": "Cherry, woody"
+    },
+    {
+      "id": 900016,
+      "name": "Pistachio Dreams",
+      "brand": "Philosophy",
+      "type": "Body wash",
+      "families": [
+        "Gourmand",
+        "Sweet",
+        "Nutty"
+      ],
+      "seasons": [
+        "Fall",
+        "Winter"
+      ],
+      "notes": "Pistachio, salted caramel, vanilla"
+    },
+    {
+      "id": 900017,
+      "name": "Water",
+      "brand": "Bath & Body Works",
+      "type": "Body wash",
+      "families": [
+        "Fresh",
+        "Aquatic"
+      ],
+      "seasons": [
+        "Spring",
+        "Summer",
+        "Fall",
+        "Winter"
+      ],
+      "notes": ""
+    },
+    {
+      "id": 900018,
+      "name": "Beach Waves",
+      "brand": "Eos",
+      "type": "Lotion",
+      "families": [
+        "Solar",
+        "Tropical",
+        "Sweet"
+      ],
+      "seasons": [
+        "Spring",
+        "Summer"
+      ],
+      "notes": "Pineapple, tiare flower, coconut water, salty skin"
+    },
+    {
+      "id": 900019,
+      "name": "Strawberry Dream",
+      "brand": "Eos",
+      "type": "Lotion",
+      "families": [
+        "Fruity",
+        "Sweet"
+      ],
+      "seasons": [
+        "Spring",
+        "Summer",
+        "Fall"
+      ],
+      "notes": "Strawberry, pink sugar, vanilla cream"
+    },
+    {
+      "id": 900020,
+      "name": "Cr\u00e8me de Pistachio",
+      "brand": "Eos",
+      "type": "Lotion",
+      "families": [
+        "Gourmand",
+        "Sweet",
+        "Nutty"
+      ],
+      "seasons": [
+        "Spring",
+        "Fall",
+        "Winter"
+      ],
+      "notes": "Pistachio, toffee, warm woods"
+    },
+    {
+      "id": 900021,
+      "name": "Glazed Donut",
+      "brand": "Truly",
+      "type": "Body oil",
+      "families": [
+        "Gourmand",
+        "Sweet"
+      ],
+      "seasons": [
+        "Spring",
+        "Summer",
+        "Fall",
+        "Winter"
+      ],
+      "notes": ""
+    },
+    {
+      "id": 900022,
+      "name": "Shea Soleil",
+      "brand": "Saltair",
+      "type": "Body oil",
+      "families": [
+        "Gourmand",
+        "Woody",
+        "Sweet"
+      ],
+      "seasons": [
+        "Spring",
+        "Summer",
+        "Fall",
+        "Winter"
+      ],
+      "notes": "Shea butter, almond milk, vanilla"
+    },
+    {
+      "id": 900023,
+      "name": "Body Badalada Daily Glow",
+      "brand": "Sol de Janeiro",
+      "type": "Body cream",
+      "families": [
+        "Gourmand",
+        "Sweet",
+        "Nutty"
+      ],
+      "seasons": [
+        "Spring",
+        "Summer",
+        "Fall",
+        "Winter"
+      ],
+      "notes": "Pistachio, salted caramel"
+    },
+    {
+      "id": 900024,
+      "name": "Soft Serve",
+      "brand": "Truly",
+      "type": "Body oil",
+      "families": [
+        "Gourmand",
+        "Fruity",
+        "Sweet"
+      ],
+      "seasons": [
+        "Spring",
+        "Summer",
+        "Fall",
+        "Winter"
+      ],
+      "notes": ""
+    },
+    {
+      "id": 900025,
+      "name": "Wrapped Up in Matcha",
+      "brand": "Philosophy",
+      "type": "Body wash",
+      "families": [
+        "Gourmand",
+        "Green",
+        "Nutty"
+      ],
+      "seasons": [
+        "Spring",
+        "Summer",
+        "Fall",
+        "Winter"
+      ],
+      "notes": "Matcha"
+    },
+    {
+      "id": 900026,
+      "name": "Sweet Jasmine & Rose",
+      "brand": "Hempz",
+      "type": "Lotion",
+      "families": [
+        "Floral",
+        "Green",
+        "Sweet"
+      ],
+      "seasons": [
+        "Spring",
+        "Summer",
+        "Fall",
+        "Winter"
+      ],
+      "notes": "Jasmine, ripe fig, tea roses"
+    },
+    {
+      "id": 900027,
+      "name": "Sea Salt Vanilla",
+      "brand": "Saltair",
+      "type": "Body oil",
+      "families": [
+        "Woody",
+        "Musk",
+        "Spicy"
+      ],
+      "seasons": [
+        "Spring",
+        "Summer",
+        "Fall",
+        "Winter"
+      ],
+      "notes": "Vanilla, sea salt, sandalwood"
+    },
+    {
+      "id": 900028,
+      "name": "Jarritos",
+      "brand": "Native",
+      "type": "Body wash",
+      "families": [
+        "Citrus"
+      ],
+      "seasons": [
+        "Spring",
+        "Summer",
+        "Fall"
+      ],
+      "notes": "Mandarin"
+    }
+  ],
+  "nextShelfId": 900029
 };
 const FAMILIES=["Gourmand","Floral","Fruity","Fresh","Citrus","Woody","Amber","Musk","Green","Aquatic","Solar","Spicy","Tropical","Lactonic","Sweet","Nutty","Powdery"];
 const FAM_COLOR={Gourmand:"#C68A4E",Floral:"#D27FA3",Fruity:"#D2604E",Fresh:"#4FA8C0",Citrus:"#E0A92E",Woody:"#8A6A45",Amber:"#B07A3C",Musk:"#B9A38C",Green:"#6B9A5B",Aquatic:"#3C7DAE",Solar:"#E0954E",Spicy:"#A8432C",Tropical:"#2FA98E",Lactonic:"#D9C4A3",Sweet:"#B47BC4",Nutty:"#A6764B",Powdery:"#C7B3C9"};
@@ -5856,6 +6548,22 @@ async function loadUser(){
 }
 const MONTHS=["January","February","March","April","May","June","July","August","September","October","November","December"];
 function defaultTrayLabel(){const d=new Date();return MONTHS[d.getMonth()]+" "+d.getFullYear();}
+function isAutoTrayLabel(l){
+  // true when the label is still one of our generated "Month YYYY" names (not renamed by hand)
+  return new RegExp("^(?:"+MONTHS.join("|")+")\\s+\\d{4}$").test((l||"").trim());
+}
+function refreshTrayMonth(){
+  // A tray started last month keeps its old name forever otherwise — roll it forward.
+  if(!USER||!USER.tray)return false;
+  const cur=defaultTrayLabel();
+  if(USER.tray.label===cur)return false;
+  if(!isAutoTrayLabel(USER.tray.label))return false;   // hand-named trays are left alone
+  if(USER.tray.ids&&USER.tray.ids.length)USER.tray.carried=USER.tray.label;
+  else delete USER.tray.carried;
+  USER.tray.label=cur;
+  queueSave();
+  return true;
+}
 function defaultUser(){return {ov:{},custom:[],nextId:100001,tray:{label:defaultTrayLabel(),ids:[]},trayHistory:[]};}
 function seedUser(){
   // Used when no real saved data exists in this browser/address.
@@ -6209,24 +6917,57 @@ function bodyCatalog(all){
   const out=[];
   all.forEach(s=>{
     (s.matchbody||[]).forEach(t=>{
-      out.push({label:s.name,type:t,src:s,kind:"matching"});
+      out.push({key:"m:"+s.id+":"+t,label:s.name,type:t,src:s,kind:"matching"});
     });
     (getBody(s.id)||[]).forEach(b=>{
       if(!b||!b.n)return;
-      out.push({label:b.n,type:b.t||"Other",src:s,kind:"other"});
+      out.push({key:"o:"+s.id+":"+(b.t||"Other")+":"+b.n,label:b.n,type:b.t||"Other",src:s,kind:"other"});
     });
   });
   // standalone shelf products — no parent fragrance, so give them a stand-in "source"
   shelf().forEach(p=>{
-    out.push({label:p.name,type:p.type||"Other",kind:"standalone",brand:p.brand||"",
+    out.push({key:"s:"+p.id,label:p.name,type:p.type||"Other",kind:"standalone",brand:p.brand||"",
       src:{id:p.id,name:p.name,brand:p.brand||"",families:p.families||[],seasons:p.seasons||[],
            notes:p.notes||"",rating:0,fav:false}});
   });
   return out;
 }
+/* per-scent curation of body-care pairings */
+function getBPairs(id){
+  const rec=id>=100000?(USER.custom.find(x=>x.id===id)||{}):(USER.ov[id]||{});
+  const b=rec.bpairs||{};
+  return {pin:(b.pin||[]).slice(),hide:(b.hide||[]).slice()};
+}
+function setBPairs(id,bp){
+  if(id>=100000){const c=USER.custom.find(x=>x.id===id);if(c)c.bpairs=bp;}
+  else USER.ov[id]=Object.assign({},USER.ov[id],{bpairs:bp});
+  queueSave();
+}
+function pinBody(id,key){
+  const b=getBPairs(id);
+  if(!b.pin.includes(key))b.pin.push(key);
+  b.hide=b.hide.filter(k=>k!==key);
+  setBPairs(id,b);softUpdate(id);flash("Added");
+}
+function unpinBody(id,key){
+  const b=getBPairs(id);b.pin=b.pin.filter(k=>k!==key);
+  setBPairs(id,b);softUpdate(id);
+}
+function hideBody(id,key){
+  const b=getBPairs(id);
+  if(!b.hide.includes(key))b.hide.push(key);
+  b.pin=b.pin.filter(k=>k!==key);
+  setBPairs(id,b);softUpdate(id);
+}
 function bodySuggest(it,all){
-  const cat=bodyCatalog(all).filter(p=>p.src.id!==it.id);
-  if(!cat.length)return [];
+  const cur=getBPairs(it.id);
+  const hidden=new Set(cur.hide);
+  const full=bodyCatalog(all);
+  const pinnedList=cur.pin.map(k=>full.find(p=>p.key===k)).filter(Boolean)
+    .map(p=>({p,s:99,why:"",pinned:true}));
+  const cat=full.filter(p=>p.src.id!==it.id&&!hidden.has(p.key)&&!cur.pin.includes(p.key));
+  const slots=Math.max(0,4-pinnedList.length);
+  if(!cat.length||!slots)return pinnedList.slice(0,4);
   const partners=new Set();
   it.families.forEach(f=>(PAIR_MAP[f]||[]).forEach(p=>partners.add(p)));
   const itTok=tokenSet(it.notes), cs=currentSeason();
@@ -6251,13 +6992,14 @@ function bodySuggest(it,all){
   scored.sort((a,b)=>b.s-a.s);
   const keyOf=o=>(o.p.label+"|"+o.p.type).toLowerCase();
   const chosen=[], seenType=new Set(), seenSrc=new Set(), seenKey=new Set();
+  pinnedList.forEach(o=>{seenType.add(o.p.type);seenSrc.add(o.p.src.id);seenKey.add(keyOf(o));});
   const push=o=>{chosen.push(o);seenType.add(o.p.type);seenSrc.add(o.p.src.id);seenKey.add(keyOf(o));};
   // Your standalone shelf is a much smaller pool than scent-linked products, so
   // reserve it a slot (two once it's a decent share) — otherwise it never shows.
   const shelfScored=scored.filter(o=>o.p.kind==="standalone");
   if(shelfScored.length){
     const share=shelfScored.length/scored.length;
-    const reserve=Math.min(share>=0.25?2:1,shelfScored.length,2);
+    const reserve=Math.min(share>=0.25?2:1,shelfScored.length,slots);
     for(const o of shelfScored){
       if(chosen.length>=reserve)break;
       if(seenKey.has(keyOf(o))||seenType.has(o.p.type))continue;
@@ -6266,21 +7008,21 @@ function bodySuggest(it,all){
   }
   // variety: spread across product types AND source scents, then relax to fill
   for(const o of scored){
-    if(chosen.length>=4)break;
+    if(chosen.length>=slots)break;
     if(seenKey.has(keyOf(o))||seenType.has(o.p.type)||seenSrc.has(o.p.src.id))continue;
     push(o);
   }
   for(const o of scored){   // relax the source rule
-    if(chosen.length>=4)break;
+    if(chosen.length>=slots)break;
     if(seenKey.has(keyOf(o))||seenType.has(o.p.type))continue;
     push(o);
   }
   for(const o of scored){   // relax everything but duplicates
-    if(chosen.length>=4)break;
+    if(chosen.length>=slots)break;
     if(seenKey.has(keyOf(o)))continue;
     push(o);
   }
-  return chosen;
+  return pinnedList.concat(chosen);
 }
 
 function pairings(it,all){
@@ -6357,9 +7099,11 @@ function cardHTML(it,all){
         const src=o.p.kind==="matching"?"matching set"
                  :o.p.kind==="standalone"?(o.p.brand?esc(o.p.brand):"your shelf")
                  :"with "+esc(o.p.src.name);
-        return `<div class="pair bsug"><span class="bc-type">${esc(o.p.type)}</span><span class="pn">${esc(o.p.label)}</span><span class="pb">${src}</span>${o.why?`<span class="pwhy">${esc(o.why)}</span>`:""}</div>`;
-      }).join("")
-    : `<div class="pair pb" style="cursor:default">Tick matching products or add named ones on a few scents, and suggestions will appear here.</div>`;
+        const tail=o.pinned?'<span class="pinned-tag">added</span>':(o.why?`<span class="pwhy">${esc(o.why)}</span>`:"");
+        const act=o.pinned?`unpinBody(${it.id},'${esc(o.p.key)}')`:`hideBody(${it.id},'${esc(o.p.key)}')`;
+        return `<div class="pair bsug"><span class="bc-type">${esc(o.p.type)}</span><span class="pn">${esc(o.p.label)}</span><span class="pb">${src}</span>${tail}<span class="pctrl"><button class="pbtn" title="${o.pinned?'Remove':'Not this one'}" onclick="${act}">×</button></span></div>`;
+      }).join("")+`<button class="addpair" onclick="openBodyPicker(${it.id})">＋ Add your own</button>`
+    : `<div class="pair pb" style="cursor:default">Tick matching products or add named ones on a few scents, and suggestions will appear here.</div><button class="addpair" onclick="openBodyPicker(${it.id})">＋ Add your own</button>`;
   const bodyAdd=`<div class="bc-add">
       <input id="bcN-${it.id}" class="bc-input" placeholder="e.g. Vanilla body lotion (CeraVe)" onkeydown="if(event.key==='Enter')addBody(${it.id})">
       <select id="bcT-${it.id}" class="bc-sel">${BODY_TYPES.map(t=>`<option>${t}</option>`).join("")}</select>
@@ -6753,10 +7497,16 @@ function trayToggle(id){
 function setTrayLabel(v){USER.tray.label=v.trim()||defaultTrayLabel();queueSave();}
 function archiveTray(){
   if(!USER.tray.ids.length){flash("Your tray is empty");return;}
-  if(!confirm(`Archive “${USER.tray.label}” (${USER.tray.ids.length} scents) to your history and start a fresh tray?`))return;
-  USER.trayHistory.unshift({label:USER.tray.label,ids:USER.tray.ids.slice(),date:todayISO()});
+  // a tray that rolled over from a previous month is filed under the month it was curated
+  const archiveLabel=USER.tray.carried||USER.tray.label;
+  if(!confirm(`Archive “${archiveLabel}” (${USER.tray.ids.length} scents) to your history and start a fresh tray?`))return;
+  USER.trayHistory.unshift({label:archiveLabel,ids:USER.tray.ids.slice(),date:todayISO()});
   USER.tray={label:defaultTrayLabel(),ids:[]};
   queueSave();renderTray();flash("Tray archived");
+}
+function dismissCarry(){
+  if(USER.tray)delete USER.tray.carried;
+  queueSave();renderTray();
 }
 function reuseTray(i){
   const h=USER.trayHistory[i];if(!h)return;
@@ -6809,6 +7559,7 @@ function applyTraySuggestion(key,mode){
   queueSave();renderTray();flash(mode==="replace"?"Tray set":"Added to tray");
 }
 function renderTray(){
+  refreshTrayMonth();
   const all=items();
   const tray=trayItems();
   const season=currentSeason();
@@ -6849,6 +7600,13 @@ function renderTray(){
       </div>
       <button class="btn-ghost" onclick="archiveTray()">Archive &amp; start new month</button>
     </div>
+    ${USER.tray.carried?`<div class="carry-note">
+      <div class="carry-txt"><b>Carried over from ${esc(USER.tray.carried)}.</b> These scents are still here — archive them if you'd like a clean ${esc(USER.tray.label)}.</div>
+      <div class="carry-acts">
+        <button class="pbtn carry-btn" onclick="dismissCarry()">Keep them</button>
+        <button class="pbtn carry-btn solid" onclick="archiveTray()">Archive ${esc(USER.tray.carried)}</button>
+      </div>
+    </div>`:""}
     ${cards}
     <div class="panel">
       <h2>Ideas for this month</h2>
@@ -7085,11 +7843,63 @@ function renderPairResults(q){
   document.getElementById("ppResults").innerHTML=rows||`<div class="ql-row" style="color:var(--faint);cursor:default">No matches.</div>`;
 }
 
+let bodyPickTarget=null, bodyPickQ="";
+function openBodyPicker(id){
+  modalKind="bodypick";bodyPickTarget=id;bodyPickQ="";
+  const it=items().find(x=>x.id===id);
+  document.getElementById("modalCard").innerHTML=`
+    <h2>Add a body care pairing</h2>
+    <p class="mh">Pin a product for <b>${esc(it.name)}</b> — tap to add or remove. Dismissed suggestions can be brought back here too.</p>
+    <div class="field" style="margin-bottom:6px"><input id="bpSearch" placeholder="Search your body care…" oninput="onBodyPickSearch(this.value)"></div>
+    <div class="ql-results" id="bpResults"></div>
+    <div class="modal-foot" style="margin-top:14px"><button class="btn-solid" onclick="closeModal()">Done</button></div>`;
+  document.getElementById("modalBg").classList.add("on");
+  renderBodyPick("");
+  setTimeout(()=>{const s=document.getElementById("bpSearch");if(s)s.focus();},60);
+}
+function onBodyPickSearch(v){bodyPickQ=v;renderBodyPick(v);}
+function renderBodyPick(q){
+  const id=bodyPickTarget;
+  const it=items().find(x=>x.id===id);if(!it)return;
+  const cur=getBPairs(id);
+  const pinned=new Set(cur.pin), hidden=new Set(cur.hide);
+  let list=bodyCatalog(items()).filter(p=>p.src.id!==id);
+  // de-duplicate identical product+type entries
+  const seen=new Set();
+  list=list.filter(p=>{const k=(p.label+"|"+p.type).toLowerCase();if(seen.has(k))return false;seen.add(k);return true;});
+  if(q&&q.trim()){
+    const t=q.toLowerCase();
+    list=list.filter(p=>(p.label+" "+p.type+" "+(p.brand||"")+" "+p.src.name+" "+(p.src.families||[]).join(" ")).toLowerCase().includes(t));
+  }else{
+    // default: things that suit this scent, best first
+    const partners=new Set();it.families.forEach(f=>(PAIR_MAP[f]||[]).forEach(x=>partners.add(x)));
+    list=list.sort((a,b)=>{
+      const sc=p=>(p.src.families.some(f=>it.families.includes(f))?2:0)+(p.src.families.some(f=>partners.has(f))?1:0);
+      return sc(b)-sc(a)||a.type.localeCompare(b.type)||a.label.localeCompare(b.label);
+    });
+  }
+  list=list.slice(0,40);
+  const rows=list.map(p=>{
+    const isP=pinned.has(p.key), isH=hidden.has(p.key);
+    const sub=p.kind==="matching"?"matching set · "+esc(p.src.name)
+             :p.kind==="standalone"?(p.brand?esc(p.brand):"your shelf")
+             :"with "+esc(p.src.name);
+    const famColor=p.src.families&&p.src.families.length?FAM_COLOR[p.src.families[0]]:"#C9BFB0";
+    const act=isP?`unpinBody(${id},'${esc(p.key)}')`:`pinBody(${id},'${esc(p.key)}')`;
+    return `<div class="ql-row ${isP?'done':''}" onclick="${act};renderBodyPick(bodyPickQ)">
+      <span class="qf" style="background:${famColor}"></span>
+      <span class="qn">${esc(p.label)}<small>${esc(p.type)} · ${sub}</small></span>
+      <span class="qmeta">${isP?'added ✓':(isH?'dismissed — tap to add':'tap to add')}</span></div>`;
+  }).join("");
+  document.getElementById("bpResults").innerHTML=rows||`<div class="ql-row" style="color:var(--faint);cursor:default">No matches.</div>`;
+}
+
 document.addEventListener("keydown",e=>{if(e.key==="Escape")closeModal();});
 
 /* ---------- boot ---------- */
 (async function(){
   USER=ensureShape(await loadUser());
+  refreshTrayMonth();
   if(storeMode==="none")document.getElementById("storageBanner").classList.add("show");
   document.getElementById("sortSel").value=state.sort;
   render();
