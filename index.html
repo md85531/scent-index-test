@@ -115,6 +115,13 @@ h1 em{font-style:italic;color:var(--accent-deep)}
 .shelf-fam{font-size:9.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;border-radius:999px;padding:2px 9px}
 .shelf-tags .sd{font-size:9.5px;font-weight:700;color:#fff;padding:2px 8px;border-radius:999px;text-transform:uppercase}
 .shelf-acts{display:flex;gap:5px;flex:none}
+.shelf-pairs{border-top:1px dashed var(--line);margin-top:2px;padding:9px 0 4px 0}
+.sp-h{font-size:9.5px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--faint);margin-bottom:6px}
+.sp-row{display:flex;align-items:center;gap:8px;padding:4px 0;font-size:12.5px;flex-wrap:wrap}
+.sp-dot{width:8px;height:8px;border-radius:50%;flex:none}
+.sp-n{font-weight:700;color:var(--ink)}
+.sp-b{font-size:10.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--faint)}
+.sp-why{margin-left:auto;font-size:10.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--accent-deep);background:var(--tint);border-radius:999px;padding:2px 9px}
 /* surprise me */
 #surpriseBtn{border-style:dashed}
 #surpriseBtn:hover{color:var(--accent-deep);border-color:var(--accent);background:var(--tint)}
@@ -1698,6 +1705,9 @@ const INITIAL_USER = /*userdata*/{
       ],
       "sizes": [
         "Full Size"
+      ],
+      "wears": [
+        "2026-08-09"
       ]
     },
     "49": {
@@ -5351,6 +5361,7 @@ const INITIAL_USER = /*userdata*/{
         "Full Size"
       ],
       "matchbody": [
+        "Body wash",
         "Body cream"
       ]
     },
@@ -5528,6 +5539,7 @@ const INITIAL_USER = /*userdata*/{
       "name": "Limonada Gelada",
       "families": [
         "Fruity",
+        "Citrus",
         "Tropical",
         "Sweet"
       ],
@@ -5543,8 +5555,24 @@ const INITIAL_USER = /*userdata*/{
       "rating": 4,
       "price": 26,
       "fav": false,
-      "wears": [],
-      "memo": "Limited edition "
+      "wears": [
+        "2026-08-10"
+      ],
+      "memo": "Limited edition ",
+      "pairs": {
+        "pin": {
+          "layer": [],
+          "rot": []
+        },
+        "hide": {
+          "layer": [
+            39,
+            100002,
+            56
+          ],
+          "rot": []
+        }
+      }
     },
     {
       "id": 100025,
@@ -6002,9 +6030,90 @@ const INITIAL_USER = /*userdata*/{
       "price": 28,
       "fav": false,
       "wears": []
+    },
+    {
+      "id": 100043,
+      "brand": "Rare Beauty",
+      "name": "Rare Beginnings",
+      "families": [
+        "Floral",
+        "Fruity",
+        "Sweet"
+      ],
+      "notes": "Pear, gardenia, jasmine, vanilla",
+      "seasons": [
+        "Spring",
+        "Summer",
+        "Fall",
+        "Winter"
+      ],
+      "sizes": [
+        "Travel Size"
+      ],
+      "multiples": false,
+      "rating": 0,
+      "price": 38,
+      "fav": false,
+      "wears": [],
+      "bpairs": {
+        "pin": [],
+        "hide": [
+          "s:900010:Body wash",
+          "o:112:Body wash:Sandstone",
+          "o:112:Body wash:Brown Sugar & Fig"
+        ]
+      }
+    },
+    {
+      "id": 100044,
+      "brand": "Gap",
+      "name": "Grass",
+      "families": [
+        "Fresh",
+        "Green"
+      ],
+      "notes": "Green mandarin, matcha, cedar",
+      "seasons": [
+        "Spring",
+        "Summer",
+        "Fall"
+      ],
+      "sizes": [
+        "Travel Size"
+      ],
+      "multiples": false,
+      "rating": 0,
+      "price": 20,
+      "fav": false,
+      "wears": []
+    },
+    {
+      "id": 100045,
+      "brand": "Gap",
+      "name": "Heaven",
+      "families": [
+        "Fruity",
+        "Fresh",
+        "Sweet"
+      ],
+      "notes": "Pear, vanilla, patchouli",
+      "seasons": [
+        "Spring",
+        "Summer",
+        "Fall",
+        "Winter"
+      ],
+      "sizes": [
+        "Travel Size"
+      ],
+      "multiples": false,
+      "rating": 0,
+      "price": 20,
+      "fav": false,
+      "wears": []
     }
   ],
-  "nextId": 100043,
+  "nextId": 100046,
   "tray": {
     "label": "August 2026",
     "ids": [
@@ -6131,7 +6240,7 @@ const INITIAL_USER = /*userdata*/{
       ]
     },
     {
-      "id": 900005,
+      "id": 900006,
       "name": "Lemon Custard",
       "brand": "Philosophy",
       "type": "Body wash",
@@ -6148,27 +6257,7 @@ const INITIAL_USER = /*userdata*/{
       ],
       "notes": "Lemon, bergamot, vanilla",
       "types": [
-        "Body wash"
-      ]
-    },
-    {
-      "id": 900006,
-      "name": "Lemon Custard",
-      "brand": "Philosophy",
-      "type": "Lotion",
-      "families": [
-        "Gourmand",
-        "Citrus",
-        "Sweet"
-      ],
-      "seasons": [
-        "Spring",
-        "Summer",
-        "Fall",
-        "Winter"
-      ],
-      "notes": "Lemon, bergamot, vanilla",
-      "types": [
+        "Body wash",
         "Lotion"
       ]
     },
@@ -6187,27 +6276,6 @@ const INITIAL_USER = /*userdata*/{
         "Fall"
       ],
       "notes": "Coconut, passion fruit, mango",
-      "types": [
-        "Body wash"
-      ]
-    },
-    {
-      "id": 900008,
-      "name": "Sea Salt & Cedar",
-      "brand": "Native",
-      "type": "Body wash",
-      "families": [
-        "Fresh",
-        "Woody",
-        "Spicy"
-      ],
-      "seasons": [
-        "Spring",
-        "Summer",
-        "Fall",
-        "Winter"
-      ],
-      "notes": "Cedar, sea salt",
       "types": [
         "Body wash"
       ]
@@ -6450,7 +6518,7 @@ const INITIAL_USER = /*userdata*/{
       "id": 900021,
       "name": "Glazed Donut",
       "brand": "Truly",
-      "type": "Body oil",
+      "type": "Body cream",
       "families": [
         "Gourmand",
         "Sweet"
@@ -6463,6 +6531,7 @@ const INITIAL_USER = /*userdata*/{
       ],
       "notes": "",
       "types": [
+        "Body cream",
         "Body oil"
       ]
     },
@@ -6686,9 +6755,323 @@ const INITIAL_USER = /*userdata*/{
       "types": [
         "Body wash"
       ]
+    },
+    {
+      "id": 900033,
+      "name": "Caramel Cashmere",
+      "brand": "Eos",
+      "types": [
+        "Lotion"
+      ],
+      "type": "Lotion",
+      "families": [
+        "Gourmand",
+        "Sweet",
+        "Nutty"
+      ],
+      "seasons": [
+        "Fall",
+        "Winter"
+      ],
+      "notes": "Caramel, sugar cookie, vanilla"
+    },
+    {
+      "id": 900034,
+      "name": "Cocoa Cashmere",
+      "brand": "Eos",
+      "types": [
+        "Lotion"
+      ],
+      "type": "Lotion",
+      "families": [
+        "Gourmand",
+        "Sweet"
+      ],
+      "seasons": [
+        "Fall",
+        "Winter"
+      ],
+      "notes": "Cocoa, marshmallow, amber"
+    },
+    {
+      "id": 900035,
+      "name": "Sticky Dates",
+      "brand": "Lush",
+      "types": [
+        "Body wash",
+        "Body scrub",
+        "Lotion"
+      ],
+      "type": "Body wash",
+      "families": [
+        "Gourmand",
+        "Sweet",
+        "Nutty"
+      ],
+      "seasons": [
+        "Fall",
+        "Winter"
+      ],
+      "notes": "Dates, sugar"
+    },
+    {
+      "id": 900036,
+      "name": "Brazil Nut",
+      "brand": "Trader Joe\u2019s",
+      "types": [
+        "Body wash",
+        "Body scrub",
+        "Body cream",
+        "Body oil"
+      ],
+      "type": "Body wash",
+      "families": [
+        "Gourmand",
+        "Nutty"
+      ],
+      "seasons": [
+        "Spring",
+        "Summer",
+        "Fall"
+      ],
+      "notes": ""
+    },
+    {
+      "id": 900037,
+      "name": "Hot Cocoa",
+      "brand": "Trader Joe\u2019s",
+      "types": [
+        "Body scrub"
+      ],
+      "type": "Body scrub",
+      "families": [
+        "Gourmand",
+        "Sweet"
+      ],
+      "seasons": [
+        "Fall",
+        "Winter"
+      ],
+      "notes": "Chocolate"
+    },
+    {
+      "id": 900038,
+      "name": "Japanese Cherry Blossom",
+      "brand": "Bath & Body Works",
+      "types": [
+        "Body scrub"
+      ],
+      "type": "Body scrub",
+      "families": [
+        "Floral",
+        "Spicy"
+      ],
+      "seasons": [
+        "Spring",
+        "Fall",
+        "Winter"
+      ],
+      "notes": "Japanese cherry blossom, pear, mimosa, jasmine, sandalwood"
+    },
+    {
+      "id": 900039,
+      "name": "Vitamin C",
+      "brand": "Trader Joe\u2019s",
+      "types": [
+        "Body butter"
+      ],
+      "type": "Body butter",
+      "families": [
+        "Citrus"
+      ],
+      "seasons": [
+        "Spring",
+        "Summer"
+      ],
+      "notes": "Clementine"
+    },
+    {
+      "id": 900040,
+      "name": "Bergamot Bliss",
+      "brand": "Random",
+      "types": [
+        "Body oil"
+      ],
+      "type": "Body oil",
+      "families": [
+        "Fresh",
+        "Citrus"
+      ],
+      "seasons": [
+        "Spring",
+        "Summer",
+        "Fall"
+      ],
+      "notes": "Bergamot"
+    },
+    {
+      "id": 900041,
+      "name": "Warm Vanilla",
+      "brand": "NatureLove",
+      "types": [
+        "Body oil"
+      ],
+      "type": "Body oil",
+      "families": [
+        "Gourmand",
+        "Amber",
+        "Sweet"
+      ],
+      "seasons": [
+        "Fall",
+        "Winter"
+      ],
+      "notes": "Vanilla, jasmine, amber, musk"
+    },
+    {
+      "id": 900042,
+      "name": "Vanilla Verve",
+      "brand": "Cyklar",
+      "types": [
+        "Body oil"
+      ],
+      "type": "Body oil",
+      "families": [
+        "Gourmand",
+        "Amber",
+        "Spicy"
+      ],
+      "seasons": [
+        "Spring",
+        "Summer",
+        "Fall",
+        "Winter"
+      ],
+      "notes": "Vanilla, musk, ambrette"
+    },
+    {
+      "id": 900043,
+      "name": "Nuxe",
+      "brand": "Huile Prodigieuse",
+      "types": [
+        "Body oil"
+      ],
+      "type": "Body oil",
+      "families": [
+        "Musk",
+        "Spicy",
+        "Powdery"
+      ],
+      "seasons": [
+        "Spring",
+        "Summer",
+        "Fall",
+        "Winter"
+      ],
+      "notes": ""
+    },
+    {
+      "id": 900044,
+      "name": "Cactus Blossom",
+      "brand": "Bath & Body Works",
+      "types": [
+        "Body wash"
+      ],
+      "type": "Body wash",
+      "families": [
+        "Fresh",
+        "Citrus",
+        "Green"
+      ],
+      "seasons": [
+        "Spring",
+        "Summer",
+        "Fall"
+      ],
+      "notes": "Cactus flower, fresh citrus, vanilla coconut"
+    },
+    {
+      "id": 900045,
+      "name": "Country Chic",
+      "brand": "Bath & Body Works",
+      "types": [
+        "Body wash",
+        "Body cream"
+      ],
+      "type": "Body wash",
+      "families": [
+        "Floral",
+        "Citrus",
+        "Sweet"
+      ],
+      "seasons": [
+        "Spring",
+        "Summer",
+        "Fall"
+      ],
+      "notes": "Lemon, marigold, sunflower, orange blossom, amber wood"
+    },
+    {
+      "id": 900046,
+      "name": "Inspire Love",
+      "brand": "Bath & Body Works",
+      "types": [
+        "Body wash",
+        "Body cream"
+      ],
+      "type": "Body wash",
+      "families": [
+        "Floral",
+        "Sweet"
+      ],
+      "seasons": [
+        "Spring",
+        "Summer",
+        "Fall",
+        "Winter"
+      ],
+      "notes": "Rose, vanilla"
+    },
+    {
+      "id": 900047,
+      "name": "Firecracker Pop",
+      "brand": "Bath & Body Works",
+      "types": [
+        "Body wash",
+        "Body cream"
+      ],
+      "type": "Body wash",
+      "families": [
+        "Fruity",
+        "Citrus",
+        "Sweet"
+      ],
+      "seasons": [
+        "Spring",
+        "Summer"
+      ],
+      "notes": "Cherry, fresh citrus, berries"
+    },
+    {
+      "id": 900048,
+      "name": "Almond Croissant",
+      "brand": "Bath & Body Works",
+      "types": [
+        "Body cream"
+      ],
+      "type": "Body cream",
+      "families": [
+        "Lactonic",
+        "Nutty"
+      ],
+      "seasons": [
+        "Fall",
+        "Winter"
+      ],
+      "notes": "Almond, vanilla, croissant"
     }
   ],
-  "nextShelfId": 900033
+  "nextShelfId": 900049
 };
 const FAMILIES=["Gourmand","Floral","Fruity","Fresh","Citrus","Woody","Amber","Musk","Green","Aquatic","Solar","Spicy","Tropical","Lactonic","Sweet","Nutty","Powdery"];
 const FAM_COLOR={Gourmand:"#C68A4E",Floral:"#D27FA3",Fruity:"#D2604E",Fresh:"#4FA8C0",Citrus:"#E0A92E",Woody:"#8A6A45",Amber:"#B07A3C",Musk:"#B9A38C",Green:"#6B9A5B",Aquatic:"#3C7DAE",Solar:"#E0954E",Spicy:"#A8432C",Tropical:"#2FA98E",Lactonic:"#D9C4A3",Sweet:"#B47BC4",Nutty:"#A6764B",Powdery:"#C7B3C9"};
@@ -6810,6 +7193,7 @@ function ensureShape(u){
 }
 let saveTimer=null;
 function queueSave(){
+  BP_CACHE=null;                 // any data change re-opens the pairing allocation
   if(saveTimer)clearTimeout(saveTimer);
   saveTimer=setTimeout(doSave,400);
 }
@@ -6934,6 +7318,121 @@ function esc(s){return(s||"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":
 /* note tokenisation for similarity (drop ubiquitous adjectives so matches mean something) */
 const NOTE_STOP=new Set(["soft","warm","sweet","creamy","clean","airy","bright","intense","lush","dark","cool","fresh","skin","plush","dreamy","mineral","powder","powdery","aromatic","herbal","fizzy","juicy","festive","nocturnal","mysterious","mystical","cosmic","wistful","quiet","night","sunny","roasted","steamed","glow","comfort","velvet","silky","plush"]);
 const TOK={};
+/* ---------- note families: relate similar notes across scents & body care ----------
+   So a "lemonade" fragrance can find a "lemon" body wash, or a "cocoa" scrub
+   can find a "chocolate" scent. Each cluster maps related words to one tag. */
+const NOTE_CLUSTERS={
+  citrus:["lemon","lemonade","lemony","limoncello","citron","lime","orange","blood orange","bergamot","grapefruit","pomelo","mandarin","tangerine","clementine","yuzu","citrus","zest","neroli","petitgrain"],
+  vanilla:["vanilla","vanille","vanillic","bourbon vanilla","custard","creme","crème","creamy","cream","pudding","meringue","flan"],
+  sugar:["sugar","sugared","brown sugar","caramelized","cotton candy","marshmallow","syrup","icing","frosting","candy","sweet","honey","nectar","maple"],
+  caramel:["caramel","toffee","butterscotch","dulce","praline","brittle","molasses"],
+  chocolate:["chocolate","cocoa","cacao","mocha","truffle","fudge"],
+  coffee:["coffee","espresso","latte","cappuccino","macchiato"],
+  almond:["almond","amaretto","marzipan","frangipane","nutty","hazelnut","pistachio","pecan","walnut","brazil nut","macadamia","praline"],
+  coconut:["coconut","copra","monoi"],
+  milk:["milk","milky","lactonic","yogurt","buttermilk","condensed","horchata","oat milk"],
+  butter:["butter","buttery","shea","cocoa butter","biscuit","shortbread","pastry","croissant","dough","cake","cookie","waffle","brioche"],
+  berry:["berry","strawberry","raspberry","blackberry","blueberry","cranberry","currant","cassis","cherry","boysenberry"],
+  stonefruit:["peach","apricot","nectarine","plum","damson"],
+  tropicalfruit:["mango","papaya","lychee","guava","passionfruit","passion fruit","pineapple","banana","melon","watermelon","tropical","coconut water"],
+  orchard:["apple","pear","quince"],
+  fig:["fig","fig leaf","figue","figs"],
+  rose:["rose","rosewater","damask","peony"],
+  whiteflower:["jasmine","gardenia","tuberose","magnolia","orange blossom","ylang","frangipani","honeysuckle","lily","freesia","narcissus"],
+  lavender:["lavender","lavandin"],
+  powder:["powder","powdery","iris","orris","violet","talc","heliotrope","mimosa"],
+  musk:["musk","musky","skin","clean musk","white musk"],
+  amber:["amber","ambergris","ambrette","benzoin","labdanum","resin","balsam"],
+  wood:["wood","woody","sandalwood","cedar","cedarwood","oud","agarwood","teak","birch","oak","driftwood","pine","fir","cypress"],
+  vetiver:["vetiver","patchouli","moss","oakmoss"],
+  spice:["spice","spicy","cinnamon","clove","cardamom","ginger","nutmeg","pepper","peppercorn","saffron","anise","chai"],
+  herb:["basil","mint","peppermint","spearmint","sage","rosemary","thyme","eucalyptus","tea","matcha","chamomile"],
+  green:["green","grass","leaf","leaves","stem","bamboo","cucumber","aloe","fern","ivy"],
+  marine:["sea","sea salt","ocean","aquatic","marine","surf","tide","seaweed","kelp","brine"],
+  solar:["sun","solar","sunscreen","beach","sand","coconut oil","tanning","warm skin"],
+  tonka:["tonka","coumarin","hay"],
+  smoke:["smoke","smoky","tobacco","leather","incense","frankincense","myrrh","vetivert"],
+  boozy:["rum","whiskey","bourbon","champagne","wine","liqueur","cognac","brandy"]
+};
+const NOTE_TAG={};
+Object.keys(NOTE_CLUSTERS).forEach(tag=>NOTE_CLUSTERS[tag].forEach(w=>{NOTE_TAG[w]=tag;}));
+const NOTE_WORDS=Object.keys(NOTE_TAG).sort((a,b)=>b.length-a.length);   // longest first for phrases
+const NTAG={};
+function noteTags(text){
+  const t=(text||"").toLowerCase();
+  if(NTAG[t])return NTAG[t];
+  const tags=new Set();
+  // multi-word notes first ("brown sugar", "orange blossom"), then single words
+  NOTE_WORDS.forEach(w=>{ if(w.indexOf(" ")>0 && t.indexOf(w)>=0) tags.add(NOTE_TAG[w]); });
+  t.replace(/[()]/g," ").split(/[\s,;/&+.-]+/).forEach(raw=>{
+    let w=raw.trim(); if(w.length<3)return;
+    if(NOTE_TAG[w]){tags.add(NOTE_TAG[w]);return;}
+    const stem=w.replace(/(ies|ied)$/,"y").replace(/(es|s)$/,"").replace(/(ade|ish|ed|y)$/,"");
+    if(NOTE_TAG[stem]){tags.add(NOTE_TAG[stem]);return;}
+    // "lemonade" -> "lemon", "vanillic" -> "vanilla"
+    for(const cand of NOTE_WORDS){
+      if(cand.length>=4&&(w.startsWith(cand)||cand.startsWith(w))&&Math.abs(w.length-cand.length)<=3){tags.add(NOTE_TAG[cand]);break;}
+    }
+  });
+  NTAG[t]=tags;return tags;
+}
+/* Notes read in order, so the opening note counts for most. An exact shared note
+   ("fig" with "fig leaf") outranks a merely related one ("fig" with "apple"). */
+const NLIST={};
+const NOTE_SKIP=new Set(["and","with","the","of","a","an","hint","hints","touch","note","notes","accord","absolute","essence","extract","oil","water","blossom","bean","beans","leaf","leaves","fresh","soft","warm","dark","light","sweet","rich","creamy","toasted","whipped","crushed","wild",
+  /* colours & modifiers aren't notes — "pink pepper" should match on pepper, not pink */
+  "pink","white","black","red","blue","blood","golden","gold","deep","pure","iced","hot","cold","dry","bright","silky","velvet","smooth","fine","little","pale","raw"]);
+function noteList(text){
+  const raw=(text||"").toLowerCase().trim();
+  if(NLIST[raw])return NLIST[raw];
+  const parts=raw.replace(/[()]/g," ").split(/[,;/&+]| and /).map(x=>x.trim()).filter(Boolean);
+  const out=parts.map((phrase,i)=>{
+    const words=phrase.split(/[\s.-]+/).map(w=>w.trim()).filter(w=>w.length>2&&!NOTE_SKIP.has(w));
+    const norm=new Set();
+    words.forEach(w=>{
+      norm.add(w);
+      const stem=w.replace(/(ies|ied)$/,"y").replace(/(es|s)$/,"").replace(/(ade|ish|ed|y)$/,"");
+      if(stem.length>2)norm.add(stem);
+    });
+    // cluster tag for the phrase
+    let tag=null;
+    NOTE_WORDS.forEach(cand=>{ if(!tag&&cand.indexOf(" ")>0&&phrase.indexOf(cand)>=0)tag=NOTE_TAG[cand]; });
+    if(!tag)for(const w of norm){ if(NOTE_TAG[w]){tag=NOTE_TAG[w];break;} }
+    if(!tag)for(const w of norm){
+      for(const cand of NOTE_WORDS){
+        if(cand.length>=4&&(w.startsWith(cand)||cand.startsWith(w))&&Math.abs(w.length-cand.length)<=3){tag=NOTE_TAG[cand];break;}
+      }
+      if(tag)break;
+    }
+    return {phrase,norm,tag,pw:1/(1+0.4*i),head:words[0]||phrase};
+  }).filter(n=>n.norm.size||n.tag);
+  NLIST[raw]=out;return out;
+}
+function shareWord(a,b){ for(const w of a.norm){ if(b.norm.has(w))return w; } return null; }
+function noteAffinity(A,B){
+  // best pairing per note, so one shared note isn't counted many times over
+  let raw=0, bestExact=null, bestExactW=0, anyTag=false;
+  A.forEach(a=>{
+    let best=0, bestWord=null, bestIsExact=false;
+    B.forEach(b=>{
+      const w=shareWord(a,b);
+      let v=0, exact=false;
+      if(w){v=1.0;exact=true;}
+      else if(a.tag&&a.tag===b.tag){v=0.35;anyTag=true;}
+      if(!v)return;
+      const score=v*a.pw*b.pw;
+      if(score>best){best=score;bestWord=w;bestIsExact=exact;}
+    });
+    raw+=best;
+    if(bestIsExact&&best>bestExactW){bestExactW=best;bestExact=bestWord;}
+  });
+  return {score:Math.min(1,raw/1.8),exact:bestExact,tag:anyTag};
+}
+function noteSim(a,b){
+  // shared note-clusters, with diminishing returns
+  let n=0; a.forEach(t=>{if(b.has(t))n++;});
+  return n?Math.min(n,3)/3:0;
+}
 function tokenSet(notes){
   if(TOK[notes])return TOK[notes];
   const s=new Set((notes||"").toLowerCase().replace(/[()]/g," ").split(/[\s,]+/).filter(w=>w.length>2&&!NOTE_STOP.has(w)));
@@ -7025,6 +7524,11 @@ function removeShelfItem(id){
   USER.shelf=shelf().filter(x=>x.id!==id);
   queueSave();renderBody();flash("Removed");
 }
+let shelfOpen=new Set();
+function toggleShelfPairs(id){
+  if(shelfOpen.has(id))shelfOpen.delete(id);else shelfOpen.add(id);
+  renderBody();
+}
 function renderBody(){
   const list=shelf().slice().sort((a,b)=>(a.name||"").localeCompare(b.name||""));
   const cs=currentSeason();
@@ -7043,6 +7547,8 @@ function renderBody(){
           ${groups[t].map(p=>{
             const fams=p.families.length?p.families.map(f=>`<span class="shelf-fam" style="background:${FAM_COLOR[f]};color:${txtOn(FAM_COLOR[f])}">${f}</span>`).join(""):"";
             const seas=p.seasons.length?p.seasons.map(s=>`<span class="sd" style="background:${SEASON_THEME[s].a}">${s.slice(0,2)}</span>`).join(""):"";
+            const open=shelfOpen.has(p.id);
+            const matches=open?scentsForProduct(p,4):[];
             const others=typesOf(p).filter(x=>x!==t);
             const alsoTag=others.length?`<span class="shelf-also">also ${others.map(esc).join(" · ")}</span>`:"";
             return `<div class="shelf-item">
@@ -7053,10 +7559,20 @@ function renderBody(){
                 <div class="shelf-tags">${fams}${seas}</div>
               </div>
               <div class="shelf-acts">
+                <button class="pbtn" title="${open?'Hide pairings':'Show scent pairings'}" onclick="toggleShelfPairs(${p.id})">${open?'▴':'▾'}</button>
                 <button class="pbtn" title="Edit" onclick="openShelf(${p.id})">✎</button>
                 <button class="pbtn" title="Remove" onclick="removeShelfItem(${p.id})">×</button>
               </div>
-            </div>`;
+            </div>
+            ${open?`<div class="shelf-pairs">
+              <div class="sp-h">Wear it with</div>
+              ${matches.length?matches.map(o=>`<div class="sp-row">
+                  <span class="sp-dot" style="background:${FAM_COLOR[o.x.family]}"></span>
+                  <span class="sp-n">${esc(o.x.name)}</span>
+                  <span class="sp-b">${esc(o.x.brand)}</span>
+                  <span class="sp-why">${esc(o.why)}</span>
+                </div>`).join(""):`<div class="sp-row sp-b">Nothing obvious yet — adding notes or families to this product will sharpen the matches.</div>`}
+            </div>`:""}`;
           }).join("")}
         </div>`).join("")
     : `<div class="empty"><h3>Nothing on the shelf yet</h3><p>Add body washes, lotions, oils and creams that don't belong to a fragrance. Give them a family or two and they'll start showing up as pairing suggestions on your scents.</p></div>`;
@@ -7184,70 +7700,145 @@ function hideBody(id,key){
   b.pin=b.pin.filter(k=>k!==key);
   setBPairs(id,b);softUpdate(id);
 }
+/* ---------- body pairing allocation ----------
+   Scored globally rather than per card, so one crowd-pleasing lotion can't win
+   every scent. Products that have already been handed out get a rising penalty,
+   which pushes the long tail of the shelf into circulation. */
+let BP_CACHE=null;
+function invalidateBodyIndex(){BP_CACHE=null;}
+function bodyScore(it,p,itNotes,partners,cs){
+  const shared=p.src.families.find(f=>it.families.includes(f));
+  const comp=p.src.families.find(f=>partners.has(f));
+  const aff=noteAffinity(itNotes,noteList((p.src.notes||"")+", "+(p.label||"")));
+  const sim=aff.score;
+  let s=sim*3.4;                                   // shared notes lead
+  let why="";
+  if(aff.exact)why="both "+aff.exact;
+  else if(sim>=0.25)why="similar notes";
+  if(shared){s+=1.5;if(!why)why=shared.toLowerCase();}
+  else if(comp){s+=0.9;if(!why)why=comp.toLowerCase()+" pairs well";}
+  else if(p.kind==="standalone"&&!p.src.families.length){s+=0.5;if(!why)why="goes with anything";}
+  const seasonShare=p.src.seasons.filter(x=>it.seasons.includes(x)).length;
+  s+=Math.min(seasonShare,2)*0.25;
+  if(p.src.seasons.includes(cs))s+=0.4;
+  if(p.src.rating)s+=p.src.rating*0.08;
+  if(p.src.fav)s+=0.2;
+  s+=jit(it.id*31+7,p.src.id+p.type.length*13)*0.6;
+  if(!why)why=p.src.families[0]?p.src.families[0].toLowerCase():"";
+  return {s,why};
+}
+function bodyPairIndex(){
+  if(BP_CACHE)return BP_CACHE;
+  const all=items(), cat=bodyCatalog(all), cs=currentSeason();
+  const usage={}, map={};
+  const PEN=0.9;               // congestion price per prior use
+  const DEPTH=12;              // keep a ranked reserve per scent for hides/pins
+  // deterministic but non-alphabetical order, so no scent is systematically served first
+  const order=all.slice().sort((a,b)=>jit(a.id,101)-jit(b.id,101));
+  order.forEach(it=>{
+    const itNotes=noteList(it.notes);
+    const partners=new Set();it.families.forEach(f=>(PAIR_MAP[f]||[]).forEach(x=>partners.add(x)));
+    const scored=[];
+    cat.forEach(p=>{
+      if(p.src.id===it.id)return;
+      const r=bodyScore(it,p,itNotes,partners,cs);
+      scored.push({p,base:r.s,why:r.why});
+    });
+    scored.forEach(o=>{o.s=o.base-(usage[o.p.key]||0)*PEN;});
+    scored.sort((a,b)=>b.s-a.s);
+    const keyOf=o=>(o.p.label+"|"+o.p.type).toLowerCase();
+    const picked=[], seenType=new Set(), seenSrc=new Set(), seenKey=new Set();
+    const push=o=>{picked.push(o);seenType.add(o.p.type);seenSrc.add(o.p.src.id);seenKey.add(keyOf(o));
+                   if(picked.length<=4)usage[o.p.key]=(usage[o.p.key]||0)+1;};
+    // one guaranteed slot for the standalone shelf
+    const shelfScored=scored.filter(o=>o.p.kind==="standalone");
+    if(shelfScored.length){
+      const reserve=Math.min(shelfScored.length/scored.length>=0.25?2:1,shelfScored.length,4);
+      for(const o of shelfScored){
+        if(picked.length>=reserve)break;
+        if(seenKey.has(keyOf(o))||seenType.has(o.p.type)||seenSrc.has(o.p.src.id))continue;
+        push(o);
+      }
+    }
+    for(const o of scored){
+      if(picked.length>=DEPTH)break;
+      if(seenKey.has(keyOf(o)))continue;
+      if(picked.length<4&&(seenType.has(o.p.type)||seenSrc.has(o.p.src.id)))continue;
+      push(o);
+    }
+    for(const o of scored){          // top up the reserve without the diversity rules
+      if(picked.length>=DEPTH)break;
+      if(seenKey.has(keyOf(o)))continue;
+      push(o);
+    }
+    map[it.id]=picked;
+  });
+  BP_CACHE={map,cat};
+  return BP_CACHE;
+}
 function bodySuggest(it,all){
   const cur=getBPairs(it.id);
   const hidden=new Set(cur.hide);
-  const full=bodyCatalog(all);
+  const idx=bodyPairIndex();
+  const full=idx.cat;
   const pinnedList=cur.pin.map(k=>full.find(p=>p.key===k)).filter(Boolean)
     .map(p=>({p,s:99,why:"",pinned:true}));
-  const cat=full.filter(p=>p.src.id!==it.id&&!hidden.has(p.key)&&!cur.pin.includes(p.key));
   const slots=Math.max(0,4-pinnedList.length);
-  if(!cat.length||!slots)return pinnedList.slice(0,4);
-  const partners=new Set();
-  it.families.forEach(f=>(PAIR_MAP[f]||[]).forEach(p=>partners.add(p)));
-  const itTok=tokenSet(it.notes), cs=currentSeason();
-  const scored=cat.map(p=>{
-    const shared=p.src.families.find(f=>it.families.includes(f));
-    const comp=p.src.families.find(f=>partners.has(f));
-    let s=0, why="";
-    if(shared){s+=2.4;why=shared.toLowerCase();}
-    else if(comp){s+=1.6;why=comp.toLowerCase()+" pairs well";}
-    else if(p.kind==="standalone"&&!p.src.families.length){s+=1.2;why="goes with anything";}
-    else {s+=0.2;why="";}
-    const seasonShare=p.src.seasons.filter(x=>it.seasons.includes(x)).length;
-    s+=Math.min(seasonShare,2)*0.35;
-    if(p.src.seasons.includes(cs))s+=0.5;
-    s+=Math.min(overlapCount(tokenSet(p.src.notes),itTok),3)*0.7;
-    if(p.src.rating)s+=p.src.rating*0.1;
-    if(p.src.fav)s+=0.3;
-    s+=jit(it.id*31+7,p.src.id+p.type.length*13)*1.0;
-    if(!why)why=p.src.families[0]?p.src.families[0].toLowerCase():"";
-    return {p,s,why};
+  const ranked=(idx.map[it.id]||[]).filter(o=>!hidden.has(o.p.key)&&!cur.pin.includes(o.p.key));
+  const out=[], seenType=new Set(pinnedList.map(o=>o.p.type)), seenKey=new Set(), seenSrc=new Set(pinnedList.map(o=>o.p.src.id));
+  for(const o of ranked){
+    if(out.length>=slots)break;
+    const k=(o.p.label+"|"+o.p.type).toLowerCase();
+    if(seenKey.has(k)||seenSrc.has(o.p.src.id))continue;
+    out.push(o);seenKey.add(k);seenType.add(o.p.type);seenSrc.add(o.p.src.id);
+  }
+  for(const o of ranked){          // relax if the shelf is too small to fill four
+    if(out.length>=slots)break;
+    const k=(o.p.label+"|"+o.p.type).toLowerCase();
+    if(seenKey.has(k))continue;
+    out.push(o);seenKey.add(k);
+  }
+  return pinnedList.concat(out);
+}
+/* ---------- the reverse view: which scents suit a given body product ---------- */
+function scentsForProduct(p,limit){
+  const all=items(), cs=currentSeason();
+  const pNotes=noteList(((p.src?p.src.notes:p.notes)||"")+", "+((p.src?p.src.name:p.name)||""));
+  const pFams=(p.src?p.src.families:p.families)||[];
+  const pSeasons=(p.src?p.src.seasons:p.seasons)||[];
+  const partners=new Set();pFams.forEach(f=>(PAIR_MAP[f]||[]).forEach(x=>partners.add(x)));
+  const srcId=p.src?p.src.id:p.id;
+  const scored=all.filter(x=>x.id!==srcId).map(x=>{
+    const aff=noteAffinity(pNotes,noteList(x.notes));
+    const sim=aff.score;
+    const shared=x.families.find(f=>pFams.includes(f));
+    const comp=x.families.find(f=>partners.has(f));
+    let s=sim*3.4, why="";
+    if(aff.exact)why="both "+aff.exact;
+    else if(sim>=0.25)why="similar notes";
+    if(shared){s+=1.5;if(!why)why=shared.toLowerCase();}
+    else if(comp){s+=0.9;if(!why)why=comp.toLowerCase()+" pairs well";}
+    s+=Math.min(x.seasons.filter(v=>pSeasons.includes(v)).length,2)*0.25;
+    if(x.seasons.includes(cs))s+=0.4;
+    if(x.rating)s+=x.rating*0.12;
+    if(x.fav)s+=0.3;
+    s+=jit(srcId*17+3,x.id)*0.5;
+    if(!why)why=x.families[0]?x.families[0].toLowerCase():"";
+    return {x,s,why};
   });
   scored.sort((a,b)=>b.s-a.s);
-  const keyOf=o=>(o.p.label+"|"+o.p.type).toLowerCase();
-  const chosen=[], seenType=new Set(), seenSrc=new Set(), seenKey=new Set();
-  pinnedList.forEach(o=>{seenType.add(o.p.type);seenSrc.add(o.p.src.id);seenKey.add(keyOf(o));});
-  const push=o=>{chosen.push(o);seenType.add(o.p.type);seenSrc.add(o.p.src.id);seenKey.add(keyOf(o));};
-  // Your standalone shelf is a much smaller pool than scent-linked products, so
-  // reserve it a slot (two once it's a decent share) — otherwise it never shows.
-  const shelfScored=scored.filter(o=>o.p.kind==="standalone");
-  if(shelfScored.length){
-    const share=shelfScored.length/scored.length;
-    const reserve=Math.min(share>=0.25?2:1,shelfScored.length,slots);
-    for(const o of shelfScored){
-      if(chosen.length>=reserve)break;
-      if(seenKey.has(keyOf(o))||seenType.has(o.p.type))continue;
-      push(o);
-    }
-  }
-  // variety: spread across product types AND source scents, then relax to fill
+  const out=[],brands=new Set();
   for(const o of scored){
-    if(chosen.length>=slots)break;
-    if(seenKey.has(keyOf(o))||seenType.has(o.p.type)||seenSrc.has(o.p.src.id))continue;
-    push(o);
+    if(out.length>=(limit||4))break;
+    if(brands.has(o.x.brand))continue;      // spread across houses
+    out.push(o);brands.add(o.x.brand);
   }
-  for(const o of scored){   // relax the source rule
-    if(chosen.length>=slots)break;
-    if(seenKey.has(keyOf(o))||seenType.has(o.p.type))continue;
-    push(o);
+  for(const o of scored){
+    if(out.length>=(limit||4))break;
+    if(out.includes(o))continue;
+    out.push(o);
   }
-  for(const o of scored){   // relax everything but duplicates
-    if(chosen.length>=slots)break;
-    if(seenKey.has(keyOf(o)))continue;
-    push(o);
-  }
-  return pinnedList.concat(chosen);
+  return out;
 }
 
 function pairings(it,all){
