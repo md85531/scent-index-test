@@ -93,6 +93,60 @@ h1 em{font-style:italic;color:var(--accent-deep)}
 .th-meta{font-size:11.5px;color:var(--faint);font-weight:600}
 .th-reuse{margin-left:auto}
 .th-names{font-size:12px;color:var(--muted);margin-top:7px;line-height:1.5}
+/* scent history */
+.hist-top{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.hist-pills{display:flex;gap:6px;flex-wrap:wrap}
+.hpill{border:1px solid var(--line);background:#fff;border-radius:999px;padding:5px 12px;font-size:11.5px;font-weight:700;color:var(--muted)}
+.hpill.on{background:var(--accent);border-color:var(--accent);color:#fff}
+.hist-kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(110px,1fr));gap:10px;margin-bottom:16px}
+.hk{background:var(--paper);border:1px solid var(--line);border-radius:11px;padding:11px 12px}
+.hk .v{font-family:"Fraunces",serif;font-size:23px;font-weight:500;color:var(--ink);line-height:1}
+.hk .l{font-size:10.5px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--faint);margin-top:5px}
+.hmonths{display:flex;flex-wrap:wrap;gap:18px 22px;align-items:flex-start;align-content:flex-start}
+.hmonth{flex:0 0 auto;align-self:flex-start}
+.hm-h{font-size:10.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--faint);margin-bottom:7px}
+/* fixed track sizes + start alignment so the grid can never be stretched by its parent */
+.hgrid{display:grid;grid-template-columns:repeat(7,32px);grid-template-rows:16px;grid-auto-rows:32px;gap:3px;
+  justify-content:start;align-content:start;width:max-content}
+.hd{width:32px;height:16px;font-size:9px;font-weight:700;color:var(--faint);text-align:center;line-height:16px}
+
+.hc{width:32px;height:32px;line-height:30px;text-align:center;font-size:10.5px;color:var(--muted);border-radius:6px;background:#F2EDE4;border:1px solid transparent;overflow:hidden}
+.hc.empty{background:transparent}
+.hc.l1{background:var(--tint);color:var(--accent-deep);font-weight:700;cursor:pointer}
+.hc.l2{background:var(--accent);color:#fff;font-weight:700;cursor:pointer}
+.hc.l3{background:var(--accent-deep);color:#fff;font-weight:700;cursor:pointer}
+.hc.today{border-color:var(--ink)}
+.hc.sel{outline:2px solid var(--ink);outline-offset:1px}
+.hist-day{margin-top:14px;border:1px solid var(--accent);background:var(--tint);border-radius:11px;padding:11px 13px}
+.hd-h{font-size:10.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent-deep);margin-bottom:7px}
+.hd-row{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--ink);padding:3px 0}
+.hd-row small{color:var(--faint);font-size:10.5px;font-weight:700;letter-spacing:.05em;text-transform:uppercase}
+.hist-note{font-size:11.5px;color:var(--faint);margin:12px 0 0}
+.hist-empty{font-size:13px;color:var(--muted);margin:0}
+/* worn vs owned */
+.mixlist{display:flex;flex-direction:column;gap:7px}
+.mx{display:flex;align-items:center;gap:9px;font-size:12px}
+.mx-l{flex:0 0 78px;color:var(--ink);font-weight:600}
+.mx-bars{position:relative;flex:1;height:14px;background:#F2EDE4;border-radius:999px;overflow:hidden}
+.mx-o{position:absolute;left:0;top:0;height:100%;background:#E2D9C9}
+.mx-w{position:absolute;left:0;top:0;height:100%;border-radius:999px}
+.mx-v{flex:0 0 62px;text-align:right;color:var(--muted);font-weight:700;font-size:11px}
+.mx-tag{margin-left:5px;border-radius:999px;padding:1px 6px;font-size:9.5px;font-weight:700}
+.mx-tag.hot{background:var(--accent);color:#fff}
+.mx-tag.cool{background:#E2D9C9;color:var(--muted)}
+.mx-tag.cold{background:#EFE7DA;color:var(--faint)}
+/* timeline */
+.tl{display:flex;flex-direction:column;gap:14px}
+.tl-month{}
+.tl-h{font-size:10.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--faint);margin-bottom:6px;display:flex;gap:8px;align-items:center}
+.tl-c{background:var(--tint);color:var(--accent-deep);border-radius:999px;padding:1px 8px;letter-spacing:.03em}
+.tl-row{display:flex;align-items:center;gap:9px;padding:5px 0;border-top:1px solid var(--line);font-size:13px}
+.tl-month .tl-row:first-of-type{border-top:none}
+.tl-d{flex:0 0 22px;text-align:center;font-weight:700;color:var(--faint);font-size:11.5px}
+.tl-dot{width:8px;height:8px;border-radius:50%;flex:none}
+.tl-n{flex:1;color:var(--ink);font-weight:600;min-width:0}
+.tl-n small{display:block;color:var(--faint);font-size:10px;font-weight:700;letter-spacing:.05em;text-transform:uppercase}
+.tl-w{font-size:10.5px;color:var(--faint);font-weight:700;white-space:nowrap}
 /* carry-over notice */
 .carry-note{display:flex;align-items:center;gap:14px;flex-wrap:wrap;background:var(--tint);border:1px solid var(--accent);border-radius:12px;padding:12px 15px}
 .carry-txt{flex:1;min-width:220px;font-size:13px;color:var(--ink);line-height:1.5}
@@ -8373,6 +8427,153 @@ function setView(v){
   if(v==="body")renderBody();
 }
 
+/* ---------- scent history ---------- */
+let histPeriod="90", histDay=null, histAllTl=false;
+const DOW=["S","M","T","W","T","F","S"];
+function wearLog(){
+  const out=[];
+  items().forEach(x=>(x.wears||[]).forEach(d=>{if(d)out.push({d,x});}));
+  out.sort((a,b)=>b.d.localeCompare(a.d)||a.x.name.localeCompare(b.x.name));
+  return out;
+}
+function dFromISO(iso){const p=(iso||"").split("-");return new Date(+p[0],+p[1]-1,+p[2]);}
+function isoOf(dt){return dt.getFullYear()+"-"+String(dt.getMonth()+1).padStart(2,"0")+"-"+String(dt.getDate()).padStart(2,"0");}
+function histRange(){
+  const log=wearLog();
+  const today=new Date();const t0=new Date(today.getFullYear(),today.getMonth(),today.getDate());
+  if(histPeriod==="all"){
+    const first=log.length?dFromISO(log[log.length-1].d):t0;
+    return {from:new Date(first.getFullYear(),first.getMonth(),1),to:t0};
+  }
+  if(histPeriod==="year")return {from:new Date(t0.getFullYear(),0,1),to:t0};
+  const n=parseInt(histPeriod,10);
+  const f=new Date(t0);f.setDate(f.getDate()-(n-1));
+  return {from:f,to:t0};
+}
+function histEntries(){
+  const {from,to}=histRange();
+  const a=isoOf(from),b=isoOf(to);
+  return wearLog().filter(e=>e.d>=a&&e.d<=b);
+}
+function setHistPeriod(p){histPeriod=p;histDay=null;histAllTl=false;renderInsights();}
+function pickHistDay(iso){histDay=(histDay===iso)?null:iso;renderInsights();}
+function toggleHistTimeline(){histAllTl=!histAllTl;renderInsights();}
+function monthGrid(y,m,byDay,maxDay){
+  const first=new Date(y,m,1), days=new Date(y,m+1,0).getDate();
+  const today=isoOf(new Date());
+  let cells="";
+  for(let i=0;i<first.getDay();i++)cells+=`<span class="hc empty"></span>`;
+  for(let d=1;d<=days;d++){
+    const iso=y+"-"+String(m+1).padStart(2,"0")+"-"+String(d).padStart(2,"0");
+    const n=(byDay[iso]||[]).length;
+    const lvl=n===0?0:(n>=Math.max(2,maxDay)?3:(n>1?2:1));
+    const sel=histDay===iso?" sel":"";
+    const isToday=iso===today?" today":"";
+    const names=n?(byDay[iso].map(e=>e.x.name).join(", ")):"";
+    cells+=`<span class="hc l${lvl}${sel}${isToday}" ${n?`onclick="pickHistDay('${iso}')" title="${esc(names)}"`:""}>${d}</span>`;
+  }
+  return `<div class="hmonth"><div class="hm-h">${MONTHS[m]} ${y}</div>
+    <div class="hgrid">${DOW.map(x=>`<span class="hd">${x}</span>`).join("")}${cells}</div></div>`;
+}
+function historyHTML(){
+  const all=items();
+  const entries=histEntries();
+  const {from,to}=histRange();
+  const byDay={};entries.forEach(e=>{(byDay[e.d]=byDay[e.d]||[]).push(e);});
+  const maxDay=Math.max(1,...Object.values(byDay).map(a=>a.length));
+  const distinct=new Set(entries.map(e=>e.x.id)).size;
+  const daysLogged=Object.keys(byDay).length;
+  const spanDays=Math.max(1,Math.round((to-from)/86400000)+1);
+  const perWeek=(entries.length/(spanDays/7)).toFixed(1);
+  const label=histPeriod==="all"?"all time":histPeriod==="year"?"this year":"last "+histPeriod+" days";
+
+  // calendar months across the range
+  const months=[];
+  let cur=new Date(from.getFullYear(),from.getMonth(),1);
+  while(cur<=to){months.push(monthGrid(cur.getFullYear(),cur.getMonth(),byDay,maxDay));cur=new Date(cur.getFullYear(),cur.getMonth()+1,1);}
+
+  // what you actually wear vs what you own, by family
+  const ownF={},wornF={};
+  all.forEach(x=>x.families.forEach(f=>ownF[f]=(ownF[f]||0)+1));
+  entries.forEach(e=>e.x.families.forEach(f=>wornF[f]=(wornF[f]||0)+1));
+  const totalOwn=Object.values(ownF).reduce((a,b)=>a+b,0)||1;
+  const totalWorn=Object.values(wornF).reduce((a,b)=>a+b,0)||1;
+  const mixRows=FAMILIES.filter(f=>ownF[f]||wornF[f]).map(f=>{
+    const o=Math.round((ownF[f]||0)/totalOwn*100), w=Math.round((wornF[f]||0)/totalWorn*100);
+    const diff=w-o;
+    const tag=!wornF[f]?`<span class="mx-tag cold">unworn</span>`
+      :diff>=8?`<span class="mx-tag hot">+${diff}</span>`
+      :diff<=-8?`<span class="mx-tag cool">${diff}</span>`:"";
+    return `<div class="mx"><span class="mx-l">${f}</span>
+      <span class="mx-bars"><span class="mx-o" style="width:${o}%"></span><span class="mx-w" style="width:${w}%;background:${FAM_COLOR[f]}"></span></span>
+      <span class="mx-v">${w}%${tag}</span></div>`;
+  }).join("");
+
+  // timeline grouped by month
+  const groups={};entries.forEach(e=>{(groups[e.d.slice(0,7)]=groups[e.d.slice(0,7)]||[]).push(e);});
+  const gKeys=Object.keys(groups).sort().reverse();
+  const shown=histAllTl?gKeys:gKeys.slice(0,2);
+  const timeline=entries.length?shown.map(k=>{
+    const [y,m]=k.split("-");
+    const rows=groups[k].map(e=>`<div class="tl-row">
+        <span class="tl-d">${dFromISO(e.d).getDate()}</span>
+        <span class="tl-dot" style="background:${FAM_COLOR[e.x.family]}"></span>
+        <span class="tl-n">${esc(e.x.name)}<small>${esc(e.x.brand)}</small></span>
+        <span class="tl-w">${relDate(e.d)}</span>
+      </div>`).join("");
+    return `<div class="tl-month"><div class="tl-h">${MONTHS[+m-1]} ${y} <span class="tl-c">${groups[k].length} wear${groups[k].length===1?'':'s'}</span></div>${rows}</div>`;
+  }).join(""):`<p class="hist-empty">No wears logged in this window yet.</p>`;
+  const moreBtn=gKeys.length>2?`<button class="addpair" onclick="toggleHistTimeline()">${histAllTl?"Show less":"Show all "+gKeys.length+" months"}</button>`:"";
+
+  // rested & untouched
+  const lastOf=x=>x.wears.length?x.wears[x.wears.length-1]:"";
+  const rested=all.filter(x=>x.wears.length).sort((a,b)=>daysSince(lastOf(b))-daysSince(lastOf(a))).slice(0,5);
+  const never=all.filter(x=>!x.wears.length);
+  const neverInSeason=never.filter(x=>x.seasons.includes(currentSeason()));
+  const neverPick=(neverInSeason.length?neverInSeason:never).slice().sort((a,b)=>(b.rating-a.rating)||jit(a.id,5)-jit(b.id,5)).slice(0,5);
+
+  const dayPanel=histDay?`<div class="hist-day">
+      <div class="hd-h">${fmtShort(histDay)} · ${relDate(histDay)}</div>
+      ${(byDay[histDay]||[]).map(e=>`<div class="hd-row"><span class="tl-dot" style="background:${FAM_COLOR[e.x.family]}"></span>${esc(e.x.name)} <small>${esc(e.x.brand)}</small></div>`).join("")}
+    </div>`:"";
+
+  return `
+    <div class="panel hist">
+      <div class="hist-top">
+        <h2 style="margin:0">Scent history</h2>
+        <div class="hist-pills">
+          ${[["30","30 days"],["90","90 days"],["year","This year"],["all","All time"]].map(([v,l])=>
+            `<button class="hpill ${histPeriod===v?'on':''}" onclick="setHistPeriod('${v}')">${l}</button>`).join("")}
+        </div>
+      </div>
+      <div class="hist-kpis">
+        <div class="hk"><div class="v">${entries.length}</div><div class="l">wears · ${label}</div></div>
+        <div class="hk"><div class="v">${daysLogged}</div><div class="l">days logged</div></div>
+        <div class="hk"><div class="v">${distinct}</div><div class="l">different scents</div></div>
+        <div class="hk"><div class="v">${perWeek}</div><div class="l">wears / week</div></div>
+      </div>
+      <div class="hmonths">${months.join("")}</div>
+      ${dayPanel}
+      <p class="hist-note">Tap any shaded day to see what you wore.</p>
+    </div>
+    <div class="twocol">
+      <div class="panel"><h2>What you wear vs what you own</h2>
+        <p class="panel-sub">Faint bar is your collection, colour is what you actually reached for ${label}.</p>
+        <div class="mixlist">${mixRows}</div>
+      </div>
+      <div class="panel"><h2>Timeline</h2><div class="tl">${timeline}</div>${moreBtn}</div>
+    </div>
+    <div class="twocol">
+      <div class="panel"><h2>Rested the longest</h2>
+        <p class="panel-sub">Worn before, but not for a while.</p>
+        <div class="rank">${rested.length?rested.map((x,i)=>`<div class="ri"><span class="rn">${i+1}</span><span class="rname">${esc(x.name)}<small>${esc(x.brand)}</small></span><span class="rval">${relDate(lastOf(x))}</span></div>`).join(""):`<div class="ri" style="color:var(--faint)">Nothing logged yet.</div>`}</div>
+      </div>
+      <div class="panel"><h2>Still untouched</h2>
+        <p class="panel-sub">${never.length} of your ${all.length} scents have never been logged${neverInSeason.length?` — these suit ${currentSeason().toLowerCase()}`:""}.</p>
+        <div class="rank">${neverPick.map((x,i)=>`<div class="ri"><span class="rn">${i+1}</span><span class="rname">${esc(x.name)}<small>${esc(x.brand)}</small></span><span class="rval">${x.rating?'★'.repeat(x.rating):'—'}</span></div>`).join("")||`<div class="ri" style="color:var(--faint)">You've worn everything. Remarkable.</div>`}</div>
+      </div>
+    </div>`;
+}
 function renderInsights(){
   const all=items();
   const value=all.reduce((s,x)=>s+(x.price||0),0);
@@ -8420,6 +8621,7 @@ function renderInsights(){
       <div class="panel"><h2>Most worn</h2><div class="rank">${rankList(mostWorn,x=>x.wears.length+'×')}</div></div>
       <div class="panel"><h2>Recently worn</h2><div class="rank">${rankList(recent,x=>relDate(lastWear(x)))}</div></div>
     </div>
+    ${historyHTML()}
     <div class="panel">
       <h2>Backup &amp; restore</h2>
       <p style="font-size:13px;color:var(--muted);margin:0 0 16px;max-width:60ch">Your library is currently saved <b>${storeLabel()}</b>. Export a backup file to keep a safe copy — or to move your whole collection, ratings and wear history to another phone. Import that file on the new device to restore everything.</p>
