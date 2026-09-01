@@ -328,6 +328,7 @@ h1 em{font-style:italic;color:var(--accent-deep)}
 .bars{display:flex;flex-direction:column;gap:9px}
 .bar{display:grid;grid-template-columns:90px 1fr 36px;align-items:center;gap:12px;font-size:13px}
 .bar .bl{font-weight:600;color:var(--muted)}
+.bar .bl .bmo{display:block;font-size:9.5px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--faint);margin-top:1px}
 .bar .bt{height:13px;border-radius:7px;background:var(--bc,#ccc);min-width:6px;transition:width .6s ease}
 .bar .bv{text-align:right;font-weight:700;color:var(--ink);font-variant-numeric:tabular-nums}
 .twocol{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px}
@@ -726,6 +727,9 @@ const INITIAL_USER = /*userdata*/{
       ],
       "matchbody": [
         "Body cream"
+      ],
+      "wears": [
+        "2026-08-28"
       ]
     },
     "13": {
@@ -787,7 +791,7 @@ const INITIAL_USER = /*userdata*/{
           ]
         }
       },
-      "rating": 3,
+      "rating": 2,
       "matchbody": [
         "Body cream"
       ],
@@ -1605,7 +1609,7 @@ const INITIAL_USER = /*userdata*/{
     },
     "44": {
       "family": "Woody",
-      "notes": "bergamot, violet, lemon, neroli, African marigold",
+      "notes": "Bergamot, violet, lemon, neroli, marigold",
       "seasons": [
         "Spring",
         "Summer",
@@ -1632,13 +1636,16 @@ const INITIAL_USER = /*userdata*/{
       "sizes": [
         "Travel Size",
         "Full Size"
+      ],
+      "wears": [
+        "2026-08-24"
       ]
     },
     "45": {
       "rating": 5,
       "fav": true,
       "price": 340,
-      "notes": "black currant, bergamot, lemon, violet, musk, praline, violet",
+      "notes": "Black currant, bergamot, lemon, violet, musk, praline, violet",
       "family": "Citrus",
       "seasons": [
         "Spring",
@@ -1669,6 +1676,9 @@ const INITIAL_USER = /*userdata*/{
       ],
       "sizes": [
         "Full Size"
+      ],
+      "wears": [
+        "2026-08-30"
       ]
     },
     "46": {
@@ -2052,6 +2062,9 @@ const INITIAL_USER = /*userdata*/{
       ],
       "sizes": [
         "Travel Size"
+      ],
+      "wears": [
+        "2026-08-27"
       ]
     },
     "62": {
@@ -3243,7 +3256,10 @@ const INITIAL_USER = /*userdata*/{
         "Travel Size",
         "Full Size"
       ],
-      "multiples": true
+      "multiples": true,
+      "wears": [
+        "2026-08-26"
+      ]
     },
     "113": {
       "price": 99,
@@ -3270,7 +3286,8 @@ const INITIAL_USER = /*userdata*/{
       "rating": 3,
       "wears": [
         "2026-06-13",
-        "2026-06-23"
+        "2026-06-23",
+        "2026-08-25"
       ],
       "families": [
         "Citrus",
@@ -3293,7 +3310,8 @@ const INITIAL_USER = /*userdata*/{
         },
         "hide": {
           "layer": [
-            71
+            71,
+            100038
           ],
           "rot": []
         }
@@ -4193,6 +4211,9 @@ const INITIAL_USER = /*userdata*/{
       "multiples": true,
       "matchbody": [
         "Body cream"
+      ],
+      "wears": [
+        "2026-08-25"
       ]
     },
     "162": {
@@ -4258,7 +4279,8 @@ const INITIAL_USER = /*userdata*/{
         "Sweet"
       ],
       "sizes": [
-        "Sample/Decant"
+        "Sample/Decant",
+        "Travel Size"
       ]
     },
     "166": {
@@ -4609,6 +4631,7 @@ const INITIAL_USER = /*userdata*/{
         "Sweet"
       ],
       "sizes": [
+        "Sample/Decant",
         "Travel Size"
       ]
     },
@@ -4619,7 +4642,7 @@ const INITIAL_USER = /*userdata*/{
         "Summer"
       ],
       "price": 23,
-      "rating": 5,
+      "rating": 4,
       "families": [
         "Fruity",
         "Fresh",
@@ -4630,7 +4653,8 @@ const INITIAL_USER = /*userdata*/{
         "Travel Size"
       ],
       "wears": [
-        "2026-06-30"
+        "2026-06-30",
+        "2026-08-23"
       ],
       "body": [
         {
@@ -4718,7 +4742,8 @@ const INITIAL_USER = /*userdata*/{
           "layer": [],
           "rot": []
         }
-      }
+      },
+      "fav": true
     },
     "190": {
       "family": "Gourmand",
@@ -4797,7 +4822,8 @@ const INITIAL_USER = /*userdata*/{
       "sizes": [
         "Travel Size",
         "Full Size"
-      ]
+      ],
+      "multiples": true
     },
     "194": {
       "notes": "Spring rain, pink pepper, saucer magnolia, peony, raspberry, cotton, cedar",
@@ -4820,7 +4846,8 @@ const INITIAL_USER = /*userdata*/{
         "Full Size"
       ],
       "wears": [
-        "2026-07-05"
+        "2026-07-05",
+        "2026-08-22"
       ]
     },
     "195": {
@@ -4883,7 +4910,8 @@ const INITIAL_USER = /*userdata*/{
         "Fall",
         "Winter"
       ],
-      "fav": true
+      "fav": true,
+      "multiples": true
     },
     "198": {
       "notes": "Strawberry, vanilla cream soda, fresh green grass, morning dew, ambrette seed",
@@ -5080,7 +5108,9 @@ const INITIAL_USER = /*userdata*/{
       "rating": 3,
       "price": 99,
       "fav": false,
-      "wears": [],
+      "wears": [
+        "2026-08-27"
+      ],
       "body": [],
       "matchbody": [
         "Body oil",
@@ -5394,7 +5424,8 @@ const INITIAL_USER = /*userdata*/{
       "price": 4,
       "fav": false,
       "wears": [
-        "2026-06-16"
+        "2026-06-16",
+        "2026-08-24"
       ],
       "families": [
         "Floral",
@@ -6045,7 +6076,9 @@ const INITIAL_USER = /*userdata*/{
       "rating": 4,
       "price": 16,
       "fav": false,
-      "wears": [],
+      "wears": [
+        "2026-08-13"
+      ],
       "pairs": {
         "pin": {
           "layer": [
@@ -6153,10 +6186,12 @@ const INITIAL_USER = /*userdata*/{
         "Travel Size"
       ],
       "multiples": false,
-      "rating": 0,
+      "rating": 4,
       "price": 38,
       "fav": false,
-      "wears": [],
+      "wears": [
+        "2026-08-23"
+      ],
       "bpairs": {
         "pin": [],
         "hide": [
@@ -6164,6 +6199,20 @@ const INITIAL_USER = /*userdata*/{
           "o:112:Body wash:Sandstone",
           "o:112:Body wash:Brown Sugar & Fig"
         ]
+      },
+      "pairs": {
+        "pin": {
+          "layer": [
+            186
+          ],
+          "rot": []
+        },
+        "hide": {
+          "layer": [
+            144
+          ],
+          "rot": []
+        }
       }
     },
     {
@@ -6316,7 +6365,9 @@ const INITIAL_USER = /*userdata*/{
       "rating": 5,
       "price": 25,
       "fav": false,
-      "wears": [],
+      "wears": [
+        "2026-08-29"
+      ],
       "pairs": {
         "pin": {
           "layer": [],
@@ -6367,26 +6418,139 @@ const INITIAL_USER = /*userdata*/{
           "rot": []
         }
       }
+    },
+    {
+      "id": 100050,
+      "brand": "Montagne",
+      "name": "Moi?",
+      "families": [
+        "Amber",
+        "Musk",
+        "Spicy"
+      ],
+      "notes": "Iris, musk, pink pepper, ambrette, ambroxan",
+      "seasons": [
+        "Spring",
+        "Summer",
+        "Fall",
+        "Winter"
+      ],
+      "sizes": [
+        "Full Size"
+      ],
+      "multiples": false,
+      "rating": 4,
+      "price": 40,
+      "fav": false,
+      "wears": [],
+      "memo": "Dupe of OG Glossier You",
+      "bpairs": {
+        "pin": [
+          "o:48:Body butter:You",
+          "o:72:Body wash:Missing Person",
+          "m:72:Body oil"
+        ],
+        "hide": [
+          "s:900012:Body butter"
+        ]
+      }
+    },
+    {
+      "id": 100051,
+      "brand": "Sorce",
+      "name": "Dark Skies",
+      "families": [
+        "Woody",
+        "Spicy"
+      ],
+      "notes": "Desert sage, agave, tuberose, saguaro, sandalwood, vanilla",
+      "seasons": [
+        "Spring",
+        "Summer",
+        "Fall"
+      ],
+      "sizes": [
+        "Sample/Decant",
+        "Travel Size"
+      ],
+      "multiples": false,
+      "rating": 3,
+      "price": 21,
+      "fav": false,
+      "wears": []
+    },
+    {
+      "id": 100052,
+      "brand": "Sorce",
+      "name": "English Major",
+      "families": [
+        "Gourmand",
+        "Green",
+        "Spicy"
+      ],
+      "notes": "Library books, orris absolute, marshmallow, decalepis absolute, carrot seed, sandalwood, fallen leaves",
+      "seasons": [
+        "Fall",
+        "Winter"
+      ],
+      "sizes": [
+        "Sample/Decant",
+        "Travel Size"
+      ],
+      "multiples": false,
+      "rating": 4,
+      "price": 23,
+      "fav": false,
+      "wears": []
+    },
+    {
+      "id": 100053,
+      "brand": "Sorce",
+      "name": "Clairsentient",
+      "families": [
+        "Fruity",
+        "Sweet"
+      ],
+      "notes": "BlackBerry, raspberry, bergamot, sugar, juniper berries, vanilla, Iso E Super",
+      "seasons": [
+        "Spring",
+        "Summer"
+      ],
+      "sizes": [
+        "Sample/Decant",
+        "Travel Size"
+      ],
+      "multiples": true,
+      "rating": 4,
+      "price": 37,
+      "fav": false,
+      "wears": [
+        "2026-08-31"
+      ]
     }
   ],
-  "nextId": 100050,
+  "nextId": 100054,
   "tray": {
-    "label": "August 2026",
-    "ids": [
-      100039,
-      100015,
-      114,
-      100041,
-      61,
-      100010,
-      186,
-      112,
-      193,
-      168,
-      187
-    ]
+    "label": "September 2026",
+    "ids": []
   },
   "trayHistory": [
+    {
+      "label": "August 2026",
+      "ids": [
+        100039,
+        100015,
+        114,
+        61,
+        100010,
+        186,
+        112,
+        193,
+        168,
+        187
+      ],
+      "date": "2026-08-31"
+    },
     {
       "label": "July 2026",
       "ids": [
@@ -7334,6 +7498,29 @@ const FAM_COLOR={Gourmand:"#C68A4E",Floral:"#D27FA3",Fruity:"#D2604E",Fresh:"#4F
 const SIZES=["Sample/Decant","Travel Size","Full Size"];
 function txtOn(hex){const c=hex.replace("#","");const r=parseInt(c.slice(0,2),16),g=parseInt(c.slice(2,4),16),b=parseInt(c.slice(4,6),16);return ((0.299*r+0.587*g+0.114*b)/255)>0.62?"#2B2724":"#ffffff";}
 const SEASONS=["Spring","Summer","Fall","Winter"];
+const MONTHS=["January","February","March","April","May","June","July","August","September","October","November","December"];
+/* Which months count as which season. Tuned for coastal Southern California,
+   where summer runs well into September and autumn is short.
+   Index 0 = January … 11 = December. */
+const SEASON_MONTHS={
+  Winter:[11,0,1],        // December – February
+  Spring:[2,3,4,5],       // March – June
+  Summer:[6,7,8],         // July – September
+  Fall:[9,10]             // October – November
+};
+const MONTH_SEASON=(()=>{
+  const m=new Array(12).fill("Summer");
+  Object.keys(SEASON_MONTHS).forEach(s=>SEASON_MONTHS[s].forEach(i=>{m[i]=s;}));
+  return m;
+})();
+function seasonOfMonth(i){return MONTH_SEASON[((i%12)+12)%12];}
+function currentSeason(){return seasonOfMonth(new Date().getMonth());}
+function seasonMonthsLabel(s){
+  const idx=SEASON_MONTHS[s]||[];
+  if(!idx.length)return "";
+  const names=idx.map(i=>MONTHS[i].slice(0,3));
+  return names.length===1?names[0]:names[0]+"–"+names[names.length-1];
+}
 const BODY_TYPES=["Body wash","Body scrub","Lotion","Body cream","Body oil","Body butter","Body mist","Deodorant","Hair mist","Other"];
 const MATCH_TYPES=["Body wash","Body scrub","Lotion","Body cream","Body oil","Body butter","Body mist","Deodorant","Hair mist"];
 const MATCH_SHORT={"Body wash":"Wash","Body scrub":"Scrub","Lotion":"Lotion","Body cream":"Cream","Body oil":"Oil","Body butter":"Butter","Body mist":"Mist","Deodorant":"Deo","Hair mist":"Hair"};
@@ -7389,7 +7576,6 @@ async function loadUser(){
   storeMode="none";
   return seedUser();
 }
-const MONTHS=["January","February","March","April","May","June","July","August","September","October","November","December"];
 function defaultTrayLabel(){const d=new Date();return MONTHS[d.getMonth()]+" "+d.getFullYear();}
 function isAutoTrayLabel(l){
   // true when the label is still one of our generated "Month YYYY" names (not renamed by hand)
@@ -7472,13 +7658,6 @@ function flash(msg){
 let USER=defaultUser();
 let state={view:"library",season:currentSeason(),families:new Set(),fav:false,match:false,tray:false,sort:"az",q:""};
 
-function currentSeason(){
-  const m=new Date().getMonth();
-  if(m<2||m===11)return"Winter";
-  if(m<5)return"Spring";
-  if(m<8)return"Summer";
-  return"Fall";
-}
 
 /* merge SEED + overrides + custom into working items */
 function famArr(fams,fallback){
@@ -8591,7 +8770,7 @@ function renderInsights(){
 
   const seaCounts={};SEASONS.forEach(s=>seaCounts[s]=all.filter(x=>x.seasons.includes(s)).length);
   const maxSea=Math.max(1,...Object.values(seaCounts));
-  const seaBars=SEASONS.map(s=>`<div class="bar"><span class="bl">${s}</span><div class="bt" style="width:${seaCounts[s]/maxSea*100}%;--bc:${SEASON_THEME[s].a}"></div><span class="bv">${seaCounts[s]}</span></div>`).join("");
+  const seaBars=SEASONS.map(s=>`<div class="bar"><span class="bl">${s}<small class="bmo">${seasonMonthsLabel(s)}</small></span><div class="bt" style="width:${seaCounts[s]/maxSea*100}%;--bc:${SEASON_THEME[s].a}"></div><span class="bv">${seaCounts[s]}</span></div>`).join("");
 
   const topRated=all.filter(x=>x.rating).sort((a,b)=>b.rating-a.rating||b.wears.length-a.wears.length).slice(0,6);
   const mostWorn=all.filter(x=>x.wears.length).sort((a,b)=>b.wears.length-a.wears.length).slice(0,6);
@@ -8612,7 +8791,9 @@ function renderInsights(){
     </div>
     <div class="twocol">
       <div class="panel"><h2>By scent family</h2><div class="bars">${famBars}</div></div>
-      <div class="panel"><h2>By season</h2><div class="bars">${seaBars}</div>
+      <div class="panel"><h2>By season</h2>
+        <p class="panel-sub">Seasons follow the coastal Southern California calendar — right now it's <b>${currentSeason().toLowerCase()}</b> (${seasonMonthsLabel(currentSeason())}).</p>
+        <div class="bars">${seaBars}</div>
         <p style="font-size:12.5px;color:var(--muted);margin:16px 0 0">${untried} scent${untried===1?'':'s'} in your collection ${untried===1?'is':'are'} still untried — plenty left to discover.</p>
       </div>
     </div>
