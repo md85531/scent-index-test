@@ -217,13 +217,13 @@ h1 em{font-style:italic;color:var(--accent-deep)}
 .fam-chip .fdot{width:8px;height:8px;border-radius:2px;background:var(--fc,#ccc)}
 .fam-chip:hover{color:var(--ink)}
 .fam-chip.on{color:var(--ink);border-color:var(--ink);background:#fff}
-.ftype-row{align-items:center;margin-top:2px}
-.tc-lbl{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--faint);margin-right:2px}
-.type-chip{border:1px dashed var(--line);background:transparent;border-radius:999px;padding:5px 11px;font-size:12px;font-weight:600;color:var(--muted);transition:.15s}
-.type-chip:hover{color:var(--ink)}
-.type-chip.on{border-style:solid;border-color:var(--ink);background:var(--ink);color:#fff}
-.type-chip .tc-n{font-weight:600;opacity:.6;margin-left:3px}
-.type-tag{font-size:9px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--ink);border:1px solid var(--ink);border-radius:999px;padding:1px 8px}
+.ftype-row{align-items:center;margin-top:14px}
+.tc-lbl{font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--faint);margin-right:3px}
+.type-chip .tc-n{color:var(--faint);font-weight:600}
+.tdot{width:8px;height:8px;border-radius:50%;flex:none;display:inline-block}
+.tdot-none{background:transparent;border:1.5px solid var(--faint);width:8px;height:8px}
+.type-tag{display:inline-flex;align-items:center;gap:5px}
+.type-tag .tdot{width:6px;height:6px}
 .bar-link{cursor:pointer}
 .bar-link:hover .bl{color:var(--ink)}
 .fam-chip.on .fdot{box-shadow:0 0 0 2px rgba(43,39,36,.12)}
@@ -8962,7 +8962,7 @@ function cardHTML(it,all,scope){
   const stripBg=it.families.length>1?`linear-gradient(180deg,${it.families.map(f=>FAM_COLOR[f]).join(",")})`:fc;
   const matchPick=MATCH_TYPES.map(t=>{const on=it.matchbody.includes(t);return `<div class="sp ${on?'on':''}" style="${on?'background:var(--accent);color:#fff;border-color:transparent':''}" onclick="toggleMatch(${it.id},'${t}')">${esc(t)}</div>`;}).join("");
   const sizeTags=it.sizes.map(sz=>`<span class="size-tag">${esc(sz)}</span>`).join("");
-  const typeTags=it.ftypes.map(t=>`<span class="type-tag">${esc(t)}</span>`).join("");
+  const typeTags=it.ftypes.map(t=>`<span class="size-tag type-tag"><span class="tdot" style="background:${FTYPE_COLOR[t]}"></span>${esc(t)}</span>`).join("");
   const typePick=FTYPES.map(t=>{const on=it.ftypes.includes(t);return `<div class="sp ${on?'on':''}" title="${FTYPE_HINT[t]}" style="${on?'background:var(--ink);color:#fff;border-color:transparent':''}" onclick="toggleEditType(${it.id},'${t}')">${esc(t)}</div>`;}).join("");
   const backupTag=it.multiples?`<span class="backup-tag">＋ Backup</span>`:"";
   const matchTag=it.matchbody.length?`<span class="match-tag">🧴 Matching: ${it.matchbody.map(t=>MATCH_SHORT[t]||t).join(" · ")}</span>`:"";
@@ -9095,7 +9095,8 @@ function renderTypeChips(){
   all.forEach(x=>{ if(!x.ftypes.length)none++; x.ftypes.forEach(t=>counts[t]=(counts[t]||0)+1); });
   const chip=(key,label,n)=>{
     const on=state.ftypes.has(key);
-    return `<button class="type-chip ${on?'on':''}" onclick="toggleTypeFilter('${key}')">${esc(label)} <span class="tc-n">${n}</span></button>`;
+    const dot=key==="__none"?`<span class="tdot tdot-none"></span>`:`<span class="tdot" style="background:${FTYPE_COLOR[key]}"></span>`;
+    return `<button class="fam-chip type-chip ${on?'on':''}" onclick="toggleTypeFilter('${key}')">${dot}${esc(label)} <span class="tc-n">${n}</span></button>`;
   };
   document.getElementById("typeChips").innerHTML=
     `<span class="tc-lbl">Type</span>`+FTYPES.map(t=>chip(t,t,counts[t]||0)).join("")+(none?chip("__none","Not set",none):"");
