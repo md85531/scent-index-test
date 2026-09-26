@@ -217,6 +217,15 @@ h1 em{font-style:italic;color:var(--accent-deep)}
 .fam-chip .fdot{width:8px;height:8px;border-radius:2px;background:var(--fc,#ccc)}
 .fam-chip:hover{color:var(--ink)}
 .fam-chip.on{color:var(--ink);border-color:var(--ink);background:#fff}
+.ftype-row{align-items:center;margin-top:2px}
+.tc-lbl{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--faint);margin-right:2px}
+.type-chip{border:1px dashed var(--line);background:transparent;border-radius:999px;padding:5px 11px;font-size:12px;font-weight:600;color:var(--muted);transition:.15s}
+.type-chip:hover{color:var(--ink)}
+.type-chip.on{border-style:solid;border-color:var(--ink);background:var(--ink);color:#fff}
+.type-chip .tc-n{font-weight:600;opacity:.6;margin-left:3px}
+.type-tag{font-size:9px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--ink);border:1px solid var(--ink);border-radius:999px;padding:1px 8px}
+.bar-link{cursor:pointer}
+.bar-link:hover .bl{color:var(--ink)}
 .fam-chip.on .fdot{box-shadow:0 0 0 2px rgba(43,39,36,.12)}
 
 /* Stat strip */
@@ -436,6 +445,7 @@ footer{text-align:center;color:var(--faint);font-size:12px;padding:34px 0 0}
       </select>
     </div>
     <div class="families" id="familyChips"></div>
+    <div class="families ftype-row" id="typeChips"></div>
     <div class="statstrip" id="statStrip"></div>
     <div class="grid" id="grid"></div>
     <div class="empty" id="emptyState" style="display:none">
@@ -552,7 +562,8 @@ const INITIAL_USER = /*userdata*/{
       ],
       "multiples": true,
       "wears": [
-        "2026-06-26"
+        "2026-06-26",
+        "2026-09-13"
       ]
     },
     "5": {
@@ -925,6 +936,9 @@ const INITIAL_USER = /*userdata*/{
       "matchbody": [
         "Body wash",
         "Body cream"
+      ],
+      "wears": [
+        "2026-09-09"
       ]
     },
     "20": {
@@ -1585,11 +1599,12 @@ const INITIAL_USER = /*userdata*/{
         "Fresh"
       ],
       "wears": [
-        "2026-08-09"
+        "2026-08-09",
+        "2026-09-25"
       ]
     },
     "43": {
-      "rating": 4,
+      "rating": 3,
       "family": "Green",
       "notes": "Coconut water, aldehydes, musk, incense, jasmine",
       "seasons": [
@@ -1605,6 +1620,9 @@ const INITIAL_USER = /*userdata*/{
       ],
       "sizes": [
         "Full Size"
+      ],
+      "wears": [
+        "2026-09-12"
       ]
     },
     "44": {
@@ -1678,7 +1696,8 @@ const INITIAL_USER = /*userdata*/{
         "Full Size"
       ],
       "wears": [
-        "2026-08-30"
+        "2026-08-30",
+        "2026-09-15"
       ]
     },
     "46": {
@@ -2008,7 +2027,8 @@ const INITIAL_USER = /*userdata*/{
       ],
       "wears": [
         "2026-06-13",
-        "2026-07-03"
+        "2026-07-03",
+        "2026-09-01"
       ],
       "families": [
         "Fresh",
@@ -2106,6 +2126,9 @@ const INITIAL_USER = /*userdata*/{
       ],
       "sizes": [
         "Full Size"
+      ],
+      "wears": [
+        "2026-09-08"
       ]
     },
     "64": {
@@ -2179,6 +2202,10 @@ const INITIAL_USER = /*userdata*/{
       ],
       "sizes": [
         "Full Size"
+      ],
+      "wears": [
+        "2026-09-03",
+        "2026-09-04"
       ]
     },
     "67": {
@@ -2274,7 +2301,8 @@ const INITIAL_USER = /*userdata*/{
       "body": [],
       "matchbody": [
         "Body wash",
-        "Lotion"
+        "Lotion",
+        "Body oil"
       ],
       "families": [
         "Floral",
@@ -2282,6 +2310,9 @@ const INITIAL_USER = /*userdata*/{
       ],
       "sizes": [
         "Full Size"
+      ],
+      "wears": [
+        "2026-09-19"
       ]
     },
     "71": {
@@ -2428,7 +2459,7 @@ const INITIAL_USER = /*userdata*/{
     },
     "75": {
       "price": 32,
-      "rating": 3,
+      "rating": 4,
       "seasons": [
         "Spring",
         "Summer",
@@ -2445,7 +2476,8 @@ const INITIAL_USER = /*userdata*/{
         "Travel Size"
       ],
       "wears": [
-        "2026-06-28"
+        "2026-06-28",
+        "2026-09-11"
       ],
       "bpairs": {
         "pin": [],
@@ -2521,7 +2553,8 @@ const INITIAL_USER = /*userdata*/{
         "Travel Size"
       ],
       "wears": [
-        "2026-06-19"
+        "2026-06-19",
+        "2026-09-14"
       ]
     },
     "80": {
@@ -2540,8 +2573,23 @@ const INITIAL_USER = /*userdata*/{
         "Travel Size"
       ],
       "wears": [
-        "2026-07-31"
-      ]
+        "2026-07-31",
+        "2026-09-01"
+      ],
+      "pairs": {
+        "pin": {
+          "layer": [
+            59
+          ],
+          "rot": []
+        },
+        "hide": {
+          "layer": [
+            132
+          ],
+          "rot": []
+        }
+      }
     },
     "81": {
       "price": 46,
@@ -3258,7 +3306,8 @@ const INITIAL_USER = /*userdata*/{
       ],
       "multiples": true,
       "wears": [
-        "2026-08-26"
+        "2026-08-26",
+        "2026-09-11"
       ]
     },
     "113": {
@@ -3386,7 +3435,9 @@ const INITIAL_USER = /*userdata*/{
       ],
       "multiples": true,
       "wears": [
-        "2026-06-18"
+        "2026-06-18",
+        "2026-09-10",
+        "2026-09-21"
       ],
       "matchbody": [
         "Body wash",
@@ -3515,7 +3566,8 @@ const INITIAL_USER = /*userdata*/{
         }
       },
       "wears": [
-        "2026-06-26"
+        "2026-06-26",
+        "2026-09-17"
       ]
     },
     "123": {
@@ -3583,7 +3635,8 @@ const INITIAL_USER = /*userdata*/{
         "Full Size"
       ],
       "wears": [
-        "2026-07-04"
+        "2026-07-04",
+        "2026-09-17"
       ]
     },
     "126": {
@@ -4337,7 +4390,8 @@ const INITIAL_USER = /*userdata*/{
         "Travel Size"
       ],
       "wears": [
-        "2026-07-24"
+        "2026-07-24",
+        "2026-09-04"
       ]
     },
     "169": {
@@ -4349,13 +4403,17 @@ const INITIAL_USER = /*userdata*/{
         "Winter"
       ],
       "price": 26,
-      "rating": 3,
+      "rating": 4,
       "families": [
         "Musk",
         "Green"
       ],
       "sizes": [
         "Travel Size"
+      ],
+      "multiples": true,
+      "wears": [
+        "2026-09-18"
       ]
     },
     "170": {
@@ -4434,6 +4492,9 @@ const INITIAL_USER = /*userdata*/{
       ],
       "sizes": [
         "Travel Size"
+      ],
+      "wears": [
+        "2026-09-24"
       ]
     },
     "175": {
@@ -4784,7 +4845,8 @@ const INITIAL_USER = /*userdata*/{
         "Full Size"
       ],
       "wears": [
-        "2026-07-09"
+        "2026-07-09",
+        "2026-09-05"
       ]
     },
     "192": {
@@ -4947,7 +5009,9 @@ const INITIAL_USER = /*userdata*/{
       "price": 38,
       "rating": 4,
       "wears": [
-        "2026-06-16"
+        "2026-06-16",
+        "2026-09-02",
+        "2026-09-18"
       ],
       "sizes": [
         "Travel Size"
@@ -4974,7 +5038,8 @@ const INITIAL_USER = /*userdata*/{
         "Travel Size"
       ],
       "wears": [
-        "2026-07-29"
+        "2026-07-29",
+        "2026-09-21"
       ]
     },
     "201": {
@@ -5243,29 +5308,6 @@ const INITIAL_USER = /*userdata*/{
       ]
     },
     {
-      "id": 100008,
-      "brand": "Byredo",
-      "name": "Gypsy Water",
-      "family": "Citrus",
-      "notes": "Juniper, lemon, pink pepper, pine, vanilla",
-      "seasons": [
-        "Spring",
-        "Summer",
-        "Fall"
-      ],
-      "rating": 4,
-      "price": 199,
-      "fav": false,
-      "wears": [],
-      "families": [
-        "Fresh",
-        "Citrus"
-      ],
-      "sizes": [
-        "Full Size"
-      ]
-    },
-    {
       "id": 100009,
       "brand": "Goldfield & Banks",
       "name": "Sunset Hour",
@@ -5281,7 +5323,8 @@ const INITIAL_USER = /*userdata*/{
       "wears": [
         "2026-06-25",
         "2026-07-07",
-        "2026-07-17"
+        "2026-07-17",
+        "2026-09-07"
       ],
       "families": [
         "Fruity",
@@ -5347,7 +5390,8 @@ const INITIAL_USER = /*userdata*/{
       "fav": false,
       "wears": [
         "2026-07-20",
-        "2026-08-08"
+        "2026-08-08",
+        "2026-09-23"
       ],
       "families": [
         "Floral",
@@ -5566,7 +5610,9 @@ const INITIAL_USER = /*userdata*/{
       "rating": 4,
       "price": null,
       "fav": false,
-      "wears": [],
+      "wears": [
+        "2026-09-24"
+      ],
       "matchbody": [
         "Body wash",
         "Body oil"
@@ -5596,7 +5642,9 @@ const INITIAL_USER = /*userdata*/{
       "rating": 5,
       "price": 82,
       "fav": true,
-      "wears": []
+      "wears": [
+        "2026-09-10"
+      ]
     },
     {
       "id": 100022,
@@ -5654,15 +5702,26 @@ const INITIAL_USER = /*userdata*/{
         "Winter"
       ],
       "sizes": [
-        "Sample/Decant"
+        "Sample/Decant",
+        "Full Size"
       ],
       "multiples": false,
       "rating": 5,
       "price": null,
       "fav": true,
       "wears": [
-        "2026-08-12"
-      ]
+        "2026-08-12",
+        "2026-09-16"
+      ],
+      "bpairs": {
+        "pin": [
+          "o:130:Body wash:Lemon Custard",
+          "s:900006:Lotion"
+        ],
+        "hide": [
+          "s:900025:Body wash"
+        ]
+      }
     },
     {
       "id": 100024,
@@ -5749,10 +5808,12 @@ const INITIAL_USER = /*userdata*/{
         "Full Size"
       ],
       "multiples": false,
-      "rating": 0,
+      "rating": 4,
       "price": 68,
       "fav": false,
-      "wears": []
+      "wears": [
+        "2026-09-09"
+      ]
     },
     {
       "id": 100027,
@@ -5930,7 +5991,9 @@ const INITIAL_USER = /*userdata*/{
       "rating": 0,
       "price": 125,
       "fav": false,
-      "wears": []
+      "wears": [
+        "2026-09-14"
+      ]
     },
     {
       "id": 100034,
@@ -5951,10 +6014,12 @@ const INITIAL_USER = /*userdata*/{
         "Full Size"
       ],
       "multiples": false,
-      "rating": 0,
+      "rating": 4,
       "price": 175,
       "fav": false,
-      "wears": []
+      "wears": [
+        "2026-09-05"
+      ]
     },
     {
       "id": 100035,
@@ -6320,7 +6385,8 @@ const INITIAL_USER = /*userdata*/{
       "price": 25,
       "fav": false,
       "wears": [
-        "2026-08-18"
+        "2026-08-18",
+        "2026-09-19"
       ],
       "pairs": {
         "pin": {
@@ -6366,7 +6432,8 @@ const INITIAL_USER = /*userdata*/{
       "price": 25,
       "fav": false,
       "wears": [
-        "2026-08-29"
+        "2026-08-29",
+        "2026-09-13"
       ],
       "pairs": {
         "pin": {
@@ -6405,7 +6472,9 @@ const INITIAL_USER = /*userdata*/{
       "rating": 5,
       "price": 25,
       "fav": false,
-      "wears": [],
+      "wears": [
+        "2026-09-02"
+      ],
       "pairs": {
         "pin": {
           "layer": [
@@ -6442,7 +6511,10 @@ const INITIAL_USER = /*userdata*/{
       "rating": 4,
       "price": 40,
       "fav": false,
-      "wears": [],
+      "wears": [
+        "2026-09-08",
+        "2026-09-23"
+      ],
       "memo": "Dupe of OG Glossier You",
       "bpairs": {
         "pin": [
@@ -6527,12 +6599,503 @@ const INITIAL_USER = /*userdata*/{
       "wears": [
         "2026-08-31"
       ]
+    },
+    {
+      "id": 100054,
+      "brand": "L\u2019Epoque Parfums",
+      "name": "Serotonin Spritz",
+      "families": [
+        "Fresh",
+        "Citrus",
+        "Spicy"
+      ],
+      "notes": "Grapefruit, pomelo, pink pepper, tequila, thyme, geranium, cassis, cedarwood, amber, musk",
+      "seasons": [
+        "Spring",
+        "Summer",
+        "Fall"
+      ],
+      "sizes": [
+        "Full Size"
+      ],
+      "multiples": false,
+      "rating": 0,
+      "price": 125,
+      "fav": false,
+      "wears": []
+    },
+    {
+      "id": 100055,
+      "brand": "L\u2019Epoque Parfums",
+      "name": "Dreams and Nightmares",
+      "families": [
+        "Fresh",
+        "Woody",
+        "Green"
+      ],
+      "notes": "Bergamot, eucalyptus, pink pepper, cardamom, patchouli, petrichor, wet earth, moss, amber woods",
+      "seasons": [
+        "Spring",
+        "Summer",
+        "Fall"
+      ],
+      "sizes": [
+        "Full Size"
+      ],
+      "multiples": false,
+      "rating": 0,
+      "price": 125,
+      "fav": false,
+      "wears": []
+    },
+    {
+      "id": 100056,
+      "brand": "Sorce",
+      "name": "Don\u2019t Whistle in the Woods",
+      "families": [
+        "Gourmand",
+        "Woody",
+        "Spicy"
+      ],
+      "notes": "Cedar, sandalwood, cypriol, fir balsam, black vanilla, sugar, ambrette, fur",
+      "seasons": [
+        "Fall",
+        "Winter"
+      ],
+      "sizes": [
+        "Travel Size"
+      ],
+      "multiples": false,
+      "rating": 4,
+      "price": 23,
+      "fav": false,
+      "wears": []
+    },
+    {
+      "id": 100057,
+      "brand": "Sorce",
+      "name": "A Bump in the Night",
+      "families": [
+        "Gourmand",
+        "Fruity",
+        "Spicy"
+      ],
+      "notes": "Roasted strawberries, mascarpone cream, golden honey, pecans, burning leaves",
+      "seasons": [
+        "Fall",
+        "Winter"
+      ],
+      "sizes": [
+        "Travel Size"
+      ],
+      "multiples": false,
+      "rating": 3,
+      "price": 22,
+      "fav": false,
+      "wears": []
+    },
+    {
+      "id": 100058,
+      "brand": "Sorce",
+      "name": "A Sign Painted Peaches",
+      "families": [
+        "Gourmand",
+        "Floral",
+        "Fruity"
+      ],
+      "notes": "Peach nectar, peach skin, saffron, gardenia, ambergris, vanilla absolute, vetiver",
+      "seasons": [
+        "Spring",
+        "Summer",
+        "Fall"
+      ],
+      "sizes": [
+        "Travel Size"
+      ],
+      "multiples": false,
+      "rating": 3,
+      "price": 23,
+      "fav": false,
+      "wears": []
+    },
+    {
+      "id": 100059,
+      "brand": "Sorce",
+      "name": "Don\u2019t Whistle in the Woods",
+      "families": [
+        "Woody",
+        "Sweet"
+      ],
+      "notes": "Cedar, sandalwood, cypriol, fir balsam, black vanilla, sugar, ambrette, fur",
+      "seasons": [
+        "Fall",
+        "Winter"
+      ],
+      "sizes": [
+        "Travel Size"
+      ],
+      "multiples": false,
+      "rating": 4,
+      "price": 21,
+      "fav": false,
+      "wears": []
+    },
+    {
+      "id": 100060,
+      "brand": "Sorce",
+      "name": "A Bump in the Night",
+      "families": [
+        "Gourmand",
+        "Fruity",
+        "Spicy"
+      ],
+      "notes": "Strawberries, mascarpone cream, golden honey, pecans, burning leaves",
+      "seasons": [
+        "Fall",
+        "Winter"
+      ],
+      "sizes": [
+        "Travel Size"
+      ],
+      "multiples": false,
+      "rating": 3,
+      "price": 22,
+      "fav": false,
+      "wears": [],
+      "pairs": {
+        "pin": {
+          "layer": [],
+          "rot": []
+        },
+        "hide": {
+          "layer": [
+            6,
+            100057
+          ],
+          "rot": []
+        }
+      }
+    },
+    {
+      "id": 100061,
+      "brand": "Sorce",
+      "name": "Song of a Siren",
+      "families": [
+        "Floral",
+        "Amber",
+        "Aquatic"
+      ],
+      "notes": "Black water lily, vanilla absolute, salty sea air, barrel aged rum, dark amber, immortelle",
+      "seasons": [
+        "Summer",
+        "Fall",
+        "Winter"
+      ],
+      "sizes": [
+        "Travel Size"
+      ],
+      "multiples": false,
+      "rating": 0,
+      "price": 22,
+      "fav": false,
+      "wears": []
+    },
+    {
+      "id": 100062,
+      "brand": "Sorce",
+      "name": "Poisonous Roots",
+      "families": [
+        "Floral",
+        "Amber",
+        "Spicy"
+      ],
+      "notes": "Jasmine absolute, incense, milky tea, vanilla absolute, black amber",
+      "seasons": [
+        "Spring",
+        "Fall",
+        "Winter"
+      ],
+      "sizes": [
+        "Travel Size"
+      ],
+      "multiples": false,
+      "rating": 0,
+      "price": 44,
+      "fav": false,
+      "wears": []
+    },
+    {
+      "id": 100063,
+      "brand": "Sorce",
+      "name": "Stuck on You",
+      "families": [
+        "Gourmand",
+        "Fruity",
+        "Sweet"
+      ],
+      "notes": "Apple, caramel",
+      "seasons": [
+        "Spring",
+        "Fall",
+        "Winter"
+      ],
+      "sizes": [
+        "Sample/Decant",
+        "Travel Size"
+      ],
+      "multiples": false,
+      "rating": 3,
+      "price": 22,
+      "fav": false,
+      "wears": []
+    },
+    {
+      "id": 100064,
+      "brand": "Ouai",
+      "name": "Laurel Canyon",
+      "families": [
+        "Floral",
+        "Green",
+        "Nutty"
+      ],
+      "notes": "Fig leaf, green mandarin, almond milk, cedar, musk, tonka bean, jasmine, violet, orris root",
+      "seasons": [
+        "Spring",
+        "Summer",
+        "Fall",
+        "Winter"
+      ],
+      "sizes": [
+        "Travel Size"
+      ],
+      "multiples": false,
+      "rating": 0,
+      "price": 30,
+      "fav": false,
+      "wears": []
+    },
+    {
+      "id": 100065,
+      "brand": "Ellis Brooklyn",
+      "name": "Vanilla Rice",
+      "families": [
+        "Gourmand",
+        "Lactonic",
+        "Nutty"
+      ],
+      "notes": "Mandarin,\u00a0freesia, toasted rice, sakura blossom, coconut milk, jasmine nectar, skin musk, vanilla, tonka bean",
+      "seasons": [
+        "Spring",
+        "Summer",
+        "Fall",
+        "Winter"
+      ],
+      "sizes": [
+        "Travel Size"
+      ],
+      "multiples": false,
+      "rating": 0,
+      "price": 15,
+      "fav": false,
+      "wears": []
+    },
+    {
+      "id": 100066,
+      "brand": "Ellis Brooklyn",
+      "name": "Vanilla Salt",
+      "families": [
+        "Musk",
+        "Aquatic",
+        "Sweet"
+      ],
+      "notes": "Sea salt, ocean water, whipped cream, ylang-ylang, jasmine, vanilla, musk, benzoin, woods",
+      "seasons": [
+        "Spring",
+        "Summer",
+        "Fall"
+      ],
+      "sizes": [
+        "Travel Size"
+      ],
+      "multiples": false,
+      "rating": 0,
+      "price": 15,
+      "fav": false,
+      "wears": [],
+      "pairs": {
+        "pin": {
+          "layer": [],
+          "rot": []
+        },
+        "hide": {
+          "layer": [],
+          "rot": [
+            43
+          ]
+        }
+      }
+    },
+    {
+      "id": 100067,
+      "brand": "Forevr Mood",
+      "name": "Hard to Get",
+      "families": [
+        "Floral",
+        "Citrus",
+        "Sweet"
+      ],
+      "notes": "Vanilla, citron, jasmine",
+      "seasons": [
+        "Spring",
+        "Summer",
+        "Fall"
+      ],
+      "sizes": [
+        "Travel Size"
+      ],
+      "multiples": false,
+      "rating": 0,
+      "price": 28,
+      "fav": false,
+      "wears": []
+    },
+    {
+      "id": 100068,
+      "brand": "Nest New York",
+      "name": "Cardamom Latte",
+      "families": [
+        "Gourmand",
+        "Spicy",
+        "Sweet"
+      ],
+      "notes": "Cardamom, jasmine petals, coconut milk, vanilla cream",
+      "seasons": [
+        "Spring",
+        "Fall",
+        "Winter"
+      ],
+      "sizes": [
+        "Travel Size"
+      ],
+      "multiples": false,
+      "rating": 0,
+      "price": 30,
+      "fav": false,
+      "wears": []
+    },
+    {
+      "id": 100069,
+      "brand": "Bath & Body Works",
+      "name": "Worth Wanting",
+      "families": [
+        "Floral",
+        "Fruity",
+        "Sweet"
+      ],
+      "notes": "Peach, mandarin, lily, honey",
+      "seasons": [
+        "Spring",
+        "Summer",
+        "Fall",
+        "Winter"
+      ],
+      "sizes": [
+        "Full Size"
+      ],
+      "multiples": false,
+      "rating": 0,
+      "price": 18,
+      "fav": false,
+      "wears": [],
+      "matchbody": [
+        "Body cream"
+      ],
+      "memo": "Dupe of Jimmy Choo - I Want Choo",
+      "bpairs": {
+        "pin": [],
+        "hide": [
+          "m:33:Body cream"
+        ]
+      }
+    },
+    {
+      "id": 100070,
+      "brand": "Bath & Body Works",
+      "name": "Orchid Effect",
+      "families": [
+        "Gourmand",
+        "Floral",
+        "Fruity"
+      ],
+      "notes": "Vanilla, vanilla orchid, cashmere woods",
+      "seasons": [
+        "Spring",
+        "Summer",
+        "Fall",
+        "Winter"
+      ],
+      "sizes": [
+        "Full Size"
+      ],
+      "multiples": false,
+      "rating": 0,
+      "price": 18,
+      "fav": false,
+      "wears": [],
+      "matchbody": [
+        "Body cream"
+      ],
+      "memo": "Dupe of Gucci Flora Gorgeous Orchid"
+    },
+    {
+      "id": 100071,
+      "brand": "Bath & Body Works",
+      "name": "Trace of Blue",
+      "families": [
+        "Floral",
+        "Citrus",
+        "Woody"
+      ],
+      "notes": "Citrus, jasmine, cedarwood",
+      "seasons": [
+        "Spring",
+        "Summer",
+        "Fall"
+      ],
+      "sizes": [
+        "Full Size"
+      ],
+      "multiples": false,
+      "rating": 0,
+      "price": 18,
+      "fav": false,
+      "wears": [],
+      "memo": "Dupe of D&G Light Blue"
     }
   ],
-  "nextId": 100054,
+  "nextId": 100072,
   "tray": {
     "label": "September 2026",
-    "ids": []
+    "ids": [
+      63,
+      100021,
+      100049,
+      1,
+      43,
+      80,
+      79,
+      187,
+      193,
+      59,
+      66,
+      75,
+      100009,
+      100026,
+      125,
+      122,
+      100050,
+      168
+    ]
   },
   "trayHistory": [
     {
@@ -7489,13 +8052,43 @@ const INITIAL_USER = /*userdata*/{
         "Winter"
       ],
       "notes": "Almond, vanilla, croissant"
+    },
+    {
+      "id": 900049,
+      "name": "Love Letter",
+      "brand": "Athena",
+      "types": [
+        "Lotion"
+      ],
+      "type": "Lotion",
+      "families": [
+        "Floral",
+        "Spicy"
+      ],
+      "seasons": [
+        "Spring",
+        "Summer",
+        "Fall",
+        "Winter"
+      ],
+      "notes": "Iris, pink pepper, creamy woods"
     }
   ],
-  "nextShelfId": 900049
+  "nextShelfId": 900050
 };
 const FAMILIES=["Gourmand","Floral","Fruity","Fresh","Citrus","Woody","Amber","Musk","Green","Aquatic","Solar","Spicy","Tropical","Lactonic","Sweet","Nutty","Powdery"];
 const FAM_COLOR={Gourmand:"#C68A4E",Floral:"#D27FA3",Fruity:"#D2604E",Fresh:"#4FA8C0",Citrus:"#E0A92E",Woody:"#8A6A45",Amber:"#B07A3C",Musk:"#B9A38C",Green:"#6B9A5B",Aquatic:"#3C7DAE",Solar:"#E0954E",Spicy:"#A8432C",Tropical:"#2FA98E",Lactonic:"#D9C4A3",Sweet:"#B47BC4",Nutty:"#A6764B",Powdery:"#C7B3C9"};
 const SIZES=["Sample/Decant","Travel Size","Full Size"];
+/* what form the fragrance itself comes in — a scent can be several (an EDP and its oil) */
+const FTYPES=["EDP","EDT","Extrait","Perfume Oil","Body Mist/Spray","Solid"];
+const FTYPE_HINT={"EDP":"eau de parfum","EDT":"eau de toilette","Extrait":"extrait / parfum","Perfume Oil":"roll-on or oil","Body Mist/Spray":"body mist, body spray or hair mist","Solid":"solid perfume"};
+const FTYPE_COLOR={"EDP":"#7A6247","EDT":"#8FA6AC","Extrait":"#5A4668","Perfume Oil":"#B8863B","Body Mist/Spray":"#6FAFC2","Solid":"#A8927C"};
+const FTYPE_RENAME={"Perfume oil":"Perfume Oil","Body mist":"Body Mist/Spray"};   // earlier spellings
+function ftArr(v){
+  if(!Array.isArray(v))return [];
+  const m=v.map(x=>FTYPE_RENAME[x]||x);
+  return FTYPES.filter(t=>m.includes(t));
+}
 function txtOn(hex){const c=hex.replace("#","");const r=parseInt(c.slice(0,2),16),g=parseInt(c.slice(2,4),16),b=parseInt(c.slice(4,6),16);return ((0.299*r+0.587*g+0.114*b)/255)>0.62?"#2B2724":"#ffffff";}
 const SEASONS=["Spring","Summer","Fall","Winter"];
 const MONTHS=["January","February","March","April","May","June","July","August","September","October","November","December"];
@@ -7656,7 +8249,7 @@ function flash(msg){
 
 /* ---------- state ---------- */
 let USER=defaultUser();
-let state={view:"library",season:currentSeason(),families:new Set(),fav:false,match:false,tray:false,sort:"az",q:""};
+let state={view:"library",season:currentSeason(),families:new Set(),ftypes:new Set(),fav:false,match:false,tray:false,sort:"az",q:""};
 
 
 /* merge SEED + overrides + custom into working items */
@@ -7676,6 +8269,7 @@ function items(){
       notes:ov.notes!=null?ov.notes:s.o,
       seasons:ov.seasons||s.s,
       sizes:Array.isArray(ov.sizes)?ov.sizes:[],
+      ftypes:ftArr(ov.ftypes),
       multiples:!!ov.multiples,
       matchbody:Array.isArray(ov.matchbody)?ov.matchbody:[],
       rating:ov.rating||0,
@@ -7688,7 +8282,7 @@ function items(){
   USER.custom.forEach(c=>{
     const families=famArr(c.families,c.family);
     list.push({id:c.id,brand:c.brand,name:c.name,families,family:families[0],notes:c.notes,
-      seasons:c.seasons,sizes:Array.isArray(c.sizes)?c.sizes:[],multiples:!!c.multiples,
+      seasons:c.seasons,sizes:Array.isArray(c.sizes)?c.sizes:[],ftypes:ftArr(c.ftypes),multiples:!!c.multiples,
       matchbody:Array.isArray(c.matchbody)?c.matchbody:[],
       rating:c.rating||0,price:c.price!=null?c.price:null,
       fav:!!c.fav,wears:c.wears||[],custom:true});
@@ -7714,12 +8308,13 @@ function filtered(){
   let list=items();
   if(state.season!=="All")list=list.filter(x=>x.seasons.includes(state.season));
   if(state.families.size)list=list.filter(x=>x.families.some(f=>state.families.has(f)));
+  if(state.ftypes.size)list=list.filter(x=>x.ftypes.length?x.ftypes.some(t=>state.ftypes.has(t)):state.ftypes.has("__none"));
   if(state.fav)list=list.filter(x=>x.fav);
   if(state.match)list=list.filter(x=>x.matchbody.length);
   if(state.tray){const t=new Set((USER.tray&&USER.tray.ids)||[]);list=list.filter(x=>t.has(x.id));}
   if(state.q){
     const q=state.q.toLowerCase();
-    list=list.filter(x=>(x.brand+" "+x.name+" "+x.notes+" "+x.families.join(" ")).toLowerCase().includes(q));
+    list=list.filter(x=>(x.brand+" "+x.name+" "+x.notes+" "+x.families.join(" ")+" "+x.ftypes.join(" ")).toLowerCase().includes(q));
   }
   const lastWear=x=>x.wears.length?x.wears[x.wears.length-1]:"";
   const sorters={
@@ -8367,11 +8962,13 @@ function cardHTML(it,all,scope){
   const stripBg=it.families.length>1?`linear-gradient(180deg,${it.families.map(f=>FAM_COLOR[f]).join(",")})`:fc;
   const matchPick=MATCH_TYPES.map(t=>{const on=it.matchbody.includes(t);return `<div class="sp ${on?'on':''}" style="${on?'background:var(--accent);color:#fff;border-color:transparent':''}" onclick="toggleMatch(${it.id},'${t}')">${esc(t)}</div>`;}).join("");
   const sizeTags=it.sizes.map(sz=>`<span class="size-tag">${esc(sz)}</span>`).join("");
+  const typeTags=it.ftypes.map(t=>`<span class="type-tag">${esc(t)}</span>`).join("");
+  const typePick=FTYPES.map(t=>{const on=it.ftypes.includes(t);return `<div class="sp ${on?'on':''}" title="${FTYPE_HINT[t]}" style="${on?'background:var(--ink);color:#fff;border-color:transparent':''}" onclick="toggleEditType(${it.id},'${t}')">${esc(t)}</div>`;}).join("");
   const backupTag=it.multiples?`<span class="backup-tag">＋ Backup</span>`:"";
   const matchTag=it.matchbody.length?`<span class="match-tag">🧴 Matching: ${it.matchbody.map(t=>MATCH_SHORT[t]||t).join(" · ")}</span>`:"";
   const inTray=((USER.tray&&USER.tray.ids)||[]).includes(it.id);
   const trayTag=inTray?`<span class="tray-tag">🗂️ In tray</span>`:"";
-  const tagRow=(it.sizes.length||it.multiples||it.matchbody.length||inTray)?`<div class="tagrow">${sizeTags}${backupTag}${matchTag}${trayTag}</div>`:"";
+  const tagRow=(it.ftypes.length||it.sizes.length||it.multiples||it.matchbody.length||inTray)?`<div class="tagrow">${typeTags}${sizeTags}${backupTag}${matchTag}${trayTag}</div>`:"";
   return `<div class="card" id="card-${scope}-${it.id}" data-card="${it.id}" data-scope="${scope}" style="--fc:${fc}">
     <div class="strip" style="background:${stripBg}"></div>
     <div class="card-in">
@@ -8428,6 +9025,9 @@ function cardHTML(it,all,scope){
           <label>Seasons<div class="seasonpick">${seasonPick}</div></label>
           <label>Size<div class="seasonpick">${sizePick}</div></label>
         </div>
+        <div class="editrow" style="margin-top:10px">
+          <label>Fragrance type <span class="hinttxt">choose all that apply</span><div class="seasonpick">${typePick}</div></label>
+        </div>
         <div class="editrow" style="margin-top:12px">
           <label class="chk"><input type="checkbox" ${it.multiples?'checked':''} onchange="setMultiples(${it.id},this.checked)"> I own multiples / backups of this</label>
         </div>
@@ -8443,7 +9043,7 @@ function fmtShort(iso){const d=new Date(iso+"T00:00:00");return d.toLocaleDateSt
 
 function render(){
   applyTheme();
-  renderRibbon();renderFamilyChips();renderStats();
+  renderRibbon();renderFamilyChips();renderTypeChips();renderStats();
   const all=items();
   const list=filtered();
   const grid=document.getElementById("grid");
@@ -8490,6 +9090,22 @@ function renderStats(){
 /* ---------- interactions ---------- */
 function setSeason(s){state.season=s;render();}
 function toggleFamily(f){state.families.has(f)?state.families.delete(f):state.families.add(f);render();}
+function renderTypeChips(){
+  const all=items(), counts={}; let none=0;
+  all.forEach(x=>{ if(!x.ftypes.length)none++; x.ftypes.forEach(t=>counts[t]=(counts[t]||0)+1); });
+  const chip=(key,label,n)=>{
+    const on=state.ftypes.has(key);
+    return `<button class="type-chip ${on?'on':''}" onclick="toggleTypeFilter('${key}')">${esc(label)} <span class="tc-n">${n}</span></button>`;
+  };
+  document.getElementById("typeChips").innerHTML=
+    `<span class="tc-lbl">Type</span>`+FTYPES.map(t=>chip(t,t,counts[t]||0)).join("")+(none?chip("__none","Not set",none):"");
+}
+function gotoTypeFilter(t){
+  state.ftypes=new Set([t]);state.season="All";state.families=new Set();state.q="";
+  const sb=document.getElementById("searchBox");if(sb)sb.value="";
+  setView("library");render();window.scrollTo&&window.scrollTo(0,0);
+}
+function toggleTypeFilter(t){state.ftypes.has(t)?state.ftypes.delete(t):state.ftypes.add(t);render();}
 function toggleFavFilter(){state.fav=!state.fav;document.getElementById("favToggle").classList.toggle("on",state.fav);render();}
 function toggleMatchFilter(){state.match=!state.match;document.getElementById("matchToggle").classList.toggle("on",state.match);render();}
 function toggleTrayFilter(){state.tray=!state.tray;document.getElementById("trayFilterBtn").classList.toggle("on",state.tray);render();}
@@ -8517,6 +9133,11 @@ function toggleEditSize(id,sz){
   let arr=it.sizes.includes(sz)?it.sizes.filter(z=>z!==sz):it.sizes.concat([sz]);
   arr=SIZES.filter(z=>arr.includes(z));
   patch(id,{sizes:arr});softUpdate(id);
+}
+function toggleEditType(id,t){
+  const it=items().find(x=>x.id===id);
+  let arr=it.ftypes.includes(t)?it.ftypes.filter(z=>z!==t):it.ftypes.concat([t]);
+  patch(id,{ftypes:FTYPES.filter(z=>arr.includes(z))});softUpdate(id);renderTypeChips();
 }
 function setMultiples(id,checked){patch(id,{multiples:!!checked});softUpdate(id);}
 function getMatch(id){const it=items().find(x=>x.id===id);return it?it.matchbody:[];}
@@ -8770,6 +9391,10 @@ function renderInsights(){
 
   const seaCounts={};SEASONS.forEach(s=>seaCounts[s]=all.filter(x=>x.seasons.includes(s)).length);
   const maxSea=Math.max(1,...Object.values(seaCounts));
+  const tyCounts={},tyWears={};let tyNone=0;
+  all.forEach(x=>{ if(!x.ftypes.length)tyNone++; x.ftypes.forEach(k=>{tyCounts[k]=(tyCounts[k]||0)+1;tyWears[k]=(tyWears[k]||0)+x.wears.length;}); });
+  const maxTy=Math.max(1,...FTYPES.map(k=>tyCounts[k]||0));
+  const typeBars=FTYPES.map(k=>`<div class="bar bar-link" onclick="gotoTypeFilter('${k}')" title="Show these in the library"><span class="bl">${k}<small class="bmo">${tyWears[k]||0} wear${(tyWears[k]||0)===1?'':'s'}</small></span><div class="bt" style="width:${(tyCounts[k]||0)/maxTy*100}%;--bc:${FTYPE_COLOR[k]}"></div><span class="bv">${tyCounts[k]||0}</span></div>`).join("");
   const seaBars=SEASONS.map(s=>`<div class="bar"><span class="bl">${s}<small class="bmo">${seasonMonthsLabel(s)}</small></span><div class="bt" style="width:${seaCounts[s]/maxSea*100}%;--bc:${SEASON_THEME[s].a}"></div><span class="bv">${seaCounts[s]}</span></div>`).join("");
 
   const topRated=all.filter(x=>x.rating).sort((a,b)=>b.rating-a.rating||b.wears.length-a.wears.length).slice(0,6);
@@ -8796,6 +9421,11 @@ function renderInsights(){
         <div class="bars">${seaBars}</div>
         <p style="font-size:12.5px;color:var(--muted);margin:16px 0 0">${untried} scent${untried===1?'':'s'} in your collection ${untried===1?'is':'are'} still untried — plenty left to discover.</p>
       </div>
+      <div class="panel"><h2>By fragrance type</h2>
+        <p class="panel-sub">Tap a type to see those scents in your library.</p>
+        <div class="bars">${typeBars}</div>
+        ${tyNone?`<p style="font-size:12.5px;color:var(--muted);margin:16px 0 0"><a href="#" onclick="gotoTypeFilter('__none');return false" style="color:var(--accent-deep);font-weight:700">${tyNone} scent${tyNone===1?'':'s'}</a> ${tyNone===1?'doesn\'t':'don\'t'} have a type yet.</p>`:""}
+      </div>
     </div>
     <div class="twocol">
       <div class="panel"><h2>Top rated</h2><div class="rank">${rankList(topRated,x=>'★'.repeat(x.rating))}</div></div>
@@ -8815,9 +9445,10 @@ function renderInsights(){
 }
 
 /* ---------- add modal ---------- */
-let addSeasons=new Set([currentSeason()]), addFamilies=new Set(), addSizes=new Set(), addMultiples=false;
+let addSeasons=new Set([currentSeason()]), addFamilies=new Set(), addSizes=new Set(), addTypes=new Set(), addMultiples=false;
 function openAdd(){modalKind="add";
-  addSeasons=new Set([currentSeason()]);addFamilies=new Set();addSizes=new Set();addMultiples=false;
+  addSeasons=new Set([currentSeason()]);addFamilies=new Set();addSizes=new Set();addTypes=new Set();addMultiples=false;
+  const tp=FTYPES.map(t=>`<div class="sp" title="${FTYPE_HINT[t]}" onclick="toggleAddType('${t}',this)">${t}</div>`).join("");
   const fp=FAMILIES.map(f=>`<div class="sp" onclick="toggleAddFamily('${f}',this)">${f}</div>`).join("");
   const zp=SIZES.map(z=>`<div class="sp" onclick="toggleAddSize('${z}',this)">${z}</div>`).join("");
   const sp=SEASONS.map(s=>`<div class="sp ${addSeasons.has(s)?'on':''}" style="${addSeasons.has(s)?'background:'+SEASON_THEME[s].a+';color:#fff;border-color:transparent':''}" onclick="toggleAddSeason('${s}',this)">${s}</div>`).join("");
@@ -8829,6 +9460,7 @@ function openAdd(){modalKind="add";
     <div class="field"><label>Families <span class="hinttxt">choose one or more</span></label><div class="seasonpick" id="aFamilies">${fp}</div></div>
     <div class="field"><label>Notes / accords</label><input id="aNotes" placeholder="e.g. vanilla, musk, soft amber"></div>
     <div class="field"><label>Seasons</label><div class="seasonpick" id="aSeasons">${sp}</div></div>
+    <div class="field"><label>Fragrance type <span class="hinttxt">choose all that apply</span></label><div class="seasonpick" id="aTypes">${tp}</div></div>
     <div class="field"><label>Size <span class="hinttxt">optional</span></label><div class="seasonpick" id="aSizes">${zp}</div></div>
     <div class="field"><label class="chk"><input type="checkbox" id="aMultiples" onchange="addMultiples=this.checked"> I own multiples / backups of this</label></div>
     <div class="field"><div class="row2">
@@ -8852,6 +9484,12 @@ function toggleAddFamily(f,el){
   const on=addFamilies.has(f);
   el.classList.toggle("on",on);
   el.style.background=on?FAM_COLOR[f]:"";el.style.color=on?txtOn(FAM_COLOR[f]):"";el.style.borderColor=on?"transparent":"";
+}
+function toggleAddType(t,el){
+  if(addTypes.has(t))addTypes.delete(t);else addTypes.add(t);
+  const on=addTypes.has(t);
+  el.classList.toggle("on",on);
+  el.style.background=on?"var(--ink)":"";el.style.color=on?"#fff":"";el.style.borderColor=on?"transparent":"";
 }
 function toggleAddSize(z,el){
   if(addSizes.has(z))addSizes.delete(z);else addSizes.add(z);
@@ -8878,7 +9516,7 @@ function saveAdd(){
     families:families.length?families:["Gourmand"],
     notes:document.getElementById("aNotes").value.trim(),
     seasons:seasons.length?seasons:[currentSeason()],
-    sizes:sizes,multiples:addMultiples,
+    sizes:sizes,ftypes:FTYPES.filter(t=>addTypes.has(t)),multiples:addMultiples,
     rating:parseInt(document.getElementById("aRating").value)||0,
     price:document.getElementById("aPrice").value!==""?Math.max(0,parseFloat(document.getElementById("aPrice").value)||0):null,
     fav:false,wears:[]
