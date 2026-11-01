@@ -300,6 +300,11 @@ h1 em{font-style:italic;color:var(--accent-deep)}
 .backup-tag{font-size:9px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--accent-deep);background:var(--tint);border:1px solid var(--accent);border-radius:999px;padding:2px 9px}
 .match-tag{font-size:9px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:#fff;background:var(--accent);border-radius:999px;padding:2px 9px}
 .match-label{font-size:10.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--muted);margin-bottom:7px}
+.bsug-head{display:flex;align-items:flex-start;justify-content:space-between;gap:10px}
+.bshuf{flex:none;border:1px solid var(--line);background:var(--card);color:var(--muted);border-radius:999px;padding:3px 10px;font-size:10.5px;font-weight:700;letter-spacing:.03em;text-transform:none;cursor:pointer}
+.bshuf:hover{color:var(--ink);border-color:var(--ink)}
+.bstep{font-size:9.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--faint);margin:6px 0 1px}
+.pair-list .bstep:first-child{margin-top:0}
 .chk{display:flex!important;flex-direction:row!important;align-items:center;gap:9px;font-size:12.5px;color:var(--muted);font-weight:600;cursor:pointer}
 .chk input{width:17px;height:17px;accent-color:var(--accent);cursor:pointer;flex:none}
 .hinttxt{font-size:10px;font-weight:600;color:var(--faint);text-transform:none;letter-spacing:0}
@@ -493,6 +498,12 @@ const INITIAL_USER = /*userdata*/{
       "families": [
         "Floral",
         "Green"
+      ],
+      "ftypes": [
+        "EDP"
+      ],
+      "wears": [
+        "2026-09-29"
       ]
     },
     "2": {
@@ -506,8 +517,11 @@ const INITIAL_USER = /*userdata*/{
       "sizes": [
         "Full Size"
       ],
-      "matchbody": [
-        "Body oil"
+      "matchbody": [],
+      "ftypes": [
+        "EDP",
+        "Perfume Oil",
+        "Body Mist/Spray"
       ]
     },
     "3": {
@@ -538,6 +552,9 @@ const INITIAL_USER = /*userdata*/{
       ],
       "wears": [
         "2026-06-22"
+      ],
+      "ftypes": [
+        "EDP"
       ]
     },
     "4": {
@@ -564,6 +581,9 @@ const INITIAL_USER = /*userdata*/{
       "wears": [
         "2026-06-26",
         "2026-09-13"
+      ],
+      "ftypes": [
+        "EDP"
       ]
     },
     "5": {
@@ -580,6 +600,9 @@ const INITIAL_USER = /*userdata*/{
       "families": [
         "Gourmand",
         "Fruity"
+      ],
+      "ftypes": [
+        "Body Mist/Spray"
       ]
     },
     "6": {
@@ -595,6 +618,9 @@ const INITIAL_USER = /*userdata*/{
       "matchbody": [
         "Body wash",
         "Body cream"
+      ],
+      "ftypes": [
+        "Body Mist/Spray"
       ]
     },
     "7": {
@@ -614,6 +640,9 @@ const INITIAL_USER = /*userdata*/{
       "matchbody": [
         "Body wash",
         "Body cream"
+      ],
+      "ftypes": [
+        "Body Mist/Spray"
       ]
     },
     "8": {
@@ -658,7 +687,10 @@ const INITIAL_USER = /*userdata*/{
           "layer": [],
           "rot": []
         }
-      }
+      },
+      "ftypes": [
+        "Body Mist/Spray"
+      ]
     },
     "10": {
       "body": [],
@@ -678,6 +710,9 @@ const INITIAL_USER = /*userdata*/{
       "matchbody": [
         "Body wash",
         "Body cream"
+      ],
+      "ftypes": [
+        "Body Mist/Spray"
       ]
     },
     "11": {
@@ -715,7 +750,10 @@ const INITIAL_USER = /*userdata*/{
         "Body wash",
         "Body cream"
       ],
-      "multiples": true
+      "multiples": true,
+      "ftypes": [
+        "Body Mist/Spray"
+      ]
     },
     "12": {
       "notes": "Rhubarb, white floral, cashmere woods",
@@ -741,6 +779,9 @@ const INITIAL_USER = /*userdata*/{
       ],
       "wears": [
         "2026-08-28"
+      ],
+      "ftypes": [
+        "Body Mist/Spray"
       ]
     },
     "13": {
@@ -776,6 +817,9 @@ const INITIAL_USER = /*userdata*/{
       ],
       "matchbody": [
         "Body cream"
+      ],
+      "ftypes": [
+        "Body Mist/Spray"
       ]
     },
     "14": {
@@ -812,6 +856,9 @@ const INITIAL_USER = /*userdata*/{
       ],
       "sizes": [
         "Full Size"
+      ],
+      "ftypes": [
+        "Body Mist/Spray"
       ]
     },
     "15": {
@@ -840,6 +887,9 @@ const INITIAL_USER = /*userdata*/{
       ],
       "matchbody": [
         "Body cream"
+      ],
+      "ftypes": [
+        "Body Mist/Spray"
       ]
     },
     "16": {
@@ -860,6 +910,9 @@ const INITIAL_USER = /*userdata*/{
       "families": [
         "Gourmand",
         "Lactonic"
+      ],
+      "ftypes": [
+        "Body Mist/Spray"
       ]
     },
     "17": {
@@ -888,6 +941,9 @@ const INITIAL_USER = /*userdata*/{
       "families": [
         "Gourmand",
         "Sweet"
+      ],
+      "ftypes": [
+        "Body Mist/Spray"
       ]
     },
     "18": {
@@ -908,6 +964,9 @@ const INITIAL_USER = /*userdata*/{
       ],
       "matchbody": [
         "Body cream"
+      ],
+      "ftypes": [
+        "Body Mist/Spray"
       ]
     },
     "19": {
@@ -939,6 +998,9 @@ const INITIAL_USER = /*userdata*/{
       ],
       "wears": [
         "2026-09-09"
+      ],
+      "ftypes": [
+        "Body Mist/Spray"
       ]
     },
     "20": {
@@ -982,6 +1044,9 @@ const INITIAL_USER = /*userdata*/{
         "Gourmand",
         "Sweet",
         "Nutty"
+      ],
+      "ftypes": [
+        "Body Mist/Spray"
       ]
     },
     "21": {
@@ -1011,6 +1076,9 @@ const INITIAL_USER = /*userdata*/{
       "matchbody": [
         "Body wash",
         "Lotion"
+      ],
+      "ftypes": [
+        "Body Mist/Spray"
       ]
     },
     "22": {
@@ -1044,6 +1112,9 @@ const INITIAL_USER = /*userdata*/{
       ],
       "matchbody": [
         "Body cream"
+      ],
+      "ftypes": [
+        "Body Mist/Spray"
       ]
     },
     "23": {
@@ -1079,6 +1150,9 @@ const INITIAL_USER = /*userdata*/{
       "matchbody": [
         "Body wash",
         "Body cream"
+      ],
+      "ftypes": [
+        "Body Mist/Spray"
       ]
     },
     "24": {
@@ -1101,6 +1175,9 @@ const INITIAL_USER = /*userdata*/{
       "matchbody": [
         "Body wash",
         "Body cream"
+      ],
+      "ftypes": [
+        "Body Mist/Spray"
       ]
     },
     "25": {
@@ -1118,6 +1195,9 @@ const INITIAL_USER = /*userdata*/{
       "families": [
         "Woody",
         "Sweet"
+      ],
+      "ftypes": [
+        "Body Mist/Spray"
       ]
     },
     "26": {
@@ -1154,6 +1234,9 @@ const INITIAL_USER = /*userdata*/{
       "matchbody": [
         "Lotion",
         "Body cream"
+      ],
+      "ftypes": [
+        "Body Mist/Spray"
       ]
     },
     "27": {
@@ -1185,6 +1268,9 @@ const INITIAL_USER = /*userdata*/{
       ],
       "matchbody": [
         "Body cream"
+      ],
+      "ftypes": [
+        "Body Mist/Spray"
       ]
     },
     "28": {
@@ -1197,6 +1283,9 @@ const INITIAL_USER = /*userdata*/{
       ],
       "sizes": [
         "Full Size"
+      ],
+      "ftypes": [
+        "Body Mist/Spray"
       ]
     },
     "29": {
@@ -1228,6 +1317,9 @@ const INITIAL_USER = /*userdata*/{
       "families": [
         "Gourmand",
         "Sweet"
+      ],
+      "ftypes": [
+        "Body Mist/Spray"
       ]
     },
     "30": {
@@ -1261,6 +1353,9 @@ const INITIAL_USER = /*userdata*/{
       "matchbody": [
         "Body wash",
         "Body cream"
+      ],
+      "ftypes": [
+        "Body Mist/Spray"
       ]
     },
     "31": {
@@ -1298,6 +1393,9 @@ const INITIAL_USER = /*userdata*/{
       "matchbody": [
         "Body wash",
         "Body cream"
+      ],
+      "ftypes": [
+        "Body Mist/Spray"
       ]
     },
     "32": {
@@ -1339,7 +1437,16 @@ const INITIAL_USER = /*userdata*/{
         "Summer",
         "Fall",
         "Winter"
-      ]
+      ],
+      "ftypes": [
+        "Body Mist/Spray"
+      ],
+      "bpairs": {
+        "pin": [],
+        "hide": [
+          "s:900006:Body wash"
+        ]
+      }
     },
     "33": {
       "rating": 4,
@@ -1356,6 +1463,9 @@ const INITIAL_USER = /*userdata*/{
       "matchbody": [
         "Body wash",
         "Body cream"
+      ],
+      "ftypes": [
+        "Body Mist/Spray"
       ]
     },
     "34": {
@@ -1406,6 +1516,9 @@ const INITIAL_USER = /*userdata*/{
       "matchbody": [
         "Body wash",
         "Body cream"
+      ],
+      "ftypes": [
+        "Body Mist/Spray"
       ]
     },
     "35": {
@@ -1424,7 +1537,10 @@ const INITIAL_USER = /*userdata*/{
         "Gourmand",
         "Sweet"
       ],
-      "multiples": true
+      "multiples": true,
+      "ftypes": [
+        "Body Mist/Spray"
+      ]
     },
     "36": {
       "rating": 5,
@@ -1434,7 +1550,10 @@ const INITIAL_USER = /*userdata*/{
       "sizes": [
         "Travel Size"
       ],
-      "multiples": true
+      "multiples": true,
+      "ftypes": [
+        "EDP"
+      ]
     },
     "37": {
       "rating": 4,
@@ -1459,6 +1578,9 @@ const INITIAL_USER = /*userdata*/{
       "families": [
         "Gourmand",
         "Spicy"
+      ],
+      "ftypes": [
+        "EDP"
       ]
     },
     "38": {
@@ -1485,6 +1607,9 @@ const INITIAL_USER = /*userdata*/{
       ],
       "sizes": [
         "Travel Size"
+      ],
+      "ftypes": [
+        "EDP"
       ]
     },
     "39": {
@@ -1498,6 +1623,9 @@ const INITIAL_USER = /*userdata*/{
       ],
       "sizes": [
         "Travel Size"
+      ],
+      "ftypes": [
+        "EDP"
       ]
     },
     "40": {
@@ -1516,7 +1644,16 @@ const INITIAL_USER = /*userdata*/{
       "families": [
         "Fruity",
         "Tropical"
-      ]
+      ],
+      "ftypes": [
+        "EDP"
+      ],
+      "bpairs": {
+        "pin": [],
+        "hide": [
+          "o:91:Body oil:Missing Person"
+        ]
+      }
     },
     "41": {
       "family": "Musk",
@@ -1546,7 +1683,9 @@ const INITIAL_USER = /*userdata*/{
         "2026-06-11",
         "2026-06-15",
         "2026-07-17",
-        "2026-07-19"
+        "2026-07-19",
+        "2026-10-06",
+        "2026-10-07"
       ],
       "rating": 5,
       "fav": true,
@@ -1578,13 +1717,16 @@ const INITIAL_USER = /*userdata*/{
         "Body wash",
         "Lotion",
         "Body oil"
+      ],
+      "ftypes": [
+        "EDP"
       ]
     },
     "42": {
       "rating": 4,
       "price": 24,
       "family": "Floral",
-      "notes": "Cotton, lily water, soft rose ",
+      "notes": "Cotton, lily water, soft rose, jasmine, soft woods",
       "seasons": [
         "Spring",
         "Summer",
@@ -1601,6 +1743,9 @@ const INITIAL_USER = /*userdata*/{
       "wears": [
         "2026-08-09",
         "2026-09-25"
+      ],
+      "ftypes": [
+        "Body Mist/Spray"
       ]
     },
     "43": {
@@ -1623,6 +1768,9 @@ const INITIAL_USER = /*userdata*/{
       ],
       "wears": [
         "2026-09-12"
+      ],
+      "ftypes": [
+        "EDP"
       ]
     },
     "44": {
@@ -1657,6 +1805,9 @@ const INITIAL_USER = /*userdata*/{
       ],
       "wears": [
         "2026-08-24"
+      ],
+      "ftypes": [
+        "EDP"
       ]
     },
     "45": {
@@ -1698,6 +1849,9 @@ const INITIAL_USER = /*userdata*/{
       "wears": [
         "2026-08-30",
         "2026-09-15"
+      ],
+      "ftypes": [
+        "Extrait"
       ]
     },
     "46": {
@@ -1736,6 +1890,9 @@ const INITIAL_USER = /*userdata*/{
       ],
       "sizes": [
         "Full Size"
+      ],
+      "ftypes": [
+        "EDP"
       ]
     },
     "47": {
@@ -1754,6 +1911,9 @@ const INITIAL_USER = /*userdata*/{
       "sizes": [
         "Travel Size",
         "Full Size"
+      ],
+      "ftypes": [
+        "EDP"
       ]
     },
     "48": {
@@ -1792,6 +1952,9 @@ const INITIAL_USER = /*userdata*/{
       ],
       "wears": [
         "2026-08-09"
+      ],
+      "ftypes": [
+        "EDP"
       ]
     },
     "49": {
@@ -1822,6 +1985,9 @@ const INITIAL_USER = /*userdata*/{
       ],
       "sizes": [
         "Full Size"
+      ],
+      "ftypes": [
+        "EDP"
       ]
     },
     "50": {
@@ -1840,6 +2006,13 @@ const INITIAL_USER = /*userdata*/{
       ],
       "sizes": [
         "Full Size"
+      ],
+      "ftypes": [
+        "EDP"
+      ],
+      "wears": [
+        "2026-10-25",
+        "2026-11-01"
       ]
     },
     "51": {
@@ -1856,6 +2029,9 @@ const INITIAL_USER = /*userdata*/{
       ],
       "wears": [
         "2026-08-04"
+      ],
+      "ftypes": [
+        "EDP"
       ]
     },
     "52": {
@@ -1868,6 +2044,9 @@ const INITIAL_USER = /*userdata*/{
       ],
       "sizes": [
         "Travel Size"
+      ],
+      "ftypes": [
+        "EDP"
       ]
     },
     "53": {
@@ -1897,6 +2076,9 @@ const INITIAL_USER = /*userdata*/{
       ],
       "wears": [
         "2026-08-04"
+      ],
+      "ftypes": [
+        "EDP"
       ]
     },
     "54": {
@@ -1928,6 +2110,9 @@ const INITIAL_USER = /*userdata*/{
       ],
       "wears": [
         "2026-07-14"
+      ],
+      "ftypes": [
+        "EDP"
       ]
     },
     "55": {
@@ -1940,6 +2125,9 @@ const INITIAL_USER = /*userdata*/{
       ],
       "sizes": [
         "Travel Size"
+      ],
+      "ftypes": [
+        "EDP"
       ]
     },
     "56": {
@@ -1955,6 +2143,9 @@ const INITIAL_USER = /*userdata*/{
       ],
       "wears": [
         "2026-07-27"
+      ],
+      "ftypes": [
+        "EDP"
       ]
     },
     "57": {
@@ -1986,6 +2177,9 @@ const INITIAL_USER = /*userdata*/{
       ],
       "sizes": [
         "Sample/Decant"
+      ],
+      "ftypes": [
+        "EDP"
       ]
     },
     "58": {
@@ -2013,6 +2207,9 @@ const INITIAL_USER = /*userdata*/{
       ],
       "sizes": [
         "Sample/Decant"
+      ],
+      "ftypes": [
+        "EDP"
       ]
     },
     "59": {
@@ -2028,7 +2225,8 @@ const INITIAL_USER = /*userdata*/{
       "wears": [
         "2026-06-13",
         "2026-07-03",
-        "2026-09-01"
+        "2026-09-01",
+        "2026-09-26"
       ],
       "families": [
         "Fresh",
@@ -2050,7 +2248,11 @@ const INITIAL_USER = /*userdata*/{
       "sizes": [
         "Travel Size",
         "Full Size"
-      ]
+      ],
+      "ftypes": [
+        "EDP"
+      ],
+      "multiples": true
     },
     "60": {
       "rating": 5,
@@ -2069,7 +2271,26 @@ const INITIAL_USER = /*userdata*/{
         "Gourmand",
         "Lactonic",
         "Sweet"
-      ]
+      ],
+      "ftypes": [
+        "EDP"
+      ],
+      "multiples": true,
+      "wears": [
+        "2026-10-13"
+      ],
+      "pairs": {
+        "pin": {
+          "layer": [],
+          "rot": []
+        },
+        "hide": {
+          "layer": [
+            100024
+          ],
+          "rot": []
+        }
+      }
     },
     "61": {
       "price": 30,
@@ -2085,6 +2306,14 @@ const INITIAL_USER = /*userdata*/{
       ],
       "wears": [
         "2026-08-27"
+      ],
+      "multiples": true,
+      "ftypes": [
+        "EDP"
+      ],
+      "matchbody": [
+        "Body wash",
+        "Lotion"
       ]
     },
     "62": {
@@ -2106,7 +2335,13 @@ const INITIAL_USER = /*userdata*/{
         "Travel Size",
         "Full Size"
       ],
-      "multiples": true
+      "multiples": true,
+      "ftypes": [
+        "EDP"
+      ],
+      "wears": [
+        "2026-10-16"
+      ]
     },
     "63": {
       "rating": 5,
@@ -2129,6 +2364,9 @@ const INITIAL_USER = /*userdata*/{
       ],
       "wears": [
         "2026-09-08"
+      ],
+      "ftypes": [
+        "EDT"
       ]
     },
     "64": {
@@ -2144,6 +2382,9 @@ const INITIAL_USER = /*userdata*/{
       ],
       "wears": [
         "2026-08-17"
+      ],
+      "ftypes": [
+        "EDP"
       ]
     },
     "65": {
@@ -2175,6 +2416,9 @@ const INITIAL_USER = /*userdata*/{
       ],
       "sizes": [
         "Full Size"
+      ],
+      "ftypes": [
+        "Body Mist/Spray"
       ]
     },
     "66": {
@@ -2206,6 +2450,9 @@ const INITIAL_USER = /*userdata*/{
       "wears": [
         "2026-09-03",
         "2026-09-04"
+      ],
+      "ftypes": [
+        "Body Mist/Spray"
       ]
     },
     "67": {
@@ -2230,6 +2477,9 @@ const INITIAL_USER = /*userdata*/{
       "families": [
         "Gourmand",
         "Sweet"
+      ],
+      "ftypes": [
+        "EDP"
       ]
     },
     "68": {
@@ -2249,6 +2499,9 @@ const INITIAL_USER = /*userdata*/{
       ],
       "sizes": [
         "Travel Size"
+      ],
+      "ftypes": [
+        "Body Mist/Spray"
       ]
     },
     "69": {
@@ -2274,7 +2527,10 @@ const INITIAL_USER = /*userdata*/{
       "sizes": [
         "Full Size"
       ],
-      "multiples": true
+      "multiples": true,
+      "ftypes": [
+        "Body Mist/Spray"
+      ]
     },
     "70": {
       "price": 35,
@@ -2313,6 +2569,9 @@ const INITIAL_USER = /*userdata*/{
       ],
       "wears": [
         "2026-09-19"
+      ],
+      "ftypes": [
+        "Body Mist/Spray"
       ]
     },
     "71": {
@@ -2350,6 +2609,9 @@ const INITIAL_USER = /*userdata*/{
       ],
       "sizes": [
         "Full Size"
+      ],
+      "ftypes": [
+        "Body Mist/Spray"
       ]
     },
     "72": {
@@ -2393,6 +2655,9 @@ const INITIAL_USER = /*userdata*/{
       ],
       "wears": [
         "2026-08-06"
+      ],
+      "ftypes": [
+        "EDP"
       ]
     },
     "73": {
@@ -2455,7 +2720,10 @@ const INITIAL_USER = /*userdata*/{
         "2026-06-26",
         "2026-07-13"
       ],
-      "multiples": true
+      "multiples": true,
+      "ftypes": [
+        "EDP"
+      ]
     },
     "75": {
       "price": 32,
@@ -2485,7 +2753,10 @@ const INITIAL_USER = /*userdata*/{
           "o:112:Body wash:Sandstone",
           "o:112:Body wash:Brown Sugar & Fig"
         ]
-      }
+      },
+      "ftypes": [
+        "EDP"
+      ]
     },
     "76": {
       "price": 50,
@@ -2502,6 +2773,9 @@ const INITIAL_USER = /*userdata*/{
       ],
       "sizes": [
         "Travel Size"
+      ],
+      "ftypes": [
+        "EDP"
       ]
     },
     "77": {
@@ -2516,6 +2790,9 @@ const INITIAL_USER = /*userdata*/{
       "notes": "Tuberose, jasmine",
       "sizes": [
         "Full Size"
+      ],
+      "ftypes": [
+        "EDP"
       ]
     },
     "78": {
@@ -2534,6 +2811,9 @@ const INITIAL_USER = /*userdata*/{
       ],
       "sizes": [
         "Travel Size"
+      ],
+      "ftypes": [
+        "EDP"
       ]
     },
     "79": {
@@ -2555,6 +2835,9 @@ const INITIAL_USER = /*userdata*/{
       "wears": [
         "2026-06-19",
         "2026-09-14"
+      ],
+      "ftypes": [
+        "EDP"
       ]
     },
     "80": {
@@ -2589,7 +2872,10 @@ const INITIAL_USER = /*userdata*/{
           ],
           "rot": []
         }
-      }
+      },
+      "ftypes": [
+        "EDP"
+      ]
     },
     "81": {
       "price": 46,
@@ -2607,6 +2893,9 @@ const INITIAL_USER = /*userdata*/{
       ],
       "wears": [
         "2026-07-27"
+      ],
+      "ftypes": [
+        "EDP"
       ]
     },
     "82": {
@@ -2643,7 +2932,11 @@ const INITIAL_USER = /*userdata*/{
         "Travel Size"
       ],
       "matchbody": [
+        "Body wash",
         "Body oil"
+      ],
+      "ftypes": [
+        "EDP"
       ]
     },
     "83": {
@@ -2660,6 +2953,9 @@ const INITIAL_USER = /*userdata*/{
       ],
       "sizes": [
         "Travel Size"
+      ],
+      "ftypes": [
+        "EDP"
       ]
     },
     "84": {
@@ -2685,6 +2981,9 @@ const INITIAL_USER = /*userdata*/{
         "Fresh",
         "Woody",
         "Aquatic"
+      ],
+      "ftypes": [
+        "EDP"
       ]
     },
     "85": {
@@ -2717,6 +3016,9 @@ const INITIAL_USER = /*userdata*/{
       ],
       "wears": [
         "2026-06-23"
+      ],
+      "ftypes": [
+        "EDP"
       ]
     },
     "86": {
@@ -2737,6 +3039,9 @@ const INITIAL_USER = /*userdata*/{
       ],
       "wears": [
         "2026-07-08"
+      ],
+      "ftypes": [
+        "EDP"
       ]
     },
     "87": {
@@ -2750,6 +3055,9 @@ const INITIAL_USER = /*userdata*/{
       "rating": 3,
       "sizes": [
         "Travel Size"
+      ],
+      "ftypes": [
+        "EDP"
       ]
     },
     "88": {
@@ -2768,6 +3076,9 @@ const INITIAL_USER = /*userdata*/{
       ],
       "sizes": [
         "Travel Size"
+      ],
+      "ftypes": [
+        "EDP"
       ]
     },
     "89": {
@@ -2803,7 +3114,10 @@ const INITIAL_USER = /*userdata*/{
             69
           ]
         }
-      }
+      },
+      "ftypes": [
+        "EDP"
+      ]
     },
     "90": {
       "price": 90,
@@ -2821,6 +3135,9 @@ const INITIAL_USER = /*userdata*/{
       ],
       "sizes": [
         "Full Size"
+      ],
+      "ftypes": [
+        "EDP"
       ]
     },
     "91": {
@@ -2854,10 +3171,14 @@ const INITIAL_USER = /*userdata*/{
         }
       ],
       "sizes": [
+        "Sample/Decant",
         "Travel Size"
       ],
       "wears": [
         "2026-08-14"
+      ],
+      "ftypes": [
+        "EDP"
       ]
     },
     "92": {
@@ -2877,6 +3198,9 @@ const INITIAL_USER = /*userdata*/{
       ],
       "sizes": [
         "Travel Size"
+      ],
+      "ftypes": [
+        "EDP"
       ]
     },
     "93": {
@@ -2903,7 +3227,25 @@ const INITIAL_USER = /*userdata*/{
       "sizes": [
         "Travel Size",
         "Full Size"
-      ]
+      ],
+      "seasons": [
+        "Spring",
+        "Fall",
+        "Winter"
+      ],
+      "ftypes": [
+        "EDP"
+      ],
+      "wears": [
+        "2026-10-24"
+      ],
+      "bpairs": {
+        "pin": [
+          "m:100020:Body oil",
+          "m:100020:Body wash"
+        ],
+        "hide": []
+      }
     },
     "94": {
       "notes": "Strawberry, marshmallow, whipped vanilla",
@@ -2944,6 +3286,9 @@ const INITIAL_USER = /*userdata*/{
       "sizes": [
         "Travel Size",
         "Full Size"
+      ],
+      "ftypes": [
+        "EDP"
       ]
     },
     "95": {
@@ -2966,6 +3311,9 @@ const INITIAL_USER = /*userdata*/{
       ],
       "sizes": [
         "Full Size"
+      ],
+      "ftypes": [
+        "EDP"
       ]
     },
     "96": {
@@ -2982,6 +3330,9 @@ const INITIAL_USER = /*userdata*/{
       ],
       "wears": [
         "2026-08-19"
+      ],
+      "ftypes": [
+        "EDP"
       ]
     },
     "97": {
@@ -2991,7 +3342,7 @@ const INITIAL_USER = /*userdata*/{
         "Fall"
       ],
       "notes": "Black tea, white tea, bergamot, blonde woods, cardamom",
-      "price": 175,
+      "price": 6,
       "rating": 4,
       "families": [
         "Fresh",
@@ -3000,6 +3351,9 @@ const INITIAL_USER = /*userdata*/{
       ],
       "sizes": [
         "Sample/Decant"
+      ],
+      "ftypes": [
+        "EDP"
       ]
     },
     "98": {
@@ -3012,6 +3366,9 @@ const INITIAL_USER = /*userdata*/{
       ],
       "sizes": [
         "Travel Size"
+      ],
+      "ftypes": [
+        "EDP"
       ]
     },
     "99": {
@@ -3030,6 +3387,9 @@ const INITIAL_USER = /*userdata*/{
       ],
       "sizes": [
         "Travel Size"
+      ],
+      "ftypes": [
+        "EDP"
       ]
     },
     "100": {
@@ -3042,6 +3402,9 @@ const INITIAL_USER = /*userdata*/{
       ],
       "sizes": [
         "Travel Size"
+      ],
+      "ftypes": [
+        "EDP"
       ]
     },
     "101": {
@@ -3079,6 +3442,9 @@ const INITIAL_USER = /*userdata*/{
       ],
       "wears": [
         "2026-07-30"
+      ],
+      "ftypes": [
+        "EDP"
       ]
     },
     "102": {
@@ -3091,6 +3457,9 @@ const INITIAL_USER = /*userdata*/{
       ],
       "sizes": [
         "Travel Size"
+      ],
+      "ftypes": [
+        "Body Mist/Spray"
       ]
     },
     "103": {
@@ -3106,6 +3475,9 @@ const INITIAL_USER = /*userdata*/{
       "sizes": [
         "Sample/Decant",
         "Travel Size"
+      ],
+      "ftypes": [
+        "EDP"
       ]
     },
     "104": {
@@ -3123,6 +3495,9 @@ const INITIAL_USER = /*userdata*/{
       ],
       "sizes": [
         "Travel Size"
+      ],
+      "ftypes": [
+        "Body Mist/Spray"
       ]
     },
     "105": {
@@ -3153,6 +3528,9 @@ const INITIAL_USER = /*userdata*/{
       "families": [
         "Floral",
         "Fruity"
+      ],
+      "ftypes": [
+        "EDP"
       ]
     },
     "106": {
@@ -3169,6 +3547,9 @@ const INITIAL_USER = /*userdata*/{
       ],
       "matchbody": [
         "Body oil"
+      ],
+      "ftypes": [
+        "Body Mist/Spray"
       ]
     },
     "107": {
@@ -3182,6 +3563,9 @@ const INITIAL_USER = /*userdata*/{
       ],
       "sizes": [
         "Travel Size"
+      ],
+      "ftypes": [
+        "Body Mist/Spray"
       ]
     },
     "108": {
@@ -3217,6 +3601,9 @@ const INITIAL_USER = /*userdata*/{
       ],
       "wears": [
         "2026-08-21"
+      ],
+      "ftypes": [
+        "Body Mist/Spray"
       ]
     },
     "109": {
@@ -3236,6 +3623,9 @@ const INITIAL_USER = /*userdata*/{
       "sizes": [
         "Travel Size",
         "Full Size"
+      ],
+      "ftypes": [
+        "EDP"
       ]
     },
     "110": {
@@ -3248,6 +3638,9 @@ const INITIAL_USER = /*userdata*/{
       ],
       "sizes": [
         "Travel Size"
+      ],
+      "ftypes": [
+        "Body Mist/Spray"
       ]
     },
     "111": {
@@ -3261,6 +3654,9 @@ const INITIAL_USER = /*userdata*/{
       ],
       "sizes": [
         "Travel Size"
+      ],
+      "ftypes": [
+        "Body Mist/Spray"
       ]
     },
     "112": {
@@ -3307,7 +3703,11 @@ const INITIAL_USER = /*userdata*/{
       "multiples": true,
       "wears": [
         "2026-08-26",
-        "2026-09-11"
+        "2026-09-11",
+        "2026-10-05"
+      ],
+      "ftypes": [
+        "EDP"
       ]
     },
     "113": {
@@ -3327,6 +3727,9 @@ const INITIAL_USER = /*userdata*/{
       "sizes": [
         "Travel Size",
         "Full Size"
+      ],
+      "ftypes": [
+        "EDP"
       ]
     },
     "114": {
@@ -3364,7 +3767,10 @@ const INITIAL_USER = /*userdata*/{
           ],
           "rot": []
         }
-      }
+      },
+      "ftypes": [
+        "Body Mist/Spray"
+      ]
     },
     "115": {
       "family": "Green",
@@ -3382,6 +3788,9 @@ const INITIAL_USER = /*userdata*/{
       ],
       "sizes": [
         "Travel Size"
+      ],
+      "ftypes": [
+        "EDP"
       ]
     },
     "116": {
@@ -3402,6 +3811,9 @@ const INITIAL_USER = /*userdata*/{
       ],
       "sizes": [
         "Full Size"
+      ],
+      "ftypes": [
+        "Body Mist/Spray"
       ]
     },
     "117": {
@@ -3437,12 +3849,17 @@ const INITIAL_USER = /*userdata*/{
       "wears": [
         "2026-06-18",
         "2026-09-10",
-        "2026-09-21"
+        "2026-09-21",
+        "2026-10-06"
       ],
       "matchbody": [
         "Body wash",
         "Lotion",
         "Body oil"
+      ],
+      "ftypes": [
+        "EDP",
+        "Perfume Oil"
       ]
     },
     "118": {
@@ -3459,6 +3876,9 @@ const INITIAL_USER = /*userdata*/{
       ],
       "wears": [
         "2026-07-23"
+      ],
+      "ftypes": [
+        "EDP"
       ]
     },
     "119": {
@@ -3476,6 +3896,9 @@ const INITIAL_USER = /*userdata*/{
       ],
       "sizes": [
         "Travel Size"
+      ],
+      "ftypes": [
+        "Body Mist/Spray"
       ]
     },
     "120": {
@@ -3490,6 +3913,9 @@ const INITIAL_USER = /*userdata*/{
       ],
       "sizes": [
         "Travel Size"
+      ],
+      "ftypes": [
+        "Body Mist/Spray"
       ]
     },
     "121": {
@@ -3504,7 +3930,8 @@ const INITIAL_USER = /*userdata*/{
       "rating": 5,
       "wears": [
         "2026-06-18",
-        "2026-07-02"
+        "2026-07-02",
+        "2026-09-28"
       ],
       "families": [
         "Floral",
@@ -3531,7 +3958,10 @@ const INITIAL_USER = /*userdata*/{
         "Travel Size",
         "Full Size"
       ],
-      "multiples": true
+      "multiples": true,
+      "ftypes": [
+        "EDP"
+      ]
     },
     "122": {
       "family": "Floral",
@@ -3568,6 +3998,9 @@ const INITIAL_USER = /*userdata*/{
       "wears": [
         "2026-06-26",
         "2026-09-17"
+      ],
+      "ftypes": [
+        "Body Mist/Spray"
       ]
     },
     "123": {
@@ -3588,11 +4021,14 @@ const INITIAL_USER = /*userdata*/{
       "sizes": [
         "Travel Size"
       ],
-      "multiples": true
+      "multiples": true,
+      "ftypes": [
+        "EDP"
+      ]
     },
     "124": {
       "price": 99,
-      "notes": "vanilla orchid, powder, jasmine, musk, amber",
+      "notes": "Vanilla orchid, powder, jasmine, musk, amber",
       "family": "Floral",
       "rating": 5,
       "pairs": {
@@ -3600,14 +4036,20 @@ const INITIAL_USER = /*userdata*/{
           "layer": [
             117
           ],
-          "rot": []
+          "rot": [
+            100070
+          ]
         },
         "hide": {
           "layer": [
             19,
-            24
+            24,
+            2
           ],
-          "rot": []
+          "rot": [
+            100066,
+            100043
+          ]
         }
       },
       "families": [
@@ -3619,7 +4061,22 @@ const INITIAL_USER = /*userdata*/{
         "Travel Size",
         "Full Size"
       ],
-      "multiples": true
+      "multiples": true,
+      "ftypes": [
+        "EDP"
+      ],
+      "bpairs": {
+        "pin": [
+          "m:100070:Body cream"
+        ],
+        "hide": [
+          "m:24:Body cream",
+          "s:900001:Body wash"
+        ]
+      },
+      "wears": [
+        "2026-09-27"
+      ]
     },
     "125": {
       "notes": "Mandarin, neroli, bergamot, solar notes",
@@ -3637,6 +4094,9 @@ const INITIAL_USER = /*userdata*/{
       "wears": [
         "2026-07-04",
         "2026-09-17"
+      ],
+      "ftypes": [
+        "EDP"
       ]
     },
     "126": {
@@ -3674,7 +4134,11 @@ const INITIAL_USER = /*userdata*/{
         }
       },
       "wears": [
-        "2026-08-20"
+        "2026-08-20",
+        "2026-09-30"
+      ],
+      "ftypes": [
+        "EDP"
       ]
     },
     "127": {
@@ -3688,6 +4152,9 @@ const INITIAL_USER = /*userdata*/{
       "families": [
         "Fruity",
         "Sweet"
+      ],
+      "ftypes": [
+        "EDP"
       ]
     },
     "128": {
@@ -3714,6 +4181,9 @@ const INITIAL_USER = /*userdata*/{
       ],
       "wears": [
         "2026-06-19"
+      ],
+      "ftypes": [
+        "EDP"
       ]
     },
     "129": {
@@ -3733,7 +4203,10 @@ const INITIAL_USER = /*userdata*/{
       "sizes": [
         "Travel Size"
       ],
-      "multiples": true
+      "multiples": true,
+      "ftypes": [
+        "EDP"
+      ]
     },
     "130": {
       "notes": "Candied lemon, meringue, chantilly cream, tonka bean",
@@ -3756,6 +4229,9 @@ const INITIAL_USER = /*userdata*/{
       ],
       "sizes": [
         "Travel Size"
+      ],
+      "ftypes": [
+        "EDP"
       ]
     },
     "131": {
@@ -3778,6 +4254,9 @@ const INITIAL_USER = /*userdata*/{
       ],
       "sizes": [
         "Full Size"
+      ],
+      "ftypes": [
+        "Body Mist/Spray"
       ]
     },
     "132": {
@@ -3802,6 +4281,9 @@ const INITIAL_USER = /*userdata*/{
       ],
       "sizes": [
         "Full Size"
+      ],
+      "ftypes": [
+        "Body Mist/Spray"
       ]
     },
     "133": {
@@ -3832,6 +4314,9 @@ const INITIAL_USER = /*userdata*/{
       ],
       "sizes": [
         "Travel Size"
+      ],
+      "ftypes": [
+        "EDP"
       ]
     },
     "140": {
@@ -3850,6 +4335,9 @@ const INITIAL_USER = /*userdata*/{
       ],
       "sizes": [
         "Full Size"
+      ],
+      "ftypes": [
+        "EDP"
       ]
     },
     "141": {
@@ -3882,6 +4370,9 @@ const INITIAL_USER = /*userdata*/{
       ],
       "sizes": [
         "Travel Size"
+      ],
+      "ftypes": [
+        "EDT"
       ]
     },
     "142": {
@@ -3915,6 +4406,9 @@ const INITIAL_USER = /*userdata*/{
       ],
       "sizes": [
         "Travel Size"
+      ],
+      "ftypes": [
+        "Body Mist/Spray"
       ]
     },
     "143": {
@@ -3927,6 +4421,9 @@ const INITIAL_USER = /*userdata*/{
       ],
       "sizes": [
         "Travel Size"
+      ],
+      "ftypes": [
+        "EDT"
       ]
     },
     "144": {
@@ -3953,6 +4450,9 @@ const INITIAL_USER = /*userdata*/{
       ],
       "sizes": [
         "Full Size"
+      ],
+      "ftypes": [
+        "EDT"
       ]
     },
     "145": {
@@ -3967,6 +4467,12 @@ const INITIAL_USER = /*userdata*/{
       "sizes": [
         "Travel Size",
         "Full Size"
+      ],
+      "ftypes": [
+        "EDT"
+      ],
+      "wears": [
+        "2026-10-10"
       ]
     },
     "146": {
@@ -4000,6 +4506,9 @@ const INITIAL_USER = /*userdata*/{
       ],
       "sizes": [
         "Full Size"
+      ],
+      "ftypes": [
+        "Body Mist/Spray"
       ]
     },
     "147": {
@@ -4018,6 +4527,9 @@ const INITIAL_USER = /*userdata*/{
       ],
       "sizes": [
         "Full Size"
+      ],
+      "ftypes": [
+        "Body Mist/Spray"
       ]
     },
     "148": {
@@ -4037,6 +4549,9 @@ const INITIAL_USER = /*userdata*/{
       ],
       "sizes": [
         "Full Size"
+      ],
+      "ftypes": [
+        "EDP"
       ]
     },
     "149": {
@@ -4074,6 +4589,9 @@ const INITIAL_USER = /*userdata*/{
       ],
       "sizes": [
         "Full Size"
+      ],
+      "ftypes": [
+        "EDP"
       ]
     },
     "150": {
@@ -4092,6 +4610,9 @@ const INITIAL_USER = /*userdata*/{
       ],
       "sizes": [
         "Travel Size"
+      ],
+      "ftypes": [
+        "EDP"
       ]
     },
     "151": {
@@ -4104,6 +4625,9 @@ const INITIAL_USER = /*userdata*/{
       ],
       "sizes": [
         "Full Size"
+      ],
+      "ftypes": [
+        "EDT"
       ]
     },
     "152": {
@@ -4118,6 +4642,9 @@ const INITIAL_USER = /*userdata*/{
       ],
       "sizes": [
         "Full Size"
+      ],
+      "ftypes": [
+        "Body Mist/Spray"
       ]
     },
     "153": {
@@ -4134,6 +4661,12 @@ const INITIAL_USER = /*userdata*/{
       ],
       "wears": [
         "2026-06-27"
+      ],
+      "ftypes": [
+        "EDP"
+      ],
+      "matchbody": [
+        "Body butter"
       ]
     },
     "154": {
@@ -4152,6 +4685,9 @@ const INITIAL_USER = /*userdata*/{
       ],
       "sizes": [
         "Travel Size"
+      ],
+      "ftypes": [
+        "EDT"
       ]
     },
     "155": {
@@ -4164,6 +4700,9 @@ const INITIAL_USER = /*userdata*/{
       ],
       "sizes": [
         "Full Size"
+      ],
+      "ftypes": [
+        "EDP"
       ]
     },
     "156": {
@@ -4176,6 +4715,9 @@ const INITIAL_USER = /*userdata*/{
       ],
       "sizes": [
         "Travel Size"
+      ],
+      "ftypes": [
+        "EDP"
       ]
     },
     "157": {
@@ -4189,6 +4731,9 @@ const INITIAL_USER = /*userdata*/{
       ],
       "sizes": [
         "Sample/Decant"
+      ],
+      "ftypes": [
+        "Extrait"
       ]
     },
     "158": {
@@ -4207,6 +4752,9 @@ const INITIAL_USER = /*userdata*/{
       ],
       "sizes": [
         "Travel Size"
+      ],
+      "ftypes": [
+        "EDP"
       ]
     },
     "159": {
@@ -4226,6 +4774,15 @@ const INITIAL_USER = /*userdata*/{
       "sizes": [
         "Travel Size",
         "Full Size"
+      ],
+      "ftypes": [
+        "EDP"
+      ],
+      "matchbody": [
+        "Body cream"
+      ],
+      "wears": [
+        "2026-10-27"
       ]
     },
     "160": {
@@ -4240,6 +4797,9 @@ const INITIAL_USER = /*userdata*/{
       "price": 68,
       "sizes": [
         "Full Size"
+      ],
+      "ftypes": [
+        "EDP"
       ]
     },
     "161": {
@@ -4267,6 +4827,9 @@ const INITIAL_USER = /*userdata*/{
       ],
       "wears": [
         "2026-08-25"
+      ],
+      "ftypes": [
+        "Body Mist/Spray"
       ]
     },
     "162": {
@@ -4284,6 +4847,9 @@ const INITIAL_USER = /*userdata*/{
       ],
       "matchbody": [
         "Body butter"
+      ],
+      "ftypes": [
+        "Body Mist/Spray"
       ]
     },
     "163": {
@@ -4297,10 +4863,13 @@ const INITIAL_USER = /*userdata*/{
       ],
       "sizes": [
         "Sample/Decant",
-        "Travel Size"
+        "Full Size"
       ],
       "wears": [
         "2026-08-21"
+      ],
+      "ftypes": [
+        "Perfume Oil"
       ]
     },
     "164": {
@@ -4310,13 +4879,39 @@ const INITIAL_USER = /*userdata*/{
       "rating": 5,
       "families": [
         "Woody",
-        "Amber"
+        "Amber",
+        "Sweet"
       ],
       "sizes": [
+        "Sample/Decant",
         "Travel Size"
       ],
       "matchbody": [],
-      "multiples": true
+      "multiples": false,
+      "ftypes": [
+        "Extrait",
+        "Perfume Oil"
+      ],
+      "wears": [
+        "2026-10-08",
+        "2026-10-09",
+        "2026-10-11",
+        "2026-10-12",
+        "2026-10-31",
+        "2026-11-01"
+      ],
+      "fav": true,
+      "bpairs": {
+        "pin": [],
+        "hide": [
+          "o:20:Body cream:SDJ Body Lada",
+          "o:112:Body wash:Brown Sugar & Fig",
+          "m:32:Body wash",
+          "m:6:Body wash",
+          "m:35:Body cream",
+          "o:112:Body wash:Sandstone"
+        ]
+      }
     },
     "165": {
       "notes": "Matcha, vanilla soft serve, cherry blossom, almond, waffle cone, powdered sugar, sandalwood",
@@ -4333,7 +4928,10 @@ const INITIAL_USER = /*userdata*/{
       ],
       "sizes": [
         "Sample/Decant",
-        "Travel Size"
+        "Full Size"
+      ],
+      "ftypes": [
+        "Perfume Oil"
       ]
     },
     "166": {
@@ -4353,6 +4951,9 @@ const INITIAL_USER = /*userdata*/{
       ],
       "sizes": [
         "Travel Size"
+      ],
+      "ftypes": [
+        "Extrait"
       ]
     },
     "167": {
@@ -4370,7 +4971,10 @@ const INITIAL_USER = /*userdata*/{
         "Fruity"
       ],
       "sizes": [
-        "Travel Size"
+        "Full Size"
+      ],
+      "ftypes": [
+        "Perfume Oil"
       ]
     },
     "168": {
@@ -4387,11 +4991,14 @@ const INITIAL_USER = /*userdata*/{
         "Tropical"
       ],
       "sizes": [
-        "Travel Size"
+        "Full Size"
       ],
       "wears": [
         "2026-07-24",
         "2026-09-04"
+      ],
+      "ftypes": [
+        "Perfume Oil"
       ]
     },
     "169": {
@@ -4409,11 +5016,18 @@ const INITIAL_USER = /*userdata*/{
         "Green"
       ],
       "sizes": [
-        "Travel Size"
+        "Sample/Decant",
+        "Travel Size",
+        "Full Size"
       ],
-      "multiples": true,
+      "multiples": false,
       "wears": [
-        "2026-09-18"
+        "2026-09-18",
+        "2026-10-16"
+      ],
+      "ftypes": [
+        "Extrait",
+        "Perfume Oil"
       ]
     },
     "170": {
@@ -4433,6 +5047,9 @@ const INITIAL_USER = /*userdata*/{
       ],
       "sizes": [
         "Full Size"
+      ],
+      "ftypes": [
+        "Extrait"
       ]
     },
     "171": {
@@ -4449,6 +5066,10 @@ const INITIAL_USER = /*userdata*/{
       ],
       "wears": [
         "2026-07-04"
+      ],
+      "ftypes": [
+        "Extrait",
+        "Perfume Oil"
       ]
     },
     "172": {
@@ -4462,6 +5083,9 @@ const INITIAL_USER = /*userdata*/{
       ],
       "sizes": [
         "Travel Size"
+      ],
+      "ftypes": [
+        "Extrait"
       ]
     },
     "173": {
@@ -4474,8 +5098,23 @@ const INITIAL_USER = /*userdata*/{
         "Sweet"
       ],
       "sizes": [
-        "Travel Size"
-      ]
+        "Full Size"
+      ],
+      "ftypes": [
+        "Perfume Oil"
+      ],
+      "pairs": {
+        "pin": {
+          "layer": [],
+          "rot": []
+        },
+        "hide": {
+          "layer": [],
+          "rot": [
+            130
+          ]
+        }
+      }
     },
     "174": {
       "notes": "Salted vanilla, black coffee, almond cream, sandalwood, natural oud, palo santo oil, tonka bean absolute",
@@ -4494,7 +5133,11 @@ const INITIAL_USER = /*userdata*/{
         "Travel Size"
       ],
       "wears": [
-        "2026-09-24"
+        "2026-09-24",
+        "2026-10-08"
+      ],
+      "ftypes": [
+        "Extrait"
       ]
     },
     "175": {
@@ -4513,7 +5156,10 @@ const INITIAL_USER = /*userdata*/{
         "Woody"
       ],
       "sizes": [
-        "Travel Size"
+        "Full Size"
+      ],
+      "ftypes": [
+        "Perfume Oil"
       ]
     },
     "176": {
@@ -4530,7 +5176,12 @@ const INITIAL_USER = /*userdata*/{
         "Travel Size"
       ],
       "wears": [
-        "2026-08-12"
+        "2026-08-12",
+        "2026-10-28"
+      ],
+      "ftypes": [
+        "Extrait",
+        "Perfume Oil"
       ]
     },
     "177": {
@@ -4549,7 +5200,12 @@ const INITIAL_USER = /*userdata*/{
         "Sweet"
       ],
       "sizes": [
-        "Travel Size"
+        "Travel Size",
+        "Full Size"
+      ],
+      "ftypes": [
+        "Extrait",
+        "Perfume Oil"
       ]
     },
     "178": {
@@ -4567,7 +5223,10 @@ const INITIAL_USER = /*userdata*/{
         "Sweet"
       ],
       "sizes": [
-        "Travel Size"
+        "Full Size"
+      ],
+      "ftypes": [
+        "Perfume Oil"
       ]
     },
     "179": {
@@ -4586,6 +5245,9 @@ const INITIAL_USER = /*userdata*/{
       ],
       "sizes": [
         "Travel Size"
+      ],
+      "ftypes": [
+        "Extrait"
       ]
     },
     "180": {
@@ -4603,7 +5265,10 @@ const INITIAL_USER = /*userdata*/{
         "Sweet"
       ],
       "sizes": [
-        "Travel Size"
+        "Full Size"
+      ],
+      "ftypes": [
+        "Perfume Oil"
       ]
     },
     "181": {
@@ -4622,6 +5287,9 @@ const INITIAL_USER = /*userdata*/{
       ],
       "sizes": [
         "Travel Size"
+      ],
+      "ftypes": [
+        "Extrait"
       ]
     },
     "182": {
@@ -4639,10 +5307,13 @@ const INITIAL_USER = /*userdata*/{
         "Sweet"
       ],
       "sizes": [
-        "Travel Size"
+        "Full Size"
       ],
       "wears": [
         "2026-07-19"
+      ],
+      "ftypes": [
+        "Perfume Oil"
       ]
     },
     "183": {
@@ -4659,9 +5330,12 @@ const INITIAL_USER = /*userdata*/{
         "Aquatic"
       ],
       "sizes": [
-        "Travel Size"
+        "Full Size"
       ],
-      "rating": 3
+      "rating": 3,
+      "ftypes": [
+        "Perfume Oil"
+      ]
     },
     "184": {
       "notes": "Bergamot, oud, patchouli, sandalwood, tonka bean, ambroxan",
@@ -4678,7 +5352,15 @@ const INITIAL_USER = /*userdata*/{
         "Spicy"
       ],
       "sizes": [
-        "Travel Size"
+        "Travel Size",
+        "Full Size"
+      ],
+      "ftypes": [
+        "Extrait",
+        "Perfume Oil"
+      ],
+      "wears": [
+        "2026-10-31"
       ]
     },
     "185": {
@@ -4693,7 +5375,10 @@ const INITIAL_USER = /*userdata*/{
       ],
       "sizes": [
         "Sample/Decant",
-        "Travel Size"
+        "Full Size"
+      ],
+      "ftypes": [
+        "Perfume Oil"
       ]
     },
     "186": {
@@ -4711,7 +5396,7 @@ const INITIAL_USER = /*userdata*/{
       ],
       "sizes": [
         "Sample/Decant",
-        "Travel Size"
+        "Full Size"
       ],
       "wears": [
         "2026-06-30",
@@ -4726,6 +5411,9 @@ const INITIAL_USER = /*userdata*/{
           "n": "Coastal Dreaming",
           "t": "Body wash"
         }
+      ],
+      "ftypes": [
+        "Perfume Oil"
       ]
     },
     "187": {
@@ -4742,10 +5430,15 @@ const INITIAL_USER = /*userdata*/{
         "Spicy"
       ],
       "sizes": [
-        "Travel Size"
+        "Travel Size",
+        "Full Size"
       ],
       "wears": [
         "2026-08-20"
+      ],
+      "ftypes": [
+        "Extrait",
+        "Perfume Oil"
       ]
     },
     "188": {
@@ -4756,13 +5449,21 @@ const INITIAL_USER = /*userdata*/{
         "Winter"
       ],
       "price": 23,
-      "rating": 3,
+      "rating": 4,
       "families": [
         "Woody",
         "Green"
       ],
       "sizes": [
-        "Travel Size"
+        "Travel Size",
+        "Full Size"
+      ],
+      "ftypes": [
+        "Extrait",
+        "Perfume Oil"
+      ],
+      "wears": [
+        "2026-10-29"
       ]
     },
     "189": {
@@ -4782,7 +5483,8 @@ const INITIAL_USER = /*userdata*/{
       ],
       "sizes": [
         "Sample/Decant",
-        "Travel Size"
+        "Travel Size",
+        "Full Size"
       ],
       "wears": [
         "2026-06-27",
@@ -4790,7 +5492,8 @@ const INITIAL_USER = /*userdata*/{
         "2026-07-10",
         "2026-07-11",
         "2026-07-22",
-        "2026-08-03"
+        "2026-08-03",
+        "2026-10-03"
       ],
       "pairs": {
         "pin": {
@@ -4804,7 +5507,11 @@ const INITIAL_USER = /*userdata*/{
           "rot": []
         }
       },
-      "fav": true
+      "fav": true,
+      "ftypes": [
+        "Extrait",
+        "Perfume Oil"
+      ]
     },
     "190": {
       "family": "Gourmand",
@@ -4823,6 +5530,13 @@ const INITIAL_USER = /*userdata*/{
       ],
       "sizes": [
         "Full Size"
+      ],
+      "ftypes": [
+        "Extrait",
+        "Perfume Oil"
+      ],
+      "wears": [
+        "2026-10-22"
       ]
     },
     "191": {
@@ -4847,6 +5561,10 @@ const INITIAL_USER = /*userdata*/{
       "wears": [
         "2026-07-09",
         "2026-09-05"
+      ],
+      "ftypes": [
+        "Extrait",
+        "Perfume Oil"
       ]
     },
     "192": {
@@ -4858,7 +5576,11 @@ const INITIAL_USER = /*userdata*/{
         "Sweet"
       ],
       "sizes": [
-        "Travel Size"
+        "Sample/Decant",
+        "Full Size"
+      ],
+      "ftypes": [
+        "Perfume Oil"
       ]
     },
     "193": {
@@ -4885,7 +5607,11 @@ const INITIAL_USER = /*userdata*/{
         "Travel Size",
         "Full Size"
       ],
-      "multiples": true
+      "multiples": true,
+      "ftypes": [
+        "Extrait",
+        "Perfume Oil"
+      ]
     },
     "194": {
       "notes": "Spring rain, pink pepper, saucer magnolia, peony, raspberry, cotton, cedar",
@@ -4909,7 +5635,12 @@ const INITIAL_USER = /*userdata*/{
       ],
       "wears": [
         "2026-07-05",
-        "2026-08-22"
+        "2026-08-22",
+        "2026-10-21"
+      ],
+      "ftypes": [
+        "Extrait",
+        "Perfume Oil"
       ]
     },
     "195": {
@@ -4927,7 +5658,10 @@ const INITIAL_USER = /*userdata*/{
         "Green"
       ],
       "sizes": [
-        "Travel Size"
+        "Full Size"
+      ],
+      "ftypes": [
+        "Perfume Oil"
       ]
     },
     "196": {
@@ -4944,7 +5678,12 @@ const INITIAL_USER = /*userdata*/{
         "Green"
       ],
       "sizes": [
-        "Travel Size"
+        "Travel Size",
+        "Full Size"
+      ],
+      "ftypes": [
+        "Extrait",
+        "Perfume Oil"
       ]
     },
     "197": {
@@ -4963,7 +5702,8 @@ const INITIAL_USER = /*userdata*/{
       "wears": [
         "2026-07-18",
         "2026-07-19",
-        "2026-07-31"
+        "2026-07-31",
+        "2026-09-30"
       ],
       "memo": "Special Order Catalog",
       "seasons": [
@@ -4973,7 +5713,11 @@ const INITIAL_USER = /*userdata*/{
         "Winter"
       ],
       "fav": true,
-      "multiples": true
+      "multiples": true,
+      "ftypes": [
+        "Extrait",
+        "Perfume Oil"
+      ]
     },
     "198": {
       "notes": "Strawberry, vanilla cream soda, fresh green grass, morning dew, ambrette seed",
@@ -4991,10 +5735,13 @@ const INITIAL_USER = /*userdata*/{
         "Sweet"
       ],
       "sizes": [
-        "Travel Size"
+        "Full Size"
       ],
       "wears": [
         "2026-07-15"
+      ],
+      "ftypes": [
+        "Perfume Oil"
       ]
     },
     "199": {
@@ -5014,11 +5761,16 @@ const INITIAL_USER = /*userdata*/{
         "2026-09-18"
       ],
       "sizes": [
-        "Travel Size"
+        "Travel Size",
+        "Full Size"
       ],
       "families": [
         "Fruity",
         "Green"
+      ],
+      "ftypes": [
+        "Extrait",
+        "Perfume Oil"
       ]
     },
     "200": {
@@ -5040,6 +5792,9 @@ const INITIAL_USER = /*userdata*/{
       "wears": [
         "2026-07-29",
         "2026-09-21"
+      ],
+      "ftypes": [
+        "EDP"
       ]
     },
     "201": {
@@ -5052,6 +5807,9 @@ const INITIAL_USER = /*userdata*/{
       ],
       "sizes": [
         "Travel Size"
+      ],
+      "ftypes": [
+        "EDP"
       ]
     },
     "202": {
@@ -5069,6 +5827,9 @@ const INITIAL_USER = /*userdata*/{
       ],
       "sizes": [
         "Travel Size"
+      ],
+      "ftypes": [
+        "EDP"
       ]
     },
     "203": {
@@ -5086,6 +5847,9 @@ const INITIAL_USER = /*userdata*/{
       ],
       "sizes": [
         "Full Size"
+      ],
+      "ftypes": [
+        "EDT"
       ]
     },
     "204": {
@@ -5098,6 +5862,9 @@ const INITIAL_USER = /*userdata*/{
       ],
       "sizes": [
         "Full Size"
+      ],
+      "ftypes": [
+        "Body Mist/Spray"
       ]
     },
     "205": {
@@ -5116,6 +5883,9 @@ const INITIAL_USER = /*userdata*/{
       ],
       "sizes": [
         "Full Size"
+      ],
+      "ftypes": [
+        "EDP"
       ]
     },
     "206": {
@@ -5130,7 +5900,10 @@ const INITIAL_USER = /*userdata*/{
       "sizes": [
         "Travel Size"
       ],
-      "multiples": true
+      "multiples": true,
+      "ftypes": [
+        "EDP"
+      ]
     }
   },
   "custom": [
@@ -5157,6 +5930,9 @@ const INITIAL_USER = /*userdata*/{
       "matchbody": [
         "Body wash",
         "Body cream"
+      ],
+      "ftypes": [
+        "Body Mist/Spray"
       ]
     },
     {
@@ -5190,6 +5966,10 @@ const INITIAL_USER = /*userdata*/{
       "sizes": [
         "Travel Size",
         "Full Size"
+      ],
+      "ftypes": [
+        "EDP",
+        "Body Mist/Spray"
       ]
     },
     {
@@ -5213,6 +5993,9 @@ const INITIAL_USER = /*userdata*/{
       ],
       "sizes": [
         "Full Size"
+      ],
+      "ftypes": [
+        "Body Mist/Spray"
       ]
     },
     {
@@ -5236,6 +6019,9 @@ const INITIAL_USER = /*userdata*/{
       ],
       "sizes": [
         "Full Size"
+      ],
+      "ftypes": [
+        "Body Mist/Spray"
       ]
     },
     {
@@ -5259,6 +6045,9 @@ const INITIAL_USER = /*userdata*/{
       ],
       "sizes": [
         "Full Size"
+      ],
+      "ftypes": [
+        "Body Mist/Spray"
       ]
     },
     {
@@ -5281,6 +6070,9 @@ const INITIAL_USER = /*userdata*/{
       ],
       "sizes": [
         "Full Size"
+      ],
+      "ftypes": [
+        "EDP"
       ]
     },
     {
@@ -5303,8 +6095,10 @@ const INITIAL_USER = /*userdata*/{
         "Solar",
         "Tropical"
       ],
-      "matchbody": [
-        "Body mist"
+      "matchbody": [],
+      "ftypes": [
+        "EDP",
+        "Body Mist/Spray"
       ]
     },
     {
@@ -5343,6 +6137,9 @@ const INITIAL_USER = /*userdata*/{
           "n": "Fruity Musk",
           "t": "Body cream"
         }
+      ],
+      "ftypes": [
+        "EDP"
       ]
     },
     {
@@ -5363,7 +6160,10 @@ const INITIAL_USER = /*userdata*/{
       "wears": [
         "2026-07-25",
         "2026-07-26",
-        "2026-08-21"
+        "2026-08-21",
+        "2026-10-01",
+        "2026-10-02",
+        "2026-10-26"
       ],
       "families": [
         "Musk",
@@ -5371,6 +6171,9 @@ const INITIAL_USER = /*userdata*/{
       ],
       "sizes": [
         "Full Size"
+      ],
+      "ftypes": [
+        "EDP"
       ]
     },
     {
@@ -5399,6 +6202,9 @@ const INITIAL_USER = /*userdata*/{
       ],
       "sizes": [
         "Full Size"
+      ],
+      "ftypes": [
+        "EDP"
       ]
     },
     {
@@ -5425,6 +6231,9 @@ const INITIAL_USER = /*userdata*/{
       "families": [
         "Fruity",
         "Sweet"
+      ],
+      "ftypes": [
+        "Body Mist/Spray"
       ]
     },
     {
@@ -5451,6 +6260,9 @@ const INITIAL_USER = /*userdata*/{
       "matchbody": [
         "Body wash",
         "Body cream"
+      ],
+      "ftypes": [
+        "Body Mist/Spray"
       ]
     },
     {
@@ -5481,6 +6293,9 @@ const INITIAL_USER = /*userdata*/{
       "matchbody": [
         "Body wash",
         "Body cream"
+      ],
+      "ftypes": [
+        "Body Mist/Spray"
       ]
     },
     {
@@ -5508,6 +6323,9 @@ const INITIAL_USER = /*userdata*/{
       "matchbody": [
         "Body wash",
         "Body cream"
+      ],
+      "ftypes": [
+        "Body Mist/Spray"
       ]
     },
     {
@@ -5536,6 +6354,9 @@ const INITIAL_USER = /*userdata*/{
       "matchbody": [
         "Body wash",
         "Body cream"
+      ],
+      "ftypes": [
+        "Body Mist/Spray"
       ]
     },
     {
@@ -5562,6 +6383,9 @@ const INITIAL_USER = /*userdata*/{
       "wears": [],
       "matchbody": [
         "Body oil"
+      ],
+      "ftypes": [
+        "Extrait"
       ]
     },
     {
@@ -5584,7 +6408,10 @@ const INITIAL_USER = /*userdata*/{
       "rating": 2,
       "price": 6,
       "fav": false,
-      "wears": []
+      "wears": [],
+      "ftypes": [
+        "EDP"
+      ]
     },
     {
       "id": 100020,
@@ -5616,6 +6443,9 @@ const INITIAL_USER = /*userdata*/{
       "matchbody": [
         "Body wash",
         "Body oil"
+      ],
+      "ftypes": [
+        "EDP"
       ]
     },
     {
@@ -5644,6 +6474,9 @@ const INITIAL_USER = /*userdata*/{
       "fav": true,
       "wears": [
         "2026-09-10"
+      ],
+      "ftypes": [
+        "EDP"
       ]
     },
     {
@@ -5682,7 +6515,10 @@ const INITIAL_USER = /*userdata*/{
           ],
           "rot": []
         }
-      }
+      },
+      "ftypes": [
+        "EDP"
+      ]
     },
     {
       "id": 100023,
@@ -5719,9 +6555,13 @@ const INITIAL_USER = /*userdata*/{
           "s:900006:Lotion"
         ],
         "hide": [
-          "s:900025:Body wash"
+          "s:900025:Body wash",
+          "s:900011:Body wash"
         ]
-      }
+      },
+      "ftypes": [
+        "EDP"
+      ]
     },
     {
       "id": 100024,
@@ -5762,7 +6602,10 @@ const INITIAL_USER = /*userdata*/{
           ],
           "rot": []
         }
-      }
+      },
+      "ftypes": [
+        "Body Mist/Spray"
+      ]
     },
     {
       "id": 100025,
@@ -5788,6 +6631,9 @@ const INITIAL_USER = /*userdata*/{
       "fav": false,
       "wears": [
         "2026-08-11"
+      ],
+      "ftypes": [
+        "EDP"
       ]
     },
     {
@@ -5813,6 +6659,9 @@ const INITIAL_USER = /*userdata*/{
       "fav": false,
       "wears": [
         "2026-09-09"
+      ],
+      "ftypes": [
+        "EDP"
       ]
     },
     {
@@ -5836,7 +6685,10 @@ const INITIAL_USER = /*userdata*/{
       "rating": 4,
       "price": 28,
       "fav": false,
-      "wears": []
+      "wears": [],
+      "ftypes": [
+        "EDP"
+      ]
     },
     {
       "id": 100028,
@@ -5862,6 +6714,9 @@ const INITIAL_USER = /*userdata*/{
       "fav": false,
       "wears": [
         "2026-07-28"
+      ],
+      "ftypes": [
+        "EDP"
       ]
     },
     {
@@ -5889,6 +6744,9 @@ const INITIAL_USER = /*userdata*/{
         "Body wash",
         "Lotion",
         "Body cream"
+      ],
+      "ftypes": [
+        "Body Mist/Spray"
       ]
     },
     {
@@ -5916,6 +6774,9 @@ const INITIAL_USER = /*userdata*/{
       "wears": [],
       "matchbody": [
         "Body wash"
+      ],
+      "ftypes": [
+        "Body Mist/Spray"
       ]
     },
     {
@@ -5944,6 +6805,9 @@ const INITIAL_USER = /*userdata*/{
       "matchbody": [
         "Body wash",
         "Lotion"
+      ],
+      "ftypes": [
+        "Body Mist/Spray"
       ]
     },
     {
@@ -5967,7 +6831,10 @@ const INITIAL_USER = /*userdata*/{
       "rating": 0,
       "price": 18,
       "fav": false,
-      "wears": []
+      "wears": [],
+      "ftypes": [
+        "Body Mist/Spray"
+      ]
     },
     {
       "id": 100033,
@@ -5988,11 +6855,14 @@ const INITIAL_USER = /*userdata*/{
         "Full Size"
       ],
       "multiples": false,
-      "rating": 0,
+      "rating": 4,
       "price": 125,
       "fav": false,
       "wears": [
         "2026-09-14"
+      ],
+      "ftypes": [
+        "EDP"
       ]
     },
     {
@@ -6019,6 +6889,9 @@ const INITIAL_USER = /*userdata*/{
       "fav": false,
       "wears": [
         "2026-09-05"
+      ],
+      "ftypes": [
+        "EDP"
       ]
     },
     {
@@ -6044,7 +6917,10 @@ const INITIAL_USER = /*userdata*/{
       "rating": 0,
       "price": 17,
       "fav": false,
-      "wears": []
+      "wears": [],
+      "ftypes": [
+        "EDP"
+      ]
     },
     {
       "id": 100036,
@@ -6067,16 +6943,19 @@ const INITIAL_USER = /*userdata*/{
       "rating": 0,
       "price": 16,
       "fav": false,
-      "wears": []
+      "wears": [],
+      "ftypes": [
+        "EDP"
+      ]
     },
     {
       "id": 100037,
       "brand": "Imaginary Authors",
       "name": "How to Say Bicycle in French",
       "families": [
+        "Floral",
         "Fresh",
-        "Green",
-        "Powdery"
+        "Green"
       ],
       "notes": "Sweet basil, lavender, clary sage, white thyme",
       "seasons": [
@@ -6091,7 +6970,12 @@ const INITIAL_USER = /*userdata*/{
       "rating": 4,
       "price": 46,
       "fav": false,
-      "wears": []
+      "wears": [
+        "2026-09-26"
+      ],
+      "ftypes": [
+        "EDP"
+      ]
     },
     {
       "id": 100038,
@@ -6116,7 +7000,11 @@ const INITIAL_USER = /*userdata*/{
       "fav": false,
       "wears": [
         "2026-07-28"
-      ]
+      ],
+      "ftypes": [
+        "EDT"
+      ],
+      "memo": "Dupe of Nest Madagascar Vanilla"
     },
     {
       "id": 100039,
@@ -6157,7 +7045,14 @@ const INITIAL_USER = /*userdata*/{
           "layer": [],
           "rot": []
         }
-      }
+      },
+      "ftypes": [
+        "Perfume Oil"
+      ],
+      "memo": "Dupe of Kayali Yum Boujee Marshmallow",
+      "matchbody": [
+        "Lotion"
+      ]
     },
     {
       "id": 100040,
@@ -6182,7 +7077,10 @@ const INITIAL_USER = /*userdata*/{
       "rating": 0,
       "price": 28,
       "fav": false,
-      "wears": []
+      "wears": [],
+      "ftypes": [
+        "EDP"
+      ]
     },
     {
       "id": 100041,
@@ -6206,7 +7104,10 @@ const INITIAL_USER = /*userdata*/{
       "rating": 0,
       "price": 28,
       "fav": false,
-      "wears": []
+      "wears": [],
+      "ftypes": [
+        "EDP"
+      ]
     },
     {
       "id": 100042,
@@ -6229,7 +7130,10 @@ const INITIAL_USER = /*userdata*/{
       "rating": 0,
       "price": 28,
       "fav": false,
-      "wears": []
+      "wears": [],
+      "ftypes": [
+        "EDP"
+      ]
     },
     {
       "id": 100043,
@@ -6278,7 +7182,10 @@ const INITIAL_USER = /*userdata*/{
           ],
           "rot": []
         }
-      }
+      },
+      "ftypes": [
+        "EDP"
+      ]
     },
     {
       "id": 100044,
@@ -6309,7 +7216,10 @@ const INITIAL_USER = /*userdata*/{
           "m:82:Body oil"
         ],
         "hide": []
-      }
+      },
+      "ftypes": [
+        "EDP"
+      ]
     },
     {
       "id": 100045,
@@ -6334,7 +7244,10 @@ const INITIAL_USER = /*userdata*/{
       "rating": 0,
       "price": 20,
       "fav": false,
-      "wears": []
+      "wears": [],
+      "ftypes": [
+        "EDP"
+      ]
     },
     {
       "id": 100046,
@@ -6359,7 +7272,12 @@ const INITIAL_USER = /*userdata*/{
       "rating": 4,
       "price": 65,
       "fav": false,
-      "wears": []
+      "wears": [
+        "2026-09-29"
+      ],
+      "ftypes": [
+        "EDP"
+      ]
     },
     {
       "id": 100047,
@@ -6407,7 +7325,10 @@ const INITIAL_USER = /*userdata*/{
         "hide": [
           "s:900035:Lotion"
         ]
-      }
+      },
+      "ftypes": [
+        "EDP"
+      ]
     },
     {
       "id": 100048,
@@ -6446,7 +7367,10 @@ const INITIAL_USER = /*userdata*/{
             118
           ]
         }
-      }
+      },
+      "ftypes": [
+        "EDP"
+      ]
     },
     {
       "id": 100049,
@@ -6486,7 +7410,10 @@ const INITIAL_USER = /*userdata*/{
           "layer": [],
           "rot": []
         }
-      }
+      },
+      "ftypes": [
+        "EDP"
+      ]
     },
     {
       "id": 100050,
@@ -6525,7 +7452,10 @@ const INITIAL_USER = /*userdata*/{
         "hide": [
           "s:900012:Body butter"
         ]
-      }
+      },
+      "ftypes": [
+        "EDP"
+      ]
     },
     {
       "id": 100051,
@@ -6543,13 +7473,16 @@ const INITIAL_USER = /*userdata*/{
       ],
       "sizes": [
         "Sample/Decant",
-        "Travel Size"
+        "Full Size"
       ],
       "multiples": false,
       "rating": 3,
       "price": 21,
       "fav": false,
-      "wears": []
+      "wears": [],
+      "ftypes": [
+        "Perfume Oil"
+      ]
     },
     {
       "id": 100052,
@@ -6567,13 +7500,18 @@ const INITIAL_USER = /*userdata*/{
       ],
       "sizes": [
         "Sample/Decant",
-        "Travel Size"
+        "Full Size"
       ],
       "multiples": false,
       "rating": 4,
       "price": 23,
       "fav": false,
-      "wears": []
+      "wears": [
+        "2026-10-20"
+      ],
+      "ftypes": [
+        "Perfume Oil"
+      ]
     },
     {
       "id": 100053,
@@ -6598,6 +7536,10 @@ const INITIAL_USER = /*userdata*/{
       "fav": false,
       "wears": [
         "2026-08-31"
+      ],
+      "ftypes": [
+        "Extrait",
+        "Perfume Oil"
       ]
     },
     {
@@ -6619,10 +7561,15 @@ const INITIAL_USER = /*userdata*/{
         "Full Size"
       ],
       "multiples": false,
-      "rating": 0,
+      "rating": 4,
       "price": 125,
       "fav": false,
-      "wears": []
+      "wears": [
+        "2026-10-18"
+      ],
+      "ftypes": [
+        "EDP"
+      ]
     },
     {
       "id": 100055,
@@ -6643,10 +7590,15 @@ const INITIAL_USER = /*userdata*/{
         "Full Size"
       ],
       "multiples": false,
-      "rating": 0,
+      "rating": 4,
       "price": 125,
       "fav": false,
-      "wears": []
+      "wears": [
+        "2026-10-19"
+      ],
+      "ftypes": [
+        "EDP"
+      ]
     },
     {
       "id": 100056,
@@ -6663,36 +7615,19 @@ const INITIAL_USER = /*userdata*/{
         "Winter"
       ],
       "sizes": [
-        "Travel Size"
+        "Full Size"
       ],
       "multiples": false,
       "rating": 4,
       "price": 23,
       "fav": false,
-      "wears": []
-    },
-    {
-      "id": 100057,
-      "brand": "Sorce",
-      "name": "A Bump in the Night",
-      "families": [
-        "Gourmand",
-        "Fruity",
-        "Spicy"
+      "wears": [
+        "2026-10-09",
+        "2026-10-27"
       ],
-      "notes": "Roasted strawberries, mascarpone cream, golden honey, pecans, burning leaves",
-      "seasons": [
-        "Fall",
-        "Winter"
-      ],
-      "sizes": [
-        "Travel Size"
-      ],
-      "multiples": false,
-      "rating": 3,
-      "price": 22,
-      "fav": false,
-      "wears": []
+      "ftypes": [
+        "Perfume Oil"
+      ]
     },
     {
       "id": 100058,
@@ -6710,35 +7645,17 @@ const INITIAL_USER = /*userdata*/{
         "Fall"
       ],
       "sizes": [
-        "Travel Size"
+        "Sample/Decant",
+        "Full Size"
       ],
       "multiples": false,
       "rating": 3,
       "price": 23,
       "fav": false,
-      "wears": []
-    },
-    {
-      "id": 100059,
-      "brand": "Sorce",
-      "name": "Don\u2019t Whistle in the Woods",
-      "families": [
-        "Woody",
-        "Sweet"
-      ],
-      "notes": "Cedar, sandalwood, cypriol, fir balsam, black vanilla, sugar, ambrette, fur",
-      "seasons": [
-        "Fall",
-        "Winter"
-      ],
-      "sizes": [
-        "Travel Size"
-      ],
-      "multiples": false,
-      "rating": 4,
-      "price": 21,
-      "fav": false,
-      "wears": []
+      "wears": [],
+      "ftypes": [
+        "Perfume Oil"
+      ]
     },
     {
       "id": 100060,
@@ -6755,7 +7672,7 @@ const INITIAL_USER = /*userdata*/{
         "Winter"
       ],
       "sizes": [
-        "Travel Size"
+        "Full Size"
       ],
       "multiples": false,
       "rating": 3,
@@ -6774,7 +7691,10 @@ const INITIAL_USER = /*userdata*/{
           ],
           "rot": []
         }
-      }
+      },
+      "ftypes": [
+        "Perfume Oil"
+      ]
     },
     {
       "id": 100061,
@@ -6792,13 +7712,18 @@ const INITIAL_USER = /*userdata*/{
         "Winter"
       ],
       "sizes": [
-        "Travel Size"
+        "Full Size"
       ],
       "multiples": false,
-      "rating": 0,
+      "rating": 4,
       "price": 22,
       "fav": false,
-      "wears": []
+      "wears": [
+        "2026-10-17"
+      ],
+      "ftypes": [
+        "Perfume Oil"
+      ]
     },
     {
       "id": 100062,
@@ -6819,10 +7744,16 @@ const INITIAL_USER = /*userdata*/{
         "Travel Size"
       ],
       "multiples": false,
-      "rating": 0,
+      "rating": 4,
       "price": 44,
       "fav": false,
-      "wears": []
+      "wears": [
+        "2026-10-31"
+      ],
+      "ftypes": [
+        "Extrait",
+        "Perfume Oil"
+      ]
     },
     {
       "id": 100063,
@@ -6841,13 +7772,18 @@ const INITIAL_USER = /*userdata*/{
       ],
       "sizes": [
         "Sample/Decant",
-        "Travel Size"
+        "Full Size"
       ],
       "multiples": false,
       "rating": 3,
       "price": 22,
       "fav": false,
-      "wears": []
+      "wears": [
+        "2026-10-31"
+      ],
+      "ftypes": [
+        "Perfume Oil"
+      ]
     },
     {
       "id": 100064,
@@ -6872,7 +7808,10 @@ const INITIAL_USER = /*userdata*/{
       "rating": 0,
       "price": 30,
       "fav": false,
-      "wears": []
+      "wears": [],
+      "ftypes": [
+        "EDP"
+      ]
     },
     {
       "id": 100065,
@@ -6897,7 +7836,10 @@ const INITIAL_USER = /*userdata*/{
       "rating": 0,
       "price": 15,
       "fav": false,
-      "wears": []
+      "wears": [],
+      "ftypes": [
+        "EDP"
+      ]
     },
     {
       "id": 100066,
@@ -6933,7 +7875,10 @@ const INITIAL_USER = /*userdata*/{
             43
           ]
         }
-      }
+      },
+      "ftypes": [
+        "EDP"
+      ]
     },
     {
       "id": 100067,
@@ -6957,7 +7902,22 @@ const INITIAL_USER = /*userdata*/{
       "rating": 0,
       "price": 28,
       "fav": false,
-      "wears": []
+      "wears": [],
+      "ftypes": [
+        "EDP"
+      ],
+      "pairs": {
+        "pin": {
+          "layer": [],
+          "rot": []
+        },
+        "hide": {
+          "layer": [
+            100068
+          ],
+          "rot": []
+        }
+      }
     },
     {
       "id": 100068,
@@ -6978,10 +7938,16 @@ const INITIAL_USER = /*userdata*/{
         "Travel Size"
       ],
       "multiples": false,
-      "rating": 0,
+      "rating": 4,
       "price": 30,
       "fav": false,
-      "wears": []
+      "wears": [
+        "2026-09-28",
+        "2026-10-23"
+      ],
+      "ftypes": [
+        "EDP"
+      ]
     },
     {
       "id": 100069,
@@ -7016,7 +7982,11 @@ const INITIAL_USER = /*userdata*/{
         "hide": [
           "m:33:Body cream"
         ]
-      }
+      },
+      "ftypes": [
+        "EDP",
+        "Body Mist/Spray"
+      ]
     },
     {
       "id": 100070,
@@ -7041,11 +8011,16 @@ const INITIAL_USER = /*userdata*/{
       "rating": 0,
       "price": 18,
       "fav": false,
-      "wears": [],
+      "wears": [
+        "2026-09-27"
+      ],
       "matchbody": [
         "Body cream"
       ],
-      "memo": "Dupe of Gucci Flora Gorgeous Orchid"
+      "memo": "Dupe of Gucci Flora Gorgeous Orchid",
+      "ftypes": [
+        "Body Mist/Spray"
+      ]
     },
     {
       "id": 100071,
@@ -7070,34 +8045,323 @@ const INITIAL_USER = /*userdata*/{
       "price": 18,
       "fav": false,
       "wears": [],
-      "memo": "Dupe of D&G Light Blue"
+      "memo": "Dupe of D&G Light Blue",
+      "ftypes": [
+        "Body Mist/Spray"
+      ]
+    },
+    {
+      "id": 100072,
+      "brand": "By Rosie Jane",
+      "name": "Birthday Suit",
+      "families": [
+        "Fruity",
+        "Musk",
+        "Spicy"
+      ],
+      "notes": "Tangerine, apple, lemon blossom, lily, jasmine petals, salty air, amber, skin musk, cedarwood",
+      "seasons": [
+        "Spring",
+        "Summer",
+        "Fall"
+      ],
+      "sizes": [
+        "Full Size"
+      ],
+      "ftypes": [
+        "Body Mist/Spray"
+      ],
+      "multiples": false,
+      "rating": 0,
+      "price": 26,
+      "fav": false,
+      "wears": []
+    },
+    {
+      "id": 100073,
+      "brand": "By Rosie Jane",
+      "name": "Lake",
+      "families": [
+        "Fresh",
+        "Citrus",
+        "Musk"
+      ],
+      "notes": "Vanilla, lemon, neroli, cedar",
+      "seasons": [
+        "Spring",
+        "Summer",
+        "Fall"
+      ],
+      "sizes": [
+        "Travel Size"
+      ],
+      "ftypes": [
+        "EDP"
+      ],
+      "multiples": false,
+      "rating": 0,
+      "price": 22,
+      "fav": false,
+      "wears": []
+    },
+    {
+      "id": 100074,
+      "brand": "Salt & Stone",
+      "name": "Bergamot & Hinoki",
+      "families": [
+        "Fresh",
+        "Citrus",
+        "Woody"
+      ],
+      "notes": "Italian bergamot, grapefruit, hinoki, vetiver, eucalyptus, amber, orange blossom",
+      "seasons": [
+        "Spring",
+        "Summer",
+        "Fall",
+        "Winter"
+      ],
+      "sizes": [
+        "Full Size"
+      ],
+      "ftypes": [
+        "Body Mist/Spray"
+      ],
+      "multiples": false,
+      "rating": 4,
+      "price": 48,
+      "fav": false,
+      "wears": []
+    },
+    {
+      "id": 100075,
+      "brand": "Sand & Fog",
+      "name": "Love Potion",
+      "families": [
+        "Floral",
+        "Fruity",
+        "Sweet"
+      ],
+      "notes": "Strawberry, orange, jasmine, violet, lily, vanilla",
+      "seasons": [
+        "Spring",
+        "Summer",
+        "Fall"
+      ],
+      "sizes": [
+        "Full Size"
+      ],
+      "ftypes": [
+        "Perfume Oil"
+      ],
+      "multiples": false,
+      "rating": 0,
+      "price": 15,
+      "fav": false,
+      "wears": [],
+      "memo": "Dupe of Burberry Her"
+    },
+    {
+      "id": 100077,
+      "brand": "Summer Fridays",
+      "name": "Toasted Marshmallow",
+      "families": [
+        "Gourmand",
+        "Sweet"
+      ],
+      "notes": "Marshmallow, musk",
+      "seasons": [
+        "Spring",
+        "Fall",
+        "Winter"
+      ],
+      "sizes": [
+        "Full Size"
+      ],
+      "ftypes": [
+        "Body Mist/Spray"
+      ],
+      "multiples": false,
+      "rating": 3,
+      "price": null,
+      "fav": false,
+      "wears": [],
+      "matchbody": [
+        "Body butter"
+      ],
+      "bpairs": {
+        "pin": [],
+        "hide": [
+          "m:72:Body butter"
+        ]
+      }
+    },
+    {
+      "id": 100078,
+      "brand": "Sand & Fog",
+      "name": "Vanilla Latte",
+      "families": [
+        "Gourmand",
+        "Spicy",
+        "Sweet"
+      ],
+      "notes": "Espresso, latte, coffee, vanilla, sugar, musk, coconut, amber",
+      "seasons": [
+        "Fall",
+        "Winter"
+      ],
+      "sizes": [
+        "Full Size"
+      ],
+      "ftypes": [
+        "Perfume Oil"
+      ],
+      "multiples": false,
+      "rating": 4,
+      "price": 15,
+      "fav": false,
+      "wears": []
+    },
+    {
+      "id": 100079,
+      "brand": "Henry Rose",
+      "name": "Rhu Berry",
+      "families": [
+        "Fruity",
+        "Green",
+        "Sweet"
+      ],
+      "notes": "Rhubarb, orange, pink pepper, strawberry jam, osmanthus, peach, choux pastry, musk, sandalwood",
+      "seasons": [
+        "Spring",
+        "Summer",
+        "Fall",
+        "Winter"
+      ],
+      "sizes": [
+        "Travel Size"
+      ],
+      "ftypes": [
+        "EDP"
+      ],
+      "multiples": false,
+      "rating": 4,
+      "price": 30,
+      "fav": false,
+      "wears": []
+    },
+    {
+      "id": 100080,
+      "brand": "Sorce",
+      "name": "Lady of Steel",
+      "families": [
+        "Floral",
+        "Fresh",
+        "Musk"
+      ],
+      "notes": "Lily of the valley, ethereal musk, cold metal",
+      "seasons": [
+        "Spring",
+        "Summer",
+        "Fall",
+        "Winter"
+      ],
+      "sizes": [
+        "Sample/Decant",
+        "Travel Size"
+      ],
+      "ftypes": [
+        "Extrait",
+        "Perfume Oil"
+      ],
+      "multiples": false,
+      "rating": 4,
+      "price": 40,
+      "fav": false,
+      "wears": [],
+      "bpairs": {
+        "pin": [],
+        "hide": [
+          "s:900036:Body oil"
+        ]
+      }
     }
   ],
-  "nextId": 100072,
+  "nextId": 100081,
   "tray": {
-    "label": "September 2026",
+    "label": "November 2026",
     "ids": [
-      63,
-      100021,
-      100049,
-      1,
-      43,
-      80,
-      79,
-      187,
-      193,
-      59,
-      66,
-      75,
-      100009,
-      100026,
-      125,
-      122,
-      100050,
-      168
+      16,
+      36,
+      109,
+      149,
+      2,
+      37,
+      38,
+      39,
+      164,
+      184,
+      50,
+      56,
+      60,
+      100079,
+      100020,
+      100027,
+      103,
+      144,
+      170,
+      100052,
+      176
     ]
   },
   "trayHistory": [
+    {
+      "label": "October 2026",
+      "ids": [
+        42,
+        100048,
+        100050,
+        100010,
+        191,
+        100055,
+        163,
+        173,
+        100044,
+        100065,
+        100021,
+        100023,
+        82,
+        93,
+        100049,
+        100068,
+        100025,
+        100052
+      ],
+      "date": "2026-10-31"
+    },
+    {
+      "label": "September 2026",
+      "ids": [
+        63,
+        100021,
+        100049,
+        1,
+        43,
+        80,
+        79,
+        187,
+        193,
+        59,
+        66,
+        75,
+        100009,
+        100026,
+        125,
+        122,
+        100050,
+        168
+      ],
+      "date": "2026-10-01"
+    },
     {
       "label": "August 2026",
       "ids": [
@@ -7646,7 +8910,7 @@ const INITIAL_USER = /*userdata*/{
     },
     {
       "id": 900028,
-      "name": "Jarritos",
+      "name": "Jarritos - Tangerine",
       "brand": "Native",
       "type": "Body wash",
       "families": [
@@ -8040,9 +9304,10 @@ const INITIAL_USER = /*userdata*/{
       "name": "Almond Croissant",
       "brand": "Bath & Body Works",
       "types": [
+        "Body wash",
         "Body cream"
       ],
-      "type": "Body cream",
+      "type": "Body wash",
       "families": [
         "Lactonic",
         "Nutty"
@@ -8072,9 +9337,313 @@ const INITIAL_USER = /*userdata*/{
         "Winter"
       ],
       "notes": "Iris, pink pepper, creamy woods"
+    },
+    {
+      "id": 900050,
+      "name": "Autumn Drive",
+      "brand": "Bath & Body Works",
+      "types": [
+        "Body cream"
+      ],
+      "type": "Body cream",
+      "families": [
+        "Fruity",
+        "Amber",
+        "Spicy"
+      ],
+      "seasons": [
+        "Fall",
+        "Winter"
+      ],
+      "notes": "Raspberry, warm amber, vanilla birch"
+    },
+    {
+      "id": 900051,
+      "name": "Champagne Toast",
+      "brand": "Bath & Body Works",
+      "types": [
+        "Body wash"
+      ],
+      "type": "Body wash",
+      "families": [
+        "Fruity",
+        "Sweet"
+      ],
+      "seasons": [
+        "Spring",
+        "Summer",
+        "Fall",
+        "Winter"
+      ],
+      "notes": "Champagne, sparkling berries, tangerine"
+    },
+    {
+      "id": 900052,
+      "name": "Bonfire Bash",
+      "brand": "Bath & Body Works",
+      "types": [
+        "Body wash",
+        "Body cream"
+      ],
+      "type": "Body wash",
+      "families": [
+        "Woody",
+        "Musk",
+        "Spicy"
+      ],
+      "seasons": [
+        "Fall",
+        "Winter"
+      ],
+      "notes": "Vanilla bourbon, sandalwood, cashmere musk"
+    },
+    {
+      "id": 900053,
+      "name": "Amber Era",
+      "brand": "Bath & Body Works",
+      "types": [
+        "Body cream"
+      ],
+      "type": "Body cream",
+      "families": [
+        "Floral",
+        "Amber",
+        "Spicy"
+      ],
+      "seasons": [
+        "Spring",
+        "Summer",
+        "Fall",
+        "Winter"
+      ],
+      "notes": "Honeyed amber, saffron rose, tonka"
+    },
+    {
+      "id": 900054,
+      "name": "Spiced Dreams",
+      "brand": "Hempz",
+      "types": [
+        "Lotion",
+        "Body cream"
+      ],
+      "type": "Lotion",
+      "families": [
+        "Gourmand",
+        "Spicy"
+      ],
+      "seasons": [
+        "Spring",
+        "Fall",
+        "Winter"
+      ],
+      "notes": "Cardamom, tonka bean"
+    },
+    {
+      "id": 900055,
+      "name": "Espresso Martini",
+      "brand": "Tree Hut",
+      "types": [
+        "Body wash",
+        "Body scrub",
+        "Body butter"
+      ],
+      "type": "Body wash",
+      "families": [
+        "Gourmand",
+        "Spicy",
+        "Sweet"
+      ],
+      "seasons": [
+        "Spring",
+        "Fall",
+        "Winter"
+      ],
+      "notes": "Espresso, vanilla, chocolate"
+    },
+    {
+      "id": 900056,
+      "name": "Whipped Honey & Vanilla",
+      "brand": "Bath & Body Works",
+      "types": [
+        "Body wash",
+        "Lotion"
+      ],
+      "type": "Body wash",
+      "families": [
+        "Gourmand",
+        "Sweet"
+      ],
+      "seasons": [
+        "Fall",
+        "Winter"
+      ],
+      "notes": "Honey, warm neroli, vanilla bean"
+    },
+    {
+      "id": 900057,
+      "name": "Midnight Rouge",
+      "brand": "Bath & Body Works",
+      "types": [
+        "Body cream"
+      ],
+      "type": "Body cream",
+      "families": [
+        "Fruity",
+        "Amber",
+        "Spicy"
+      ],
+      "seasons": [
+        "Spring",
+        "Fall",
+        "Winter"
+      ],
+      "notes": "Pear, jasmine absolute, amber musk"
+    },
+    {
+      "id": 900058,
+      "name": "Jarritos - Passion Fruit",
+      "brand": "Native",
+      "types": [
+        "Body wash"
+      ],
+      "type": "Body wash",
+      "families": [
+        "Fruity",
+        "Sweet"
+      ],
+      "seasons": [
+        "Spring",
+        "Summer",
+        "Fall"
+      ],
+      "notes": "Passion fruit"
+    },
+    {
+      "id": 900059,
+      "name": "Toasted Marshmallow",
+      "brand": "Eos",
+      "types": [
+        "Lotion"
+      ],
+      "type": "Lotion",
+      "families": [
+        "Gourmand",
+        "Lactonic",
+        "Sweet"
+      ],
+      "seasons": [
+        "Spring",
+        "Summer",
+        "Fall",
+        "Winter"
+      ],
+      "notes": "Marshmallow, caramelized sugar, smoky birch"
+    },
+    {
+      "id": 900060,
+      "name": "Vanilla Comfort",
+      "brand": "Vaseline",
+      "types": [
+        "Body oil"
+      ],
+      "type": "Body oil",
+      "families": [
+        "Gourmand",
+        "Spicy",
+        "Sweet"
+      ],
+      "seasons": [
+        "Spring",
+        "Summer",
+        "Fall",
+        "Winter"
+      ],
+      "notes": "Vanilla, cocoa"
+    },
+    {
+      "id": 900061,
+      "name": "Strawberry Frosted",
+      "brand": "Native",
+      "types": [
+        "Body wash"
+      ],
+      "type": "Body wash",
+      "families": [
+        "Gourmand",
+        "Fruity",
+        "Sweet"
+      ],
+      "seasons": [
+        "Spring",
+        "Fall",
+        "Winter"
+      ],
+      "notes": "Strawberry, sugar, frosting"
+    },
+    {
+      "id": 900062,
+      "name": "Ocean Timber",
+      "brand": "Native",
+      "types": [
+        "Body wash"
+      ],
+      "type": "Body wash",
+      "families": [
+        "Fresh",
+        "Woody",
+        "Aquatic"
+      ],
+      "seasons": [
+        "Spring",
+        "Summer",
+        "Fall",
+        "Winter"
+      ],
+      "notes": "Sea salt, ocean water, woods"
+    },
+    {
+      "id": 900063,
+      "name": "Powder & Cotton",
+      "brand": "Native",
+      "types": [
+        "Body wash"
+      ],
+      "type": "Body wash",
+      "families": [
+        "Fresh",
+        "Powdery"
+      ],
+      "seasons": [
+        "Spring",
+        "Summer",
+        "Fall",
+        "Winter"
+      ],
+      "notes": "Cotton, powder"
+    },
+    {
+      "id": 900064,
+      "name": "Blueberry Cobbler",
+      "brand": "Native",
+      "types": [
+        "Body wash"
+      ],
+      "type": "Body wash",
+      "families": [
+        "Gourmand",
+        "Fruity",
+        "Sweet"
+      ],
+      "seasons": [
+        "Spring",
+        "Summer",
+        "Fall",
+        "Winter"
+      ],
+      "notes": "Blueberry, sugar"
     }
   ],
-  "nextShelfId": 900050
+  "nextShelfId": 900065
 };
 const FAMILIES=["Gourmand","Floral","Fruity","Fresh","Citrus","Woody","Amber","Musk","Green","Aquatic","Solar","Spicy","Tropical","Lactonic","Sweet","Nutty","Powdery"];
 const FAM_COLOR={Gourmand:"#C68A4E",Floral:"#D27FA3",Fruity:"#D2604E",Fresh:"#4FA8C0",Citrus:"#E0A92E",Woody:"#8A6A45",Amber:"#B07A3C",Musk:"#B9A38C",Green:"#6B9A5B",Aquatic:"#3C7DAE",Solar:"#E0954E",Spicy:"#A8432C",Tropical:"#2FA98E",Lactonic:"#D9C4A3",Sweet:"#B47BC4",Nutty:"#A6764B",Powdery:"#C7B3C9"};
@@ -8361,7 +9930,7 @@ const NOTE_CLUSTERS={
   almond:["almond","amaretto","marzipan","frangipane","nutty","hazelnut","pistachio","pecan","walnut","brazil nut","macadamia","praline"],
   coconut:["coconut","copra","monoi"],
   milk:["milk","milky","lactonic","yogurt","buttermilk","condensed","horchata","oat milk"],
-  butter:["butter","buttery","shea","cocoa butter","biscuit","shortbread","pastry","croissant","dough","cake","cookie","waffle","brioche"],
+  butter:["butter","buttery","buttercream","shea","cocoa butter","biscuit","shortbread","pastry","croissant","dough","cake","cookie","waffle","brioche","pancake","pancakes","pie","cobbler","crumble"],
   berry:["berry","strawberry","raspberry","blackberry","blueberry","cranberry","currant","cassis","cherry","boysenberry"],
   stonefruit:["peach","apricot","nectarine","plum","damson"],
   tropicalfruit:["mango","papaya","lychee","guava","passionfruit","passion fruit","pineapple","banana","melon","watermelon","tropical","coconut water"],
@@ -8676,11 +10245,10 @@ function saveShelf(){
   closeModal();flash(shelfEdit.id?"Saved":"Added to your shelf");
 }
 
-/* ---------- body-care pairing engine ---------- */
-/* Builds a catalog of every body product you've told the app you own:
-   - "matching" products (same line as a scent, from the Matching-products picker)
-   - "other" named products you've listed under a scent
-   Then suggests ones that suit a given scent, based on family fit. */
+/* ---------- body care catalogue ----------
+   Raw entries: matching sets (same line as a scent), named products listed under
+   a scent, and standalone shelf products. bodyIndex() merges duplicates and gives
+   every product its own scent profile before anything is scored. */
 function bodyCatalog(all){
   const out=[];
   all.forEach(s=>{
@@ -8692,7 +10260,6 @@ function bodyCatalog(all){
       out.push({key:"o:"+s.id+":"+(b.t||"Other")+":"+b.n,label:b.n,type:b.t||"Other",src:s,kind:"other"});
     });
   });
-  // standalone shelf products — no parent fragrance, so give them a stand-in "source"
   shelf().forEach(p=>{
     const src={id:p.id,name:p.name,brand:p.brand||"",families:p.families||[],seasons:p.seasons||[],
                notes:p.notes||"",rating:0,fav:false};
@@ -8703,7 +10270,161 @@ function bodyCatalog(all){
   });
   return out;
 }
-/* per-scent curation of body-care pairings */
+function normName(s){return (s||"").toLowerCase().replace(/&/g," and ").replace(/[^a-z0-9 ]+/g," ").replace(/\s+/g," ").trim();}
+function jsq(s){return esc(String(s).replace(/\\/g,"\\\\").replace(/'/g,"\\'"));}
+/* routine steps: what you'd use in the shower, after, and to finish */
+const BODY_STEP={"Body wash":"Shower","Body scrub":"Shower","Lotion":"Moisturize","Body cream":"Moisturize",
+  "Body butter":"Moisturize","Body oil":"Moisturize","Body mist":"Finish","Hair mist":"Finish","Deodorant":"Finish","Other":"Finish"};
+const STEP_ORDER=["Shower","Moisturize","Finish"];
+const STEP_QUOTA={Shower:1,Moisturize:2,Finish:1};
+const TAG_LABEL={citrus:"citrus",vanilla:"vanilla",sugar:"sweet notes",caramel:"caramel",chocolate:"chocolate",coffee:"coffee",
+  almond:"nutty notes",coconut:"coconut",milk:"milky notes",butter:"bakery notes",berry:"berries",stonefruit:"stone fruit",
+  tropicalfruit:"tropical fruit",orchard:"orchard fruit",fig:"fig",rose:"rose",whiteflower:"white florals",lavender:"lavender",
+  powder:"powdery notes",musk:"musk",amber:"amber",wood:"woods",vetiver:"earthy notes",spice:"spice",herb:"herbal notes",
+  green:"green notes",marine:"sea notes",solar:"sunny notes",tonka:"tonka",smoke:"smoky notes",boozy:"boozy notes"};
+/* fit thresholds — a suggestion has to clear these to be shown at all */
+const BODY_T={strong:0.30,withFamily:0.22,distinct:0.40,band:0.45};
+let BP_CACHE=null, BP_GEN=0;
+function invalidateBodyIndex(){BP_CACHE=null;}
+function stemOf(w){return w.replace(/(ies|ied)$/,"y").replace(/(es|s)$/,"").replace(/(ade|ish|ed|y)$/,"");}
+function prodNotes(notes,label){
+  const own=noteList(notes||"");
+  const lab=noteList(label||"");
+  if(!own.length)return lab;                       // no notes entered: the name is all we have
+  // a product name like "Brown Sugar & Fig" is a clue; "Missing Person" is not
+  return own.concat(lab.filter(n=>n.tag).map(n=>Object.assign({},n,{pw:n.pw*0.7})));
+}
+function bodyIndex(){
+  if(BP_CACHE)return BP_CACHE;
+  const all=items();
+  const byName={};all.forEach(x=>{const k=normName(x.name);if(!byName[k])byName[k]=x;});
+  const groups={};
+  bodyCatalog(all).forEach(e=>{
+    let prof, line, conf=1, brand="";
+    const twin=byName[normName(e.label)];
+    if(e.kind==="matching"){prof=e.src;line=e.src.id;brand=e.src.brand;}
+    else if(e.kind==="other"){
+      // a named product usually has a fragrance of the same name in your library — use its real notes
+      if(twin){prof=twin;line=twin.id;brand=twin.brand;}
+      else{prof=e.src;line="n:"+normName(e.label);conf=0.6;}   // unknown: borrow the scent it's worn with, discounted
+    }else{
+      const noNotes=!(e.src.notes||"").trim();
+      prof=(noNotes&&twin)?Object.assign({},e.src,{notes:twin.notes,families:e.src.families.length?e.src.families:twin.families}):e.src;
+      line=twin?twin.id:"s:"+e.src.id;
+      brand=e.brand||(twin?twin.brand:"");
+    }
+    const hasNotes=!!(prof.notes||"").trim();
+    const rank=e.kind==="standalone"&&hasNotes?0:e.kind==="matching"?1:(e.kind==="other"&&conf===1)?2:e.kind==="standalone"?3:4;
+    const gk=normName(e.label)+"|"+e.type;
+    (groups[gk]=groups[gk]||[]).push({e,prof,line,conf,brand,rank});
+  });
+  const products=[], alias={};
+  Object.keys(groups).forEach(gk=>{
+    const g=groups[gk].sort((a,b)=>a.rank-b.rank), top=g[0];
+    const prof={id:top.prof.id,name:top.prof.name,brand:top.prof.brand||"",notes:top.prof.notes||"",
+      families:top.prof.families||[],seasons:top.prof.seasons||[],rating:top.prof.rating||0,fav:!!top.prof.fav};
+    const p={key:top.e.key,aliases:g.map(x=>x.e.key),label:top.e.label,type:top.e.type,
+      step:BODY_STEP[top.e.type]||"Finish",kind:top.e.kind,kinds:[...new Set(g.map(x=>x.e.kind))],
+      brand:top.brand||(g.find(x=>x.brand)||{}).brand||"",line:top.line,conf:top.conf,prof,src:prof};
+    p.notesList=prodNotes(prof.notes,p.label);
+    products.push(p);p.aliases.forEach(k=>{alias[k]=p;});
+  });
+  // how distinctive each note is across everything you own: vanilla is everywhere, fig is not
+  const docs=all.map(x=>noteList(x.notes)).concat(products.map(p=>p.notesList));
+  const df={},tdf={};
+  docs.forEach(d=>{const ws=new Set(),ts=new Set();d.forEach(n=>{n.norm.forEach(w=>ws.add(w));if(n.tag)ts.add(n.tag);});
+    ws.forEach(w=>{df[w]=(df[w]||0)+1;});ts.forEach(t=>{tdf[t]=(tdf[t]||0)+1;});});
+  const N=Math.max(3,docs.length), den=Math.log(N/2);
+  const w=c=>Math.max(0.15,Math.min(1,Math.log(N/Math.max(1,c))/den));
+  // which products mention which words/families of notes, so unrelated pairs are skipped outright
+  const byWord={},byTag={};
+  products.forEach((p,i)=>p.notesList.forEach(n=>{n.norm.forEach(x=>{(byWord[x]=byWord[x]||new Set()).add(i);});if(n.tag)(byTag[n.tag]=byTag[n.tag]||new Set()).add(i);}));
+  BP_CACHE={all,products,alias,byScent:{},byWord,byTag,gen:++BP_GEN,idf:x=>w(df[x]||1),tidf:t=>w(tdf[t]||1)};
+  return BP_CACHE;
+}
+/* How much of A's character does B echo? Shared rare notes count far more than shared
+   common ones, and A's opening notes count more than its base. Returns coverage both ways. */
+function phraseWords(n){
+  if(!n.words)n.words=n.phrase.split(/[\s.-]+/).filter(x=>x.length>2&&!NOTE_SKIP.has(x));
+  return n.words;
+}
+const NO_FIT={covA:0,covB:0,word:null,tag:null,wordIdf:0,topNote:false};
+function noteFit(A,B,ix){
+  const wOf=n=>{if(n._g!==ix.gen){let m=0.15;n.norm.forEach(x=>{const v=ix.idf(x);if(v>m)m=v;});n._w=m;n._g=ix.gen;}return n._w;};
+  const posB=j=>1/(1+0.25*j);
+  const colBest=new Array(B.length).fill(0);
+  let numA=0,denA=0,best=null,bestV=0,bestA=null,tagBest=null,tagV=0;
+  let bestIdf=0,bestPos=-1;
+  A.forEach((a,ai)=>{
+    const wa=wOf(a);denA+=a.pw*wa;
+    let m=0,word=null,viaTag=null,mIdf=0;
+    B.forEach((b,j)=>{
+      let v=0,sw=null,swv=0;
+      a.norm.forEach(x=>{if(b.norm.has(x)){const iv=ix.idf(x);if(iv>swv){swv=iv;sw=x;}}});
+      // "brown sugar" vs "sugar" earns sugar's (low) credit, not brown's
+      if(sw){
+        v=swv;
+        // "sugar" only covers half of "brown sugar"; "fig" fully covers "fig leaf"
+        const wa2=phraseWords(a);
+        if(wa2.length>1&&!wa2.every(x=>b.norm.has(x)||b.norm.has(stemOf(x))))v*=0.75;
+      }else if(a.tag&&a.tag===b.tag)v=0.4*Math.min(wa,wOf(b));
+      if(v>colBest[j])colBest[j]=v;
+      const vp=v*posB(j);
+      if(vp>m){m=vp;word=sw;viaTag=sw?null:(v?a.tag:null);mIdf=sw?swv:0;}
+    });
+    numA+=a.pw*Math.min(m,wa);
+    if(word&&a.pw*m>bestV){bestV=a.pw*m;best=word;bestA=a;bestIdf=mIdf;bestPos=ai;}
+    if(!word&&viaTag&&a.pw*m>tagV){tagV=a.pw*m;tagBest=viaTag;}
+  });
+  let numB=0,denB=0;
+  B.forEach((b,j)=>{const wb=wOf(b);denB+=b.pw*wb;numB+=b.pw*Math.min(colBest[j],wb);});
+  // a fragrance's character lives mostly in its first few notes, so a long pyramid
+  // shouldn't make every match look tiny: measure against roughly the first five
+  const cap=L=>L.slice(0,5).reduce((s,n)=>s+n.pw*wOf(n),0);
+  denA=Math.min(denA,cap(A)||denA);denB=Math.min(denB,cap(B)||denB);
+  let shown=best;
+  if(best&&bestA){   // show a real word ("berries"), not its stem ("berr")
+    const words=bestA.phrase.split(/[\s.-]+/).filter(x=>x.length>2&&!NOTE_SKIP.has(x));
+    shown=words.find(x=>x===best)||words.find(x=>stemOf(x)===best)||best;
+  }
+  return {covA:denA?Math.min(1,numA/denA):0,covB:denB?Math.min(1,numB/denB):0,word:shown,tag:tagBest,wordIdf:bestIdf,topNote:bestPos===0};
+}
+function bodyFit(it,p,ix,itNotes,partners,cs,noOverlap){
+  const f=noOverlap?NO_FIT:noteFit(itNotes,p.notesList,ix);
+  const aff=(0.65*f.covA+0.35*f.covB)*p.conf;
+  const shared=p.prof.families.filter(x=>it.families.includes(x));
+  const comp=!shared.length&&p.prof.families.some(x=>partners.has(x));
+  let s=aff*3+(shared.length?0.25+0.1*Math.min(shared.length-1,2):0)+(comp?0.1:0);
+  if(p.prof.seasons.includes(cs))s+=0.15;
+  if(p.prof.seasons.some(x=>it.seasons.includes(x)))s+=0.05;
+  s+=(p.prof.rating||0)*0.03+(p.prof.fav?0.08:0);
+  const why=f.word?"both "+f.word:f.tag?"both "+(TAG_LABEL[f.tag]||f.tag):shared.length?shared[0].toLowerCase():"";
+  // sharing the scent's opening note counts as distinctive even when that note is common (milk with milk)
+  const distinctive=f.wordIdf>=BODY_T.distinct||f.topNote;
+  const strong=aff>=BODY_T.strong
+    ||(aff>=BODY_T.withFamily&&shared.length>0&&distinctive)
+    ||(!p.notesList.length&&shared.length>=2);
+  return {s,aff,why,strong,wordIdf:f.wordIdf,topNote:f.topNote};
+}
+function bodyRanked(it){
+  const ix=bodyIndex();
+  if(ix.byScent[it.id])return ix.byScent[it.id];
+  const cs=currentSeason(), itNotes=noteList(it.notes);
+  const partners=new Set();it.families.forEach(f=>(PAIR_MAP[f]||[]).forEach(x=>partners.add(x)));
+  const own=new Set((getBody(it.id)||[]).map(b=>normName(b.n)+"|"+(b.t||"Other")));
+  const near=new Set();
+  itNotes.forEach(n=>{n.norm.forEach(x=>{(ix.byWord[x]||[]).forEach(i=>near.add(i));});if(n.tag)(ix.byTag[n.tag]||[]).forEach(i=>near.add(i));});
+  const out=[];
+  ix.products.forEach((p,i)=>{
+    if(p.line===it.id||p.prof.id===it.id)return;           // its own line is already listed on the card
+    if(own.has(normName(p.label)+"|"+p.type))return;         // already under "Other products to layer"
+    out.push(Object.assign({p},bodyFit(it,p,ix,itNotes,partners,cs,!near.has(i))));
+  });
+  out.sort((a,b)=>b.s-a.s);
+  ix.byScent[it.id]=out;
+  return out;
+}
+/* per-scent curation of body-care pairings (stored keys may be older aliases of a product) */
 function getBPairs(id){
   const rec=id>=100000?(USER.custom.find(x=>x.id===id)||{}):(USER.ov[id]||{});
   const b=rec.bpairs||{};
@@ -8714,162 +10435,110 @@ function setBPairs(id,bp){
   else USER.ov[id]=Object.assign({},USER.ov[id],{bpairs:bp});
   queueSave();
 }
+function sameProduct(k){const p=bodyIndex().alias[k];return p?new Set(p.aliases):new Set([k]);}
+function canonKey(k){const p=bodyIndex().alias[k];return p?p.key:k;}
 function pinBody(id,key){
-  const b=getBPairs(id);
-  if(!b.pin.includes(key))b.pin.push(key);
-  b.hide=b.hide.filter(k=>k!==key);
+  const b=getBPairs(id),same=sameProduct(key),ck=canonKey(key);
+  b.pin=b.pin.filter(k=>!same.has(k));b.pin.push(ck);
+  b.hide=b.hide.filter(k=>!same.has(k));
   setBPairs(id,b);softUpdate(id);flash("Added");
 }
 function unpinBody(id,key){
-  const b=getBPairs(id);b.pin=b.pin.filter(k=>k!==key);
+  const b=getBPairs(id),same=sameProduct(key);
+  b.pin=b.pin.filter(k=>!same.has(k));
   setBPairs(id,b);softUpdate(id);
 }
 function hideBody(id,key){
-  const b=getBPairs(id);
-  if(!b.hide.includes(key))b.hide.push(key);
-  b.pin=b.pin.filter(k=>k!==key);
+  const b=getBPairs(id),same=sameProduct(key);
+  b.pin=b.pin.filter(k=>!same.has(k));
+  b.hide=b.hide.filter(k=>!same.has(k));b.hide.push(canonKey(key));
   setBPairs(id,b);softUpdate(id);
 }
-/* ---------- body pairing allocation ----------
-   Scored globally rather than per card, so one crowd-pleasing lotion can't win
-   every scent. Products that have already been handed out get a rising penalty,
-   which pushes the long tail of the shelf into circulation. */
-let BP_CACHE=null;
-function invalidateBodyIndex(){BP_CACHE=null;}
-function bodyScore(it,p,itNotes,partners,cs){
-  const shared=p.src.families.find(f=>it.families.includes(f));
-  const comp=p.src.families.find(f=>partners.has(f));
-  const aff=noteAffinity(itNotes,noteList((p.src.notes||"")+", "+(p.label||"")));
-  const sim=aff.score;
-  let s=sim*3.4;                                   // shared notes lead
-  let why="";
-  if(aff.exact)why="both "+aff.exact;
-  else if(sim>=0.25)why="similar notes";
-  if(shared){s+=1.5;if(!why)why=shared.toLowerCase();}
-  else if(comp){s+=0.9;if(!why)why=comp.toLowerCase()+" pairs well";}
-  else if(p.kind==="standalone"&&!p.src.families.length){s+=0.5;if(!why)why="goes with anything";}
-  const seasonShare=p.src.seasons.filter(x=>it.seasons.includes(x)).length;
-  s+=Math.min(seasonShare,2)*0.25;
-  if(p.src.seasons.includes(cs))s+=0.4;
-  if(p.src.rating)s+=p.src.rating*0.08;
-  if(p.src.fav)s+=0.2;
-  s+=jit(it.id*31+7,p.src.id+p.type.length*13)*0.6;
-  if(!why)why=p.src.families[0]?p.src.families[0].toLowerCase():"";
-  return {s,why};
-}
-function bodyPairIndex(){
-  if(BP_CACHE)return BP_CACHE;
-  const all=items(), cat=bodyCatalog(all), cs=currentSeason();
-  const usage={}, map={};
-  const PEN=0.9;               // congestion price per prior use
-  const DEPTH=12;              // keep a ranked reserve per scent for hides/pins
-  // deterministic but non-alphabetical order, so no scent is systematically served first
-  const order=all.slice().sort((a,b)=>jit(a.id,101)-jit(b.id,101));
-  order.forEach(it=>{
-    const itNotes=noteList(it.notes);
-    const partners=new Set();it.families.forEach(f=>(PAIR_MAP[f]||[]).forEach(x=>partners.add(x)));
-    const scored=[];
-    cat.forEach(p=>{
-      if(p.src.id===it.id)return;
-      const r=bodyScore(it,p,itNotes,partners,cs);
-      scored.push({p,base:r.s,why:r.why});
-    });
-    scored.forEach(o=>{o.s=o.base-(usage[o.p.key]||0)*PEN;});
-    scored.sort((a,b)=>b.s-a.s);
-    const keyOf=o=>(o.p.label+"|"+o.p.type).toLowerCase();
-    const picked=[], seenType=new Set(), seenSrc=new Set(), seenKey=new Set();
-    const push=o=>{picked.push(o);seenType.add(o.p.type);seenSrc.add(o.p.src.id);seenKey.add(keyOf(o));
-                   if(picked.length<=4)usage[o.p.key]=(usage[o.p.key]||0)+1;};
-    // one guaranteed slot for the standalone shelf
-    const shelfScored=scored.filter(o=>o.p.kind==="standalone");
-    if(shelfScored.length){
-      const reserve=Math.min(shelfScored.length/scored.length>=0.25?2:1,shelfScored.length,4);
-      for(const o of shelfScored){
-        if(picked.length>=reserve)break;
-        if(seenKey.has(keyOf(o))||seenType.has(o.p.type)||seenSrc.has(o.p.src.id))continue;
-        push(o);
-      }
-    }
-    for(const o of scored){
-      if(picked.length>=DEPTH)break;
-      if(seenKey.has(keyOf(o)))continue;
-      if(picked.length<4&&(seenType.has(o.p.type)||seenSrc.has(o.p.src.id)))continue;
-      push(o);
-    }
-    for(const o of scored){          // top up the reserve without the diversity rules
-      if(picked.length>=DEPTH)break;
-      if(seenKey.has(keyOf(o)))continue;
-      push(o);
-    }
-    map[it.id]=picked;
-  });
-  BP_CACHE={map,cat};
-  return BP_CACHE;
-}
+/* ---------- choosing what to show ----------
+   Fit first, per scent. Within each routine step, the strongest few matches take turns:
+   the pick is steady all day, changes tomorrow, or changes when you tap Shuffle. */
+let BSHUF={};
+function shuffleBody(id){BSHUF[id]=(BSHUF[id]||0)+1;softUpdate(id);}
+function strHash(s){let h=2166136261;for(let i=0;i<s.length;i++){h^=s.charCodeAt(i);h=Math.imul(h,16777619);}return h>>>0;}
+function seeded(seed){let h=seed>>>0;return ()=>{h=(h+0x6D2B79F5)>>>0;let t=h;t=Math.imul(t^(t>>>15),t|1);t^=t+Math.imul(t^(t>>>7),t|61);return((t^(t>>>14))>>>0)/4294967296;};}
 function bodySuggest(it,all){
-  const cur=getBPairs(it.id);
-  const hidden=new Set(cur.hide);
-  const idx=bodyPairIndex();
-  const full=idx.cat;
-  const pinnedList=cur.pin.map(k=>full.find(p=>p.key===k)).filter(Boolean)
-    .map(p=>({p,s:99,why:"",pinned:true}));
-  const slots=Math.max(0,4-pinnedList.length);
-  const ranked=(idx.map[it.id]||[]).filter(o=>!hidden.has(o.p.key)&&!cur.pin.includes(o.p.key));
-  const out=[], seenType=new Set(pinnedList.map(o=>o.p.type)), seenKey=new Set(), seenSrc=new Set(pinnedList.map(o=>o.p.src.id));
-  for(const o of ranked){
-    if(out.length>=slots)break;
-    const k=(o.p.label+"|"+o.p.type).toLowerCase();
-    if(seenKey.has(k)||seenSrc.has(o.p.src.id))continue;
-    out.push(o);seenKey.add(k);seenType.add(o.p.type);seenSrc.add(o.p.src.id);
-  }
-  for(const o of ranked){          // relax if the shelf is too small to fill four
-    if(out.length>=slots)break;
-    const k=(o.p.label+"|"+o.p.type).toLowerCase();
-    if(seenKey.has(k))continue;
-    out.push(o);seenKey.add(k);
-  }
-  return pinnedList.concat(out);
+  const ix=bodyIndex(), cur=getBPairs(it.id), ranked=bodyRanked(it);
+  const hidden=new Set();cur.hide.forEach(k=>{const p=ix.alias[k];hidden.add(p?p.key:k);});
+  const pinKeys=[];cur.pin.forEach(k=>{const p=ix.alias[k];if(p&&!pinKeys.includes(p.key))pinKeys.push(p.key);});
+  const pinned=pinKeys.slice(0,4).map(k=>{
+    const r=ranked.find(o=>o.p.key===k);
+    return Object.assign({},r||{p:ix.alias[k],s:99,why:"",strong:true},{pinned:true});
+  });
+  const usedLine=new Set(pinned.map(o=>o.p.line)), usedKey=new Set(pinned.map(o=>o.p.key));
+  const filled={Shower:0,Moisturize:0,Finish:0};pinned.forEach(o=>{filled[o.p.step]=(filled[o.p.step]||0)+1;});
+  const pool={Shower:[],Moisturize:[],Finish:[]};
+  ranked.forEach(o=>{if(o.strong&&!hidden.has(o.p.key)&&!usedKey.has(o.p.key))pool[o.p.step].push(o);});
+  const rnd=seeded(strHash(it.id+"|"+todayISO()+"|"+(BSHUF[it.id]||0)));
+  let canShuffle=false;
+  const draw=st=>{
+    const c=pool[st].filter(o=>!usedLine.has(o.p.line));
+    if(!c.length)return null;
+    const top=c[0].s;
+    let band=c.filter(o=>o.s>=top-BODY_T.band).slice(0,6);
+    if(band.length<2)band=c.slice(0,Math.min(2,c.length));
+    if(band.length>1)canShuffle=true;
+    const floor=band[band.length-1].s-0.15;
+    const ws=band.map(o=>Math.max(0.05,o.s-floor));
+    let r=rnd()*ws.reduce((a,b)=>a+b,0),pick=band[band.length-1];
+    for(let i=0;i<band.length;i++){r-=ws[i];if(r<=0){pick=band[i];break;}}
+    pool[st]=pool[st].filter(o=>o!==pick);
+    return pick;
+  };
+  const out=pinned.slice();
+  const take=st=>{
+    const o=draw(st);
+    if(!o)return false;
+    out.push(o);usedLine.add(o.p.line);usedKey.add(o.p.key);filled[st]++;return true;
+  };
+  // one for the shower, up to two moisturizers, one to finish — only if they genuinely fit
+  ["Shower","Moisturize","Moisturize","Finish"].forEach(st=>{if(out.length<4&&filled[st]<STEP_QUOTA[st])take(st);});
+  // spare slots go to whichever steps still have strong matches
+  for(const st of ["Moisturize","Shower","Finish"]){while(out.length<4&&take(st));}
+  out.sort((a,b)=>STEP_ORDER.indexOf(a.p.step)-STEP_ORDER.indexOf(b.p.step)||(b.pinned?1:0)-(a.pinned?1:0)||b.s-a.s);
+  out.canShuffle=canShuffle;
+  out.strongCount=ranked.filter(o=>o.strong&&!hidden.has(o.p.key)).length;
+  return out;
 }
 /* ---------- the reverse view: which scents suit a given body product ---------- */
 function scentsForProduct(p,limit){
-  const all=items(), cs=currentSeason();
-  const pNotes=noteList(((p.src?p.src.notes:p.notes)||"")+", "+((p.src?p.src.name:p.name)||""));
-  const pFams=(p.src?p.src.families:p.families)||[];
-  const pSeasons=(p.src?p.src.seasons:p.seasons)||[];
-  const partners=new Set();pFams.forEach(f=>(PAIR_MAP[f]||[]).forEach(x=>partners.add(x)));
-  const srcId=p.src?p.src.id:p.id;
-  const scored=all.filter(x=>x.id!==srcId).map(x=>{
-    const aff=noteAffinity(pNotes,noteList(x.notes));
-    const sim=aff.score;
-    const shared=x.families.find(f=>pFams.includes(f));
-    const comp=x.families.find(f=>partners.has(f));
-    let s=sim*3.4, why="";
-    if(aff.exact)why="both "+aff.exact;
-    else if(sim>=0.25)why="similar notes";
-    if(shared){s+=1.5;if(!why)why=shared.toLowerCase();}
-    else if(comp){s+=0.9;if(!why)why=comp.toLowerCase()+" pairs well";}
-    s+=Math.min(x.seasons.filter(v=>pSeasons.includes(v)).length,2)*0.25;
-    if(x.seasons.includes(cs))s+=0.4;
-    if(x.rating)s+=x.rating*0.12;
-    if(x.fav)s+=0.3;
-    s+=jit(srcId*17+3,x.id)*0.5;
-    if(!why)why=x.families[0]?x.families[0].toLowerCase():"";
+  const ix=bodyIndex(), cs=currentSeason();
+  // p may be a raw shelf item or a catalogue product — find its merged profile
+  let prod=null;
+  if(p.aliases)prod=p;
+  else if(p.key)prod=ix.alias[p.key]||null;
+  else{const types=(p.types&&p.types.length)?p.types:[p.type||"Other"];
+    for(const t of types){if(ix.alias["s:"+p.id+":"+t]){prod=ix.alias["s:"+p.id+":"+t];break;}}}
+  if(!prod){
+    const src={id:p.id,name:p.name,brand:p.brand||"",notes:p.notes||"",families:p.families||[],seasons:p.seasons||[],rating:0,fav:false};
+    prod={label:p.name,prof:src,src,line:"s:"+p.id,conf:1,notesList:prodNotes(src.notes,p.name)};
+  }
+  const pf=prod.prof, partners=new Set();pf.families.forEach(f=>(PAIR_MAP[f]||[]).forEach(x=>partners.add(x)));
+  const scored=ix.all.map(x=>{
+    if(x.id===pf.id&&prod.line!==x.id)return null;
+    const f=noteFit(prod.notesList,noteList(x.notes),ix);
+    const aff=(0.65*f.covA+0.35*f.covB)*(prod.conf||1);
+    const shared=x.families.filter(y=>pf.families.includes(y));
+    const comp=!shared.length&&x.families.some(y=>partners.has(y));
+    let s=aff*3+(shared.length?0.25+0.1*Math.min(shared.length-1,2):0)+(comp?0.1:0);
+    if(x.seasons.includes(cs))s+=0.15;
+    if(x.seasons.some(v=>pf.seasons.includes(v)))s+=0.05;
+    s+=(x.rating||0)*0.06+(x.fav?0.15:0);
+    let why=f.word?"both "+f.word:f.tag?"both "+(TAG_LABEL[f.tag]||f.tag):shared.length?shared[0].toLowerCase():"";
+    if(prod.line===x.id){s+=5;why="same line";}
     return {x,s,why};
-  });
+  }).filter(Boolean);
   scored.sort((a,b)=>b.s-a.s);
   const out=[],brands=new Set();
-  for(const o of scored){
-    if(out.length>=(limit||4))break;
-    if(brands.has(o.x.brand))continue;      // spread across houses
-    out.push(o);brands.add(o.x.brand);
-  }
-  for(const o of scored){
-    if(out.length>=(limit||4))break;
-    if(out.includes(o))continue;
-    out.push(o);
-  }
+  for(const o of scored){if(out.length>=(limit||4))break;if(brands.has(o.x.brand))continue;out.push(o);brands.add(o.x.brand);}
+  for(const o of scored){if(out.length>=(limit||4))break;if(out.includes(o))continue;out.push(o);}
   return out;
 }
+
 
 function pairings(it,all){
   const pr=getPairs(it.id);
@@ -8941,16 +10610,18 @@ function cardHTML(it,all,scope){
     ? body.map((b,idx)=>`<div class="pair"><span class="bc-type">${esc(b.t)}</span><span class="pn">${esc(b.n)}</span><span class="pctrl" style="margin-left:auto"><button class="pbtn" title="Remove" onclick="removeBody(${it.id},${idx})">×</button></span></div>`).join("")
     : `<div class="pair pb" style="cursor:default">Nothing added yet — add a body wash, lotion or oil you layer with this.</div>`;
   const bsug=bodySuggest(it,all);
-  const bsugRows=bsug.length
+  let bStep=null;
+  const bsugRows=(bsug.length
     ? bsug.map(o=>{
-        const src=o.p.kind==="matching"?"matching set"
-                 :o.p.kind==="standalone"?(o.p.brand?esc(o.p.brand):"your shelf")
-                 :"with "+esc(o.p.src.name);
+        const cap=o.p.step!==bStep?`<div class="bstep">${o.p.step}</div>`:"";bStep=o.p.step;
+        const src=o.p.brand?esc(o.p.brand):(o.p.kind==="standalone"?"your shelf":"with "+esc(o.p.src.name));
         const tail=o.pinned?'<span class="pinned-tag">added</span>':(o.why?`<span class="pwhy">${esc(o.why)}</span>`:"");
-        const act=o.pinned?`unpinBody(${it.id},'${esc(o.p.key)}')`:`hideBody(${it.id},'${esc(o.p.key)}')`;
-        return `<div class="pair bsug"><span class="bc-type">${esc(o.p.type)}</span><span class="pn">${esc(o.p.label)}</span><span class="pb">${src}</span>${tail}<span class="pctrl"><button class="pbtn" title="${o.pinned?'Remove':'Not this one'}" onclick="${act}">×</button></span></div>`;
-      }).join("")+`<button class="addpair" onclick="openBodyPicker(${it.id})">＋ Add your own</button>`
-    : `<div class="pair pb" style="cursor:default">Tick matching products or add named ones on a few scents, and suggestions will appear here.</div><button class="addpair" onclick="openBodyPicker(${it.id})">＋ Add your own</button>`;
+        const act=o.pinned?`unpinBody(${it.id},'${jsq(o.p.key)}')`:`hideBody(${it.id},'${jsq(o.p.key)}')`;
+        return `${cap}<div class="pair bsug"><span class="bc-type">${esc(o.p.type)}</span><span class="pn">${esc(o.p.label)}</span><span class="pb">${src}</span>${tail}<span class="pctrl"><button class="pbtn" title="${o.pinned?'Remove':'Not this one'}" onclick="${act}">×</button></span></div>`;
+      }).join("")
+    : `<div class="pair pb" style="cursor:default">Nothing in your body care is a close match for this one yet. Pin one below, or add notes to shelf products to sharpen the matches.</div>`)
+    +`<button class="addpair" onclick="openBodyPicker(${it.id})">＋ Add your own</button>`;
+  const bShuf=bsug.canShuffle?`<button class="bshuf" title="Show other close matches" onclick="shuffleBody(${it.id})">↻ Shuffle</button>`:"";
   const bodyAdd=`<div class="bc-add">
       <input id="bcN-${it.id}" class="bc-input" placeholder="e.g. Vanilla body lotion (CeraVe)" onkeydown="if(event.key==='Enter')addBody(${it.id})">
       <select id="bcT-${it.id}" class="bc-sel">${BODY_TYPES.map(t=>`<option>${t}</option>`).join("")}</select>
@@ -9005,7 +10676,7 @@ function cardHTML(it,all,scope){
         <div class="match-label" style="margin-top:12px">Other products to layer</div>
         <div class="pair-list">${bodyRows}</div>
         ${bodyAdd}
-        <div class="match-label" style="margin-top:14px">Pair from your body care <span class="hinttxt">products you own, drawn from your other scents</span></div>
+        <div class="match-label bsug-head" style="margin-top:14px"><span>Pair from your body care <span class="hinttxt">closest matches you own, by routine step</span></span>${bShuf}</div>
         <div class="pair-list">${bsugRows}</div>
       </div>
       <div>
@@ -9910,35 +11581,23 @@ function onBodyPickSearch(v){bodyPickQ=v;renderBodyPick(v);}
 function renderBodyPick(q){
   const id=bodyPickTarget;
   const it=items().find(x=>x.id===id);if(!it)return;
-  const cur=getBPairs(id);
-  const pinned=new Set(cur.pin), hidden=new Set(cur.hide);
-  let list=bodyCatalog(items()).filter(p=>p.src.id!==id);
-  // de-duplicate identical product+type entries
-  const seen=new Set();
-  list=list.filter(p=>{const k=(p.label+"|"+p.type).toLowerCase();if(seen.has(k))return false;seen.add(k);return true;});
+  const ix=bodyIndex(), cur=getBPairs(id);
+  const pinned=new Set(cur.pin.map(canonKey)), hidden=new Set(cur.hide.map(canonKey));
+  let list=bodyRanked(it);                       // every product except this scent's own line, best fit first
   if(q&&q.trim()){
     const t=q.toLowerCase();
-    list=list.filter(p=>(p.label+" "+p.type+" "+(p.brand||"")+" "+p.src.name+" "+(p.src.families||[]).join(" ")).toLowerCase().includes(t));
-  }else{
-    // default: things that suit this scent, best first
-    const partners=new Set();it.families.forEach(f=>(PAIR_MAP[f]||[]).forEach(x=>partners.add(x)));
-    list=list.sort((a,b)=>{
-      const sc=p=>(p.src.families.some(f=>it.families.includes(f))?2:0)+(p.src.families.some(f=>partners.has(f))?1:0);
-      return sc(b)-sc(a)||a.type.localeCompare(b.type)||a.label.localeCompare(b.label);
-    });
+    list=list.filter(o=>(o.p.label+" "+o.p.type+" "+(o.p.brand||"")+" "+o.p.prof.name+" "+o.p.prof.notes+" "+o.p.prof.families.join(" ")).toLowerCase().includes(t));
   }
   list=list.slice(0,40);
-  const rows=list.map(p=>{
-    const isP=pinned.has(p.key), isH=hidden.has(p.key);
-    const sub=p.kind==="matching"?"matching set · "+esc(p.src.name)
-             :p.kind==="standalone"?(p.brand?esc(p.brand):"your shelf")
-             :"with "+esc(p.src.name);
-    const famColor=p.src.families&&p.src.families.length?FAM_COLOR[p.src.families[0]]:"#C9BFB0";
-    const act=isP?`unpinBody(${id},'${esc(p.key)}')`:`pinBody(${id},'${esc(p.key)}')`;
+  const rows=list.map(o=>{
+    const p=o.p, isP=pinned.has(p.key), isH=hidden.has(p.key);
+    const sub=[p.type,p.brand||(p.kind==="standalone"?"your shelf":""),o.why].filter(Boolean).map(esc).join(" · ");
+    const famColor=p.prof.families&&p.prof.families.length?FAM_COLOR[p.prof.families[0]]:"#C9BFB0";
+    const act=isP?`unpinBody(${id},'${jsq(p.key)}')`:`pinBody(${id},'${jsq(p.key)}')`;
     return `<div class="ql-row ${isP?'done':''}" onclick="${act};renderBodyPick(bodyPickQ)">
       <span class="qf" style="background:${famColor}"></span>
-      <span class="qn">${esc(p.label)}<small>${esc(p.type)} · ${sub}</small></span>
-      <span class="qmeta">${isP?'added ✓':(isH?'dismissed — tap to add':'tap to add')}</span></div>`;
+      <span class="qn">${esc(p.label)}<small>${sub}</small></span>
+      <span class="qmeta">${isP?'added ✓':(isH?'dismissed — tap to add':(o.strong?'close match':'tap to add'))}</span></div>`;
   }).join("");
   document.getElementById("bpResults").innerHTML=rows||`<div class="ql-row" style="color:var(--faint);cursor:default">No matches.</div>`;
 }
