@@ -184,6 +184,11 @@ h1 em{font-style:italic;color:var(--accent-deep)}
 .sur-strip{height:5px}
 .sur-brand{font-size:10.5px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--faint);padding:14px 16px 0}
 .sur-name{font-family:"Fraunces",serif;font-size:25px;font-weight:500;color:var(--ink);padding:2px 16px 0;line-height:1.15}
+.sur-link{display:block;width:100%;border:none;background:none;text-align:left;cursor:pointer}
+.sur-link .sur-go{font-family:"Hanken Grotesk",sans-serif;font-size:10.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--accent-deep);margin-left:9px;white-space:nowrap;vertical-align:middle}
+.sur-link:hover .sur-n{text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:4px}
+.sur-link:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:6px}
+.card.spot{box-shadow:0 0 0 2px var(--accent),var(--shadow);transition:box-shadow .3s}
 .sur-fam{font-size:11px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--accent-deep);padding:7px 16px 0}
 .sur-notes{font-size:13px;color:var(--muted);padding:8px 16px 0;line-height:1.5}
 .sur-rest{font-size:12px;color:var(--faint);font-weight:600;padding:10px 16px 0}
@@ -266,6 +271,23 @@ h1 em{font-style:italic;color:var(--accent-deep)}
 .iconbtn:hover{border-color:var(--ink);color:var(--ink)}
 .iconbtn.fav.on{color:#d23a5c;border-color:#eebcc6;background:#fdf2f4}
 .wearinfo{font-size:11.5px;color:var(--faint);font-weight:500;padding:0 21px 12px;margin-top:-4px}
+.withrow{display:flex;flex-wrap:wrap;align-items:center;gap:6px;padding:0 18px 12px 21px}
+.withrow.open{display:block;border-top:1px dashed var(--line);padding-top:10px}
+.wr-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:7px}
+.wr-lbl{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--faint)}
+.wr-x,.withlink{border:none;background:none;color:var(--accent-deep);font-size:12px;font-weight:700;cursor:pointer;padding:3px 2px}
+.wr-done,.wr-chips{display:flex;flex-wrap:wrap;gap:6px}
+.wr-done{margin-bottom:8px}
+.wchip{display:inline-flex;align-items:center;gap:6px;max-width:100%;border:1px solid var(--line);background:var(--card);border-radius:999px;padding:5px 11px;font-size:12px;font-weight:600;color:var(--ink);cursor:pointer;text-align:left}
+.wchip small{color:var(--faint);font-weight:600;font-size:10.5px;white-space:nowrap}
+.wchip:hover{border-color:var(--accent)}
+.wchip.other{border-style:dashed;color:var(--muted)}
+.wchip.on{background:var(--tint);border-color:var(--accent);padding:0;gap:0;overflow:hidden;cursor:default}
+.wchip.on .wc-main{border:none;background:none;padding:5px 10px;font-size:12px;font-weight:700;color:var(--accent-deep);cursor:pointer;text-align:left}
+.wc-pin{border:none;border-left:1px solid var(--accent);background:var(--card);color:var(--accent-deep);font-size:11px;font-weight:700;padding:5px 10px;cursor:pointer;white-space:nowrap}
+.wc-saved{padding:0 9px 0 0;font-size:11px}
+.wc-dot{width:7px;height:7px;border-radius:50%;flex:none}
+.wchip:focus-visible,.wc-main:focus-visible,.wc-pin:focus-visible,.withlink:focus-visible,.wr-x:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 .wearinfo b{color:var(--muted);font-weight:700}
 
 /* Expanded */
@@ -957,7 +979,8 @@ const INITIAL_USER = /*userdata*/{
       "rating": 3,
       "families": [
         "Floral",
-        "Fruity"
+        "Fruity",
+        "Spicy"
       ],
       "sizes": [
         "Full Size"
@@ -1581,6 +1604,9 @@ const INITIAL_USER = /*userdata*/{
       ],
       "ftypes": [
         "EDP"
+      ],
+      "wears": [
+        "2026-11-18"
       ]
     },
     "38": {
@@ -1626,6 +1652,10 @@ const INITIAL_USER = /*userdata*/{
       ],
       "ftypes": [
         "EDP"
+      ],
+      "families": [
+        "Gourmand",
+        "Sweet"
       ]
     },
     "40": {
@@ -1685,7 +1715,8 @@ const INITIAL_USER = /*userdata*/{
         "2026-07-17",
         "2026-07-19",
         "2026-10-06",
-        "2026-10-07"
+        "2026-10-07",
+        "2026-11-15"
       ],
       "rating": 5,
       "fav": true,
@@ -1893,6 +1924,9 @@ const INITIAL_USER = /*userdata*/{
       ],
       "ftypes": [
         "EDP"
+      ],
+      "wears": [
+        "2026-11-12"
       ]
     },
     "47": {
@@ -2142,7 +2176,8 @@ const INITIAL_USER = /*userdata*/{
         "Full Size"
       ],
       "wears": [
-        "2026-07-27"
+        "2026-07-27",
+        "2026-11-02"
       ],
       "ftypes": [
         "EDP"
@@ -2226,7 +2261,8 @@ const INITIAL_USER = /*userdata*/{
         "2026-06-13",
         "2026-07-03",
         "2026-09-01",
-        "2026-09-26"
+        "2026-09-26",
+        "2026-11-09"
       ],
       "families": [
         "Fresh",
@@ -2277,7 +2313,8 @@ const INITIAL_USER = /*userdata*/{
       ],
       "multiples": true,
       "wears": [
-        "2026-10-13"
+        "2026-10-13",
+        "2026-11-02"
       ],
       "pairs": {
         "pin": {
@@ -3289,6 +3326,9 @@ const INITIAL_USER = /*userdata*/{
       ],
       "ftypes": [
         "EDP"
+      ],
+      "wears": [
+        "2026-11-11"
       ]
     },
     "95": {
@@ -3463,10 +3503,10 @@ const INITIAL_USER = /*userdata*/{
       ]
     },
     "103": {
-      "notes": "Ambrette, sandalwood, lavender milk",
-      "rating": 2,
+      "notes": "Ambrette, sandalwood, lavender, milk",
+      "rating": 3,
       "price": 6,
-      "memo": "Samples only",
+      "memo": "",
       "families": [
         "Woody",
         "Amber",
@@ -3478,6 +3518,15 @@ const INITIAL_USER = /*userdata*/{
       ],
       "ftypes": [
         "EDP"
+      ],
+      "bpairs": {
+        "pin": [],
+        "hide": [
+          "m:131:Body oil"
+        ]
+      },
+      "wears": [
+        "2026-11-09"
       ]
     },
     "104": {
@@ -3626,6 +3675,21 @@ const INITIAL_USER = /*userdata*/{
       ],
       "ftypes": [
         "EDP"
+      ],
+      "pairs": {
+        "pin": {
+          "layer": [],
+          "rot": []
+        },
+        "hide": {
+          "layer": [
+            100024
+          ],
+          "rot": []
+        }
+      },
+      "wears": [
+        "2026-11-03"
       ]
     },
     "110": {
@@ -3704,11 +3768,24 @@ const INITIAL_USER = /*userdata*/{
       "wears": [
         "2026-08-26",
         "2026-09-11",
-        "2026-10-05"
+        "2026-10-05",
+        "2026-11-17"
       ],
       "ftypes": [
         "EDP"
-      ]
+      ],
+      "pairs": {
+        "pin": {
+          "layer": [],
+          "rot": []
+        },
+        "hide": {
+          "layer": [],
+          "rot": [
+            105
+          ]
+        }
+      }
     },
     "113": {
       "price": 99,
@@ -3820,7 +3897,7 @@ const INITIAL_USER = /*userdata*/{
       "notes": "Skin musk, bergamot, blonde woods",
       "price": 139,
       "rating": 5,
-      "fav": false,
+      "fav": true,
       "pairs": {
         "pin": {
           "layer": [
@@ -3850,7 +3927,8 @@ const INITIAL_USER = /*userdata*/{
         "2026-06-18",
         "2026-09-10",
         "2026-09-21",
-        "2026-10-06"
+        "2026-10-06",
+        "2026-11-15"
       ],
       "matchbody": [
         "Body wash",
@@ -5050,6 +5128,9 @@ const INITIAL_USER = /*userdata*/{
       ],
       "ftypes": [
         "Extrait"
+      ],
+      "wears": [
+        "2026-11-06"
       ]
     },
     "171": {
@@ -5134,11 +5215,26 @@ const INITIAL_USER = /*userdata*/{
       ],
       "wears": [
         "2026-09-24",
-        "2026-10-08"
+        "2026-10-08",
+        "2026-11-18"
       ],
       "ftypes": [
         "Extrait"
-      ]
+      ],
+      "pairs": {
+        "pin": {
+          "layer": [],
+          "rot": [
+            37
+          ]
+        },
+        "hide": {
+          "layer": [],
+          "rot": [
+            130
+          ]
+        }
+      }
     },
     "175": {
       "notes": "Strawberry, coconut milk, almond cream, palo santo, tonka bean absolute ",
@@ -5177,7 +5273,8 @@ const INITIAL_USER = /*userdata*/{
       ],
       "wears": [
         "2026-08-12",
-        "2026-10-28"
+        "2026-10-28",
+        "2026-11-03"
       ],
       "ftypes": [
         "Extrait",
@@ -5367,7 +5464,7 @@ const INITIAL_USER = /*userdata*/{
       "notes": "Lavender, vanilla, milk, chai spices, tonka bean, cashmeran, ambroxan, mystical crystals",
       "family": "Floral",
       "price": 23,
-      "rating": 3,
+      "rating": 4,
       "families": [
         "Gourmand",
         "Floral",
@@ -5379,6 +5476,9 @@ const INITIAL_USER = /*userdata*/{
       ],
       "ftypes": [
         "Perfume Oil"
+      ],
+      "wears": [
+        "2026-11-13"
       ]
     },
     "186": {
@@ -5536,8 +5636,15 @@ const INITIAL_USER = /*userdata*/{
         "Perfume Oil"
       ],
       "wears": [
-        "2026-10-22"
-      ]
+        "2026-10-22",
+        "2026-11-13"
+      ],
+      "bpairs": {
+        "pin": [],
+        "hide": [
+          "s:900022:Body oil"
+        ]
+      }
     },
     "191": {
       "notes": "Vanilla milkshake, vetiver, lavender maillette, beeswax absolute, golden orbs of amber, ambroxan",
@@ -5560,7 +5667,8 @@ const INITIAL_USER = /*userdata*/{
       ],
       "wears": [
         "2026-07-09",
-        "2026-09-05"
+        "2026-09-05",
+        "2026-11-06"
       ],
       "ftypes": [
         "Extrait",
@@ -5591,12 +5699,13 @@ const INITIAL_USER = /*userdata*/{
         "Summer",
         "Fall"
       ],
-      "price": 38,
+      "price": 100,
       "rating": 5,
       "wears": [
         "2026-06-12",
         "2026-07-03",
-        "2026-08-13"
+        "2026-08-13",
+        "2026-11-05"
       ],
       "families": [
         "Citrus",
@@ -5611,7 +5720,8 @@ const INITIAL_USER = /*userdata*/{
       "ftypes": [
         "Extrait",
         "Perfume Oil"
-      ]
+      ],
+      "fav": true
     },
     "194": {
       "notes": "Spring rain, pink pepper, saucer magnolia, peony, raspberry, cotton, cedar",
@@ -5703,7 +5813,8 @@ const INITIAL_USER = /*userdata*/{
         "2026-07-18",
         "2026-07-19",
         "2026-07-31",
-        "2026-09-30"
+        "2026-09-30",
+        "2026-11-16"
       ],
       "memo": "Special Order Catalog",
       "seasons": [
@@ -6380,7 +6491,9 @@ const INITIAL_USER = /*userdata*/{
       "rating": 4,
       "price": 35,
       "fav": false,
-      "wears": [],
+      "wears": [
+        "2026-11-11"
+      ],
       "matchbody": [
         "Body oil"
       ],
@@ -6547,7 +6660,8 @@ const INITIAL_USER = /*userdata*/{
       "fav": true,
       "wears": [
         "2026-08-12",
-        "2026-09-16"
+        "2026-09-16",
+        "2026-11-10"
       ],
       "bpairs": {
         "pin": [
@@ -6888,7 +7002,8 @@ const INITIAL_USER = /*userdata*/{
       "price": 175,
       "fav": false,
       "wears": [
-        "2026-09-05"
+        "2026-09-05",
+        "2026-11-08"
       ],
       "ftypes": [
         "EDP"
@@ -6971,7 +7086,8 @@ const INITIAL_USER = /*userdata*/{
       "price": 46,
       "fav": false,
       "wears": [
-        "2026-09-26"
+        "2026-09-26",
+        "2026-11-08"
       ],
       "ftypes": [
         "EDP"
@@ -7273,7 +7389,8 @@ const INITIAL_USER = /*userdata*/{
       "price": 65,
       "fav": false,
       "wears": [
-        "2026-09-29"
+        "2026-09-29",
+        "2026-11-12"
       ],
       "ftypes": [
         "EDP"
@@ -7304,7 +7421,8 @@ const INITIAL_USER = /*userdata*/{
       "fav": false,
       "wears": [
         "2026-08-18",
-        "2026-09-19"
+        "2026-09-19",
+        "2026-11-10"
       ],
       "pairs": {
         "pin": {
@@ -7314,7 +7432,9 @@ const INITIAL_USER = /*userdata*/{
           ]
         },
         "hide": {
-          "layer": [],
+          "layer": [
+            2
+          ],
           "rot": [
             118
           ]
@@ -7615,7 +7735,7 @@ const INITIAL_USER = /*userdata*/{
         "Winter"
       ],
       "sizes": [
-        "Full Size"
+        "Travel Size"
       ],
       "multiples": false,
       "rating": 4,
@@ -7626,6 +7746,7 @@ const INITIAL_USER = /*userdata*/{
         "2026-10-27"
       ],
       "ftypes": [
+        "Extrait",
         "Perfume Oil"
       ]
     },
@@ -7722,6 +7843,7 @@ const INITIAL_USER = /*userdata*/{
         "2026-10-17"
       ],
       "ftypes": [
+        "Extrait",
         "Perfume Oil"
       ]
     },
@@ -7748,7 +7870,8 @@ const INITIAL_USER = /*userdata*/{
       "price": 44,
       "fav": false,
       "wears": [
-        "2026-10-31"
+        "2026-10-31",
+        "2026-11-04"
       ],
       "ftypes": [
         "Extrait",
@@ -7775,7 +7898,7 @@ const INITIAL_USER = /*userdata*/{
         "Full Size"
       ],
       "multiples": false,
-      "rating": 3,
+      "rating": 4,
       "price": 22,
       "fav": false,
       "wears": [
@@ -7783,7 +7906,22 @@ const INITIAL_USER = /*userdata*/{
       ],
       "ftypes": [
         "Perfume Oil"
-      ]
+      ],
+      "pairs": {
+        "pin": {
+          "layer": [
+            164
+          ],
+          "rot": []
+        },
+        "hide": {
+          "layer": [
+            7,
+            100009
+          ],
+          "rot": []
+        }
+      }
     },
     {
       "id": 100064,
@@ -8247,7 +8385,9 @@ const INITIAL_USER = /*userdata*/{
       "rating": 4,
       "price": 30,
       "fav": false,
-      "wears": []
+      "wears": [
+        "2026-11-05"
+      ]
     },
     {
       "id": 100080,
@@ -8277,16 +8417,667 @@ const INITIAL_USER = /*userdata*/{
       "rating": 4,
       "price": 40,
       "fav": false,
-      "wears": [],
+      "wears": [
+        "2026-11-17"
+      ],
       "bpairs": {
         "pin": [],
         "hide": [
           "s:900036:Body oil"
         ]
+      },
+      "pairs": {
+        "pin": {
+          "layer": [
+            112
+          ],
+          "rot": []
+        },
+        "hide": {
+          "layer": [],
+          "rot": [
+            24,
+            11
+          ]
+        }
       }
+    },
+    {
+      "id": 100081,
+      "brand": "Sand & Fog",
+      "name": "Cedarwood & Fig",
+      "families": [
+        "Citrus",
+        "Woody",
+        "Green"
+      ],
+      "notes": "Black currant, lemon, fig, black pepper, violet, amber, cedar wood",
+      "seasons": [
+        "Spring",
+        "Fall",
+        "Winter"
+      ],
+      "sizes": [
+        "Full Size"
+      ],
+      "ftypes": [
+        "Perfume Oil"
+      ],
+      "multiples": false,
+      "rating": 0,
+      "price": 16,
+      "fav": false,
+      "wears": [],
+      "memo": "Dupe of Noyz Shitty Day"
+    },
+    {
+      "id": 100082,
+      "brand": "Sand & Fog",
+      "name": "Date Night",
+      "families": [
+        "Gourmand",
+        "Spicy",
+        "Sweet"
+      ],
+      "notes": "Dates, vanilla, butter, caramel, sandalwood",
+      "seasons": [
+        "Fall",
+        "Winter"
+      ],
+      "sizes": [
+        "Full Size"
+      ],
+      "ftypes": [
+        "Perfume Oil"
+      ],
+      "multiples": false,
+      "rating": 0,
+      "price": 16,
+      "fav": false,
+      "wears": [],
+      "memo": "Dupe for Lush Sticky Dates"
+    },
+    {
+      "id": 100083,
+      "brand": "Sand & Fog",
+      "name": "Venice",
+      "families": [
+        "Floral",
+        "Sweet",
+        "Powdery"
+      ],
+      "notes": "Bergamot, lavender, jasmine, cashmere, wood, violet",
+      "seasons": [
+        "Spring",
+        "Summer",
+        "Fall"
+      ],
+      "sizes": [
+        "Full Size"
+      ],
+      "ftypes": [
+        "Perfume Oil"
+      ],
+      "multiples": false,
+      "rating": 0,
+      "price": 16,
+      "fav": false,
+      "wears": [],
+      "memo": "Dupe of Valentino Donna Born in Roma Green Stravaganza"
+    },
+    {
+      "id": 100084,
+      "brand": "Sand & Fog",
+      "name": "Fall Morning",
+      "families": [
+        "Gourmand",
+        "Spicy"
+      ],
+      "notes": "Cinnamon, clove, pumpkin, ginger, vanilla",
+      "seasons": [
+        "Fall",
+        "Winter"
+      ],
+      "sizes": [
+        "Full Size"
+      ],
+      "ftypes": [
+        "Perfume Oil"
+      ],
+      "multiples": false,
+      "rating": 0,
+      "price": 16,
+      "fav": false,
+      "wears": [],
+      "pairs": {
+        "pin": {
+          "layer": [],
+          "rot": []
+        },
+        "hide": {
+          "layer": [],
+          "rot": [
+            94
+          ]
+        }
+      }
+    },
+    {
+      "id": 100085,
+      "brand": "Sand & Fog",
+      "name": "Lilac Wine",
+      "families": [
+        "Floral",
+        "Woody",
+        "Powdery"
+      ],
+      "notes": "Bergamot, rose, jasmine, sandalwood",
+      "seasons": [
+        "Spring",
+        "Summer",
+        "Fall",
+        "Winter"
+      ],
+      "sizes": [
+        "Full Size"
+      ],
+      "ftypes": [
+        "Perfume Oil"
+      ],
+      "multiples": false,
+      "rating": 0,
+      "price": 16,
+      "fav": false,
+      "wears": [],
+      "memo": "Dupe of Mugler Alien Goddess"
+    },
+    {
+      "id": 100086,
+      "brand": "Sand & Fog",
+      "name": "Sweet Lavender",
+      "families": [
+        "Floral",
+        "Amber",
+        "Sweet"
+      ],
+      "notes": "Lavender, mandarin, vanilla, amber, praline",
+      "seasons": [
+        "Spring",
+        "Fall",
+        "Winter"
+      ],
+      "sizes": [
+        "Full Size"
+      ],
+      "ftypes": [
+        "Perfume Oil"
+      ],
+      "multiples": false,
+      "rating": 0,
+      "price": 16,
+      "fav": false,
+      "wears": [],
+      "memo": "Dupe of Lattafa Angham"
+    },
+    {
+      "id": 100087,
+      "brand": "Sand & Fog",
+      "name": "Coastal Cashmere",
+      "families": [
+        "Fruity",
+        "Citrus",
+        "Sweet"
+      ],
+      "notes": "Mandarin, coconut, jasmine, lily, vanilla",
+      "seasons": [
+        "Spring",
+        "Summer"
+      ],
+      "sizes": [
+        "Full Size"
+      ],
+      "ftypes": [
+        "Perfume Oil"
+      ],
+      "multiples": false,
+      "rating": 0,
+      "price": 16,
+      "fav": false,
+      "wears": []
+    },
+    {
+      "id": 100088,
+      "brand": "Sand & Fog",
+      "name": "White Fig",
+      "families": [
+        "Floral",
+        "Musk",
+        "Lactonic"
+      ],
+      "notes": "Bergamot, galbanum, violet, milky musk, cedarwood, patchouli",
+      "seasons": [
+        "Spring",
+        "Fall",
+        "Winter"
+      ],
+      "sizes": [
+        "Full Size"
+      ],
+      "ftypes": [
+        "EDT"
+      ],
+      "multiples": false,
+      "rating": 0,
+      "price": 16,
+      "fav": false,
+      "wears": []
+    },
+    {
+      "id": 100089,
+      "brand": "Elizabeth Arden",
+      "name": "Green Tea Pistachio Crunch",
+      "families": [
+        "Green",
+        "Sweet",
+        "Nutty"
+      ],
+      "notes": "Green tea, pistachio, bergamot, heliotrope, magnolia, rosewater, vanilla bean",
+      "seasons": [
+        "Spring",
+        "Summer",
+        "Fall"
+      ],
+      "sizes": [
+        "Full Size"
+      ],
+      "ftypes": [
+        "EDT"
+      ],
+      "multiples": false,
+      "rating": 0,
+      "price": 15,
+      "fav": false,
+      "wears": []
+    },
+    {
+      "id": 100090,
+      "brand": "Elizabeth Arden",
+      "name": "Green Tea",
+      "families": [
+        "Fresh",
+        "Citrus",
+        "Green"
+      ],
+      "notes": "Green tea, lemon, bergamot, jasmine, musk, amber",
+      "seasons": [
+        "Spring",
+        "Summer",
+        "Fall"
+      ],
+      "sizes": [
+        "Full Size"
+      ],
+      "ftypes": [
+        "EDT"
+      ],
+      "multiples": false,
+      "rating": 0,
+      "price": 15,
+      "fav": false,
+      "wears": []
+    },
+    {
+      "id": 100091,
+      "brand": "Sorce",
+      "name": "Dreaming Evil",
+      "families": [
+        "Woody",
+        "Amber",
+        "Spicy"
+      ],
+      "notes": "Vanilla, tonka bean, benzoin, cocoa, sheer woods, oud",
+      "seasons": [
+        "Fall",
+        "Winter"
+      ],
+      "sizes": [
+        "Full Size"
+      ],
+      "ftypes": [
+        "Extrait",
+        "Perfume Oil"
+      ],
+      "multiples": false,
+      "rating": 4,
+      "price": 80,
+      "fav": false,
+      "wears": []
+    },
+    {
+      "id": 100092,
+      "brand": "Sorce",
+      "name": "Something Wicked",
+      "families": [
+        "Woody",
+        "Amber",
+        "Spicy"
+      ],
+      "notes": "Vanilla, patchouli, sandalwood, whiskey",
+      "seasons": [
+        "Fall",
+        "Winter"
+      ],
+      "sizes": [],
+      "ftypes": [
+        "Perfume Oil"
+      ],
+      "multiples": false,
+      "rating": 0,
+      "price": 23,
+      "fav": false,
+      "wears": [],
+      "bpairs": {
+        "pin": [],
+        "hide": [
+          "m:20:Body cream",
+          "m:20:Body wash"
+        ]
+      },
+      "pairs": {
+        "pin": {
+          "layer": [],
+          "rot": []
+        },
+        "hide": {
+          "layer": [
+            20
+          ],
+          "rot": []
+        }
+      }
+    },
+    {
+      "id": 100093,
+      "brand": "Sorce",
+      "name": "Seance",
+      "families": [
+        "Woody",
+        "Spicy",
+        "Sweet"
+      ],
+      "notes": "Campari, orange, cinnamon, jasmine sambac absolute, immortelle absolute, ambrette, vanilla sugar, smoked amber, salt, sandalwood, cashmere woods",
+      "seasons": [
+        "Fall",
+        "Winter"
+      ],
+      "sizes": [],
+      "ftypes": [
+        "Perfume Oil"
+      ],
+      "multiples": false,
+      "rating": 4,
+      "price": 23,
+      "fav": false,
+      "wears": [
+        "2026-11-16"
+      ]
+    },
+    {
+      "id": 100094,
+      "brand": "Sorce",
+      "name": "Her Kind",
+      "families": [
+        "Woody",
+        "Amber",
+        "Powdery"
+      ],
+      "notes": "Amber, musk, sandalwood, benzoin, Cashmeran, myrrh, vanilla, wisps of smoke",
+      "seasons": [
+        "Fall",
+        "Winter"
+      ],
+      "sizes": [],
+      "ftypes": [
+        "Perfume Oil"
+      ],
+      "multiples": false,
+      "rating": 0,
+      "price": 23,
+      "fav": false,
+      "wears": []
+    },
+    {
+      "id": 100095,
+      "brand": "Phlur",
+      "name": "Cashmere Frost",
+      "families": [
+        "Musk",
+        "Sweet",
+        "Nutty"
+      ],
+      "notes": "Almond, tiare flower, bergamot, snowdrops, jasmine, cashmere musk, vanilla",
+      "seasons": [
+        "Fall",
+        "Winter"
+      ],
+      "sizes": [
+        "Full Size"
+      ],
+      "ftypes": [
+        "Body Mist/Spray"
+      ],
+      "multiples": false,
+      "rating": 4,
+      "price": 32,
+      "fav": false,
+      "wears": [
+        "2026-11-15"
+      ]
+    },
+    {
+      "id": 100096,
+      "brand": "Phlur",
+      "name": "Heavy Cream (EDP)",
+      "families": [
+        "Gourmand",
+        "Musk",
+        "Lactonic"
+      ],
+      "notes": "Whipped cream, coconut cream, vanilla mousse, lemon, tiare flower, orange blossom, jasmine",
+      "seasons": [
+        "Spring",
+        "Fall",
+        "Winter"
+      ],
+      "sizes": [
+        "Travel Size"
+      ],
+      "ftypes": [
+        "EDP"
+      ],
+      "multiples": false,
+      "rating": 4,
+      "price": 0,
+      "fav": false,
+      "wears": [],
+      "bpairs": {
+        "pin": [],
+        "hide": [
+          "m:70:Body wash"
+        ]
+      }
+    },
+    {
+      "id": 100097,
+      "brand": "OUAI",
+      "name": "Laurel Canyon",
+      "families": [
+        "Woody",
+        "Green",
+        "Nutty"
+      ],
+      "notes": "Almond milk, fig leaf, green mandarin, musk, cedarwood, tonka bean, jasmine, violet",
+      "seasons": [
+        "Spring",
+        "Summer",
+        "Fall",
+        "Winter"
+      ],
+      "sizes": [
+        "Travel Size"
+      ],
+      "ftypes": [
+        "EDP"
+      ],
+      "multiples": false,
+      "rating": 0,
+      "price": 30,
+      "fav": false,
+      "wears": []
+    },
+    {
+      "id": 100098,
+      "brand": "Sorce",
+      "name": "C\u2019est Noel",
+      "families": [
+        "Gourmand",
+        "Woody",
+        "Spicy"
+      ],
+      "notes": "Coffee, cinnamon, bread, chestnut, smoke, incense, snow",
+      "seasons": [
+        "Fall",
+        "Winter"
+      ],
+      "sizes": [
+        "Sample/Decant"
+      ],
+      "ftypes": [
+        "Extrait",
+        "Perfume Oil"
+      ],
+      "multiples": false,
+      "rating": 3,
+      "price": 26,
+      "fav": false,
+      "wears": []
+    },
+    {
+      "id": 100099,
+      "brand": "Sorce",
+      "name": "Nothing Burns Like the Cold",
+      "families": [
+        "Gourmand",
+        "Spicy",
+        "Sweet",
+        "Nutty"
+      ],
+      "notes": "Jasmine absolute, toasted rice, saffron, caramel, vanilla CO2, vanilla planifolia, vanilla beans, ambroxan, velvet musk",
+      "seasons": [
+        "Spring",
+        "Fall",
+        "Winter"
+      ],
+      "sizes": [
+        "Sample/Decant",
+        "Travel Size"
+      ],
+      "ftypes": [
+        "Extrait",
+        "Perfume Oil"
+      ],
+      "multiples": false,
+      "rating": 4,
+      "price": null,
+      "fav": false,
+      "wears": [],
+      "bpairs": {
+        "pin": [],
+        "hide": [
+          "m:100020:Body wash"
+        ]
+      }
+    },
+    {
+      "id": 100100,
+      "brand": "Sorce",
+      "name": "Your Girlfriend is a Badass",
+      "families": [
+        "Woody",
+        "Green",
+        "Sweet"
+      ],
+      "notes": "Yellow cake, fudge icing, oakmoss, Himalayan cedar, forest floor",
+      "seasons": [
+        "Spring",
+        "Fall",
+        "Winter"
+      ],
+      "sizes": [
+        "Sample/Decant",
+        "Travel Size"
+      ],
+      "ftypes": [
+        "Extrait",
+        "Perfume Oil"
+      ],
+      "multiples": false,
+      "rating": 3,
+      "price": 27,
+      "fav": false,
+      "wears": [],
+      "pairs": {
+        "pin": {
+          "layer": [],
+          "rot": []
+        },
+        "hide": {
+          "layer": [
+            100,
+            100048
+          ],
+          "rot": []
+        }
+      },
+      "bpairs": {
+        "pin": [
+          "s:900009:Lotion",
+          "s:900034:Lotion",
+          "s:900001:Body wash"
+        ],
+        "hide": []
+      }
+    },
+    {
+      "id": 100101,
+      "brand": "Carolina Herrera",
+      "name": "Cedar Chic",
+      "families": [
+        "Fresh",
+        "Musk",
+        "Powdery"
+      ],
+      "notes": "Aldehydes, bergamot, orange blossom, white musk, cedarwood",
+      "seasons": [
+        "Spring",
+        "Summer",
+        "Fall",
+        "Winter"
+      ],
+      "sizes": [
+        "Full Size"
+      ],
+      "ftypes": [
+        "EDP"
+      ],
+      "multiples": false,
+      "rating": 5,
+      "price": 285,
+      "fav": false,
+      "wears": []
     }
   ],
-  "nextId": 100081,
+  "nextId": 100102,
   "tray": {
     "label": "November 2026",
     "ids": [
@@ -8294,7 +9085,6 @@ const INITIAL_USER = /*userdata*/{
       36,
       109,
       149,
-      2,
       37,
       38,
       39,
@@ -8310,7 +9100,8 @@ const INITIAL_USER = /*userdata*/{
       144,
       170,
       100052,
-      176
+      176,
+      193
     ]
   },
   "trayHistory": [
@@ -10660,6 +11451,7 @@ function cardHTML(it,all,scope){
       <button class="iconbtn tray ${inTray?'on':''}" title="${inTray?'In tray — tap to remove':'Add to tray'}" onclick="trayToggle(${it.id})"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-6l-2 3h-4l-2-3H2"/><path d="M5.45 5.11 2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z"/></svg></button>
       <button class="iconbtn" title="Details & pairings" onclick="toggleExpand(${it.id})">⋯</button>
     </div>
+    ${withRowHTML(it,all,P)}
     <div class="expand">
       <div>
         <div class="exp-h">Layer with</div>
@@ -10835,16 +11627,149 @@ function logWear(id){
   const today=todayISO();
   const wears=it.wears.concat([today]);
   patch(id,{wears});
+  WITH_OPEN.add(id);             // ask what it was worn with, right there on the card
   Array.prototype.slice.call(document.querySelectorAll('[data-log="'+id+'"]')).forEach(btn=>{
     btn.classList.add("justlogged");setTimeout(()=>btn.classList.remove("justlogged"),400);
   });
   softUpdate(id);renderStats();
 }
+/* ---------- worn together ----------
+   Each scent keeps paired:{date:[ids]} — the scents it was worn with that day, stored on both sides. */
+let WITH_OPEN=new Set();
+function getPaired(id){
+  const rec=id>=100000?(USER.custom.find(x=>x.id===id)||{}):(USER.ov[id]||{});
+  return Object.assign({},rec.paired||{});
+}
+function pairedToday(id,all){
+  const t=todayISO();all=all||items();
+  return (getPaired(id)[t]||[]).filter(b=>{const x=all.find(y=>y.id===b);return x&&x.wears.includes(t);});
+}
+function linkPair(a,b,d,on){
+  if(a===b)return;
+  [[a,b],[b,a]].forEach(([x,y])=>{
+    const p=getPaired(x), l=(p[d]||[]).filter(z=>z!==y);
+    if(on)l.push(y);
+    if(l.length)p[d]=l;else delete p[d];
+    patch(x,{paired:p});
+  });
+}
+/* who you're most likely to have worn it with: your saved pairs, past pairings, scents logged on the
+   same day before, anything already worn today, then the card's own layering ideas */
+function withCandidates(it,all,P){
+  const t=todayISO(), already=new Set(pairedToday(it.id,all)), sc={}, why={};
+  const bump=(id,v,label,prio)=>{
+    if(id===it.id||already.has(id))return;
+    sc[id]=(sc[id]||0)+v;
+    if(!why[id]||prio>why[id].p)why[id]={t:label,p:prio};
+  };
+  getPairs(it.id).pin.layer.forEach(id=>bump(id,5,"your pair",4));
+  const paired=getPaired(it.id), pc={};
+  Object.keys(paired).forEach(d=>{if(d!==t)paired[d].forEach(b=>{pc[b]=(pc[b]||0)+1;});});
+  Object.keys(pc).forEach(b=>bump(+b,2*pc[b],"paired "+pc[b]+"×",3));
+  const myDays=new Set(it.wears.filter(d=>d!==t));
+  all.forEach(x=>{
+    if(x.id===it.id)return;
+    let n=0;x.wears.forEach(d=>{if(d!==t&&myDays.has(d))n++;});
+    if(n)bump(x.id,n,"same day "+n+"×",2);
+    if(x.wears.includes(t))bump(x.id,3,"worn today",5);
+  });
+  (P||pairings(it,all)).layer.auto.slice(0,5).forEach((x,i)=>bump(x.id,1.5-0.2*i,"suggested",1));
+  return Object.keys(sc).map(Number).map(id=>({x:all.find(y=>y.id===id),s:sc[id],why:why[id].t}))
+    .filter(o=>o.x).sort((a,b)=>b.s-a.s).slice(0,6);
+}
+function withRowHTML(it,all,P){
+  const t=todayISO();
+  if(!it.wears.includes(t))return "";
+  const today=pairedToday(it.id,all).map(id=>all.find(x=>x.id===id)).filter(Boolean);
+  const pins=new Set(getPairs(it.id).pin.layer);
+  const done=today.map(x=>`<span class="wchip on"><button class="wc-main" title="Remove ${esc(x.name)} from today" onclick="unlogWith(${it.id},${x.id})">✓ ${esc(x.name)}</button>${pins.has(x.id)
+      ?`<span class="wc-saved" title="Saved as a layering pair">📌</span>`
+      :`<button class="wc-pin" title="Save as a layering pair on both cards" onclick="savePair(${it.id},${x.id})">📌 Save pair</button>`}</span>`).join("");
+  if(!WITH_OPEN.has(it.id)){
+    return `<div class="withrow">${today.length?`<span class="wr-lbl">Worn with</span>${done}`:""}<button class="withlink" onclick="openWith(${it.id})">${today.length?"＋ Add another":"＋ Wore it with something?"}</button></div>`;
+  }
+  const chips=withCandidates(it,all,P).map(o=>`<button class="wchip" onclick="logWith(${it.id},${o.x.id})"><span class="wc-dot" style="background:${FAM_COLOR[o.x.family]}"></span>${esc(o.x.name)}<small>${esc(o.why)}</small></button>`).join("");
+  return `<div class="withrow open">
+    <div class="wr-head"><span class="wr-lbl">Wore it with…</span><button class="wr-x" onclick="closeWith(${it.id})">Done</button></div>
+    ${done?`<div class="wr-done">${done}</div>`:""}
+    <div class="wr-chips">${chips}<button class="wchip other" onclick="openWithPicker(${it.id})">Other…</button></div>
+  </div>`;
+}
+function openWith(id){WITH_OPEN.add(id);softUpdate(id);}
+function closeWith(id){WITH_OPEN.delete(id);softUpdate(id);}
+function logWith(a,b,quiet){
+  const t=todayISO(), x=items().find(y=>y.id===b);if(!x)return;
+  if(!x.wears.includes(t))patch(b,{wears:x.wears.concat([t])});
+  linkPair(a,b,t,true);
+  softUpdate(a);softUpdate(b);renderStats();
+  if(!quiet)flash("Logged "+x.name+" too");
+}
+function unlogWith(a,b,skipConfirm){
+  const x=items().find(y=>y.id===b);if(!x)return;
+  if(!skipConfirm&&!confirm("Remove "+x.name+" from today?"))return;
+  const t=todayISO();
+  linkPair(a,b,t,false);
+  const w=x.wears.slice(),i=w.lastIndexOf(t);if(i>=0){w.splice(i,1);patch(b,{wears:w});}
+  softUpdate(a);softUpdate(b);renderStats();
+}
+function savePair(a,b){
+  [[a,b],[b,a]].forEach(([x,y])=>{
+    const p=getPairs(x);
+    if(!p.pin.layer.includes(y))p.pin.layer.push(y);
+    p.hide.layer=p.hide.layer.filter(z=>z!==y);
+    setUserPairs(x,p);
+  });
+  softUpdate(a);softUpdate(b);flash("Saved as a layering pair");
+}
+let withTarget=null, withQ="";
+function openWithPicker(id){
+  modalKind="withpick";withTarget=id;withQ="";
+  const it=items().find(x=>x.id===id);if(!it)return;
+  document.getElementById("modalCard").innerHTML=`
+    <h2>Wore ${esc(it.name)} with…</h2>
+    <p class="mh">Tap a scent to log it for today alongside ${esc(it.name)}. Tap it again to undo.</p>
+    <div class="field" style="margin-bottom:6px"><input id="wpSearch" placeholder="Search your collection…" oninput="onWithSearch(this.value)"></div>
+    <div class="ql-results" id="wpResults"></div>
+    <div class="modal-foot" style="margin-top:14px"><button class="btn-solid" onclick="closeModal()">Done</button></div>`;
+  document.getElementById("modalBg").classList.add("on");
+  renderWithResults("");
+}
+function onWithSearch(v){withQ=v;renderWithResults(v);}
+function renderWithResults(q){
+  const all=items(), it=all.find(x=>x.id===withTarget);if(!it)return;
+  const today=new Set(pairedToday(it.id,all));
+  const cands=withCandidates(it,all), whyOf={};cands.forEach(o=>{whyOf[o.x.id]=o.why;});
+  let list;
+  if(q&&q.trim()){
+    const s=q.toLowerCase();
+    list=all.filter(x=>x.id!==it.id&&(x.brand+" "+x.name+" "+x.notes+" "+x.families.join(" ")).toLowerCase().includes(s)).slice(0,30);
+  }else{
+    const cs=currentSeason();
+    const rest=all.filter(x=>x.id!==it.id&&x.seasons.includes(cs)).sort((a,b)=>(a.brand+a.name).localeCompare(b.brand+b.name));
+    list=all.filter(x=>today.has(x.id)).concat(cands.map(o=>o.x),rest).filter((x,i,a)=>a.indexOf(x)===i).slice(0,60);
+  }
+  document.getElementById("wpResults").innerHTML=list.map(x=>{
+    const on=today.has(x.id);
+    return `<div class="ql-row ${on?'done':''}" onclick="${on?`unlogWith(${it.id},${x.id},true)`:`logWith(${it.id},${x.id},true)`};renderWithResults(withQ)">
+      <span class="qf" style="background:${FAM_COLOR[x.family]}"></span>
+      <span class="qn">${esc(x.name)}<small>${esc(x.brand)}</small></span>
+      <span class="qmeta">${on?'logged ✓':esc(whyOf[x.id]||'')}</span></div>`;
+  }).join("")||`<div class="ql-row" style="color:var(--faint);cursor:default">No matches.</div>`;
+}
+/* once a scent has no wear left on a day, it wasn't worn with anything that day either */
+function dropPairsIfUnworn(id,d,wears){
+  if(wears.includes(d))return [];
+  const ids=(getPaired(id)[d]||[]).slice();
+  ids.forEach(b=>linkPair(id,b,d,false));
+  return ids;
+}
 function removeWear(id,d){
   const it=items().find(x=>x.id===id);
   const i=it.wears.lastIndexOf(d);
   const wears=it.wears.slice();if(i>=0)wears.splice(i,1);
-  patch(id,{wears});softUpdate(id);renderStats();
+  patch(id,{wears});
+  dropPairsIfUnworn(id,d,wears).forEach(b=>softUpdate(b));
+  softUpdate(id);renderStats();
 }
 function editWearDate(id,oldD,newD){
   if(!newD||newD===oldD)return;
@@ -10853,7 +11778,9 @@ function editWearDate(id,oldD,newD){
   const i=w.indexOf(oldD);
   if(i<0)return;
   w[i]=newD; w.sort();
-  patch(id,{wears:w});softUpdate(id);renderStats();
+  patch(id,{wears:w});
+  dropPairsIfUnworn(id,oldD,w).forEach(b=>softUpdate(b));
+  softUpdate(id);renderStats();
   flash("Date updated");
 }
 function removeScent(id){
@@ -11390,7 +12317,7 @@ function spinSurprise(forced){
     return `<div class="sur-card">
       <div class="sur-strip" style="background:${stripBg}"></div>
       <div class="sur-brand">${esc(pick.brand)}</div>
-      <div class="sur-name">${esc(pick.name)}</div>
+      <button class="sur-name sur-link" title="Open ${esc(pick.name)} in your library" onclick="gotoScent(${pick.id})"><span class="sur-n">${esc(pick.name)}</span><span class="sur-go">View card ›</span></button>
       <div class="sur-fam">${pick.families.join(" · ")}</div>
       <div class="sur-notes">${esc(pick.notes)}</div>
       <div class="sur-rest">${restLine}</div>
@@ -11412,6 +12339,25 @@ function spinSurprise(forced){
       <button class="btn-ghost" onclick="closeModal()">Close</button>
       <button class="btn-solid" onclick="spinSurprise()">🎲 Again</button>
     </div>`;
+}
+/* jump to a scent's card in the Library: open it, scroll to it, highlight it briefly.
+   Filters are only loosened if they would otherwise hide the card. */
+function gotoScent(id){
+  const it=items().find(x=>x.id===id);if(!it)return;
+  closeModal();
+  if(state.view!=="library")setView("library");
+  if(!filtered().some(x=>x.id===id)){
+    state.q="";const sb=document.getElementById("searchBox");if(sb)sb.value="";
+    state.families=new Set();state.ftypes=new Set();state.fav=false;state.match=false;state.tray=false;
+    ["favToggle","matchToggle","trayFilterBtn"].forEach(b=>{const e=document.getElementById(b);if(e)e.classList.remove("on");});
+    if(!filtered().some(x=>x.id===id))state.season="All";
+  }
+  render();
+  const node=document.getElementById("card-lib-"+id);
+  if(!node)return;
+  node.classList.add("open");node.classList.add("spot");
+  if(node.scrollIntoView)node.scrollIntoView({behavior:"smooth",block:"center"});
+  setTimeout(()=>node.classList.remove("spot"),1800);
 }
 function spinKeep(){
   // re-render the current pick (e.g. after a tray toggle) without drawing a new scent
@@ -11466,6 +12412,7 @@ function quickLogItem(id){
   const it=items().find(x=>x.id===id);if(!it)return;
   patch(id,{wears:it.wears.concat([todayISO()])});
   if(!loggedTonight.includes(id))loggedTonight.push(id);
+  loggedTonight.forEach(o=>{if(o!==id)linkPair(id,o,todayISO(),true);});
   flash("Logged "+it.name);
   renderQLChips();renderQLResults(quickQ);renderStats();
 }
@@ -11483,6 +12430,7 @@ function undoTonight(id){
   const it=items().find(x=>x.id===id);const today=todayISO();
   if(it){const i=it.wears.lastIndexOf(today);if(i>=0){const w=it.wears.slice();w.splice(i,1);patch(id,{wears:w});}}
   loggedTonight=loggedTonight.filter(x=>x!==id);
+  loggedTonight.forEach(o=>linkPair(id,o,today,false));
   renderQLChips();renderQLResults(quickQ);renderStats();
 }
 
